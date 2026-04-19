@@ -80,6 +80,3 @@ Best scores are stored in `UserDefaults.standard` under:
 
 Four visual themes unlock by score inside a run (0 / 12 / 25 / 40). See `GameState.pickThemeIndex(for:)`.
 
-## Release Notes
-
-Release history lives in the git log — recent tags/commits (`Release Candidate ...`) mark App Store submissions. The working App Store copy for the current submission was tracked in the `AppStorePage_dot-dash/` folder and has since been archived (see commit `c3d4a91`).
