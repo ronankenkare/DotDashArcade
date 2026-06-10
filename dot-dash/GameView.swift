@@ -226,11 +226,14 @@ private struct HelpOverlayView: View {
                         .glassEffect(.clear)
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier("game.startButton")
             }
             .padding(16)
             .frame(maxWidth: 480)
             .glassEffect(.regular, in: .rect(cornerRadius: 28))
             .padding(16)
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("game.helpOverlay")
         }
     }
 }
@@ -245,6 +248,7 @@ private struct ModeBadgeView: View {
                 let newMode: GameState.Mode = game.mode == .classic ? .advanced : .classic
                 game.changeMode(newMode)
             }
+            .accessibilityIdentifier("game.modePill")
         }
     }
 }
@@ -257,9 +261,11 @@ private struct ScoreBarView: View {
         HStack {
             Text("SCORE: \(game.score)")
                 .font(.system(size: 18, weight: .heavy, design: .rounded))
+                .accessibilityIdentifier("game.scoreLabel")
             Spacer()
             Text("BEST: \(game.bestCurrent)")
                 .font(.system(size: 18, weight: .heavy, design: .rounded))
+                .accessibilityIdentifier("game.bestLabel")
         }
         .padding(.horizontal, 12)
         .foregroundColor(colorScheme == .light ? .black.opacity(0.95) : .white.opacity(0.95))
