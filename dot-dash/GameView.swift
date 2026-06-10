@@ -530,7 +530,7 @@ final class GameState: ObservableObject {
 
     // MARK: - Helpers
 
-    private func inZone(_ pos: CGFloat) -> Bool {
+    func inZone(_ pos: CGFloat) -> Bool {
         let half = zoneWidth / 2
         return pos >= (zoneCenter - half) && pos <= (zoneCenter + half)
     }
