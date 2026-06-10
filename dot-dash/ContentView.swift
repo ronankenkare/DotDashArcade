@@ -74,6 +74,7 @@ struct ContentView: View {
                 ModeTogglePill(isClassic: chosenMode == .classic) {
                     chosenMode = chosenMode == .classic ? .advanced : .classic
                 }
+                .accessibilityIdentifier("home.modePill")
                 
                 
                 // Mode dropdown + single Play button
@@ -96,6 +97,7 @@ struct ContentView: View {
                         .foregroundStyle(Color.white)
                         .glassEffect(.clear)
                     }
+                    .accessibilityIdentifier("home.playButton")
                 }
                 .padding(24)
                 .background(RoundedRectangle(cornerRadius: 48).fill(Color(chosenMode == .classic ? "ClassicMode" : "AdvancedMode")))

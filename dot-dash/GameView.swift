@@ -226,11 +226,14 @@ private struct HelpOverlayView: View {
                         .glassEffect(.clear)
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier("game.startButton")
             }
             .padding(16)
             .frame(maxWidth: 480)
             .glassEffect(.regular, in: .rect(cornerRadius: 28))
             .padding(16)
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("game.helpOverlay")
         }
     }
 }
@@ -245,6 +248,7 @@ private struct ModeBadgeView: View {
                 let newMode: GameState.Mode = game.mode == .classic ? .advanced : .classic
                 game.changeMode(newMode)
             }
+            .accessibilityIdentifier("game.modePill")
         }
     }
 }
@@ -257,9 +261,11 @@ private struct ScoreBarView: View {
         HStack {
             Text("SCORE: \(game.score)")
                 .font(.system(size: 18, weight: .heavy, design: .rounded))
+                .accessibilityIdentifier("game.scoreLabel")
             Spacer()
             Text("BEST: \(game.bestCurrent)")
                 .font(.system(size: 18, weight: .heavy, design: .rounded))
+                .accessibilityIdentifier("game.bestLabel")
         }
         .padding(.horizontal, 12)
         .foregroundColor(colorScheme == .light ? .black.opacity(0.95) : .white.opacity(0.95))
@@ -416,14 +422,22 @@ final class GameState: ObservableObject {
         guard running else { updateParticles(CGFloat(dt)); return }
 
         // Move marker
-        markerPos += markerDir * speed * CGFloat(dt)
-        if markerPos >= 1 { markerPos = 1; markerDir = -1 }
-        if markerPos <= 0 { markerPos = 0; markerDir = 1 }
+        (markerPos, markerDir) = Self.advanceMarker(pos: markerPos, dir: markerDir, speed: speed, dt: CGFloat(dt))
 
         updateParticles(CGFloat(dt))
     }
 
-    private func updateParticles(_ dt: CGFloat) {
+    /// Pure marker movement + edge bounce. Extracted from step(_:) for testability.
+    nonisolated static func advanceMarker(pos: CGFloat, dir: CGFloat, speed: CGFloat, dt: CGFloat) -> (pos: CGFloat, dir: CGFloat) {
+        var pos = pos
+        var dir = dir
+        pos += dir * speed * dt
+        if pos >= 1 { pos = 1; dir = -1 }
+        if pos <= 0 { pos = 0; dir = 1 }
+        return (pos, dir)
+    }
+
+    func updateParticles(_ dt: CGFloat) {
         for i in particles.indices {
             particles[i].age += dt
             particles[i].x += particles[i].vx
@@ -470,7 +484,7 @@ final class GameState: ObservableObject {
         }
     }
 
-    private func currentSettings() -> ModeSettings {
+    func currentSettings() -> ModeSettings {
         switch mode {
         case .classic:
             return ModeSettings(
@@ -530,7 +544,7 @@ final class GameState: ObservableObject {
 
     // MARK: - Helpers
 
-    private func inZone(_ pos: CGFloat) -> Bool {
+    func inZone(_ pos: CGFloat) -> Bool {
         let half = zoneWidth / 2
         return pos >= (zoneCenter - half) && pos <= (zoneCenter + half)
     }
@@ -543,7 +557,7 @@ final class GameState: ObservableObject {
 
     private func clamp<T: Comparable>(_ v: T, _ lo: T, _ hi: T) -> T { min(max(v, lo), hi) }
 
-    private func pickThemeIndex(for score: Int) -> Int {
+    func pickThemeIndex(for score: Int) -> Int {
         if score >= 40 { return 3 }
         if score >= 25 { return 2 }
         if score >= 12 { return 1 }
