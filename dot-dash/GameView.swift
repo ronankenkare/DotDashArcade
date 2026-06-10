@@ -416,11 +416,19 @@ final class GameState: ObservableObject {
         guard running else { updateParticles(CGFloat(dt)); return }
 
         // Move marker
-        markerPos += markerDir * speed * CGFloat(dt)
-        if markerPos >= 1 { markerPos = 1; markerDir = -1 }
-        if markerPos <= 0 { markerPos = 0; markerDir = 1 }
+        (markerPos, markerDir) = Self.advanceMarker(pos: markerPos, dir: markerDir, speed: speed, dt: CGFloat(dt))
 
         updateParticles(CGFloat(dt))
+    }
+
+    /// Pure marker movement + edge bounce. Extracted from step(_:) for testability.
+    nonisolated static func advanceMarker(pos: CGFloat, dir: CGFloat, speed: CGFloat, dt: CGFloat) -> (pos: CGFloat, dir: CGFloat) {
+        var pos = pos
+        var dir = dir
+        pos += dir * speed * dt
+        if pos >= 1 { pos = 1; dir = -1 }
+        if pos <= 0 { pos = 0; dir = 1 }
+        return (pos, dir)
     }
 
     private func updateParticles(_ dt: CGFloat) {
