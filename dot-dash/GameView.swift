@@ -91,6 +91,7 @@ struct ModeTogglePill: View {
             .padding(.horizontal, 24)
             .glassEffect(.clear)
             .clipShape(.capsule)
+            .contentShape(.capsule)
             .foregroundStyle(colorScheme == .light ? Color.black : Color(isClassic ? "ClassicMode" : "AdvancedMode"))
         }
         .buttonStyle(.plain)
