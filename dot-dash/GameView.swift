@@ -431,7 +431,7 @@ final class GameState: ObservableObject {
         return (pos, dir)
     }
 
-    private func updateParticles(_ dt: CGFloat) {
+    func updateParticles(_ dt: CGFloat) {
         for i in particles.indices {
             particles[i].age += dt
             particles[i].x += particles[i].vx
@@ -478,7 +478,7 @@ final class GameState: ObservableObject {
         }
     }
 
-    private func currentSettings() -> ModeSettings {
+    func currentSettings() -> ModeSettings {
         switch mode {
         case .classic:
             return ModeSettings(
@@ -551,7 +551,7 @@ final class GameState: ObservableObject {
 
     private func clamp<T: Comparable>(_ v: T, _ lo: T, _ hi: T) -> T { min(max(v, lo), hi) }
 
-    private func pickThemeIndex(for score: Int) -> Int {
+    func pickThemeIndex(for score: Int) -> Int {
         if score >= 40 { return 3 }
         if score >= 25 { return 2 }
         if score >= 12 { return 1 }
