@@ -128,7 +128,7 @@ struct ContentView: View {
                             if showMenu {
                                 VStack(alignment: .trailing, spacing: 8) {
                                     Button(action: {
-                                        if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLScPfmnHuAq2J1f94FzmaB4rOdWdreYlzdDSp8Z9CvA8BzCDKw/viewform?usp=dialog") {
+                                        if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSc363RKRky1eFwkpDa4Eu2jDMwhBiBsOTacm03HsBZbZKctYQ/viewform?usp=dialog") {
                                             UIApplication.shared.open(url)
                                         }
                                         withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
