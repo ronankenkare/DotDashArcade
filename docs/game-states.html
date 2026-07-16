@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dot Dash game lifecycle and state transitions.">
+  <title>Game States — Dot Dash Systems Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">•</span><span>Dot • Dash</span></a>
+    <nav class="site-nav" aria-label="Systems guide">
+      <a href="index.html">Overview</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="game-states.html" aria-current="page">Game states</a>
+      <a href="tap-sequence.html">Tap sequence</a>
+      <a href="difficulty.html">Difficulty</a>
+      <a href="verification.html">Verification</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">02 · Behavioral view</p>
+      <h1>A run has one active state.</h1>
+      <p class="lede">The interface moves from selection to readiness to active play. Hits loop the run forward; a miss stops it; interruptions safely return the player to instructions.</p>
+    </section>
+
+    <section class="glass-panel diagram-shell" aria-labelledby="state-title">
+      <div class="diagram-title-row">
+        <div>
+          <h2 id="state-title">Game-state machine</h2>
+          <p>The main path begins with choosing a mode. Hover a named state—or use the preview buttons—to see the corresponding simulator capture.</p>
+        </div>
+        <span class="badge advanced">One miss ends the run</span>
+      </div>
+
+      <div class="mermaid-stage" id="game-state-diagram" role="group" aria-label="Detailed game-state diagram from home to ready and running, including frame updates, hit classification, progression, game over, mode changes, and lifecycle interruptions.">
+        <pre class="mermaid">
+stateDiagram-v2
+    [*] --> Home: App launches
+    Home --> Ready: Select mode + Play
+    Ready --> Running: Start / reset()
+
+    Running --> Running: CADisplayLink frame / advance marker
+    Running --> TapDecision: Player taps / handleTap()
+
+    state TapDecision <<choice>>
+    TapDecision --> PerfectHit: inPerfect(markerPos)
+    TapDecision --> GoodHit: inZone(markerPos)
+    TapDecision --> GameOver: outside target
+
+    PerfectHit --> Progression: score +1 / strong feedback
+    GoodHit --> Progression: score +1 / normal feedback
+    Progression --> Running: speed up + resize + relocate + theme
+
+    GameOver --> Running: Play Again / reset()
+    GameOver --> Ready: Change mode
+    Ready --> Home: Navigate back
+
+    Running --> Ready: App inactive or backgrounded
+    Running --> Ready: Change mode
+
+    note right of Running
+      running = true
+      marker and particles update each frame
+    end note
+
+    note right of GameOver
+      running = false
+      save mode-specific best
+      show results overlay
+    end note
+        </pre>
+      </div>
+      <div class="state-preview-controls" aria-label="Preview app states">
+        <span>App preview</span>
+        <button type="button" data-state-preview="Home">Home</button>
+        <button type="button" data-state-preview="Ready">Ready</button>
+        <button type="button" data-state-preview="Running">Running</button>
+        <button type="button" data-state-preview="PerfectHit">Hit</button>
+        <button type="button" data-state-preview="GameOver">Game Over</button>
+      </div>
+    </section>
+
+    <div class="callout"><strong>Important lifecycle behavior:</strong> returning from the background restarts the display link, but it does not silently resume the previous run. The player explicitly starts again from the help overlay.</div>
+  </main>
+
+  <footer class="page-footer">
+    <a class="pill-link" href="architecture.html">← Architecture</a>
+    <a class="pill-link" href="tap-sequence.html">Next: Tap sequence →</a>
+  </footer>
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script defer src="diagrams.js"></script>
+</body>
+</html>

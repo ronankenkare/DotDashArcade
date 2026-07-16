@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dot Dash Classic and Advanced difficulty progression.">
+  <title>Difficulty — Dot Dash Systems Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">•</span><span>Dot • Dash</span></a>
+    <nav class="site-nav" aria-label="Systems guide">
+      <a href="index.html">Overview</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="game-states.html">Game states</a>
+      <a href="tap-sequence.html">Tap sequence</a>
+      <a href="difficulty.html" aria-current="page">Difficulty</a>
+      <a href="verification.html">Verification</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">04 · Parametric view</p>
+      <h1>Two modes, two pressure curves.</h1>
+      <p class="lede">Classic emphasizes increasing speed. Advanced starts faster and combines speed growth with a target that shrinks toward a hard minimum.</p>
+    </section>
+
+    <section class="glass-panel diagram-shell" aria-labelledby="mode-title">
+      <div class="diagram-title-row">
+        <div>
+          <h2 id="mode-title">Starting conditions</h2>
+          <p>Bar lengths compare the configured starting values and perfect-hit fraction. They are relative within each metric, not a shared physical scale.</p>
+        </div>
+        <span class="badge">ModeSettings</span>
+      </div>
+
+      <div class="mode-grid">
+        <article class="mode-panel classic">
+          <span class="badge classic">Classic</span>
+          <div class="metric-list">
+            <div class="metric-row"><span>Target width</span><div class="meter"><span style="--value: 72%"></span></div><strong>0.36</strong></div>
+            <div class="metric-row"><span>Marker speed</span><div class="meter"><span style="--value: 55%"></span></div><strong>0.55</strong></div>
+            <div class="metric-row"><span>Perfect fraction</span><div class="meter"><span style="--value: 90%"></span></div><strong>45%</strong></div>
+            <div class="metric-row"><span>Minimum target</span><div class="meter"><span style="--value: 20%"></span></div><strong>0.10</strong></div>
+          </div>
+        </article>
+
+        <article class="mode-panel advanced">
+          <span class="badge advanced">Advanced</span>
+          <div class="metric-list">
+            <div class="metric-row"><span>Target width</span><div class="meter"><span style="--value: 52%"></span></div><strong>0.26</strong></div>
+            <div class="metric-row"><span>Marker speed</span><div class="meter"><span style="--value: 80%"></span></div><strong>0.80</strong></div>
+            <div class="metric-row"><span>Perfect fraction</span><div class="meter"><span style="--value: 60%"></span></div><strong>30%</strong></div>
+            <div class="metric-row"><span>Minimum target</span><div class="meter"><span style="--value: 12%"></span></div><strong>0.06</strong></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>Every successful tap increases pressure</h2>
+        <p>Perfect and good hits use different multipliers. Advanced also applies different shrink factors before relocating the zone.</p>
+      </div>
+      <div class="progression-flow" role="img" aria-label="A hit is classified as perfect or good, then speed grows, Advanced target width shrinks, the target moves, and the theme updates at score thresholds.">
+        <div class="node"><strong>Hit</strong><span>marker is in target</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node good"><strong>Classify</strong><span>perfect or good</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node classic"><strong>Increase speed</strong><span>× 1.05–1.15</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node advanced"><strong>Adjust target</strong><span>shrink + relocate</span></div>
+      </div>
+
+      <div class="theme-track" aria-label="Theme progression at scores 0, 12, 25, and 40">
+        <div class="theme-stage" style="--stage-color: var(--classic)"><strong>Score 0</strong><br><span>Base theme</span></div>
+        <div class="theme-stage" style="--stage-color: var(--warning)"><strong>Score 12</strong><br><span>Theme 2</span></div>
+        <div class="theme-stage" style="--stage-color: var(--purple)"><strong>Score 25</strong><br><span>Theme 3</span></div>
+        <div class="theme-stage" style="--stage-color: var(--cyan)"><strong>Score 40</strong><br><span>Theme 4</span></div>
+      </div>
+    </section>
+
+    <div class="callout"><strong>Design intent:</strong> Classic keeps the target width stable while speed rises. Advanced makes both timing and spatial precision harder, but clamps the target at 0.06 so it never collapses completely.</div>
+  </main>
+
+  <footer class="page-footer">
+    <a class="pill-link" href="tap-sequence.html">← Tap sequence</a>
+    <a class="pill-link" href="verification.html">Next: Verification →</a>
+  </footer>
+</body>
+</html>

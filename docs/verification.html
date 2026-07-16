@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Traceability from Dot Dash system behavior to automated tests.">
+  <title>Verification — Dot Dash Systems Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">•</span><span>Dot • Dash</span></a>
+    <nav class="site-nav" aria-label="Systems guide">
+      <a href="index.html">Overview</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="game-states.html">Game states</a>
+      <a href="tap-sequence.html">Tap sequence</a>
+      <a href="difficulty.html">Difficulty</a>
+      <a href="verification.html" aria-current="page">Verification</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">05 · Verification view</p>
+      <h1>Rules map directly to tests.</h1>
+      <p class="lede">The verification view connects visible player behavior to GameState logic and the automated suite that protects it from regressions.</p>
+    </section>
+
+    <section class="glass-panel diagram-shell" aria-labelledby="trace-title">
+      <div class="diagram-title-row">
+        <div>
+          <h2 id="trace-title">Requirements-to-tests map</h2>
+          <p>Each row traces one system promise from observable behavior to implementation responsibility and test coverage.</p>
+        </div>
+        <span class="badge classic">Swift Testing</span>
+      </div>
+
+      <table class="trace-table">
+        <thead>
+          <tr><th>System promise</th><th>Responsible behavior</th><th>Verification suite</th><th>Coverage</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="System promise">Marker stays on the bar</td>
+            <td data-label="Responsible behavior">Advance position, clamp at 0 and 1, reverse direction</td>
+            <td data-label="Verification suite"><code>MarkerPhysicsTests</code></td>
+            <td data-label="Coverage"><span class="status">Covered</span></td>
+          </tr>
+          <tr>
+            <td data-label="System promise">Target edges count as hits</td>
+            <td data-label="Responsible behavior">Inclusive zone and perfect-band comparisons</td>
+            <td data-label="Verification suite"><code>InZoneTests</code> + <code>dot_dashTests</code></td>
+            <td data-label="Coverage"><span class="status">Covered</span></td>
+          </tr>
+          <tr>
+            <td data-label="System promise">Hits progress the run</td>
+            <td data-label="Responsible behavior">Score, speed, width, target relocation, theme</td>
+            <td data-label="Verification suite"><code>HandleTapHitPathTests</code></td>
+            <td data-label="Coverage"><span class="status">Covered</span></td>
+          </tr>
+          <tr>
+            <td data-label="System promise">Misses end and save</td>
+            <td data-label="Responsible behavior">Stop, show Game Over, persist mode best</td>
+            <td data-label="Verification suite"><code>dot_dashTests</code></td>
+            <td data-label="Coverage"><span class="status">Covered</span></td>
+          </tr>
+          <tr>
+            <td data-label="System promise">Modes reset cleanly</td>
+            <td data-label="Responsible behavior">Apply settings, clear run, return to help</td>
+            <td data-label="Verification suite"><code>GameStateLifecycleTests</code></td>
+            <td data-label="Coverage"><span class="status">Covered</span></td>
+          </tr>
+          <tr>
+            <td data-label="System promise">Critical UI is reachable</td>
+            <td data-label="Responsible behavior">Mode pill, Play, score labels, help overlay</td>
+            <td data-label="Verification suite"><code>dot-dashUITests</code></td>
+            <td data-label="Coverage"><span class="status">Covered</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>Verification layers</h2>
+        <p>Pure calculations receive focused unit coverage; stateful tap and lifecycle paths test combined behavior; UI tests validate the player-facing route.</p>
+      </div>
+      <div class="state-path">
+        <div class="node classic"><strong>Pure rules</strong><span>movement + boundaries</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><strong>State paths</strong><span>tap + reset + persistence</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node good"><strong>Player flow</strong><span>launch + controls + labels</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <a class="pill-link" href="difficulty.html">← Difficulty</a>
+    <a class="pill-link" href="index.html">Back to overview →</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "7390E28C-B704-43C5-95BE-E6FD69F5CA00",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "game-over.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "state-game-over_0_89FBF3B9-BD14-40A7-B325-CDD2D2158978.png",
+        "timestamp" : 1784243095.855
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "7390E28C-B704-43C5-95BE-E6FD69F5CA00",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "hit.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "state-hit_0_06FA0703-8601-4D5B-958D-147CD7EAA057.png",
+        "timestamp" : 1784243095.127
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "7390E28C-B704-43C5-95BE-E6FD69F5CA00",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "running.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "state-running_0_50604585-E2FE-4039-9428-A5AB25496693.png",
+        "timestamp" : 1784243094.346
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "7390E28C-B704-43C5-95BE-E6FD69F5CA00",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "ready.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "state-ready_0_9F8B74BE-129E-4E91-84D9-FCBBAD55A124.png",
+        "timestamp" : 1784243092.842
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "7390E28C-B704-43C5-95BE-E6FD69F5CA00",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "home.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "state-home_0_43859633-D9FA-4F47-BF4D-D9B18ADA9835.png",
+        "timestamp" : 1784243090.332
+      }
+    ],
+    "testIdentifier" : "DocumentationScreenshotTests/testCaptureGameStates()",
+    "testIdentifierURL" : "test://com.apple.xcode/dot-dash/dot-dashUITests/DocumentationScreenshotTests/testCaptureGameStates"
+  }
+]

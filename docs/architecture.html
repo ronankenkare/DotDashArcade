@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dot Dash system architecture and component responsibilities.">
+  <title>Architecture — Dot Dash Systems Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">•</span><span>Dot • Dash</span></a>
+    <nav class="site-nav" aria-label="Systems guide">
+      <a href="index.html">Overview</a>
+      <a href="architecture.html" aria-current="page">Architecture</a>
+      <a href="game-states.html">Game states</a>
+      <a href="tap-sequence.html">Tap sequence</a>
+      <a href="difficulty.html">Difficulty</a>
+      <a href="verification.html">Verification</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">01 · Component view</p>
+      <h1>Everything stays close to the game.</h1>
+      <p class="lede">Dot Dash is a device-local SwiftUI app. One observable game model coordinates timing, rules, rendering data, feedback, and best-score persistence.</p>
+    </section>
+
+    <section class="glass-panel diagram-shell" aria-labelledby="architecture-title">
+      <div class="diagram-title-row">
+        <div>
+          <h2 id="architecture-title">System architecture</h2>
+          <p>Solid relationships are direct calls or state updates. The dashed boundary contains everything shipped inside the iOS app.</p>
+        </div>
+        <span class="badge classic">Device-local</span>
+      </div>
+
+      <div class="mermaid-stage" role="group" aria-label="Detailed component diagram showing the player, app views, GameState, frame loop, Canvas, haptics, lifecycle, persistence, and support form with labeled relationships.">
+        <pre class="mermaid">
+flowchart LR
+    PLAYER(["Player"])
+
+    subgraph APP["Dot Dash · iOS / iPadOS app"]
+        direction TB
+        ENTRY["@main dot_dashApp"]
+
+        subgraph UI["SwiftUI presentation"]
+            direction TB
+            NAV["ContentView + NavigationStack"]
+            HOME["HomeView&lt;br/&gt;mode · best score · Play"]
+            GAME["GameView&lt;br/&gt;scene lifecycle · composition"]
+            SCORE["ScoreBar + HelpOverlay + ModeBadge"]
+            CANVAS["GameBarView Canvas&lt;br/&gt;bar · target · marker · particles"]
+        end
+
+        subgraph ENGINE["Game engine"]
+            direction TB
+            STATE["GameState&lt;br/&gt;rules · world state · difficulty · effects"]
+            LOOP["CADisplayLink&lt;br/&gt;frame timing"]
+            RULES["Hit rules&lt;br/&gt;inZone · inPerfect"]
+            PROGRESS["Progression&lt;br/&gt;speed · zone · theme"]
+        end
+
+        ENTRY -->|"creates root scene"| NAV
+        NAV -->|"renders"| HOME
+        HOME -->|"Play(selected mode)"| GAME
+        GAME -->|"owns @StateObject"| STATE
+        STATE -->|"@Published score + flags"| SCORE
+        STATE -->|"marker + zone + particles"| CANVAS
+        LOOP -->|"timestamp → step()"| STATE
+        STATE -->|"startLoop / stopLoop"| LOOP
+        STATE -->|"classify tap"| RULES
+        RULES -->|"good / perfect hit"| PROGRESS
+        PROGRESS -->|"mutate next challenge"| STATE
+    end
+
+    PLAYER -->|"choose mode + Play"| HOME
+    PLAYER -->|"tap anywhere on game bar"| CANVAS
+    CANVAS -->|"handleTap(screenWidth)"| STATE
+    SCORE -->|"score · help · game over"| PLAYER
+    CANVAS -->|"visual frame"| PLAYER
+
+    LIFECYCLE["scenePhase"] -->|"active → start loop"| GAME
+    LIFECYCLE -->|"inactive / background → pause + stop"| GAME
+    STATE -->|"success / warning feedback"| HAPTICS["UIKit haptic generators"]
+    STATE <-->|"read / write mode bests"| STORE[("UserDefaults")]
+    HOME -->|"Support"| FORM["External Google Form"]
+        </pre>
+      </div>
+      <div class="diagram-legend" aria-label="Diagram legend">
+        <span><i></i>Direct call or state flow</span>
+        <span><i class="dashed"></i>App and subsystem boundary</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>Responsibility split</h2>
+        <p>The dependency graph is intentionally small: SwiftUI owns presentation and navigation, while GameState owns the live game.</p>
+      </div>
+      <div class="card-grid">
+        <article class="diagram-card">
+          <span class="card-number">UI</span>
+          <h3>SwiftUI views</h3>
+          <p>Present the home screen, score bar, help overlay, mode control, and Canvas drawing surface.</p>
+        </article>
+        <article class="diagram-card">
+          <span class="card-number">GS</span>
+          <h3>GameState</h3>
+          <p>Calculates movement and hit quality, changes difficulty, emits feedback, and publishes renderable state.</p>
+        </article>
+        <article class="diagram-card">
+          <span class="card-number">OS</span>
+          <h3>Platform services</h3>
+          <p>Supply frame timing, haptic feedback, scene lifecycle events, and durable key-value storage.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <a class="pill-link" href="index.html">← Overview</a>
+    <a class="pill-link" href="game-states.html">Next: Game states →</a>
+  </footer>
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script defer src="diagrams.js"></script>
+</body>
+</html>

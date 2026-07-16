@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dot Dash tap processing sequence from input to rendered feedback.">
+  <title>Tap Sequence — Dot Dash Systems Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">•</span><span>Dot • Dash</span></a>
+    <nav class="site-nav" aria-label="Systems guide">
+      <a href="index.html">Overview</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="game-states.html">Game states</a>
+      <a href="tap-sequence.html" aria-current="page">Tap sequence</a>
+      <a href="difficulty.html">Difficulty</a>
+      <a href="verification.html">Verification</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">03 · Runtime view</p>
+      <h1>One tap fans out into feedback.</h1>
+      <p class="lede">Input arrives through the game bar, GameState classifies the marker position, then updates rules and feedback before SwiftUI renders the published result.</p>
+    </section>
+
+    <section class="glass-panel diagram-shell" aria-labelledby="sequence-title">
+      <div class="diagram-title-row">
+        <div>
+          <h2 id="sequence-title">Tap-to-outcome sequence</h2>
+          <p>Read downward. The center choice shows the only major runtime branch: hit or miss.</p>
+        </div>
+        <span class="badge classic">Synchronous decision path</span>
+      </div>
+
+      <div class="mermaid-stage" role="group" aria-label="Detailed sequence diagram showing a player tap, GameState hit detection, separate hit and miss paths, haptics, persistence, published state updates, and the final redraw.">
+        <pre class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Player
+    participant Bar as GameBarView
+    participant State as GameState
+    participant Device as Haptics
+    participant Store as UserDefaults
+    participant UI as SwiftUI + Canvas
+
+    Player->>Bar: Tap screen
+    Bar->>State: handleTap(screenWidth)
+
+    alt Game is not running
+        State->>State: reset()
+        State->>State: Load current mode settings
+        State-->>UI: Publish fresh run state
+    else Game is running
+        State->>State: inZone(markerPos)
+
+        alt Marker is inside target
+            State->>State: inPerfect(markerPos)
+            State->>State: score += 1
+            State->>Device: Success or warning haptic
+            Device-->>State: Feedback emitted
+            State->>State: Spawn good particle burst
+            State->>State: Multiply speed by hit quality
+            State->>State: Clamp target width to mode minimum
+            State->>State: Pick a new target center
+            State->>State: Select theme for new score
+        else Marker is outside target
+            State->>State: Spawn failure particle burst
+            State->>State: running = false / gameOver = true
+            State->>Store: Save max(best, score) for mode
+            Store-->>State: Best score persisted
+            State->>State: showHelp = true
+        end
+
+        State-->>UI: @Published properties changed
+    end
+
+    UI-->>Player: Redraw bar, score, particles, and overlay
+        </pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>The frame loop runs alongside taps</h2>
+        <p>CADisplayLink repeatedly advances the marker and particle state. Taps do not create a separate loop; they modify the same GameState that the next frame renders.</p>
+      </div>
+      <div class="mermaid-stage" role="group" aria-label="Frame loop sequence from CADisplayLink through elapsed-time clamping, marker and particle updates, published state, and Canvas rendering.">
+        <pre class="mermaid">
+sequenceDiagram
+    participant Display as Display Link
+    participant State as Game State
+    participant Physics as Marker and particles
+    participant Canvas as SwiftUI Canvas
+
+    loop Every display refresh
+        Display->>State: Send frame timestamp
+        State->>State: Compute elapsed time
+        State->>State: Clamp elapsed time to 50 ms
+        alt Run is active
+            State->>Physics: Advance marker for elapsed time
+            Physics-->>State: Return bounded position and direction
+        end
+        State->>Physics: Update particles for elapsed time
+        Physics-->>State: Return live particles
+        State-->>Canvas: Publish render state
+        Canvas->>Canvas: Draw bar, target, marker, particles
+    end
+        </pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <a class="pill-link" href="game-states.html">← Game states</a>
+    <a class="pill-link" href="difficulty.html">Next: Difficulty →</a>
+  </footer>
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script defer src="diagrams.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Systems diagrams for the Dot Dash iOS reflex game.">
+  <title>Dot Dash — Systems Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">•</span><span>Dot • Dash</span></a>
+    <nav class="site-nav" aria-label="Systems guide">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="game-states.html">Game states</a>
+      <a href="tap-sequence.html">Tap sequence</a>
+      <a href="difficulty.html">Difficulty</a>
+      <a href="verification.html">Verification</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Systems guide</p>
+      <h1>One tap.<br>Five system views.</h1>
+      <p class="lede">A visual tour of how Dot Dash is structured, how a run changes state, how one tap travels through the system, and how the gameplay rules are verified.</p>
+      <div class="page-meta" aria-label="Project summary">
+        <span class="badge classic">SwiftUI</span>
+        <span class="badge">CADisplayLink</span>
+        <span class="badge advanced">iOS + iPadOS</span>
+        <span class="badge">No external dependencies</span>
+      </div>
+      <div class="dot-dash-bar" aria-hidden="true"></div>
+    </section>
+
+    <section aria-labelledby="diagram-list-title">
+      <div class="section-heading">
+        <h2 id="diagram-list-title">Choose a system view</h2>
+        <p>Each page answers a different question. Together they describe the complete path from player input to rendered feedback and saved score.</p>
+      </div>
+
+      <div class="card-grid">
+        <a class="diagram-card" href="architecture.html">
+          <span class="card-number">01</span>
+          <h3>Architecture</h3>
+          <p>What pieces exist, where responsibilities live, and which device services the app uses.</p>
+        </a>
+        <a class="diagram-card" href="game-states.html">
+          <span class="card-number">02</span>
+          <h3>Game states</h3>
+          <p>How the experience moves between home, instructions, active play, pause, and game over.</p>
+        </a>
+        <a class="diagram-card" href="tap-sequence.html">
+          <span class="card-number">03</span>
+          <h3>Tap sequence</h3>
+          <p>What happens in order when the player taps—and where hit and miss paths diverge.</p>
+        </a>
+        <a class="diagram-card" href="difficulty.html">
+          <span class="card-number">04</span>
+          <h3>Difficulty model</h3>
+          <p>How Classic and Advanced tune the starting speed, target size, and per-hit progression.</p>
+        </a>
+        <a class="diagram-card" href="verification.html">
+          <span class="card-number">05</span>
+          <h3>Verification map</h3>
+          <p>Which automated tests protect movement, hit detection, lifecycle, progression, and persistence.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <span>Dot Dash systems documentation</span>
+    <span>Designed to mirror the game’s visual language</span>
+  </footer>
+</body>
+</html>
