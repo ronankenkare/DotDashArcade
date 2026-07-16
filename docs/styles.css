@@ -315,6 +315,19 @@ h3 {
   overflow: hidden;
 }
 
+.diagram-dialog-content {
+  min-width: 0;
+  min-height: 0;
+  padding: 0 1rem 1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.diagram-dialog-content.has-state-panel {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+}
+
 .diagram-dialog-header,
 .diagram-toolbar {
   display: flex;
@@ -348,6 +361,7 @@ h3 {
   background: var(--surface-soft);
   color: var(--muted);
   font-size: 0.78rem;
+  flex-wrap: wrap;
 }
 
 .diagram-toolbar-controls {
@@ -372,7 +386,7 @@ h3 {
   position: relative;
   min-width: 0;
   min-height: 0;
-  margin: 0 1rem 1rem;
+  margin: 0;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background:
@@ -466,6 +480,56 @@ h3 {
   color: var(--text);
 }
 
+.state-view-options {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.state-view-options.is-expanded {
+  margin: 0 0 0 auto;
+}
+
+.state-view-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.35rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.state-view-option:has(input:focus-visible) {
+  outline: 3px solid var(--classic);
+  outline-offset: 3px;
+}
+
+.state-view-option input {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  accent-color: var(--classic);
+}
+
+.state-diagram-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.state-diagram-layout.has-side-panel {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+}
+
 .state-preview-controls {
   display: flex;
   align-items: center;
@@ -523,42 +587,64 @@ h3 {
 #game-state-diagram svg g.state-preview-target:hover circle,
 #game-state-diagram svg g.state-preview-target:hover polygon,
 #game-state-diagram svg g.state-preview-target:hover path,
+#game-state-diagram svg g.state-preview-target.is-preview-active rect,
+#game-state-diagram svg g.state-preview-target.is-preview-active circle,
+#game-state-diagram svg g.state-preview-target.is-preview-active polygon,
+#game-state-diagram svg g.state-preview-target.is-preview-active path,
 .diagram-dialog svg g.state-preview-target:hover rect,
 .diagram-dialog svg g.state-preview-target:hover circle,
 .diagram-dialog svg g.state-preview-target:hover polygon,
-.diagram-dialog svg g.state-preview-target:hover path {
+.diagram-dialog svg g.state-preview-target:hover path,
+.diagram-dialog svg g.state-preview-target.is-preview-active rect,
+.diagram-dialog svg g.state-preview-target.is-preview-active circle,
+.diagram-dialog svg g.state-preview-target.is-preview-active polygon,
+.diagram-dialog svg g.state-preview-target.is-preview-active path {
   filter: drop-shadow(0 0 8px var(--classic));
   stroke-width: 3px;
 }
 
-.state-preview {
-  position: fixed;
-  top: 50%;
-  right: clamp(0.75rem, 2.5vw, 2.5rem);
-  z-index: 10000;
-  width: min(340px, calc(100vw - 1.5rem));
-  max-height: 88vh;
+.state-preview-panel {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
   padding: 0.75rem;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-lg);
   background: var(--bg);
-  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.48);
-  opacity: 0;
   overflow: auto;
-  transform: translateY(-48%) scale(0.98);
-  transition: opacity 140ms ease, transform 140ms ease;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
 }
 
-.state-preview.is-visible {
-  opacity: 1;
-  transform: translateY(-50%) scale(1);
+.state-preview-panel.is-expanded {
+  height: 100%;
+  min-height: 0;
+  max-height: 100%;
+}
+
+.state-preview-panel.is-empty {
+  display: grid;
+  place-items: center;
+}
+
+.state-preview-prompt {
+  max-width: 17rem;
+  padding: 1rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.state-preview-prompt strong {
+  display: block;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.state-preview-prompt p {
+  margin: 0.45rem 0 0;
+  font-size: 0.8rem;
 }
 
 .state-preview-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.65rem;
-  align-items: start;
   margin-bottom: 0.65rem;
 }
 
@@ -578,23 +664,9 @@ h3 {
 }
 
 .state-preview-description {
-  grid-column: 1 / -1;
-  margin: 0;
+  margin: 0.45rem 0 0;
   color: var(--muted);
   font-size: 0.78rem;
-}
-
-.state-preview-close {
-  width: 2.2rem;
-  height: 2.2rem;
-  padding: 0;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  background: var(--surface);
-  color: var(--text);
-  font: inherit;
-  font-weight: 850;
-  cursor: pointer;
 }
 
 .state-preview-media {
@@ -1193,23 +1265,23 @@ h3 {
     justify-content: space-between;
   }
 
-  .diagram-viewport {
-    margin-inline: 0.6rem;
-    margin-bottom: 0.6rem;
+  .state-view-options.is-expanded {
+    width: 100%;
+    margin-left: 0;
   }
 
-  .state-preview {
-    top: auto;
-    right: 0.5rem;
-    bottom: 0.5rem;
-    left: 0.5rem;
-    width: auto;
-    max-height: 86vh;
-    transform: translateY(0.5rem) scale(0.98);
+  .diagram-dialog-content {
+    padding: 0 0.6rem 0.6rem;
   }
 
-  .state-preview.is-visible {
-    transform: translateY(0) scale(1);
+  .state-diagram-layout.has-side-panel,
+  .diagram-dialog-content.has-state-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .state-preview-panel.is-expanded {
+    height: 100%;
+    max-height: 100%;
   }
 
   .state-path {

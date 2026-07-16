@@ -36,8 +36,20 @@
         <span class="badge advanced">One miss ends the run</span>
       </div>
 
-      <div class="mermaid-stage" id="game-state-diagram" role="group" aria-label="Detailed game-state diagram from home to ready and running, including frame updates, hit classification, progression, game over, mode changes, and lifecycle interruptions.">
-        <pre class="mermaid">
+      <div class="state-view-options" aria-label="App-state preview options">
+        <label class="state-view-option" for="state-side-panel-toggle">
+          <input id="state-side-panel-toggle" type="checkbox" role="switch" aria-controls="state-preview-panel" checked>
+          <span>Side panel</span>
+        </label>
+        <label class="state-view-option" for="state-annotations-toggle">
+          <input id="state-annotations-toggle" type="checkbox" aria-controls="state-preview-panel" checked>
+          <span>Show annotations</span>
+        </label>
+      </div>
+
+      <div class="state-diagram-layout has-side-panel" id="state-diagram-layout">
+        <div class="mermaid-stage" id="game-state-diagram" role="group" aria-label="Detailed game-state diagram from home to ready and running, including frame updates, hit classification, progression, game over, mode changes, and lifecycle interruptions.">
+          <pre class="mermaid">
 stateDiagram-v2
     [*] --> Home: App launches
     Home --> Ready: Select mode + Play
@@ -72,7 +84,9 @@ stateDiagram-v2
       save mode-specific best
       show results overlay
     end note
-        </pre>
+          </pre>
+        </div>
+        <aside class="state-preview-panel" id="state-preview-panel" aria-label="App screen for the selected game state" aria-live="polite"></aside>
       </div>
       <div class="state-preview-controls" aria-label="Preview app states">
         <span>App preview</span>

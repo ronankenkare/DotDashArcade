@@ -188,81 +188,117 @@
       }
     };
 
-    const preview = document.createElement("aside");
-    preview.className = "state-preview";
-    preview.hidden = true;
-    preview.setAttribute("aria-live", "polite");
-    preview.innerHTML = `
-      <header class="state-preview-header">
-        <div>
-          <span class="state-preview-kicker">Actual app state</span>
-          <strong class="state-preview-title"></strong>
-        </div>
-        <button class="state-preview-close" type="button" aria-label="Close app-state preview">×</button>
-        <p class="state-preview-description"></p>
-      </header>
-      <div class="state-preview-media">
-        <img alt="">
-        <div class="state-preview-pins" aria-hidden="true"></div>
-      </div>
-      <p class="state-preview-source">iPhone 17 Pro simulator capture · iOS 27</p>
-    `;
-    document.body.append(preview);
+    const preview = document.querySelector("#state-preview-panel");
+    const layout = document.querySelector("#state-diagram-layout");
+    const sidePanelToggle = document.querySelector("#state-side-panel-toggle");
+    const annotationsToggle = document.querySelector("#state-annotations-toggle");
+    if (!preview || !layout || !sidePanelToggle || !annotationsToggle) return;
+    const annotationsOption = annotationsToggle.closest(".state-view-option");
 
-    const previewTitle = preview.querySelector(".state-preview-title");
-    const previewDescription = preview.querySelector(".state-preview-description");
-    const previewImage = preview.querySelector("img");
-    const previewPins = preview.querySelector(".state-preview-pins");
-    const closeButton = preview.querySelector(".state-preview-close");
     const controls = Array.from(document.querySelectorAll("[data-state-preview]"));
-    let locked = false;
-    let hideTimer = null;
+    const stateNodes = new Map();
+    let activeStateName = null;
+
+    const syncPanelHeight = () => {
+      if (preview.parentNode !== layout) return;
+      const diagramHeight = Math.ceil(stage.getBoundingClientRect().height);
+      if (diagramHeight <= 0) return;
+      preview.style.height = `${diagramHeight}px`;
+      preview.style.maxHeight = `${diagramHeight}px`;
+    };
 
     controls.forEach((button) => button.setAttribute("aria-pressed", "false"));
 
     const setPressedState = (stateName) => {
       controls.forEach((button) => {
-        button.setAttribute("aria-pressed", String(button.dataset.statePreview === stateName && locked));
+        button.setAttribute("aria-pressed", String(button.dataset.statePreview === stateName));
       });
     };
 
-    const showPreview = (stateName, shouldLock = false) => {
+    const setHighlightedState = (stateName) => {
+      stateNodes.forEach((nodes, name) => {
+        nodes.forEach((node) => node.classList.toggle("is-preview-active", name === stateName));
+      });
+    };
+
+    const showPanelPrompt = () => {
+      const prompt = document.createElement("div");
+      prompt.className = "state-preview-prompt";
+      const title = document.createElement("strong");
+      title.textContent = "Hover over a game state";
+      const instructions = document.createElement("p");
+      instructions.textContent = "Move over a named state in the diagram to see the matching app screen here. You can also use the preview buttons below.";
+      prompt.append(title, instructions);
+      preview.classList.add("is-empty");
+      preview.replaceChildren(prompt);
+    };
+
+    const showPreview = (stateName) => {
       const state = states[stateName];
-      if (!state) return;
-      window.clearTimeout(hideTimer);
-      locked = shouldLock;
-      previewTitle.textContent = state.title;
-      previewDescription.textContent = state.description;
-      previewImage.src = state.image;
-      previewImage.alt = state.alt;
-      previewPins.replaceChildren(...state.pins.map((pin) => {
-        const marker = document.createElement("span");
-        marker.className = "state-preview-pin";
-        marker.textContent = pin.label;
-        Object.entries(pin).forEach(([property, value]) => {
-          if (property !== "label") marker.style[property] = value;
-        });
-        return marker;
-      }));
-      preview.hidden = false;
-      window.requestAnimationFrame(() => preview.classList.add("is-visible"));
+      if (!state || !sidePanelToggle.checked) return;
+      activeStateName = stateName;
+
+      const header = document.createElement("header");
+      header.className = "state-preview-header";
+      const kicker = document.createElement("span");
+      kicker.className = "state-preview-kicker";
+      kicker.textContent = "Actual app state";
+      const title = document.createElement("strong");
+      title.className = "state-preview-title";
+      title.textContent = state.title;
+      const description = document.createElement("p");
+      description.className = "state-preview-description";
+      description.textContent = state.description;
+      header.append(kicker, title, description);
+
+      const media = document.createElement("div");
+      media.className = "state-preview-media";
+      const image = document.createElement("img");
+      image.src = state.image;
+      image.alt = state.alt;
+      media.append(image);
+
+      if (annotationsToggle.checked) {
+        const pins = document.createElement("div");
+        pins.className = "state-preview-pins";
+        pins.setAttribute("aria-hidden", "true");
+        pins.replaceChildren(...state.pins.map((pin) => {
+          const marker = document.createElement("span");
+          marker.className = "state-preview-pin";
+          marker.textContent = pin.label;
+          Object.entries(pin).forEach(([property, value]) => {
+            if (property !== "label") marker.style[property] = value;
+          });
+          return marker;
+        }));
+        media.append(pins);
+      }
+
+      const source = document.createElement("p");
+      source.className = "state-preview-source";
+      source.textContent = "iPhone 17 Pro simulator capture · iOS 27";
+      preview.classList.remove("is-empty");
+      preview.replaceChildren(header, media, source);
       setPressedState(stateName);
+      setHighlightedState(stateName);
     };
 
-    const hidePreview = (force = false) => {
-      if (locked && !force) return;
-      locked = false;
-      preview.classList.remove("is-visible");
-      setPressedState("");
-      window.clearTimeout(hideTimer);
-      hideTimer = window.setTimeout(() => {
-        if (!preview.classList.contains("is-visible")) preview.hidden = true;
-      }, 160);
-    };
-
-    const scheduleHide = () => {
-      window.clearTimeout(hideTimer);
-      hideTimer = window.setTimeout(() => hidePreview(), 120);
+    const syncSidePanel = () => {
+      const enabled = sidePanelToggle.checked;
+      preview.hidden = !enabled;
+      if (annotationsOption) annotationsOption.hidden = !enabled;
+      layout.classList.toggle("has-side-panel", enabled && preview.parentNode === layout);
+      if (!enabled) {
+        activeStateName = null;
+        preview.classList.remove("is-empty");
+        preview.replaceChildren();
+        setPressedState("");
+        setHighlightedState("");
+      } else if (!activeStateName) {
+        showPanelPrompt();
+      }
+      document.dispatchEvent(new CustomEvent("statepanelchange", { detail: { enabled } }));
+      if (enabled) window.requestAnimationFrame(syncPanelHeight);
     };
 
     const findStateNodes = (stateName) => {
@@ -275,26 +311,33 @@
     };
 
     Object.keys(states).forEach((stateName) => {
-      findStateNodes(stateName).forEach((node) => {
+      const nodes = findStateNodes(stateName);
+      stateNodes.set(stateName, nodes);
+      nodes.forEach((node) => {
         node.classList.add("state-preview-target");
         node.addEventListener("pointerenter", () => showPreview(stateName));
-        node.addEventListener("pointerleave", scheduleHide);
-        node.addEventListener("click", () => showPreview(stateName, true));
+        node.addEventListener("click", () => showPreview(stateName));
       });
     });
 
     controls.forEach((button) => {
       button.addEventListener("pointerenter", () => showPreview(button.dataset.statePreview));
-      button.addEventListener("pointerleave", scheduleHide);
       button.addEventListener("focus", () => showPreview(button.dataset.statePreview));
-      button.addEventListener("blur", scheduleHide);
-      button.addEventListener("click", () => showPreview(button.dataset.statePreview, true));
+      button.addEventListener("click", () => showPreview(button.dataset.statePreview));
     });
 
-    preview.addEventListener("pointerenter", () => window.clearTimeout(hideTimer));
-    preview.addEventListener("pointerleave", scheduleHide);
-    closeButton.addEventListener("click", () => hidePreview(true));
-    document.addEventListener("diagramviewerclose", () => hidePreview(true));
+    sidePanelToggle.addEventListener("change", syncSidePanel);
+    annotationsToggle.addEventListener("change", () => {
+      if (activeStateName) showPreview(activeStateName);
+    });
+    if (typeof ResizeObserver !== "undefined") {
+      const diagramObserver = new ResizeObserver(syncPanelHeight);
+      diagramObserver.observe(stage);
+    }
+    document.addEventListener("statepanelrestored", () => {
+      window.requestAnimationFrame(syncPanelHeight);
+    });
+    syncSidePanel();
   };
 
   const initializeDiagramViewer = () => {
@@ -322,8 +365,10 @@
             <button class="diagram-button diagram-reset" type="button">Reset</button>
           </div>
         </div>
-        <div class="diagram-viewport" role="region" aria-label="Pannable and zoomable diagram">
-          <div class="diagram-canvas"></div>
+        <div class="diagram-dialog-content">
+          <div class="diagram-viewport" role="region" aria-label="Pannable and zoomable diagram">
+            <div class="diagram-canvas"></div>
+          </div>
         </div>
       </div>
     `;
@@ -335,6 +380,8 @@
     const zoomInButton = dialog.querySelector(".diagram-zoom-in");
     const resetButton = dialog.querySelector(".diagram-reset");
     const zoomValue = dialog.querySelector(".diagram-zoom-value");
+    const toolbar = dialog.querySelector(".diagram-toolbar");
+    const content = dialog.querySelector(".diagram-dialog-content");
     const viewport = dialog.querySelector(".diagram-viewport");
     const canvas = dialog.querySelector(".diagram-canvas");
 
@@ -348,6 +395,10 @@
     let pointerX = 0;
     let pointerY = 0;
     let previewHome = null;
+    let previewNextSibling = null;
+    let optionsHome = null;
+    let optionsNextSibling = null;
+    let activeStage = null;
 
     const clamp = (value, minimum, maximum) => Math.min(Math.max(value, minimum), maximum);
 
@@ -369,10 +420,32 @@
     };
 
     const restoreDiagram = () => {
-      document.dispatchEvent(new CustomEvent("diagramviewerclose"));
-      const statePreview = dialog.querySelector(".state-preview");
-      if (statePreview && previewHome) previewHome.append(statePreview);
+      const statePreview = content.querySelector(".state-preview-panel");
+      if (statePreview && previewHome) {
+        if (previewNextSibling && previewNextSibling.parentNode === previewHome) {
+          previewHome.insertBefore(statePreview, previewNextSibling);
+        } else {
+          previewHome.append(statePreview);
+        }
+        statePreview.classList.remove("is-expanded");
+        previewHome.classList.toggle("has-side-panel", !statePreview.hidden);
+        document.dispatchEvent(new CustomEvent("statepanelrestored"));
+      }
+      content.classList.remove("has-state-panel");
       previewHome = null;
+      previewNextSibling = null;
+      const stateOptions = toolbar.querySelector(".state-view-options");
+      if (stateOptions && optionsHome) {
+        if (optionsNextSibling && optionsNextSibling.parentNode === optionsHome) {
+          optionsHome.insertBefore(stateOptions, optionsNextSibling);
+        } else {
+          optionsHome.append(stateOptions);
+        }
+        stateOptions.classList.remove("is-expanded");
+      }
+      optionsHome = null;
+      optionsNextSibling = null;
+      activeStage = null;
       if (!activeSvg || !sourceParent) return;
       if (sourceNextSibling && sourceNextSibling.parentNode === sourceParent) {
         sourceParent.insertBefore(activeSvg, sourceNextSibling);
@@ -397,11 +470,25 @@
       sourceParent = svg.parentNode;
       sourceNextSibling = svg.nextSibling;
       activeSvg = svg;
+      activeStage = stage;
       canvas.replaceChildren(svg);
-      const statePreview = document.querySelector(".state-preview");
+      const statePreview = document.querySelector("#state-preview-panel");
       if (stage.id === "game-state-diagram" && statePreview) {
+        const stateOptions = document.querySelector(".state-view-options");
+        if (stateOptions) {
+          optionsHome = stateOptions.parentNode;
+          optionsNextSibling = stateOptions.nextSibling;
+          stateOptions.classList.add("is-expanded");
+          toolbar.append(stateOptions);
+        }
         previewHome = statePreview.parentNode;
-        dialog.append(statePreview);
+        previewNextSibling = statePreview.nextSibling;
+        previewHome.classList.remove("has-side-panel");
+        statePreview.classList.add("is-expanded");
+        statePreview.style.removeProperty("height");
+        statePreview.style.removeProperty("max-height");
+        content.append(statePreview);
+        content.classList.toggle("has-state-panel", !statePreview.hidden);
       }
       resetView();
       dialog.showModal();
@@ -430,6 +517,11 @@
     });
 
     dialog.addEventListener("close", restoreDiagram);
+
+    document.addEventListener("statepanelchange", (event) => {
+      if (!dialog.open || activeStage?.id !== "game-state-diagram") return;
+      content.classList.toggle("has-state-panel", Boolean(event.detail?.enabled));
+    });
 
     viewport.addEventListener("wheel", (event) => {
       event.preventDefault();
