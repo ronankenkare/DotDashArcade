@@ -94,6 +94,25 @@ final class dot_dashUITests: XCTestCase {
     }
 
     @MainActor
+    func testCornerButtonsStayTheSameSizeAcrossAppearances() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        let appearanceButton = app.buttons["home.appearanceButton"].firstMatch
+        let supportButton = app.buttons["home.supportButton"].firstMatch
+        XCTAssertTrue(appearanceButton.waitForExistence(timeout: 10),
+                      "Appearance button should be visible on the home screen")
+        XCTAssertTrue(supportButton.waitForExistence(timeout: 5),
+                      "Support button should be visible on the home screen")
+
+        for _ in 0..<3 {
+            XCTAssertEqual(appearanceButton.frame.width, supportButton.frame.width, accuracy: 0.5)
+            XCTAssertEqual(appearanceButton.frame.height, supportButton.frame.height, accuracy: 0.5)
+            appearanceButton.tap()
+        }
+    }
+
+    @MainActor
     func testPlayNavigatesToGame() throws {
         let app = XCUIApplication()
         app.launch()

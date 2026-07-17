@@ -112,6 +112,8 @@ struct ContentView: View {
         @State private var showMenu: Bool = false
         @Environment(\.colorScheme) var colorScheme
 
+        private static let cornerButtonSize: CGFloat = 48
+
         /// The main content view for the Home screen of the app.
         /// Displays the title, best scores, and CTA buttons to start each game mode.
         var body: some View {
@@ -185,11 +187,12 @@ struct ContentView: View {
                             Image(systemName: appearance.symbolName)
                                 .font(.title2)
                                 .foregroundColor(colorScheme == .light ? .black : .white)
-                                .padding(12)
-                                .glassEffect(.clear)
-                                .clipShape(.circle)
                         }
                         .buttonStyle(.plain)
+                        .frame(width: Self.cornerButtonSize, height: Self.cornerButtonSize)
+                        .glassEffect(.clear)
+                        .clipShape(.circle)
+                        .contentShape(Circle())
                         .accessibilityIdentifier("home.appearanceButton")
                         .accessibilityLabel("Appearance: \(appearance.displayName)")
                         .accessibilityHint("Cycles between Light, Dark, and System appearance")
@@ -230,11 +233,13 @@ struct ContentView: View {
                                 Image(systemName: "questionmark")
                                     .font(.title2)
                                     .foregroundColor(colorScheme == .light ? .black : .white)
-                                    .padding(12)
-                                    .glassEffect(.clear)
-                                    .clipShape(.circle)
                             }
                             .buttonStyle(.plain)
+                            .frame(width: Self.cornerButtonSize, height: Self.cornerButtonSize)
+                            .glassEffect(.clear)
+                            .clipShape(.circle)
+                            .contentShape(Circle())
+                            .accessibilityIdentifier("home.supportButton")
                         }
                     }
                     .padding(.horizontal, 22)

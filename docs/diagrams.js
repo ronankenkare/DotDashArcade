@@ -357,7 +357,6 @@
           <button class="diagram-button diagram-close" type="button">Close</button>
         </header>
         <div class="diagram-toolbar">
-          <span>Drag or use arrow keys to pan · Scroll to zoom</span>
           <div class="diagram-toolbar-controls" aria-label="Diagram zoom controls">
             <button class="diagram-button diagram-zoom-out" type="button" aria-label="Zoom out">−</button>
             <output class="diagram-zoom-value" aria-live="polite">100%</output>

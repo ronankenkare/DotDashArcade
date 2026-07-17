@@ -30,12 +30,12 @@
       },
       {
         "configurationName" : "Test Scheme Action",
-        "deviceId" : "7390E28C-B704-43C5-95BE-E6FD69F5CA00",
-        "deviceName" : "iPhone 17 Pro",
+        "deviceId" : "BC5B0CD9-2F89-4274-AAA5-A6CC192282BB",
+        "deviceName" : "iPhone 17",
         "exportedFileName" : "ready.png",
         "isAssociatedWithFailure" : false,
-        "suggestedHumanReadableName" : "state-ready_0_9F8B74BE-129E-4E91-84D9-FCBBAD55A124.png",
-        "timestamp" : 1784243092.842
+        "suggestedHumanReadableName" : "state-ready_0_14ACC023-6124-4644-B640-BC093BF6035F.png",
+        "timestamp" : 1784250337.986
       },
       {
         "configurationName" : "Test Scheme Action",
@@ -44,7 +44,7 @@
         "exportedFileName" : "home.png",
         "isAssociatedWithFailure" : false,
         "suggestedHumanReadableName" : "home-system-appearance.png",
-        "timestamp" : 1784249035.0
+        "timestamp" : 1784249691.0
       }
     ],
     "testIdentifier" : "DocumentationScreenshotTests/testCaptureGameStates()",
