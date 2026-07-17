@@ -207,7 +207,10 @@ private struct HelpOverlayView: View {
                     }
                     .multilineTextAlignment(.leading)
                     .font(.headline)
-                    .foregroundStyle(.secondary)
+                    // Keep instruction copy consistent across Classic and Advanced.
+                    // A concrete system label color avoids mode-dependent resolution
+                    // of the hierarchical `.secondary` style inside Liquid Glass.
+                    .foregroundStyle(Color(uiColor: .secondaryLabel))
                 }
                 Button(action: { game.reset() }) {
                     Text(game.gameOver ? "Play Again" : "Start")

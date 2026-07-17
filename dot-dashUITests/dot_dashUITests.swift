@@ -64,6 +64,55 @@ final class dot_dashUITests: XCTestCase {
     }
 
     @MainActor
+    func testAppearanceButtonCyclesAndPersists() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        let appearanceButton = app.buttons["home.appearanceButton"].firstMatch
+        XCTAssertTrue(appearanceButton.waitForExistence(timeout: 10),
+                      "Appearance button should be visible on the home screen")
+
+        let cycle = ["Light": "Dark", "Dark": "System", "System": "Light"]
+        guard let current = cycle.keys.first(where: { appearanceButton.label.contains($0) }),
+              let expected = cycle[current] else {
+            XCTFail("Appearance label should mention Light, Dark, or System; was '\(appearanceButton.label)'")
+            return
+        }
+
+        appearanceButton.tap()
+        XCTAssertTrue(waitForLabel(of: appearanceButton, toContain: expected),
+                      "Appearance should advance from \(current) to \(expected)")
+
+        app.terminate()
+        app.launch()
+
+        let relaunchedButton = app.buttons["home.appearanceButton"].firstMatch
+        XCTAssertTrue(relaunchedButton.waitForExistence(timeout: 10),
+                      "Appearance button should return after relaunch")
+        XCTAssertTrue(relaunchedButton.label.contains(expected),
+                      "Appearance \(expected) should persist after relaunch; was '\(relaunchedButton.label)'")
+    }
+
+    @MainActor
+    func testCornerButtonsStayTheSameSizeAcrossAppearances() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        let appearanceButton = app.buttons["home.appearanceButton"].firstMatch
+        let supportButton = app.buttons["home.supportButton"].firstMatch
+        XCTAssertTrue(appearanceButton.waitForExistence(timeout: 10),
+                      "Appearance button should be visible on the home screen")
+        XCTAssertTrue(supportButton.waitForExistence(timeout: 5),
+                      "Support button should be visible on the home screen")
+
+        for _ in 0..<3 {
+            XCTAssertEqual(appearanceButton.frame.width, supportButton.frame.width, accuracy: 0.5)
+            XCTAssertEqual(appearanceButton.frame.height, supportButton.frame.height, accuracy: 0.5)
+            appearanceButton.tap()
+        }
+    }
+
+    @MainActor
     func testPlayNavigatesToGame() throws {
         let app = XCUIApplication()
         app.launch()

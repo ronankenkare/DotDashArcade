@@ -48,7 +48,7 @@ flowchart LR
         subgraph UI["SwiftUI presentation"]
             direction TB
             NAV["ContentView + NavigationStack"]
-            HOME["HomeView&lt;br/&gt;mode · best score · Play"]
+            HOME["HomeView&lt;br/&gt;mode · best score · Play · appearance"]
             GAME["GameView&lt;br/&gt;scene lifecycle · composition"]
             SCORE["ScoreBar + HelpOverlay + ModeBadge"]
             CANVAS["GameBarView Canvas&lt;br/&gt;bar · target · marker · particles"]
@@ -75,7 +75,7 @@ flowchart LR
         PROGRESS -->|"mutate next challenge"| STATE
     end
 
-    PLAYER -->|"choose mode + Play"| HOME
+    PLAYER -->|"choose mode · appearance · Play"| HOME
     PLAYER -->|"tap anywhere on game bar"| CANVAS
     CANVAS -->|"handleTap(screenWidth)"| STATE
     SCORE -->|"score · help · game over"| PLAYER
@@ -85,6 +85,7 @@ flowchart LR
     LIFECYCLE -->|"inactive / background → pause + stop"| GAME
     STATE -->|"success / warning feedback"| HAPTICS["UIKit haptic generators"]
     STATE <-->|"read / write mode bests"| STORE[("UserDefaults")]
+    NAV <-->|"read / write appearance"| STORE
     HOME -->|"Support"| FORM["External Google Form"]
         </pre>
       </div>
@@ -103,7 +104,7 @@ flowchart LR
         <article class="diagram-card">
           <span class="card-number">UI</span>
           <h3>SwiftUI views</h3>
-          <p>Present the home screen, score bar, help overlay, mode control, and Canvas drawing surface.</p>
+          <p>Present the home screen, persisted appearance control, score bar, help overlay, mode control, and Canvas drawing surface.</p>
         </article>
         <article class="diagram-card">
           <span class="card-number">GS</span>
@@ -113,7 +114,7 @@ flowchart LR
         <article class="diagram-card">
           <span class="card-number">OS</span>
           <h3>Platform services</h3>
-          <p>Supply frame timing, haptic feedback, scene lifecycle events, and durable key-value storage.</p>
+          <p>Supply frame timing, haptic feedback, scene lifecycle events, system appearance, and durable key-value storage.</p>
         </article>
       </div>
     </section>

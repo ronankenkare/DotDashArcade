@@ -13,6 +13,21 @@ import UIKit
 @Suite(.serialized)
 struct dot_dashTests {
 
+    // MARK: - Appearance preference
+
+    @Test func appearancePreferenceCyclesLightDarkSystem() {
+        #expect(AppearancePreference.light.next == .dark)
+        #expect(AppearancePreference.dark.next == .system)
+        #expect(AppearancePreference.system.next == .light)
+    }
+
+    @Test func appearancePreferenceFallsBackToSystemForNewInstalls() {
+        let storedValue: String? = nil
+        let preference = storedValue.flatMap(AppearancePreference.init(rawValue:)) ?? .system
+        #expect(preference == .system)
+        #expect(preference.colorScheme == nil)
+    }
+
     // MARK: - inPerfect (perfect-zone hit detection)
 
     @Test func inPerfectAtZoneCenterIsTrue() {

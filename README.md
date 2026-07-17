@@ -40,7 +40,7 @@ UI tests live alongside in `dot-dashUITests/`.
 dot-dash/
 ├── dot-dash/                  # App source
 │   ├── dot_dashApp.swift      # @main entry point
-│   ├── ContentView.swift      # Home screen: title, mode toggle, best score, Play
+│   ├── ContentView.swift      # Home screen: play controls, support, persisted appearance
 │   ├── GameView.swift         # Game screen + GameState model + shared UI
 │   └── Assets.xcassets/       # ClassicMode / AdvancedMode / AccentColor
 ├── dot-dashTests/             # Swift Testing unit tests
@@ -76,7 +76,8 @@ Best scores are stored in `UserDefaults.standard` under:
 - `dotdash_best_advanced_v1`
 - `dotdash_best_v1` *(legacy key; migrated into the classic key on first launch)*
 
+The player’s Light, Dark, or System appearance preference is stored under `dotdash_appearance_v1`. New installs follow the system appearance.
+
 ### Theme Progression
 
 Four visual themes unlock by score inside a run (0 / 12 / 25 / 40). See `GameState.pickThemeIndex(for:)`.
-
