@@ -3,27 +3,72 @@ import UIKit
 
 // MARK: - Dot Dash (SwiftUI, iOS 16+)
 
+enum AppearancePreference: String, CaseIterable {
+    case light
+    case dark
+    case system
+
+    static let storageKey = "dotdash_appearance_v1"
+
+    var colorScheme: ColorScheme? {
+        switch self {
+        case .light: .light
+        case .dark: .dark
+        case .system: nil
+        }
+    }
+
+    var displayName: String {
+        switch self {
+        case .light: "Light"
+        case .dark: "Dark"
+        case .system: "System"
+        }
+    }
+
+    var symbolName: String {
+        switch self {
+        case .light: "sun.max.fill"
+        case .dark: "moon.fill"
+        case .system: "laptopcomputer"
+        }
+    }
+
+    var next: AppearancePreference {
+        switch self {
+        case .light: .dark
+        case .dark: .system
+        case .system: .light
+        }
+    }
+}
+
 struct ContentView: View {
     // Local enum for navigation to game with a chosen mode
     enum ModeSelection: String, Identifiable { case classic, advanced; var id: String { rawValue } }
     @State private var selection: ModeSelection? = nil
     @State private var chosenMode: ModeSelection = .classic
-    @Environment(\.colorScheme) var colorScheme
+    @AppStorage(AppearancePreference.storageKey) private var appearanceRawValue = AppearancePreference.system.rawValue
 
     // Best scores are read from UserDefaults in refreshBests() on appear (initial load + returning from GameView).
     @State private var bestClassic: Int = 0
     @State private var bestAdvanced: Int = 0
 
+    private var appearance: AppearancePreference {
+        AppearancePreference(rawValue: appearanceRawValue) ?? .system
+    }
+
     var body: some View {
         NavigationStack {
             ZStack {
-                // Background adapts to light/dark mode
-                (colorScheme == .light ? Color.white : Color(red: 0.055, green: 0.059, blue: 0.075)).ignoresSafeArea()
+                AppBackground()
 
                 HomeView(
                     chosenMode: $chosenMode,
                     classicBest: bestClassic,
                     advancedBest: bestAdvanced,
+                    appearance: appearance,
+                    cycleAppearance: { appearanceRawValue = appearance.next.rawValue },
                     start: { selection = chosenMode }
                 )
             }
@@ -38,11 +83,21 @@ struct ContentView: View {
             }
             .onAppear { refreshBests() }
         }
+        .preferredColorScheme(appearance.colorScheme)
     }
 
     private func refreshBests() {
         bestClassic = UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1")
         bestAdvanced = UserDefaults.standard.integer(forKey: "dotdash_best_advanced_v1")
+    }
+
+    private struct AppBackground: View {
+        @Environment(\.colorScheme) private var colorScheme
+
+        var body: some View {
+            (colorScheme == .light ? Color.white : Color(red: 0.055, green: 0.059, blue: 0.075))
+                .ignoresSafeArea()
+        }
     }
 
     // MARK: - HomeView (unchanged UI, now self-contained in ContentView)
@@ -51,6 +106,8 @@ struct ContentView: View {
         @Binding var chosenMode: ModeSelection
         let classicBest: Int
         let advancedBest: Int
+        let appearance: AppearancePreference
+        let cycleAppearance: () -> Void
         let start: () -> Void
         @State private var showMenu: Bool = false
         @Environment(\.colorScheme) var colorScheme
@@ -120,10 +177,23 @@ struct ContentView: View {
                         }
                 }
                 
-                // Question mark button and menu overlay in bottom right
+                // Appearance button (bottom left) and Support button (bottom right)
                 VStack {
                     Spacer()
                     HStack {
+                        Button(action: cycleAppearance) {
+                            Image(systemName: appearance.symbolName)
+                                .font(.title2)
+                                .foregroundColor(colorScheme == .light ? .black : .white)
+                                .padding(12)
+                                .glassEffect(.clear)
+                                .clipShape(.circle)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityIdentifier("home.appearanceButton")
+                        .accessibilityLabel("Appearance: \(appearance.displayName)")
+                        .accessibilityHint("Cycles between Light, Dark, and System appearance")
+
                         Spacer()
                         ZStack(alignment: .bottomTrailing) {
                             // Dropdown menu
@@ -166,9 +236,9 @@ struct ContentView: View {
                             }
                             .buttonStyle(.plain)
                         }
-                        .padding(.bottom, 22)
-                        .padding(.trailing, 22)
                     }
+                    .padding(.horizontal, 22)
+                    .padding(.bottom, 22)
                 }
                 .ignoresSafeArea(edges: .bottom)
             }
