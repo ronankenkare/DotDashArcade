@@ -159,6 +159,11 @@ private struct HelpOverlayView: View {
     @ObservedObject var game: GameState
     let colorScheme: ColorScheme
     @Environment(\.colorSchemeContrast) private var contrast
+
+    /// Shared by the action button's fill, glass layer, and hit area so the three
+    /// can never disagree about where the button's edge is.
+    private static let buttonCornerRadius: CGFloat = 12
+
     var body: some View {
         if game.showHelp {
             VStack(alignment: .center, spacing: 16) {
@@ -224,10 +229,15 @@ private struct HelpOverlayView: View {
                                 radius: 1, x: 0, y: 1)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 12)
-                        .background(Color(game.mode == .classic ? "ClassicMode" : "AdvancedMode"))
-                        .clipShape(.rect(cornerRadius: 12))
-                        .contentShape(Rectangle())
-                        .glassEffect(.clear)
+                        // `glassEffect` defaults to a capsule shape. Without an
+                        // explicit shape it drew a capsule-shaped rim and shadow
+                        // around the 12pt-radius fill, so the glass spilled past the
+                        // button's corners and over the score rows above it. Fill,
+                        // glass, and hit area now share one corner radius.
+                        .background(Color(game.mode == .classic ? "ClassicMode" : "AdvancedMode"),
+                                    in: .rect(cornerRadius: Self.buttonCornerRadius))
+                        .glassEffect(.clear, in: .rect(cornerRadius: Self.buttonCornerRadius))
+                        .contentShape(.rect(cornerRadius: Self.buttonCornerRadius))
                 }
                 .buttonStyle(.plain)
                 .accessibilityIdentifier("game.startButton")
