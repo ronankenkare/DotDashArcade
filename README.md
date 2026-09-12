@@ -2,6 +2,13 @@
 
 A minimalist reflex game for iOS and iPadOS. A dot bounces back and forth across a bar — tap the moment it lands inside the target zone. Every hit shrinks the zone and speeds up the dot. One miss ends the run.
 
+## Screenshots
+
+| Home | In play | Hit | Game over |
+| --- | --- | --- | --- |
+| ![Home screen with mode picker, best score, and Play button](docs/assets/game-states/home.png) | ![A run in progress, marker approaching the target zone](docs/assets/game-states/running.png) | ![A successful hit with a particle burst](docs/assets/game-states/hit.png) | ![Game over card with score summary](docs/assets/game-states/game-over.png) |
+
+
 - **Platform:** iOS / iPadOS 26.0+ (iPhone + iPad, universal)
 - **Stack:** SwiftUI, UIKit (haptics), `CADisplayLink` for the game loop
 - **Language:** Swift 5
