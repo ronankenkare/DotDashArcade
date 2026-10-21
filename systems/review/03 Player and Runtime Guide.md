@@ -19,7 +19,7 @@ The in-game mode pill applies the new settings immediately, clears score and eff
 
 ## Appearance and accessibility
 
-The Home appearance control cycles Light, Dark and System, applies to the navigation hierarchy, and persists across relaunch. Corner buttons have 48-point frames. Critical controls and readouts have accessibility identifiers consumed by UI tests. HelpOverlay's Start/Play Again fill, glass and content shape share a 12-point corner radius. Increased Contrast adds a dark text shadow on that action button.
+The Home appearance control cycles Light, Dark and System, applies to the navigation hierarchy, and persists across relaunch. Appearance and support have 48-point label frames in the fixed bottom toolbar. Opening or dismissing the question-mark menu keeps both controls aligned and stationary in portrait and landscape; select Support to open the external form. Critical controls and readouts have accessibility identifiers consumed by UI tests. HelpOverlay's Start/Play Again fill, glass and content shape share a 12-point corner radius. Increased Contrast adds a dark text shadow on that action button.
 
 ## Feedback
 

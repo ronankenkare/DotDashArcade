@@ -1,13 +1,13 @@
 {
   "format": "Dot Dash Plus-C documentation verification",
   "nativeApp": "Installed Plus-C app model APIs; legacy plus-c CLI format is incompatible",
-  "diagramCount": 11,
+  "diagramCount": 12,
   "documentCount": 5,
   "requirementCount": 12,
-  "elementCount": 262,
-  "viewCount": 206,
+  "elementCount": 288,
+  "viewCount": 228,
   "sourceArtifacts": 9,
-  "traceCount": 30,
+  "traceCount": 33,
   "roundTrip": "passed",
   "findings": [
     {
@@ -50,7 +50,40 @@
   "appTestsRun": false,
   "traceFindings": [],
   "nativeUI": "Project loaded in installed Plus-C; player use-case canvas displayed as valid",
-  "svgPreviews": 11,
+  "svgPreviews": 12,
   "notes": "Prose documents intentionally use the app Markdown requirements-document editor; no-requirements warnings are expected for four narrative documents.",
-  "migration": "Retired docs/ guide removed; source-verified topics consolidated in native Plus-C materials and systems/review/."
+  "migration": "Retired docs/ guide removed; source-verified topics consolidated in native Plus-C materials and systems/review/.",
+  "uiDiagram": {
+    "title": "17 iPhone Duo UI",
+    "frames": 4,
+    "imageLayers": 4,
+    "hotspots": 7,
+    "links": 7,
+    "logicalSize": [
+      466,
+      678
+    ],
+    "device": "iPhone Duo",
+    "display": "LCD / screenID 1",
+    "fidelity": "Actual unmodified simulator screenshots",
+    "captureDate": "2026-10-21",
+    "captureFlowResult": "passed",
+    "manifest": "systems/assets/iphone-duo/manifest.json",
+    "findings": []
+  },
+  "appVerification": {
+    "scope": "Focused Duo screenshot UI flow only",
+    "result": "passed",
+    "fullRegressionSuiteRun": false
+  },
+  "toolbarRegression": {
+    "date": "2026-10-21",
+    "build": "passed",
+    "device": "iPhone 17 / iOS 27.0",
+    "focusedUITests": 3,
+    "failures": 0,
+    "coverage": "Appearance cycle/persistence, equal control sizes, stationary support menu in portrait and landscape",
+    "fullSuiteRun": false,
+    "duoHomeCapture": "Refreshed and visually inspected after toolbar fix"
+  }
 }

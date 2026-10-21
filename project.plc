@@ -2,7 +2,7 @@
   "format": "plus-c-project-part",
   "version": 1,
   "part": "project",
-  "savedAt": "2026-10-21T21:45:55.512Z",
+  "savedAt": "2026-10-21T22:14:32.342Z",
   "project": {
     "elements": [
       {
@@ -341,13 +341,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/ContentView.swift",
-        "documentation": "",
+        "documentation": "Reviewed fixed horizontal safe-area bottom toolbar and support-menu position regression; three focused UI tests passed on iPhone 17, 2026-10-21.",
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "105d940a329086a1e86e0ffe57891b0ebc5641dae99883b8faf67eda7013554e"
+          "contentHash": "c22c27b8f058363f5916f2508bcc7837c3ebc6dd8a4c412de49db5e488b23838"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-10-21T21:41:30.593Z"
@@ -641,13 +641,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dashUITests/dot_dashUITests.swift",
-        "documentation": "",
+        "documentation": "Reviewed fixed horizontal safe-area bottom toolbar and support-menu position regression; three focused UI tests passed on iPhone 17, 2026-10-21.",
         "properties": {
           "path": "dot-dashUITests/dot_dashUITests.swift",
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "1d1b3c2d611a512cf5229b315380b9884131ad1a127695d640716cad5896c0c8"
+          "contentHash": "82e288efa7faec1f3c03004cfd9c91f1102ca6cf1435db5f965c700dbe773648"
         },
         "createdAt": "2026-10-21T21:41:30.594Z",
         "modifiedAt": "2026-10-21T21:41:30.594Z"
@@ -667,6 +667,57 @@
         "modifiedAt": "2026-10-21T21:41:30.594Z",
         "sourceId": "code-artifact-be9af11e-1a56-4bad-ade2-38a75d0ab847",
         "targetId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "soft": true
+      },
+      {
+        "id": "satisfies-4e6d73f9-3ac8-4d12-abd7-1064c8151155",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Phone UI exposes navigation, instructions, Start and Play Again.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T22:01:17.945Z",
+        "modifiedAt": "2026-10-21T22:01:17.945Z",
+        "sourceId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
+        "soft": true
+      },
+      {
+        "id": "satisfies-f68e1010-b83f-4ac7-b75d-6d7c03932c5f",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Phone UI exposes navigation, instructions, Start and Play Again.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T22:01:17.945Z",
+        "modifiedAt": "2026-10-21T22:01:17.945Z",
+        "sourceId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "targetId": "document-requirement-a8539547-6a21-4bc2-8329-861d602d4eb2",
+        "soft": true
+      },
+      {
+        "id": "refines-10e537de-a6aa-4a4e-b8bb-ee50f766b3c2",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Editable device-sized presentation of the existing run-state behavior.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T22:01:17.945Z",
+        "modifiedAt": "2026-10-21T22:01:17.945Z",
+        "sourceId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "targetId": "diagram-dd108326-a2c0-4953-9a4c-8fb023a10365",
         "soft": true
       }
     ],

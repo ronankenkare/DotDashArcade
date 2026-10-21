@@ -48,4 +48,4 @@ A run shall use theme indices 0/1/2/3 at score thresholds 0/12/25/40. Particle a
 
 ## REQ-012 Home and support
 
-Home shall expose mode selection, the selected best, Play, appearance, and support. Play shall navigate to instructions. Support shall open the configured Google Form externally.
+Home shall expose mode selection, the selected best, Play, appearance, and support. Play shall navigate to instructions. Appearance and support shall occupy the fixed bottom toolbar and remain aligned when the support menu opens or closes. Support shall open the configured Google Form externally.

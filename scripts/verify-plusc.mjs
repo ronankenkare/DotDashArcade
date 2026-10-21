@@ -27,6 +27,22 @@ try {
  const files=['project.plc',...fs.readdirSync(path.join(root,'systems')).filter(x=>x.endsWith('.plc')).map(x=>'systems/'+x)];
  const store=m.fromDocument(m.mergeProject(files.map(p=>({path:p,text:fs.readFileSync(path.join(root,p),'utf8')}))));
  const diagrams=store.ofKind('diagram').map(d=>m.normalizeDiagram(m.partsToDiagram(store,d.id)));
+ for(const d of diagrams){
+  for(const layer of d.layers||[]){
+   if(!layer.image)continue;
+   const relative=m.normalizeUiPicturePath(layer.image);
+   if(!relative||!fs.existsSync(path.join(root,relative)))throw Error(`Missing UI image: ${layer.image}`);
+  }
+ }
+ const captureManifest=path.join(root,'systems/assets/iphone-duo/manifest.json');
+ if(fs.existsSync(captureManifest)){
+  const capture=JSON.parse(fs.readFileSync(captureManifest,'utf8'));
+  for(const shot of capture.screenshots){
+   const bytes=fs.readFileSync(path.join(root,shot.path));
+   if(crypto.createHash('sha256').update(bytes).digest('hex')!==shot.sha256)throw Error(`Screenshot changed: ${shot.path}`);
+   if(bytes.readUInt32BE(16)!==shot.pixels[0]||bytes.readUInt32BE(20)!==shot.pixels[1])throw Error(`Screenshot dimensions changed: ${shot.path}`);
+  }
+ }
  const findings=diagrams.flatMap(d=>m.validateDiagram(d).map(f=>({diagram:d.title,...f}))).concat(m.validateTraces(store));
  const unexpected=findings.filter(x=>!(x.level==='warning'&&x.title==='No requirements'&&diagrams.some(d=>d.title===x.diagram&&d.diagramType==='requirements')));
  if(unexpected.length)throw Error(JSON.stringify(unexpected,null,2));

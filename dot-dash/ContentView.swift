@@ -100,7 +100,7 @@ struct ContentView: View {
         }
     }
 
-    // MARK: - HomeView (unchanged UI, now self-contained in ContentView)
+    // MARK: - HomeView
 
     private struct HomeView: View {
         @Binding var chosenMode: ModeSelection
@@ -109,7 +109,6 @@ struct ContentView: View {
         let appearance: AppearancePreference
         let cycleAppearance: () -> Void
         let start: () -> Void
-        @State private var showMenu: Bool = false
         @Environment(\.colorScheme) var colorScheme
 
         private static let cornerButtonSize: CGFloat = 48
@@ -168,85 +167,43 @@ struct ContentView: View {
                 .frame(maxWidth: 600)
                 .padding(24)
                 
-                // Background overlay to dismiss menu when tapping outside
-                if showMenu {
-                    Color.clear
-                        .contentShape(Rectangle())
-                        .onTapGesture {
-                            withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-                                showMenu = false
-                            }
-                        }
-                }
-                
-                // Appearance button (bottom left) and Support button (bottom right)
-                VStack {
-                    Spacer()
-                    HStack {
-                        Button(action: cycleAppearance) {
-                            Image(systemName: appearance.symbolName)
-                                .font(.title2)
-                                .foregroundColor(colorScheme == .light ? .black : .white)
-                        }
-                        .buttonStyle(.plain)
-                        .frame(width: Self.cornerButtonSize, height: Self.cornerButtonSize)
-                        .glassEffect(.clear)
-                        .clipShape(.circle)
-                        .contentShape(Circle())
-                        .accessibilityIdentifier("home.appearanceButton")
-                        .accessibilityLabel("Appearance: \(appearance.displayName)")
-                        .accessibilityHint("Cycles between Light, Dark, and System appearance")
-
-                        Spacer()
-                        ZStack(alignment: .bottomTrailing) {
-                            // Dropdown menu
-                            if showMenu {
-                                VStack(alignment: .trailing, spacing: 8) {
-                                    Button(action: {
-                                        if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSc363RKRky1eFwkpDa4Eu2jDMwhBiBsOTacm03HsBZbZKctYQ/viewform?usp=dialog") {
-                                            UIApplication.shared.open(url)
-                                        }
-                                        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-                                            showMenu = false
-                                        }
-                                    }) {
-                                        Text("Support")
-                                            .font(.body.weight(.medium))
-                                            .foregroundColor(colorScheme == .light ? .black : .white)
-                                            .padding(.horizontal, 16)
-                                            .padding(.vertical, 12)
-                                            .glassEffect(.clear)
-                                            .clipShape(.rect(cornerRadius: 12))
-                                    }
-                                    .buttonStyle(.plain)
-                                }
-                                .padding(.bottom, 60)
-                                .transition(.scale.combined(with: .opacity))
-                            }
-                            
-                            // Question mark button
-                            Button(action: {
-                                withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-                                    showMenu.toggle()
-                                }
-                            }) {
-                                Image(systemName: "questionmark")
-                                    .font(.title2)
-                                    .foregroundColor(colorScheme == .light ? .black : .white)
-                            }
-                            .buttonStyle(.plain)
-                            .frame(width: Self.cornerButtonSize, height: Self.cornerButtonSize)
-                            .glassEffect(.clear)
-                            .clipShape(.circle)
-                            .contentShape(Circle())
-                            .accessibilityIdentifier("home.supportButton")
-                        }
-                    }
-                    .padding(.horizontal, 22)
-                    .padding(.bottom, 22)
-                }
-                .ignoresSafeArea(edges: .bottom)
             }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                HStack {
+                    Button(action: cycleAppearance) {
+                        Image(systemName: appearance.symbolName)
+                            .font(.title2)
+                            .frame(width: Self.cornerButtonSize, height: Self.cornerButtonSize)
+                    }
+                    .accessibilityIdentifier("home.appearanceButton")
+                    .accessibilityLabel("Appearance: \(appearance.displayName)")
+                    .accessibilityHint("Cycles between Light, Dark, and System appearance")
+                    .buttonStyle(.plain)
+                    .glassEffect(.clear, in: .circle)
+
+                    Spacer()
+
+                    Menu {
+                        Button("Support") {
+                            if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSc363RKRky1eFwkpDa4Eu2jDMwhBiBsOTacm03HsBZbZKctYQ/viewform?usp=dialog") {
+                                UIApplication.shared.open(url)
+                            }
+                        }
+                        .accessibilityIdentifier("home.supportAction")
+                    } label: {
+                        Image(systemName: "questionmark")
+                            .font(.title2)
+                            .frame(width: Self.cornerButtonSize, height: Self.cornerButtonSize)
+                    }
+                    .accessibilityIdentifier("home.supportButton")
+                    .accessibilityLabel("Help and support")
+                    .buttonStyle(.plain)
+                    .glassEffect(.clear, in: .circle)
+                }
+                .padding(.horizontal, 22)
+                .padding(.vertical, 8)
+            }
+            .tint(colorScheme == .light ? .black : .white)
             .navigationBarTitleDisplayMode(.inline)
         }
     }

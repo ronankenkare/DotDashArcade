@@ -84,10 +84,12 @@ Four visual themes unlock by score inside a run (0 / 12 / 25 / 40). See `GameSta
 
 ## Plus-C systems library
 
-Open this repository folder in the installed Plus-C app. The root `project.plc` preserves the project identity, and `systems/` contains 11 editable diagrams and five native documents covering requirements, architecture, states, sequences, difficulty, storage, player flows, verification, and maintenance.
+Open this repository folder in the installed Plus-C app. The root `project.plc` preserves the project identity, and `systems/` contains 12 editable diagrams and five native documents covering requirements, architecture, states, sequences, difficulty, storage, player flows, verification, and maintenance.
 
 Browse [the review library](systems/index.html) for HTML documents and SVG projections of the native diagrams. The native models replace the retired HTML/Mermaid guide. Twelve source-backed requirements have design and implementation traces; the verification plan distinguishes inspected test coverage from executed results.
 
 Run `node scripts/verify-plusc.mjs` to validate native models, trace endpoints, source hashes, and project round trips using the installed app. Set `PLUS_C_ASAR` if the app is installed elsewhere. The separate legacy `plus-c` CLI uses an incompatible file format. Four prose documents intentionally produce “No requirements” warnings in the app's requirements-document editor.
 
 Keep native models and their review previews synchronized when editing behavior. See [maintenance guidance](systems/review/05-maintenance-and-risks.html).
+
+The [iPhone Duo UI flow](systems/review/17-iphone-duo-ui.html) uses actual iPhone Duo simulator screenshots of Home, instructions, play and results, with editable navigation hotspots.

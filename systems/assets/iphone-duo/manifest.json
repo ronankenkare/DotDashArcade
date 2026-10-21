@@ -1,0 +1,64 @@
+{
+  "device": "iPhone Duo",
+  "deviceId": "69F9029D-6797-4777-9D1B-557F577662B4",
+  "runtime": "iOS 27.1",
+  "display": "LCD / screenID 1",
+  "date": "2026-10-21",
+  "method": "xcrun simctl io <device> screenshot --display=1 <file>",
+  "captureFlow": "DuoDocumentationCaptureTests/testCaptureDuoScreens",
+  "captureFlowResult": "passed",
+  "captureTestTemporary": true,
+  "fullRegressionSuiteRun": false,
+  "sourceChangedAfterPrebuildSnapshot": true,
+  "sourceHashesBeforeCaptureBuild": {
+    "dot-dash/ContentView.swift": "b4dd7be7abe5810ef88b50cba440a1f7ea73321d3c863a9ccd93e8a5854bc864",
+    "dot-dash/GameView.swift": "712c132600399e4c38f81b297ef3e22c916bb8f6df057efe5857196351709e42",
+    "dot-dash/dot_dashApp.swift": "e5112e69858003ed275538ba42dc49c6b64c76f74625fe625c87adc7ca764dce"
+  },
+  "screenshots": [
+    {
+      "state": "Home",
+      "path": "systems/assets/iphone-duo/duo-home.png",
+      "pixels": [
+        1398,
+        2034
+      ],
+      "scale": 3,
+      "sha256": "d5c228e04136d5c1a830ba7f95e985b2f9ee09414a4c4f872b8074766afba31d",
+      "capturedAt": "2026-10-21T22:13:10.722Z"
+    },
+    {
+      "state": "How To Play",
+      "path": "systems/assets/iphone-duo/duo-instructions.png",
+      "pixels": [
+        1398,
+        2034
+      ],
+      "scale": 3,
+      "sha256": "47d10f698d0f953fd7b102500f27f0ec919a0c1408297677c62e4c6f4ebd0dc3",
+      "capturedAt": "2026-10-21T22:13:17.680Z"
+    },
+    {
+      "state": "Running",
+      "path": "systems/assets/iphone-duo/duo-running.png",
+      "pixels": [
+        1398,
+        2034
+      ],
+      "scale": 3,
+      "sha256": "b3c523e8d565192358f21cb1e79aca701c0cb1654575a651716b0aee4d802424",
+      "capturedAt": "2026-10-21T22:13:24.076Z"
+    },
+    {
+      "state": "Game Over",
+      "path": "systems/assets/iphone-duo/duo-game-over.png",
+      "pixels": [
+        1398,
+        2034
+      ],
+      "scale": 3,
+      "sha256": "80ce73496dbf02dd53a9f088cf22e9a14421c8dd962020b554fc7a54c4694583",
+      "capturedAt": "2026-10-21T22:13:29.750Z"
+    }
+  ]
+}

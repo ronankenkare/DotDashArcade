@@ -17,7 +17,7 @@ Coverage below was inspected in source. It is not a claim that the app tests pas
 | Contract REQ-009 appearance | dot_dashTests; testAppearanceButtonCyclesAndPersists | Visual contrast still needs inspection |
 | Contract REQ-010 migration | dot_dashTests legacy cases | Home reads before GameState first initializes |
 | Contract REQ-011 effects / themes | GameStateLifecycleTests | Frame-rate dependence and colors need runtime inspection |
-| Contract REQ-012 home / support | dot_dashUITests home and navigation | No automated external form submission check |
+| Contract REQ-012 home / support | dot_dashUITests home and navigation; testSupportMenuKeepsBottomToolbarStationary | No automated external form submission check |
 
 ## Automated command
 
@@ -30,8 +30,12 @@ From the repository root, run xcodebuild -project dot-dash.xcodeproj -scheme dot
 - Verify bests remain separate, never regress, and update Home on return. Check a legacy-only installation.
 - Check Light, Dark, System and Increase Contrast on iPhone and iPad. Inspect help button edges and score rows.
 - On physical hardware, compare perfect and good haptics. Confirm misses have particle feedback.
-- Open Support from Home and confirm external form navigation. Do not submit a form as part of documentation verification.
+- Open and dismiss the Home support menu in portrait and landscape; confirm appearance and support remain aligned in the bottom toolbar. Open Support from Home and confirm external form navigation. Do not submit a form as part of documentation verification.
 
 ## Model verification
 
 Use the installed Plus-C application's model validators and split/merge round trips. The separate plus-c command-line binary on this machine uses a different, older format and cannot validate this application's native project parts.
+
+## Bottom toolbar regression — October 21, 2026
+
+On October 21, 2026, the simulator build and three focused UI tests passed on iPhone 17 (iOS 27.0): testAppearanceButtonCyclesAndPersists, testCornerButtonsStayTheSameSizeAcrossAppearances, and testSupportMenuKeepsBottomToolbarStationary. The support-menu test checks alignment and unchanged vertical positions before opening, while open, and after dismissal in portrait and landscape. The full test suite was not run. The refreshed Duo Home screenshot was visually inspected; Duo automated tests were stopped during runner startup.

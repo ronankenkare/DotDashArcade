@@ -1,0 +1,696 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "diagram",
+  "project": {
+    "elements": [
+      {
+        "id": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "kind": "diagram",
+        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "name": "17 iPhone Duo UI",
+        "documentation": "Screenshot-based UI flow using four unmodified PNG captures of Dot Dash on the installed iPhone Duo simulator, iOS 27.1, LCD screenID 1. The original wireframes were replaced. Image layers and transparent interaction hotspots form the native prototype. Capture flow passed; it checks Home, instructions, running, and Game Over, not the full app regression suite.",
+        "properties": {
+          "diagramKind": "ui"
+        },
+        "createdAt": "2026-10-21T22:01:17.934Z",
+        "modifiedAt": "2026-10-21T22:14:32.342Z"
+      },
+      {
+        "id": "frame-cdc8aeb9-fabf-4f65-ad63-ca57a4d47a23",
+        "kind": "ui-frame",
+        "ownerId": null,
+        "name": "iPhone Duo · Home",
+        "documentation": "Actual unmodified Dot Dash screenshot captured from iPhone Duo (iOS 27.1), LCD / screenID 1, on 2026-10-21. Native PNG 1398 × 2034; displayed at 3× scale in a 466 × 678 point frame. Transparent rectangles provide prototype hotspots.",
+        "properties": {
+          "start": true
+        },
+        "createdAt": "2026-10-21T22:01:17.944Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "frame-835ac891-5d8c-47e8-bde4-1b2594953fbe",
+        "kind": "ui-frame",
+        "ownerId": null,
+        "name": "iPhone Duo · How To Play",
+        "documentation": "Actual unmodified Dot Dash screenshot captured from iPhone Duo (iOS 27.1), LCD / screenID 1, on 2026-10-21. Native PNG 1398 × 2034; displayed at 3× scale in a 466 × 678 point frame. Transparent rectangles provide prototype hotspots.",
+        "properties": {},
+        "createdAt": "2026-10-21T22:01:17.944Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "frame-65870d21-1e91-4441-88a2-ab83e825903a",
+        "kind": "ui-frame",
+        "ownerId": null,
+        "name": "iPhone Duo · Running",
+        "documentation": "Actual unmodified Dot Dash screenshot captured from iPhone Duo (iOS 27.1), LCD / screenID 1, on 2026-10-21. Native PNG 1398 × 2034; displayed at 3× scale in a 466 × 678 point frame. Transparent rectangles provide prototype hotspots.",
+        "properties": {},
+        "createdAt": "2026-10-21T22:01:17.944Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "frame-4acc8eea-7e9d-4cbf-9faa-151d725dd0f1",
+        "kind": "ui-frame",
+        "ownerId": null,
+        "name": "iPhone Duo · Game Over",
+        "documentation": "Actual unmodified Dot Dash screenshot captured from iPhone Duo (iOS 27.1), LCD / screenID 1, on 2026-10-21. Native PNG 1398 × 2034; displayed at 3× scale in a 466 × 678 point frame. Transparent rectangles provide prototype hotspots.",
+        "properties": {},
+        "createdAt": "2026-10-21T22:01:17.944Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "layer-148b1420-04e5-4562-96f8-2f1ff8d63e94",
+        "kind": "ui-layer",
+        "ownerId": "frame-cdc8aeb9-fabf-4f65-ad63-ca57a4d47a23",
+        "name": "Duo capture · Home",
+        "documentation": "",
+        "properties": {
+          "shape": "image",
+          "text": "",
+          "image": "systems/assets/iphone-duo/duo-home.png"
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "layer-abf4497a-a690-4d20-8da4-3bce811eb06c",
+        "kind": "ui-layer",
+        "ownerId": "frame-835ac891-5d8c-47e8-bde4-1b2594953fbe",
+        "name": "Duo capture · How To Play",
+        "documentation": "",
+        "properties": {
+          "shape": "image",
+          "text": "",
+          "image": "systems/assets/iphone-duo/duo-instructions.png"
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "layer-81f15b6a-03d0-4c9b-a233-44967146713f",
+        "kind": "ui-layer",
+        "ownerId": "frame-65870d21-1e91-4441-88a2-ab83e825903a",
+        "name": "Duo capture · Running",
+        "documentation": "",
+        "properties": {
+          "shape": "image",
+          "text": "",
+          "image": "systems/assets/iphone-duo/duo-running.png"
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "layer-d430d61d-bfdf-4abe-98e5-b9e2b471777c",
+        "kind": "ui-layer",
+        "ownerId": "frame-4acc8eea-7e9d-4cbf-9faa-151d725dd0f1",
+        "name": "Duo capture · Game Over",
+        "documentation": "",
+        "properties": {
+          "shape": "image",
+          "text": "",
+          "image": "systems/assets/iphone-duo/duo-game-over.png"
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "layer-9a030ef5-5b55-4751-866b-88d2ad12c28c",
+        "kind": "ui-layer",
+        "ownerId": "frame-cdc8aeb9-fabf-4f65-ad63-ca57a4d47a23",
+        "name": "home.playButton",
+        "documentation": "Transparent interaction hotspot over the unchanged simulator screenshot.",
+        "properties": {
+          "shape": "rectangle",
+          "text": ""
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "layer-93c69b08-e90f-47f4-8278-e42c8cd2c39b",
+        "kind": "ui-layer",
+        "ownerId": "frame-835ac891-5d8c-47e8-bde4-1b2594953fbe",
+        "name": "game.startButton · Start",
+        "documentation": "Transparent interaction hotspot over the unchanged simulator screenshot.",
+        "properties": {
+          "shape": "rectangle",
+          "text": ""
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "layer-0443a963-f562-408c-ba63-99ad8f8f406c",
+        "kind": "ui-layer",
+        "ownerId": "frame-4acc8eea-7e9d-4cbf-9faa-151d725dd0f1",
+        "name": "game.startButton · Play Again",
+        "documentation": "Transparent interaction hotspot over the unchanged simulator screenshot.",
+        "properties": {
+          "shape": "rectangle",
+          "text": ""
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "layer-a7cb27ed-4b32-40ad-b4d5-f1a5256bc898",
+        "kind": "ui-layer",
+        "ownerId": "frame-65870d21-1e91-4441-88a2-ab83e825903a",
+        "name": "Game surface · miss path",
+        "documentation": "Transparent interaction hotspot over the unchanged simulator screenshot.",
+        "properties": {
+          "shape": "rectangle",
+          "text": ""
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "layer-b7b86fdd-53a3-486e-a884-c95568e8f9b1",
+        "kind": "ui-layer",
+        "ownerId": "frame-835ac891-5d8c-47e8-bde4-1b2594953fbe",
+        "name": "BackButton",
+        "documentation": "Transparent interaction hotspot over the unchanged simulator screenshot.",
+        "properties": {
+          "shape": "rectangle",
+          "text": ""
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "layer-d1c8e138-6d96-49c0-9730-f2c545ea07c5",
+        "kind": "ui-layer",
+        "ownerId": "frame-65870d21-1e91-4441-88a2-ab83e825903a",
+        "name": "BackButton",
+        "documentation": "Transparent interaction hotspot over the unchanged simulator screenshot.",
+        "properties": {
+          "shape": "rectangle",
+          "text": ""
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "layer-8f42b213-ef6a-455c-b16b-251c5ef14b3d",
+        "kind": "ui-layer",
+        "ownerId": "frame-4acc8eea-7e9d-4cbf-9faa-151d725dd0f1",
+        "name": "BackButton",
+        "documentation": "Transparent interaction hotspot over the unchanged simulator screenshot.",
+        "properties": {
+          "shape": "rectangle",
+          "text": ""
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z"
+      },
+      {
+        "id": "link-b74bcaff-aa02-44a2-b73a-a4f5622b67f7",
+        "kind": "ui-link",
+        "ownerId": null,
+        "name": "Play → instructions",
+        "documentation": "",
+        "properties": {
+          "trigger": "click"
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z",
+        "sourceId": "layer-9a030ef5-5b55-4751-866b-88d2ad12c28c",
+        "targetId": "frame-835ac891-5d8c-47e8-bde4-1b2594953fbe"
+      },
+      {
+        "id": "link-6b7deae4-6ae0-4dd5-98e8-275b2a91ea45",
+        "kind": "ui-link",
+        "ownerId": null,
+        "name": "Start → run",
+        "documentation": "",
+        "properties": {
+          "trigger": "click"
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z",
+        "sourceId": "layer-93c69b08-e90f-47f4-8278-e42c8cd2c39b",
+        "targetId": "frame-65870d21-1e91-4441-88a2-ab83e825903a"
+      },
+      {
+        "id": "link-30fa2257-851b-401c-8723-6778b0695d83",
+        "kind": "ui-link",
+        "ownerId": null,
+        "name": "Tap (miss) → Game Over",
+        "documentation": "",
+        "properties": {
+          "trigger": "click"
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z",
+        "sourceId": "layer-a7cb27ed-4b32-40ad-b4d5-f1a5256bc898",
+        "targetId": "frame-4acc8eea-7e9d-4cbf-9faa-151d725dd0f1"
+      },
+      {
+        "id": "link-ff60d6e0-78b3-405a-b86c-b996b49b7385",
+        "kind": "ui-link",
+        "ownerId": null,
+        "name": "Play Again → run",
+        "documentation": "",
+        "properties": {
+          "trigger": "click"
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z",
+        "sourceId": "layer-0443a963-f562-408c-ba63-99ad8f8f406c",
+        "targetId": "frame-65870d21-1e91-4441-88a2-ab83e825903a"
+      },
+      {
+        "id": "link-1c8daf2f-3269-4bb3-95b6-a2881fab50f7",
+        "kind": "ui-link",
+        "ownerId": null,
+        "name": "Back → Home",
+        "documentation": "",
+        "properties": {
+          "trigger": "click"
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z",
+        "sourceId": "layer-b7b86fdd-53a3-486e-a884-c95568e8f9b1",
+        "targetId": "frame-cdc8aeb9-fabf-4f65-ad63-ca57a4d47a23"
+      },
+      {
+        "id": "link-e49b55aa-dbba-4713-980b-bdf5ef6cd0bc",
+        "kind": "ui-link",
+        "ownerId": null,
+        "name": "Back → Home",
+        "documentation": "",
+        "properties": {
+          "trigger": "click"
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z",
+        "sourceId": "layer-d1c8e138-6d96-49c0-9730-f2c545ea07c5",
+        "targetId": "frame-cdc8aeb9-fabf-4f65-ad63-ca57a4d47a23"
+      },
+      {
+        "id": "link-6828be30-21d4-4e82-bd3a-3195fff7a3de",
+        "kind": "ui-link",
+        "ownerId": null,
+        "name": "Back → Home",
+        "documentation": "",
+        "properties": {
+          "trigger": "click"
+        },
+        "createdAt": "2026-10-21T22:14:32.341Z",
+        "modifiedAt": "2026-10-21T22:14:32.341Z",
+        "sourceId": "layer-8f42b213-ef6a-455c-b16b-251c5ef14b3d",
+        "targetId": "frame-cdc8aeb9-fabf-4f65-ad63-ca57a4d47a23"
+      }
+    ],
+    "views": [
+      {
+        "id": "view-3f5d7a50-6677-4d9d-8ead-2f927d878338",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "frame-cdc8aeb9-fabf-4f65-ad63-ca57a4d47a23",
+        "parentViewId": null,
+        "style": {
+          "fill": "#ffffff"
+        },
+        "x": 100,
+        "y": 160,
+        "width": 466,
+        "height": 678,
+        "collapsed": false
+      },
+      {
+        "id": "view-d6d90f96-a888-4c2d-a4ff-eccde98eac68",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "frame-835ac891-5d8c-47e8-bde4-1b2594953fbe",
+        "parentViewId": null,
+        "style": {
+          "fill": "#ffffff"
+        },
+        "x": 766,
+        "y": 160,
+        "width": 466,
+        "height": 678,
+        "collapsed": false
+      },
+      {
+        "id": "view-68fc74b7-ad07-4426-b1df-cf79fce6e834",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "frame-65870d21-1e91-4441-88a2-ab83e825903a",
+        "parentViewId": null,
+        "style": {
+          "fill": "#ffffff"
+        },
+        "x": 100,
+        "y": 1059,
+        "width": 466,
+        "height": 678,
+        "collapsed": false
+      },
+      {
+        "id": "view-31a6befe-ba72-4fb1-9aa9-5d5ae8ddbc15",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "frame-4acc8eea-7e9d-4cbf-9faa-151d725dd0f1",
+        "parentViewId": null,
+        "style": {
+          "fill": "#ffffff"
+        },
+        "x": 766,
+        "y": 1059,
+        "width": 466,
+        "height": 678,
+        "collapsed": false
+      },
+      {
+        "id": "view-e9af5dd7-38e2-40d1-8c7e-75faee233b91",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "layer-148b1420-04e5-4562-96f8-2f1ff8d63e94",
+        "parentViewId": null,
+        "style": {
+          "fill": "",
+          "stroke": "",
+          "textColor": "#757575",
+          "fontSize": 13,
+          "fontWeight": "regular",
+          "textAlign": "center",
+          "radius": 0,
+          "imageFit": "crop"
+        },
+        "x": 0,
+        "y": 0,
+        "width": 466,
+        "height": 678,
+        "collapsed": false
+      },
+      {
+        "id": "view-38bdd097-b4b1-41ce-af9f-4eac95c2eb2c",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "layer-abf4497a-a690-4d20-8da4-3bce811eb06c",
+        "parentViewId": null,
+        "style": {
+          "fill": "",
+          "stroke": "",
+          "textColor": "#757575",
+          "fontSize": 13,
+          "fontWeight": "regular",
+          "textAlign": "center",
+          "radius": 0,
+          "imageFit": "crop"
+        },
+        "x": 0,
+        "y": 0,
+        "width": 466,
+        "height": 678,
+        "collapsed": false
+      },
+      {
+        "id": "view-6bf4af26-f7f7-4dba-8171-045830cc66db",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "layer-81f15b6a-03d0-4c9b-a233-44967146713f",
+        "parentViewId": null,
+        "style": {
+          "fill": "",
+          "stroke": "",
+          "textColor": "#757575",
+          "fontSize": 13,
+          "fontWeight": "regular",
+          "textAlign": "center",
+          "radius": 0,
+          "imageFit": "crop"
+        },
+        "x": 0,
+        "y": 0,
+        "width": 466,
+        "height": 678,
+        "collapsed": false
+      },
+      {
+        "id": "view-3a7f8c9a-5a9c-419c-9448-80f865e0202f",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "layer-d430d61d-bfdf-4abe-98e5-b9e2b471777c",
+        "parentViewId": null,
+        "style": {
+          "fill": "",
+          "stroke": "",
+          "textColor": "#757575",
+          "fontSize": 13,
+          "fontWeight": "regular",
+          "textAlign": "center",
+          "radius": 0,
+          "imageFit": "crop"
+        },
+        "x": 0,
+        "y": 0,
+        "width": 466,
+        "height": 678,
+        "collapsed": false
+      },
+      {
+        "id": "view-1a57bd2c-2d1d-4ee4-a18c-03debc77960f",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "layer-9a030ef5-5b55-4751-866b-88d2ad12c28c",
+        "parentViewId": null,
+        "style": {
+          "fill": "",
+          "stroke": "",
+          "textColor": "#1e1e1e",
+          "fontSize": 14,
+          "fontWeight": "regular",
+          "textAlign": "center",
+          "radius": 0
+        },
+        "x": 72,
+        "y": 419,
+        "width": 238,
+        "height": 72,
+        "collapsed": false
+      },
+      {
+        "id": "view-4f1cbc83-4532-40f7-b4d4-788d6908b0ee",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "layer-93c69b08-e90f-47f4-8278-e42c8cd2c39b",
+        "parentViewId": null,
+        "style": {
+          "fill": "",
+          "stroke": "",
+          "textColor": "#1e1e1e",
+          "fontSize": 14,
+          "fontWeight": "regular",
+          "textAlign": "center",
+          "radius": 0
+        },
+        "x": 32,
+        "y": 419,
+        "width": 318,
+        "height": 44,
+        "collapsed": false
+      },
+      {
+        "id": "view-416ea13f-cf2c-403a-afee-80b073a6e700",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "layer-0443a963-f562-408c-ba63-99ad8f8f406c",
+        "parentViewId": null,
+        "style": {
+          "fill": "",
+          "stroke": "",
+          "textColor": "#1e1e1e",
+          "fontSize": 14,
+          "fontWeight": "regular",
+          "textAlign": "center",
+          "radius": 0
+        },
+        "x": 32,
+        "y": 400,
+        "width": 318,
+        "height": 44,
+        "collapsed": false
+      },
+      {
+        "id": "view-a80275f0-512b-41f2-a0dc-af665dabdcd6",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "layer-a7cb27ed-4b32-40ad-b4d5-f1a5256bc898",
+        "parentViewId": null,
+        "style": {
+          "fill": "",
+          "stroke": "",
+          "textColor": "#1e1e1e",
+          "fontSize": 14,
+          "fontWeight": "regular",
+          "textAlign": "center",
+          "radius": 0
+        },
+        "x": 20,
+        "y": 250,
+        "width": 340,
+        "height": 260,
+        "collapsed": false
+      },
+      {
+        "id": "view-2113d067-05a8-4058-b5ee-863202dd8b72",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "layer-b7b86fdd-53a3-486e-a884-c95568e8f9b1",
+        "parentViewId": null,
+        "style": {
+          "fill": "",
+          "stroke": "",
+          "textColor": "#1e1e1e",
+          "fontSize": 14,
+          "fontWeight": "regular",
+          "textAlign": "center",
+          "radius": 0
+        },
+        "x": 394,
+        "y": 174,
+        "width": 48,
+        "height": 48,
+        "collapsed": false
+      },
+      {
+        "id": "view-66e498c3-4ef0-4b46-9ccc-712f07654cf4",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "layer-d1c8e138-6d96-49c0-9730-f2c545ea07c5",
+        "parentViewId": null,
+        "style": {
+          "fill": "",
+          "stroke": "",
+          "textColor": "#1e1e1e",
+          "fontSize": 14,
+          "fontWeight": "regular",
+          "textAlign": "center",
+          "radius": 0
+        },
+        "x": 394,
+        "y": 174,
+        "width": 48,
+        "height": 48,
+        "collapsed": false
+      },
+      {
+        "id": "view-e3e9d03d-69f2-4756-9ff6-48cfe02d082a",
+        "kind": "shape",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "layer-8f42b213-ef6a-455c-b16b-251c5ef14b3d",
+        "parentViewId": null,
+        "style": {
+          "fill": "",
+          "stroke": "",
+          "textColor": "#1e1e1e",
+          "fontSize": 14,
+          "fontWeight": "regular",
+          "textAlign": "center",
+          "radius": 0
+        },
+        "x": 394,
+        "y": 174,
+        "width": 48,
+        "height": 48,
+        "collapsed": false
+      },
+      {
+        "id": "view-8d5b1ba4-9e67-4778-8cfb-ae8e3296ec4b",
+        "kind": "edge",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "link-b74bcaff-aa02-44a2-b73a-a4f5622b67f7",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-72456841-01c4-4b0b-952c-f55e3351beea",
+        "kind": "edge",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "link-6b7deae4-6ae0-4dd5-98e8-275b2a91ea45",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-52f26fd8-5ba5-4eb7-833e-3fea00cc74fb",
+        "kind": "edge",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "link-30fa2257-851b-401c-8723-6778b0695d83",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-cc50bf26-3ab9-43bc-a760-7ae9a137f44f",
+        "kind": "edge",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "link-ff60d6e0-78b3-405a-b86c-b996b49b7385",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-a72ff7a8-c029-4319-9fc9-53f26b882cf9",
+        "kind": "edge",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "link-1c8daf2f-3269-4bb3-95b6-a2881fab50f7",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-5425a6e5-7c6e-43c4-b8d2-f919693f4db0",
+        "kind": "edge",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "link-e49b55aa-dbba-4713-980b-bdf5ef6cd0bc",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-0e50e0c0-a464-4d5f-877c-932c1846bed5",
+        "kind": "edge",
+        "diagramId": "diagram-ba03d34d-d826-4765-9ebe-1b89f1b722e4",
+        "elementId": "link-6828be30-21d4-4e82-bd3a-3195fff7a3de",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      }
+    ]
+  }
+}

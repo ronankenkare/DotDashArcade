@@ -113,6 +113,40 @@ final class dot_dashUITests: XCTestCase {
     }
 
     @MainActor
+    func testSupportMenuKeepsBottomToolbarStationary() throws {
+        let app = XCUIApplication()
+        let device = XCUIDevice.shared
+        defer { device.orientation = .portrait }
+        app.launch()
+
+        for orientation in [UIDeviceOrientation.portrait, .landscapeLeft] {
+            device.orientation = orientation
+            let appearance = app.buttons["home.appearanceButton"].firstMatch
+            let support = app.buttons["home.supportButton"].firstMatch
+            XCTAssertTrue(appearance.waitForExistence(timeout: 10))
+            XCTAssertTrue(support.waitForExistence(timeout: 5))
+            let appearanceFrame = appearance.frame
+            let supportFrame = support.frame
+            XCTAssertEqual(appearanceFrame.midY, supportFrame.midY, accuracy: 1)
+            XCTAssertGreaterThan(appearanceFrame.midY, app.frame.height * 0.75)
+
+            support.tap()
+            XCTAssertTrue(app.buttons["home.supportAction"].waitForExistence(timeout: 5))
+            XCTAssertEqual(appearance.frame.midY, appearanceFrame.midY, accuracy: 1)
+            XCTAssertEqual(support.frame.midY, supportFrame.midY, accuracy: 1)
+
+            // Dismiss without opening the external support form.
+            app.staticTexts["Dot • Dash"].tap()
+            let dismissed = XCTNSPredicateExpectation(
+                predicate: NSPredicate(format: "exists == false"),
+                object: app.buttons["home.supportAction"]
+            )
+            XCTAssertEqual(XCTWaiter().wait(for: [dismissed], timeout: 5), .completed)
+            XCTAssertEqual(appearance.frame.midY, appearanceFrame.midY, accuracy: 1)
+        }
+    }
+
+    @MainActor
     func testPlayNavigatesToGame() throws {
         let app = XCUIApplication()
         app.launch()

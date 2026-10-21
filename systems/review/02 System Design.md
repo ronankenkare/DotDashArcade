@@ -2,7 +2,7 @@
 
 ## Scope and architecture
 
-Dot Dash is a universal iPhone/iPad reflex game. The deployment target is iOS 26.0. The app entry point in dot-dash/dot_dashApp.swift creates ContentView. ContentView owns NavigationStack, the selected home mode, best-score readout, and the persisted appearance preference. Home's Play selects a navigation destination; it does not start marker motion.
+Dot Dash is a universal iPhone/iPad reflex game. The deployment target is iOS 26.0. The app entry point in dot-dash/dot_dashApp.swift creates ContentView. ContentView owns NavigationStack, the selected home mode, best-score readout, and the persisted appearance preference. Home's Play selects a navigation destination; it does not start marker motion. HomeView places appearance and a native Support Menu in a horizontal HStack separated by a spacer, anchored with safeAreaInset(edge: .bottom). The system presents the menu outside toolbar layout, so opening it cannot enlarge the row or move the appearance control. The fixed bottom toolbar respects the safe area and stays horizontal on iPhone Duo, where native bottomBar items adapt into a trailing vertical rail in landscape.
 
 GameView owns a MainActor GameState through StateObject. GameState is an ObservableObject publishing score, flags, marker, target and particles. GameBarView renders a SwiftUI Canvas; ScoreBarView, HelpOverlayView and ModeBadgeView observe the same model. ModeTogglePill is shared with Home.
 
