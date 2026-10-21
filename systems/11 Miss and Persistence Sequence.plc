@@ -1,0 +1,421 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "diagram",
+  "project": {
+    "elements": [
+      {
+        "id": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "kind": "diagram",
+        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "name": "11 Miss and Persistence Sequence",
+        "documentation": "",
+        "properties": {
+          "diagramKind": "sequence",
+          "autoOrganize": true
+        },
+        "createdAt": "2026-10-21T21:41:30.585Z",
+        "modifiedAt": "2026-10-21T21:41:30.585Z"
+      },
+      {
+        "id": "participant-4d2a9655-46db-4b93-a908-ddb4531cd032",
+        "kind": "participant",
+        "ownerId": null,
+        "name": "Player",
+        "documentation": "",
+        "properties": {
+          "stereotype": "actor",
+          "order": 0,
+          "lifelineStart": 0,
+          "lifelineEnd": null
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      },
+      {
+        "id": "participant-6e20a0a4-1e3e-4234-bc55-5fea9eb93307",
+        "kind": "participant",
+        "ownerId": null,
+        "name": "GameBarView",
+        "documentation": "",
+        "properties": {
+          "stereotype": "control",
+          "order": 1,
+          "lifelineStart": 0,
+          "lifelineEnd": null
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      },
+      {
+        "id": "participant-b9996232-e65a-4eb9-81bb-bcaeedeccc12",
+        "kind": "participant",
+        "ownerId": null,
+        "name": "SwiftUI Overlay",
+        "documentation": "",
+        "properties": {
+          "stereotype": "control",
+          "order": 2,
+          "lifelineStart": 0,
+          "lifelineEnd": null
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      },
+      {
+        "id": "participant-ae146090-5884-4d78-bf39-12368dceaa5c",
+        "kind": "participant",
+        "ownerId": null,
+        "name": "GameState",
+        "documentation": "",
+        "properties": {
+          "stereotype": "control",
+          "order": 3,
+          "lifelineStart": 0,
+          "lifelineEnd": null
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      },
+      {
+        "id": "participant-2ff2fc16-0b33-4fc2-a5af-d9d5d3c90d31",
+        "kind": "participant",
+        "ownerId": null,
+        "name": "UserDefaults",
+        "documentation": "",
+        "properties": {
+          "stereotype": "control",
+          "order": 4,
+          "lifelineStart": 0,
+          "lifelineEnd": null
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      },
+      {
+        "id": "message-87270216-4ad8-40db-858f-ab0aa3fece8a",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "Tap game surface",
+        "documentation": "",
+        "properties": {
+          "order": 0
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-4d2a9655-46db-4b93-a908-ddb4531cd032",
+        "targetId": "participant-6e20a0a4-1e3e-4234-bc55-5fea9eb93307"
+      },
+      {
+        "id": "message-6e23b48f-94c1-44cc-86e9-126b7f4438a4",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "handleTap(screenWidth)",
+        "documentation": "",
+        "properties": {
+          "order": 1
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-6e20a0a4-1e3e-4234-bc55-5fea9eb93307",
+        "targetId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c"
+      },
+      {
+        "id": "message-e7bb3e8d-34cc-4237-b522-962e1742d2f3",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "spawn 18 failure particles",
+        "documentation": "",
+        "properties": {
+          "order": 2
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c",
+        "targetId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c"
+      },
+      {
+        "id": "message-af2018e9-e74c-4592-bde8-912c0b4552ce",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "running = false; gameOver = true",
+        "documentation": "",
+        "properties": {
+          "order": 3
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c",
+        "targetId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c"
+      },
+      {
+        "id": "message-e6bd89f9-e266-4759-a998-6de36ef97840",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "mode best = max(mode best, score)",
+        "documentation": "",
+        "properties": {
+          "order": 4
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c",
+        "targetId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c"
+      },
+      {
+        "id": "message-a33ed7dd-d54e-45fe-bf6b-56ca81f49534",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "set selected mode best key",
+        "documentation": "",
+        "properties": {
+          "order": 5
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c",
+        "targetId": "participant-2ff2fc16-0b33-4fc2-a5af-d9d5d3c90d31"
+      },
+      {
+        "id": "message-16e74b44-46b6-4e5f-b63a-1ed12230e361",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "showHelp = true",
+        "documentation": "",
+        "properties": {
+          "order": 6
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c",
+        "targetId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c"
+      },
+      {
+        "id": "message-f084fbd2-488c-409a-be19-cba07fdf210e",
+        "kind": "reply",
+        "ownerId": null,
+        "name": "Publish Game Over state",
+        "documentation": "",
+        "properties": {
+          "order": 7
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c",
+        "targetId": "participant-b9996232-e65a-4eb9-81bb-bcaeedeccc12"
+      },
+      {
+        "id": "message-b2e5099d-22c0-49e4-b052-cb04b8173d6b",
+        "kind": "reply",
+        "ownerId": null,
+        "name": "Show mode, score, best, Play Again",
+        "documentation": "",
+        "properties": {
+          "order": 8
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-b9996232-e65a-4eb9-81bb-bcaeedeccc12",
+        "targetId": "participant-4d2a9655-46db-4b93-a908-ddb4531cd032"
+      },
+      {
+        "id": "fragment-a1205f02-038b-4765-afab-c60acd3fd041",
+        "kind": "fragment",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "stereotype": "opt",
+          "startOrder": 0,
+          "endOrder": 8,
+          "participantIds": [
+            "participant-4d2a9655-46db-4b93-a908-ddb4531cd032",
+            "participant-6e20a0a4-1e3e-4234-bc55-5fea9eb93307",
+            "participant-ae146090-5884-4d78-bf39-12368dceaa5c",
+            "participant-2ff2fc16-0b33-4fc2-a5af-d9d5d3c90d31",
+            "participant-b9996232-e65a-4eb9-81bb-bcaeedeccc12"
+          ]
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      },
+      {
+        "id": "operand-b874d1a7-8e2c-4f29-b0ec-3c400f3cf433",
+        "kind": "operand",
+        "ownerId": "fragment-a1205f02-038b-4765-afab-c60acd3fd041",
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "guard": "running && !inZone(markerPos)",
+          "startOrder": 0,
+          "endOrder": 8,
+          "order": 0
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      }
+    ],
+    "views": [
+      {
+        "id": "view-e38d0ca3-bca6-4d5b-9c2a-798d57c0d76a",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "participant-4d2a9655-46db-4b93-a908-ddb4531cd032",
+        "parentViewId": null,
+        "style": {},
+        "slot": 0,
+        "offset": 150
+      },
+      {
+        "id": "view-eb22ab23-6fdb-4f50-88c4-9f4c306ae5eb",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "participant-6e20a0a4-1e3e-4234-bc55-5fea9eb93307",
+        "parentViewId": null,
+        "style": {},
+        "slot": 1,
+        "offset": 370
+      },
+      {
+        "id": "view-b094cb92-27f7-4bd5-9723-f6eb47c476ea",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "participant-b9996232-e65a-4eb9-81bb-bcaeedeccc12",
+        "parentViewId": null,
+        "style": {},
+        "slot": 2,
+        "offset": 590
+      },
+      {
+        "id": "view-e3dc38ee-142b-4147-9ff8-1b8ae744651a",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "participant-ae146090-5884-4d78-bf39-12368dceaa5c",
+        "parentViewId": null,
+        "style": {},
+        "slot": 3,
+        "offset": 810
+      },
+      {
+        "id": "view-aa4ccce4-11e6-411f-8664-6b798a1e9c05",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "participant-2ff2fc16-0b33-4fc2-a5af-d9d5d3c90d31",
+        "parentViewId": null,
+        "style": {},
+        "slot": 4,
+        "offset": 1030
+      },
+      {
+        "id": "view-ecc4d337-82eb-4f6a-9d66-85bacb8cc6bc",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "message-87270216-4ad8-40db-858f-ab0aa3fece8a",
+        "parentViewId": null,
+        "style": {},
+        "slot": 0,
+        "offset": null
+      },
+      {
+        "id": "view-50608ef0-6efd-4160-b5bb-5009bf8aab78",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "message-6e23b48f-94c1-44cc-86e9-126b7f4438a4",
+        "parentViewId": null,
+        "style": {},
+        "slot": 1,
+        "offset": null
+      },
+      {
+        "id": "view-ab9c49bd-4af4-4692-a0b2-aa8ac624cfbe",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "message-e7bb3e8d-34cc-4237-b522-962e1742d2f3",
+        "parentViewId": null,
+        "style": {},
+        "slot": 2,
+        "offset": null
+      },
+      {
+        "id": "view-2750190c-d2a4-407e-964c-8f136f9618df",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "message-af2018e9-e74c-4592-bde8-912c0b4552ce",
+        "parentViewId": null,
+        "style": {},
+        "slot": 3,
+        "offset": null
+      },
+      {
+        "id": "view-ed2691bc-0245-4bf5-b3fb-3f34316c4ce3",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "message-e6bd89f9-e266-4759-a998-6de36ef97840",
+        "parentViewId": null,
+        "style": {},
+        "slot": 4,
+        "offset": null
+      },
+      {
+        "id": "view-99b05be7-865e-4350-8559-66dca458aad0",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "message-a33ed7dd-d54e-45fe-bf6b-56ca81f49534",
+        "parentViewId": null,
+        "style": {},
+        "slot": 5,
+        "offset": null
+      },
+      {
+        "id": "view-32034db8-2581-405d-bda9-f5e212895528",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "message-16e74b44-46b6-4e5f-b63a-1ed12230e361",
+        "parentViewId": null,
+        "style": {},
+        "slot": 6,
+        "offset": null
+      },
+      {
+        "id": "view-23e428bf-0346-4f0f-b1a8-1ac68cd0a941",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "message-f084fbd2-488c-409a-be19-cba07fdf210e",
+        "parentViewId": null,
+        "style": {},
+        "slot": 7,
+        "offset": null
+      },
+      {
+        "id": "view-088157fd-6487-46ec-b76d-62af7d57fb9f",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "message-b2e5099d-22c0-49e4-b052-cb04b8173d6b",
+        "parentViewId": null,
+        "style": {},
+        "slot": 8,
+        "offset": null
+      },
+      {
+        "id": "view-2ed427a1-8cc8-4166-bbc5-156fa9aca40b",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "fragment-a1205f02-038b-4765-afab-c60acd3fd041",
+        "parentViewId": null,
+        "style": {},
+        "slot": 0,
+        "offset": null
+      },
+      {
+        "id": "view-75c2fbdc-a142-4b47-827a-068556290873",
+        "kind": "slot",
+        "diagramId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "elementId": "operand-b874d1a7-8e2c-4f29-b0ec-3c400f3cf433",
+        "parentViewId": null,
+        "style": {},
+        "slot": 0,
+        "offset": null
+      }
+    ]
+  }
+}

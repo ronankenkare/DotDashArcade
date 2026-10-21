@@ -1,0 +1,192 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "diagram",
+  "project": {
+    "elements": [
+      {
+        "id": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
+        "kind": "diagram",
+        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "name": "02 System Design",
+        "documentation": "",
+        "properties": {
+          "diagramKind": "requirements",
+          "markdown": "# Dot Dash system design\n\n## Scope and architecture\n\nDot Dash is a universal iPhone/iPad reflex game. The deployment target is iOS 26.0. The app entry point in dot-dash/dot_dashApp.swift creates ContentView. ContentView owns NavigationStack, the selected home mode, best-score readout, and the persisted appearance preference. Home's Play selects a navigation destination; it does not start marker motion.\n\nGameView owns a MainActor GameState through StateObject. GameState is an ObservableObject publishing score, flags, marker, target and particles. GameBarView renders a SwiftUI Canvas; ScoreBarView, HelpOverlayView and ModeBadgeView observe the same model. ModeTogglePill is shared with Home.\n\n## Timing and rendering\n\nGameView starts CADisplayLink on appear and on active scene phase. startLoop is idempotent; stopLoop invalidates and clears the link. step computes elapsed time and caps it at 50 ms. The marker moves only when running. Flash fades and particles age even when not running. Particle displacement is per frame, not velocity multiplied by dt; this is current behavior.\n\n## Rules and difficulty\n\n| Setting | Classic | Advanced |\n| --- | --- | --- |\n| Start width | 0.36 | 0.26 |\n| Start speed (normalized bar units/s) | 0.55 | 0.80 |\n| Perfect fraction | 0.45 | 0.30 |\n| Speed multiplier perfect / good | 1.10 / 1.05 | 1.15 / 1.10 |\n| Width multiplier perfect / good | 1.00 / 1.00 | 0.90 / 0.94 |\n| Minimum width | 0.10 | 0.06 |\n\nEach hit scores one point, regardless of perfect classification. There is no speed cap. Width is clamped between the mode minimum and 0.5 after multiplication. New centers are sampled within 0.15...0.85, with up to 16 attempts at the movement threshold. The target may extend beyond a bar endpoint when wide; its center is what is bounded. Theme thresholds are 12, 25 and 40.\n\n## Local persistence\n\n| Key | Owner | Write trigger |\n| --- | --- | --- |\n| dotdash_best_classic_v1 | GameState | Classic miss; eligible legacy migration |\n| dotdash_best_advanced_v1 | GameState | Advanced miss |\n| dotdash_best_v1 | GameState reads | Legacy migration input; not removed |\n| dotdash_appearance_v1 | ContentView AppStorage | Appearance button |\n\nHome refreshes bests on appear. GameState loads mode bests during initialization. Quitting, pausing, switching modes, or navigating back during a live run does not save that run as a new best.\n\n## External interfaces\n\nThe gameplay path needs no backend. UIKit supplies notification and impact haptics. SwiftUI scenePhase supplies lifecycle events. Support calls UIApplication.open for the Google Form URL in ContentView.swift. Form availability and network behavior are outside the game loop.\n\n## Source map\n\n- dot-dash/dot_dashApp.swift: application scene.\n- dot-dash/ContentView.swift: navigation, home, appearance, support and best refresh.\n- dot-dash/GameView.swift: game views, GameState, physics, rules, effects and storage.\n- dot-dashTests/: Swift Testing suites.\n- dot-dashUITests/: XCUITest flows and launch measurements.\n"
+        },
+        "createdAt": "2026-10-21T21:41:30.582Z",
+        "modifiedAt": "2026-10-21T21:41:30.582Z"
+      },
+      {
+        "id": "requirement-group-329483cd-92b5-478d-9afd-a2ce6e2892d3",
+        "kind": "requirement-group",
+        "ownerId": null,
+        "name": "Dot Dash system design",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-system-design"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.509Z"
+      },
+      {
+        "id": "requirement-group-84d2fee6-6222-4fe6-86af-33ba30ba604a",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-329483cd-92b5-478d-9afd-a2ce6e2892d3",
+        "name": "Scope and architecture",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-system-design/scope-and-architecture"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.509Z"
+      },
+      {
+        "id": "requirement-group-9e4487bb-13b5-4cbf-8875-ad624a5523c0",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-329483cd-92b5-478d-9afd-a2ce6e2892d3",
+        "name": "Timing and rendering",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-system-design/timing-and-rendering"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.509Z"
+      },
+      {
+        "id": "requirement-group-0aa2f557-c34d-4cb9-9cd8-2d4dcb519630",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-329483cd-92b5-478d-9afd-a2ce6e2892d3",
+        "name": "Rules and difficulty",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-system-design/rules-and-difficulty"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.509Z"
+      },
+      {
+        "id": "requirement-group-bd28cb82-660d-46c1-87ec-f0c432f8fc16",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-329483cd-92b5-478d-9afd-a2ce6e2892d3",
+        "name": "Local persistence",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-system-design/local-persistence"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.509Z"
+      },
+      {
+        "id": "requirement-group-1ea4d098-a57f-4d09-b005-d103f4989966",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-329483cd-92b5-478d-9afd-a2ce6e2892d3",
+        "name": "External interfaces",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-system-design/external-interfaces"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.509Z"
+      },
+      {
+        "id": "requirement-group-38157b03-47de-40b7-957b-add0508a23bb",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-329483cd-92b5-478d-9afd-a2ce6e2892d3",
+        "name": "Source map",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-system-design/source-map"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.509Z"
+      }
+    ],
+    "views": [
+      {
+        "id": "view-11d70512-50e5-45d9-b163-3c86b8d4ccba",
+        "kind": "list",
+        "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
+        "elementId": "requirement-group-329483cd-92b5-478d-9afd-a2ce6e2892d3",
+        "parentViewId": null,
+        "style": {
+          "level": 1,
+          "end": 46
+        },
+        "row": 0
+      },
+      {
+        "id": "view-525524fb-fa3e-4d15-b0dd-520d112a81ca",
+        "kind": "list",
+        "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
+        "elementId": "requirement-group-84d2fee6-6222-4fe6-86af-33ba30ba604a",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 6
+        },
+        "row": 2
+      },
+      {
+        "id": "view-f764966c-93a2-4b35-b450-a963506171e7",
+        "kind": "list",
+        "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
+        "elementId": "requirement-group-9e4487bb-13b5-4cbf-8875-ad624a5523c0",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 10
+        },
+        "row": 8
+      },
+      {
+        "id": "view-0b1f214e-375c-4cc1-9d6f-184508df8cdc",
+        "kind": "list",
+        "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
+        "elementId": "requirement-group-0aa2f557-c34d-4cb9-9cd8-2d4dcb519630",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 23
+        },
+        "row": 12
+      },
+      {
+        "id": "view-5b265a2f-68b5-4aac-8114-bbd460b4af96",
+        "kind": "list",
+        "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
+        "elementId": "requirement-group-bd28cb82-660d-46c1-87ec-f0c432f8fc16",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 34
+        },
+        "row": 25
+      },
+      {
+        "id": "view-c8be2778-6c2e-4e79-9c0a-3d018bf5c990",
+        "kind": "list",
+        "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
+        "elementId": "requirement-group-1ea4d098-a57f-4d09-b005-d103f4989966",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 38
+        },
+        "row": 36
+      },
+      {
+        "id": "view-76d28f1b-12c7-4191-b901-b87a93a95621",
+        "kind": "list",
+        "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
+        "elementId": "requirement-group-38157b03-47de-40b7-957b-add0508a23bb",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 46
+        },
+        "row": 40
+      }
+    ]
+  }
+}

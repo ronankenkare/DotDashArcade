@@ -1,0 +1,168 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "diagram",
+  "project": {
+    "elements": [
+      {
+        "id": "diagram-23808c4f-0be0-4f33-af30-5a0a81209da6",
+        "kind": "diagram",
+        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "name": "03 Player and Runtime Guide",
+        "documentation": "",
+        "properties": {
+          "diagramKind": "requirements",
+          "markdown": "# Player and runtime guide\n\n## Normal run\n\n1. Open the app; Home defaults to Classic and follows the stored appearance or System.\n2. Choose Classic or Advanced and tap Play.\n3. Read How To Play and tap Start. A fresh run randomizes marker position and direction; target center begins at 0.5.\n4. Tap the game surface when the marker is inside the target. Every hit adds one point. Perfect hits increase speed more strongly.\n5. A miss shows Game Over, saves the mode best, and displays score, best and mode.\n6. Play Again begins a new run in the same mode. Back returns to Home, which refreshes bests.\n\n## Interruptions\n\nInactive/background pauses a running run to instructions and invalidates CADisplayLink. Foreground resumes display callbacks only. The Start button resets score, position, difficulty, particles and theme; it does not resume the interrupted run. An inactive event on an already stopped game does not replace its existing overlay.\n\n## Changing mode\n\nThe in-game mode pill applies the new settings immediately, clears score and effects, and shows instructions. It discards an in-progress run without saving a best. Calling changeMode with the same mode is a no-op. On first Classic entry, this means the pre-Start world may still have GameState's initializer defaults (width 0.32 and speed 0.65); reset applies the Classic start values.\n\n## Appearance and accessibility\n\nThe Home appearance control cycles Light, Dark and System, applies to the navigation hierarchy, and persists across relaunch. Corner buttons have 48-point frames. Critical controls and readouts have accessibility identifiers consumed by UI tests. HelpOverlay's Start/Play Again fill, glass and content shape share a 12-point corner radius. Increased Contrast adds a dark text shadow on that action button.\n\n## Feedback\n\nPerfect hits emit success notification feedback and rigid impact at intensity 1.0; good hits emit warning notification and rigid impact at 0.6. Misses create failure particles; the miss branch does not call the haptic generators. Each burst has 18 particles with randomized direction and lifetime 0.6...1.0 seconds.\n"
+        },
+        "createdAt": "2026-10-21T21:41:30.583Z",
+        "modifiedAt": "2026-10-21T21:41:30.583Z"
+      },
+      {
+        "id": "requirement-group-62d175a6-0b05-49fa-944a-4f72d8f99265",
+        "kind": "requirement-group",
+        "ownerId": null,
+        "name": "Player and runtime guide",
+        "documentation": "",
+        "properties": {
+          "key": "player-and-runtime-guide"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.510Z"
+      },
+      {
+        "id": "requirement-group-d5278d1b-5429-4220-af0c-c6924bceba99",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-62d175a6-0b05-49fa-944a-4f72d8f99265",
+        "name": "Normal run",
+        "documentation": "",
+        "properties": {
+          "key": "player-and-runtime-guide/normal-run"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.510Z"
+      },
+      {
+        "id": "requirement-group-2f233912-a6b5-4d91-bdce-2f8b95a9bf9a",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-62d175a6-0b05-49fa-944a-4f72d8f99265",
+        "name": "Interruptions",
+        "documentation": "",
+        "properties": {
+          "key": "player-and-runtime-guide/interruptions"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.510Z"
+      },
+      {
+        "id": "requirement-group-3777f6d7-2595-4cf0-80e2-f1476beb8ae5",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-62d175a6-0b05-49fa-944a-4f72d8f99265",
+        "name": "Changing mode",
+        "documentation": "",
+        "properties": {
+          "key": "player-and-runtime-guide/changing-mode"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.510Z"
+      },
+      {
+        "id": "requirement-group-d5a5a21d-5618-4fcd-b653-917869ca243b",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-62d175a6-0b05-49fa-944a-4f72d8f99265",
+        "name": "Appearance and accessibility",
+        "documentation": "",
+        "properties": {
+          "key": "player-and-runtime-guide/appearance-and-accessibility"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.510Z"
+      },
+      {
+        "id": "requirement-group-940160c9-aa09-4e9b-9ffd-58690a83fcac",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-62d175a6-0b05-49fa-944a-4f72d8f99265",
+        "name": "Feedback",
+        "documentation": "",
+        "properties": {
+          "key": "player-and-runtime-guide/feedback"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.510Z"
+      }
+    ],
+    "views": [
+      {
+        "id": "view-2029823f-2a12-4134-8989-27625dbc8d0c",
+        "kind": "list",
+        "diagramId": "diagram-23808c4f-0be0-4f33-af30-5a0a81209da6",
+        "elementId": "requirement-group-62d175a6-0b05-49fa-944a-4f72d8f99265",
+        "parentViewId": null,
+        "style": {
+          "level": 1,
+          "end": 25
+        },
+        "row": 0
+      },
+      {
+        "id": "view-f41773f1-0479-4cfd-ab76-463147f07706",
+        "kind": "list",
+        "diagramId": "diagram-23808c4f-0be0-4f33-af30-5a0a81209da6",
+        "elementId": "requirement-group-d5278d1b-5429-4220-af0c-c6924bceba99",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 9
+        },
+        "row": 2
+      },
+      {
+        "id": "view-33af27a8-41bb-49c5-87d4-8f0d96d2a64f",
+        "kind": "list",
+        "diagramId": "diagram-23808c4f-0be0-4f33-af30-5a0a81209da6",
+        "elementId": "requirement-group-2f233912-a6b5-4d91-bdce-2f8b95a9bf9a",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 13
+        },
+        "row": 11
+      },
+      {
+        "id": "view-494fadc9-d0b4-4247-bea6-3ffd1ecb500e",
+        "kind": "list",
+        "diagramId": "diagram-23808c4f-0be0-4f33-af30-5a0a81209da6",
+        "elementId": "requirement-group-3777f6d7-2595-4cf0-80e2-f1476beb8ae5",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 17
+        },
+        "row": 15
+      },
+      {
+        "id": "view-c9177e9b-9c17-49ea-83c1-d3f8f377a162",
+        "kind": "list",
+        "diagramId": "diagram-23808c4f-0be0-4f33-af30-5a0a81209da6",
+        "elementId": "requirement-group-d5a5a21d-5618-4fcd-b653-917869ca243b",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 21
+        },
+        "row": 19
+      },
+      {
+        "id": "view-9fc98d7e-cb4d-4152-98e1-9500d09db5f3",
+        "kind": "list",
+        "diagramId": "diagram-23808c4f-0be0-4f33-af30-5a0a81209da6",
+        "elementId": "requirement-group-940160c9-aa09-4e9b-9ffd-58690a83fcac",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 25
+        },
+        "row": 23
+      }
+    ]
+  }
+}

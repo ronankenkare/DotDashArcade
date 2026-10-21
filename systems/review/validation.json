@@ -1,0 +1,56 @@
+{
+  "format": "Dot Dash Plus-C documentation verification",
+  "nativeApp": "Installed Plus-C app model APIs; legacy plus-c CLI format is incompatible",
+  "diagramCount": 11,
+  "documentCount": 5,
+  "requirementCount": 12,
+  "elementCount": 262,
+  "viewCount": 206,
+  "sourceArtifacts": 9,
+  "traceCount": 30,
+  "roundTrip": "passed",
+  "findings": [
+    {
+      "diagram": "02 System Design",
+      "level": "warning",
+      "title": "No requirements",
+      "message": "Nothing in this document reads as a requirement yet. Start a heading, a list item, or a table row with a key such as REQ-001.",
+      "elementIds": [
+        "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae"
+      ]
+    },
+    {
+      "diagram": "03 Player and Runtime Guide",
+      "level": "warning",
+      "title": "No requirements",
+      "message": "Nothing in this document reads as a requirement yet. Start a heading, a list item, or a table row with a key such as REQ-001.",
+      "elementIds": [
+        "diagram-23808c4f-0be0-4f33-af30-5a0a81209da6"
+      ]
+    },
+    {
+      "diagram": "04 Verification Plan",
+      "level": "warning",
+      "title": "No requirements",
+      "message": "Nothing in this document reads as a requirement yet. Start a heading, a list item, or a table row with a key such as REQ-001.",
+      "elementIds": [
+        "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760"
+      ]
+    },
+    {
+      "diagram": "05 Maintenance and Risks",
+      "level": "warning",
+      "title": "No requirements",
+      "message": "Nothing in this document reads as a requirement yet. Start a heading, a list item, or a table row with a key such as REQ-001.",
+      "elementIds": [
+        "diagram-b4d5ce81-34ab-4741-8ecb-4493099990aa"
+      ]
+    }
+  ],
+  "appTestsRun": false,
+  "traceFindings": [],
+  "nativeUI": "Project loaded in installed Plus-C; player use-case canvas displayed as valid",
+  "svgPreviews": 11,
+  "notes": "Prose documents intentionally use the app Markdown requirements-document editor; no-requirements warnings are expected for four narrative documents.",
+  "migration": "Retired docs/ guide removed; source-verified topics consolidated in native Plus-C materials and systems/review/."
+}

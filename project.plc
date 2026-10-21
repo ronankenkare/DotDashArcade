@@ -1,0 +1,675 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "project",
+  "savedAt": "2026-10-21T21:45:55.512Z",
+  "project": {
+    "elements": [
+      {
+        "id": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "kind": "project",
+        "ownerId": null,
+        "name": "DotDashArcade",
+        "documentation": "",
+        "properties": {},
+        "createdAt": "2026-10-21T21:37:14.899Z",
+        "modifiedAt": "2026-10-21T21:37:14.899Z"
+      },
+      {
+        "id": "satisfies-28bb6e96-b58f-45f9-bb03-322441ec84b5",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "targetId": "document-requirement-28674e0e-dbcb-4c6f-8be0-ffd89e05866c",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-1adab0be-fc79-4ecc-8c04-46ba6769bde3",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dash/dot_dashApp.swift",
+        "documentation": "",
+        "properties": {
+          "path": "dot-dash/dot_dashApp.swift",
+          "symbol": "",
+          "startLine": null,
+          "endLine": null,
+          "contentHash": "e5112e69858003ed275538ba42dc49c6b64c76f74625fe625c87adc7ca764dce"
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "implements-6a410ec1-79a7-497c-aaf1-3adfbb822792",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-1adab0be-fc79-4ecc-8c04-46ba6769bde3",
+        "targetId": "document-requirement-28674e0e-dbcb-4c6f-8be0-ffd89e05866c",
+        "soft": true
+      },
+      {
+        "id": "satisfies-518824c1-05b1-4c57-98e1-eb08c201386e",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "targetId": "document-requirement-80846467-7843-4018-8e28-b30fffc7c306",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-83d8c892-7fae-4e94-9b11-d1570f8f2232",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dash/GameView.swift",
+        "documentation": "",
+        "properties": {
+          "path": "dot-dash/GameView.swift",
+          "symbol": "",
+          "startLine": null,
+          "endLine": null,
+          "contentHash": "712c132600399e4c38f81b297ef3e22c916bb8f6df057efe5857196351709e42"
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "implements-b0615239-76c5-4f2c-adbc-5f0e730be374",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-83d8c892-7fae-4e94-9b11-d1570f8f2232",
+        "targetId": "document-requirement-80846467-7843-4018-8e28-b30fffc7c306",
+        "soft": true
+      },
+      {
+        "id": "satisfies-8183b955-7e3d-42c2-b051-8fd0349b23f2",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-dd108326-a2c0-4953-9a4c-8fb023a10365",
+        "targetId": "document-requirement-19002146-a4e2-48d5-828a-92964f05b443",
+        "soft": true
+      },
+      {
+        "id": "implements-a37e5e11-4434-46f7-8386-a37abacd217b",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-83d8c892-7fae-4e94-9b11-d1570f8f2232",
+        "targetId": "document-requirement-19002146-a4e2-48d5-828a-92964f05b443",
+        "soft": true
+      },
+      {
+        "id": "satisfies-5a148a55-8d9d-49f7-9ec9-a3302c722999",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-812d38f5-0c52-4ff9-bad5-a99b8539209b",
+        "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
+        "soft": true
+      },
+      {
+        "id": "implements-e84e2199-d275-4b1f-a617-558fad4f13e9",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-83d8c892-7fae-4e94-9b11-d1570f8f2232",
+        "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
+        "soft": true
+      },
+      {
+        "id": "satisfies-4f76f50e-26b0-4955-a909-e41aca5d01bb",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-869ae8fb-a785-42a7-8f88-c3b3d7870f22",
+        "targetId": "document-requirement-4d81eb2e-751f-4421-a12b-5f51ef266265",
+        "soft": true
+      },
+      {
+        "id": "implements-66cf4f65-f75f-4c60-b575-7d039d153b53",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-83d8c892-7fae-4e94-9b11-d1570f8f2232",
+        "targetId": "document-requirement-4d81eb2e-751f-4421-a12b-5f51ef266265",
+        "soft": true
+      },
+      {
+        "id": "satisfies-d43aed94-3614-42a1-958c-e9c23d1b72b8",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-dd108326-a2c0-4953-9a4c-8fb023a10365",
+        "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
+        "soft": true
+      },
+      {
+        "id": "implements-b9b95702-c981-40b1-b95a-98c231379701",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-83d8c892-7fae-4e94-9b11-d1570f8f2232",
+        "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
+        "soft": true
+      },
+      {
+        "id": "satisfies-8d84c4c8-02e0-4203-9e65-c23eda567cf5",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-0634d82d-4b9e-4b36-a6c9-97566350f4d2",
+        "targetId": "document-requirement-225241c8-d20c-41da-9e14-93338241070f",
+        "soft": true
+      },
+      {
+        "id": "implements-d781d89b-3064-43eb-a975-36f3f93e7894",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-83d8c892-7fae-4e94-9b11-d1570f8f2232",
+        "targetId": "document-requirement-225241c8-d20c-41da-9e14-93338241070f",
+        "soft": true
+      },
+      {
+        "id": "satisfies-b9b356ed-0a58-4b22-9da8-e43a64f1bbb9",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-8290fa16-cbcd-47a3-ac80-ee1826c55474",
+        "targetId": "document-requirement-3370e181-ed49-41d1-b4fd-028ef81232be",
+        "soft": true
+      },
+      {
+        "id": "implements-734f7609-37dd-423d-bf38-1df7f6b6b62e",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-83d8c892-7fae-4e94-9b11-d1570f8f2232",
+        "targetId": "document-requirement-3370e181-ed49-41d1-b4fd-028ef81232be",
+        "soft": true
+      },
+      {
+        "id": "satisfies-27a06c2d-71be-4c04-b09c-254f6ff48c5b",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
+        "targetId": "document-requirement-c35ce3a1-da66-4b67-9c4c-c3ce2df7ea38",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-3349214b-ad26-4e19-a2c1-117334e6b5ab",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dash/ContentView.swift",
+        "documentation": "",
+        "properties": {
+          "path": "dot-dash/ContentView.swift",
+          "symbol": "",
+          "startLine": null,
+          "endLine": null,
+          "contentHash": "105d940a329086a1e86e0ffe57891b0ebc5641dae99883b8faf67eda7013554e"
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "implements-074724dd-55bc-4843-ab42-08e68a99d8c4",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-3349214b-ad26-4e19-a2c1-117334e6b5ab",
+        "targetId": "document-requirement-c35ce3a1-da66-4b67-9c4c-c3ce2df7ea38",
+        "soft": true
+      },
+      {
+        "id": "satisfies-352ffbd8-0fa1-4c97-b0ed-c76a7b459bfb",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "targetId": "document-requirement-e04d54ff-d411-4d6c-8d24-f3f9c7937851",
+        "soft": true
+      },
+      {
+        "id": "implements-65f0e66a-ae10-4317-a6d6-871c45f9165f",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-83d8c892-7fae-4e94-9b11-d1570f8f2232",
+        "targetId": "document-requirement-e04d54ff-d411-4d6c-8d24-f3f9c7937851",
+        "soft": true
+      },
+      {
+        "id": "satisfies-0aa373db-d076-4632-b7e4-130ba6ac227a",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "targetId": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
+        "soft": true
+      },
+      {
+        "id": "implements-02e38cc7-3624-4e28-9884-b488d1713d17",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-83d8c892-7fae-4e94-9b11-d1570f8f2232",
+        "targetId": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
+        "soft": true
+      },
+      {
+        "id": "satisfies-26671b27-430d-4fab-b164-394114f53351",
+        "kind": "satisfies",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Source-backed design view; see verification plan for evidence limits.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "diagram-6396c807-9912-4f20-ada4-feb8a38d3e58",
+        "targetId": "document-requirement-a8539547-6a21-4bc2-8329-861d602d4eb2",
+        "soft": true
+      },
+      {
+        "id": "implements-93889065-c027-4d86-88b3-b2a4dbc6a7a9",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Implementation inspected; file hash records documentation baseline.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-3349214b-ad26-4e19-a2c1-117334e6b5ab",
+        "targetId": "document-requirement-a8539547-6a21-4bc2-8329-861d602d4eb2",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-abe89e50-1683-47db-9900-1f47763dd98e",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/MarkerPhysicsTests.swift",
+        "documentation": "",
+        "properties": {
+          "path": "dot-dashTests/MarkerPhysicsTests.swift",
+          "symbol": "",
+          "startLine": null,
+          "endLine": null,
+          "contentHash": "4ee33d78804ea5063baa00a3819a7c568b5b23d51db177662386b7e15ec20308"
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "refines-87493c85-4746-4348-b8c6-f81e085e9821",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Existing test source informs the verification plan; execution status is not asserted.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-abe89e50-1683-47db-9900-1f47763dd98e",
+        "targetId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-41ef0d08-9702-434d-827b-4af2047e76ec",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/InZoneTests.swift",
+        "documentation": "",
+        "properties": {
+          "path": "dot-dashTests/InZoneTests.swift",
+          "symbol": "",
+          "startLine": null,
+          "endLine": null,
+          "contentHash": "b0d279d6224a81682cd2deead760812ee88a9ab1d345023d026524f61ffbf429"
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "refines-3ee8f850-a631-4535-973a-42999489fb10",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Existing test source informs the verification plan; execution status is not asserted.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-41ef0d08-9702-434d-827b-4af2047e76ec",
+        "targetId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-1fb8d27a-800b-4c77-a4c0-658f8b9d2712",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/HandleTapHitPathTests.swift",
+        "documentation": "",
+        "properties": {
+          "path": "dot-dashTests/HandleTapHitPathTests.swift",
+          "symbol": "",
+          "startLine": null,
+          "endLine": null,
+          "contentHash": "d28045c92e34f650415121cb929d7c5d47a08ada388a69c77d31b07f459ed8dc"
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "refines-0edd5372-f664-4609-a39d-24352b7e2080",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Existing test source informs the verification plan; execution status is not asserted.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-1fb8d27a-800b-4c77-a4c0-658f8b9d2712",
+        "targetId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-4d7e370b-0e27-4545-980e-835e2e29be1d",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/GameStateLifecycleTests.swift",
+        "documentation": "",
+        "properties": {
+          "path": "dot-dashTests/GameStateLifecycleTests.swift",
+          "symbol": "",
+          "startLine": null,
+          "endLine": null,
+          "contentHash": "efebe631ade9034ef11ddbb23e9592bff22ecb2ffabad14a4df972fbf7dc1784"
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "refines-c42cc0ac-3059-4abb-b58e-5ed02fe0c1c7",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Existing test source informs the verification plan; execution status is not asserted.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-4d7e370b-0e27-4545-980e-835e2e29be1d",
+        "targetId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-c10a6a1c-2cf5-4e48-9e47-e1101d198b0b",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/dot_dashTests.swift",
+        "documentation": "",
+        "properties": {
+          "path": "dot-dashTests/dot_dashTests.swift",
+          "symbol": "",
+          "startLine": null,
+          "endLine": null,
+          "contentHash": "16e6b00c33c8d37ba0ef1824f28ed16fe3a892daae73c9874222e2bbf7956017"
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "refines-0743e150-3579-40cf-bd5e-72cc426315bc",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Existing test source informs the verification plan; execution status is not asserted.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "code-artifact-c10a6a1c-2cf5-4e48-9e47-e1101d198b0b",
+        "targetId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-be9af11e-1a56-4bad-ade2-38a75d0ab847",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashUITests/dot_dashUITests.swift",
+        "documentation": "",
+        "properties": {
+          "path": "dot-dashUITests/dot_dashUITests.swift",
+          "symbol": "",
+          "startLine": null,
+          "endLine": null,
+          "contentHash": "1d1b3c2d611a512cf5229b315380b9884131ad1a127695d640716cad5896c0c8"
+        },
+        "createdAt": "2026-10-21T21:41:30.594Z",
+        "modifiedAt": "2026-10-21T21:41:30.594Z"
+      },
+      {
+        "id": "refines-c79abe12-8297-4b2a-a16a-241f4ced2191",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Existing test source informs the verification plan; execution status is not asserted.",
+          "targetFingerprint": ""
+        },
+        "createdAt": "2026-10-21T21:41:30.594Z",
+        "modifiedAt": "2026-10-21T21:41:30.594Z",
+        "sourceId": "code-artifact-be9af11e-1a56-4bad-ade2-38a75d0ab847",
+        "targetId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "soft": true
+      }
+    ],
+    "views": []
+  }
+}

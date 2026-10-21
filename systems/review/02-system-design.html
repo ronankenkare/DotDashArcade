@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>02 System Design — Dot Dash</title><link rel="stylesheet" href="styles.css"></head><body><header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark">•</span>Dot • Dash</a><nav class="site-nav"><a href="../index.html">Plus-C library</a></nav></header><main><section class="hero"><p class="eyebrow">Plus-C systems library</p><h1>System Design</h1></section><article class="glass-panel" style="padding:clamp(1rem,4vw,3rem);overflow:auto"><h1 id="dot-dash-system-design">Dot Dash system design</h1>
+<h2 id="scope-and-architecture">Scope and architecture</h2>
+<p>Dot Dash is a universal iPhone/iPad reflex game. The deployment target is iOS 26.0. The app entry point in dot-dash/dot_dashApp.swift creates ContentView. ContentView owns NavigationStack, the selected home mode, best-score readout, and the persisted appearance preference. Home&#39;s Play selects a navigation destination; it does not start marker motion.</p>
+<p>GameView owns a MainActor GameState through StateObject. GameState is an ObservableObject publishing score, flags, marker, target and particles. GameBarView renders a SwiftUI Canvas; ScoreBarView, HelpOverlayView and ModeBadgeView observe the same model. ModeTogglePill is shared with Home.</p>
+<h2 id="timing-and-rendering">Timing and rendering</h2>
+<p>GameView starts CADisplayLink on appear and on active scene phase. startLoop is idempotent; stopLoop invalidates and clears the link. step computes elapsed time and caps it at 50 ms. The marker moves only when running. Flash fades and particles age even when not running. Particle displacement is per frame, not velocity multiplied by dt; this is current behavior.</p>
+<h2 id="rules-and-difficulty">Rules and difficulty</h2>
+<table><thead><tr><th>Setting</th><th>Classic</th><th>Advanced</th></tr></thead><tbody><tr><td>Start width</td><td>0.36</td><td>0.26</td></tr><tr><td>Start speed (normalized bar units/s)</td><td>0.55</td><td>0.80</td></tr><tr><td>Perfect fraction</td><td>0.45</td><td>0.30</td></tr><tr><td>Speed multiplier perfect / good</td><td>1.10 / 1.05</td><td>1.15 / 1.10</td></tr><tr><td>Width multiplier perfect / good</td><td>1.00 / 1.00</td><td>0.90 / 0.94</td></tr><tr><td>Minimum width</td><td>0.10</td><td>0.06</td></tr></tbody></table>
+<p>Each hit scores one point, regardless of perfect classification. There is no speed cap. Width is clamped between the mode minimum and 0.5 after multiplication. New centers are sampled within 0.15...0.85, with up to 16 attempts at the movement threshold. The target may extend beyond a bar endpoint when wide; its center is what is bounded. Theme thresholds are 12, 25 and 40.</p>
+<h2 id="local-persistence">Local persistence</h2>
+<table><thead><tr><th>Key</th><th>Owner</th><th>Write trigger</th></tr></thead><tbody><tr><td>dotdash_best_classic_v1</td><td>GameState</td><td>Classic miss; eligible legacy migration</td></tr><tr><td>dotdash_best_advanced_v1</td><td>GameState</td><td>Advanced miss</td></tr><tr><td>dotdash_best_v1</td><td>GameState reads</td><td>Legacy migration input; not removed</td></tr><tr><td>dotdash_appearance_v1</td><td>ContentView AppStorage</td><td>Appearance button</td></tr></tbody></table>
+<p>Home refreshes bests on appear. GameState loads mode bests during initialization. Quitting, pausing, switching modes, or navigating back during a live run does not save that run as a new best.</p>
+<h2 id="external-interfaces">External interfaces</h2>
+<p>The gameplay path needs no backend. UIKit supplies notification and impact haptics. SwiftUI scenePhase supplies lifecycle events. Support calls UIApplication.open for the Google Form URL in ContentView.swift. Form availability and network behavior are outside the game loop.</p>
+<h2 id="source-map">Source map</h2>
+<ul>
+<li>dot-dash/dot_dashApp.swift: application scene.</li>
+<li>dot-dash/ContentView.swift: navigation, home, appearance, support and best refresh.</li>
+<li>dot-dash/GameView.swift: game views, GameState, physics, rules, effects and storage.</li>
+<li>dot-dashTests/: Swift Testing suites.</li>
+<li>dot-dashUITests/: XCUITest flows and launch measurements.</li>
+</ul></article></main><footer class="page-footer"><a class="pill-link" href="../index.html">← Library</a></footer></body></html>

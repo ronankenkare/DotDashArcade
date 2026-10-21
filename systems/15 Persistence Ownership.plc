@@ -1,0 +1,422 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "diagram",
+  "project": {
+    "elements": [
+      {
+        "id": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "kind": "diagram",
+        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "name": "15 Persistence Ownership",
+        "documentation": "",
+        "properties": {
+          "diagramKind": "class",
+          "autoOrganize": false
+        },
+        "createdAt": "2026-10-21T21:41:30.585Z",
+        "modifiedAt": "2026-10-21T21:41:30.585Z"
+      },
+      {
+        "id": "classifier-af92bcb3-0f2c-456e-a4ee-35bb89af44d6",
+        "kind": "class",
+        "ownerId": null,
+        "name": "ContentView",
+        "documentation": "Reads bests on appear; writes appearance with AppStorage",
+        "properties": {
+          "stereotype": "Storage client",
+          "isAbstract": false
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "classifier-d2678e7b-5ac4-4beb-a889-8aea3cd2bd90",
+        "kind": "class",
+        "ownerId": null,
+        "name": "GameState",
+        "documentation": "Loads bests, migrates legacy; writes current best on miss",
+        "properties": {
+          "stereotype": "Storage client",
+          "isAbstract": false
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c",
+        "kind": "class",
+        "ownerId": null,
+        "name": "UserDefaults",
+        "documentation": "No remote account or synchronization",
+        "properties": {
+          "stereotype": "Device-local store",
+          "isAbstract": false
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "classifier-68b38832-151b-42d7-a636-b0a131d66c64",
+        "kind": "class",
+        "ownerId": null,
+        "name": "ClassicBestKey",
+        "documentation": "dotdash_best_classic_v1",
+        "properties": {
+          "stereotype": "Int",
+          "isAbstract": false
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "classifier-d22e0eef-e0ac-4d00-be62-5b3a98c950cb",
+        "kind": "class",
+        "ownerId": null,
+        "name": "AdvancedBestKey",
+        "documentation": "dotdash_best_advanced_v1",
+        "properties": {
+          "stereotype": "Int",
+          "isAbstract": false
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "classifier-272c6ced-435a-4d00-9a1b-0cc29e4270f0",
+        "kind": "class",
+        "ownerId": null,
+        "name": "AppearanceKey",
+        "documentation": "dotdash_appearance_v1",
+        "properties": {
+          "stereotype": "String",
+          "isAbstract": false
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "classifier-089133b0-dc6c-49c7-a810-6222d99c9676",
+        "kind": "class",
+        "ownerId": null,
+        "name": "LegacyBestKey",
+        "documentation": "dotdash_best_v1; positive value migrates only if Classic is zero",
+        "properties": {
+          "stereotype": "Int",
+          "isAbstract": false
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z"
+      },
+      {
+        "id": "class-relationship-18afe5e4-7fa5-4b6f-913a-7abb883281a3",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "read bests; write appearance",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "classifier-af92bcb3-0f2c-456e-a4ee-35bb89af44d6",
+        "targetId": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c"
+      },
+      {
+        "id": "class-relationship-257c3c73-19e6-4d92-bdb7-2c687bfe47ac",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "read / write bests",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "classifier-d2678e7b-5ac4-4beb-a889-8aea3cd2bd90",
+        "targetId": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c"
+      },
+      {
+        "id": "class-relationship-28ce71d5-e853-4b19-be5c-87ee420d4fad",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "Classic",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c",
+        "targetId": "classifier-68b38832-151b-42d7-a636-b0a131d66c64"
+      },
+      {
+        "id": "class-relationship-570f60c5-6679-476c-9519-704c71a4a3f2",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "Advanced",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c",
+        "targetId": "classifier-d22e0eef-e0ac-4d00-be62-5b3a98c950cb"
+      },
+      {
+        "id": "class-relationship-ba897239-ccfe-4285-bb57-6dfadf0d80ac",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "Light / Dark / System",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c",
+        "targetId": "classifier-272c6ced-435a-4d00-9a1b-0cc29e4270f0"
+      },
+      {
+        "id": "class-relationship-74defb86-ac0b-4098-8112-1db8c6ab30c0",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "migration source",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "sourceId": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c",
+        "targetId": "classifier-089133b0-dc6c-49c7-a810-6222d99c9676"
+      }
+    ],
+    "views": [
+      {
+        "id": "view-adde3056-907c-4360-aa04-e63070cb92ff",
+        "kind": "shape",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "classifier-af92bcb3-0f2c-456e-a4ee-35bb89af44d6",
+        "parentViewId": null,
+        "style": {},
+        "x": 180,
+        "y": 150,
+        "width": 290,
+        "height": 120,
+        "collapsed": false
+      },
+      {
+        "id": "view-a014f004-d495-45b1-af86-c2f2f2eb3d62",
+        "kind": "shape",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "classifier-d2678e7b-5ac4-4beb-a889-8aea3cd2bd90",
+        "parentViewId": null,
+        "style": {},
+        "x": 580,
+        "y": 150,
+        "width": 290,
+        "height": 120,
+        "collapsed": false
+      },
+      {
+        "id": "view-77b860f1-a597-42f1-9c94-74a3fa9a67a1",
+        "kind": "shape",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c",
+        "parentViewId": null,
+        "style": {},
+        "x": 980,
+        "y": 150,
+        "width": 290,
+        "height": 120,
+        "collapsed": false
+      },
+      {
+        "id": "view-bd23a1ef-8a04-4f83-83a9-564f55a8bd62",
+        "kind": "shape",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "classifier-68b38832-151b-42d7-a636-b0a131d66c64",
+        "parentViewId": null,
+        "style": {},
+        "x": 180,
+        "y": 400,
+        "width": 290,
+        "height": 120,
+        "collapsed": false
+      },
+      {
+        "id": "view-02c30191-c32e-4f66-918f-a34cb941337a",
+        "kind": "shape",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "classifier-d22e0eef-e0ac-4d00-be62-5b3a98c950cb",
+        "parentViewId": null,
+        "style": {},
+        "x": 580,
+        "y": 400,
+        "width": 290,
+        "height": 120,
+        "collapsed": false
+      },
+      {
+        "id": "view-5d8b1d4a-9dce-4a9a-be88-e1e8ac8b10b1",
+        "kind": "shape",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "classifier-272c6ced-435a-4d00-9a1b-0cc29e4270f0",
+        "parentViewId": null,
+        "style": {},
+        "x": 980,
+        "y": 400,
+        "width": 290,
+        "height": 120,
+        "collapsed": false
+      },
+      {
+        "id": "view-9d741377-e0b4-41dc-a8a7-ecaccfa1ca23",
+        "kind": "shape",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "classifier-089133b0-dc6c-49c7-a810-6222d99c9676",
+        "parentViewId": null,
+        "style": {},
+        "x": 180,
+        "y": 650,
+        "width": 290,
+        "height": 120,
+        "collapsed": false
+      },
+      {
+        "id": "view-a0070c59-8358-4b94-9c74-c0c58db800cc",
+        "kind": "edge",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "class-relationship-18afe5e4-7fa5-4b6f-913a-7abb883281a3",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-af9b80fe-fe47-467a-b22c-83f2deba42d3",
+        "kind": "edge",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "class-relationship-257c3c73-19e6-4d92-bdb7-2c687bfe47ac",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-d2a2ab1f-7d73-42e3-b310-e1d8a1b3db1d",
+        "kind": "edge",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "class-relationship-28ce71d5-e853-4b19-be5c-87ee420d4fad",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-871957f8-2b83-4a84-88d1-621fcf5e35c6",
+        "kind": "edge",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "class-relationship-570f60c5-6679-476c-9519-704c71a4a3f2",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-28411884-4f16-4212-8f55-661add30ad50",
+        "kind": "edge",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "class-relationship-ba897239-ccfe-4285-bb57-6dfadf0d80ac",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-bc7fc111-51f4-4666-af7e-efcb28bb8ab1",
+        "kind": "edge",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "class-relationship-74defb86-ac0b-4098-8112-1db8c6ab30c0",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      }
+    ]
+  }
+}

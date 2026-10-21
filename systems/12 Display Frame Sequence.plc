@@ -1,0 +1,321 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "diagram",
+  "project": {
+    "elements": [
+      {
+        "id": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "kind": "diagram",
+        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "name": "12 Display Frame Sequence",
+        "documentation": "",
+        "properties": {
+          "diagramKind": "sequence",
+          "autoOrganize": true
+        },
+        "createdAt": "2026-10-21T21:41:30.585Z",
+        "modifiedAt": "2026-10-21T21:41:30.585Z"
+      },
+      {
+        "id": "participant-677cea12-0449-4436-94fb-39f316a774b0",
+        "kind": "participant",
+        "ownerId": null,
+        "name": "CADisplayLink",
+        "documentation": "",
+        "properties": {
+          "stereotype": "control",
+          "order": 0,
+          "lifelineStart": 0,
+          "lifelineEnd": null
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      },
+      {
+        "id": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
+        "kind": "participant",
+        "ownerId": null,
+        "name": "GameState",
+        "documentation": "",
+        "properties": {
+          "stereotype": "control",
+          "order": 1,
+          "lifelineStart": 0,
+          "lifelineEnd": null
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      },
+      {
+        "id": "participant-551ab4d6-2d93-4b92-856f-d08c7a84b2ff",
+        "kind": "participant",
+        "ownerId": null,
+        "name": "SwiftUI Canvas",
+        "documentation": "",
+        "properties": {
+          "stereotype": "control",
+          "order": 2,
+          "lifelineStart": 0,
+          "lifelineEnd": null
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      },
+      {
+        "id": "message-f62d2277-146f-446d-9bb6-449d5aa9b153",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "step(timestamp)",
+        "documentation": "",
+        "properties": {
+          "order": 0
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-677cea12-0449-4436-94fb-39f316a774b0",
+        "targetId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78"
+      },
+      {
+        "id": "message-7b9c4048-7d56-4089-9117-cbaafd06841c",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "dt = min(timestamp - lastTs, 0.05)",
+        "documentation": "",
+        "properties": {
+          "order": 1
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
+        "targetId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78"
+      },
+      {
+        "id": "message-8fc3289e-e2e3-4ea4-a1fe-962401a48151",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "fade flash",
+        "documentation": "",
+        "properties": {
+          "order": 2
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
+        "targetId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78"
+      },
+      {
+        "id": "message-4d6b2f88-7480-4250-a9ab-57ede35dd09b",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "if running: advance marker; clamp and bounce",
+        "documentation": "",
+        "properties": {
+          "order": 3
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
+        "targetId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78"
+      },
+      {
+        "id": "message-13edf281-fe23-4b78-9f8d-1b3697696317",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "age particles by dt; x += vx; y += vy",
+        "documentation": "",
+        "properties": {
+          "order": 4
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
+        "targetId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78"
+      },
+      {
+        "id": "message-feffc9a7-7d98-42e5-afb2-e3d5b7dfa951",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "remove expired particles",
+        "documentation": "",
+        "properties": {
+          "order": 5
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
+        "targetId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78"
+      },
+      {
+        "id": "message-98801ff2-279d-4c6b-98de-7dd16a47a864",
+        "kind": "reply",
+        "ownerId": null,
+        "name": "Publish render state",
+        "documentation": "",
+        "properties": {
+          "order": 6
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "sourceId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
+        "targetId": "participant-551ab4d6-2d93-4b92-856f-d08c7a84b2ff"
+      },
+      {
+        "id": "fragment-8511ff2b-9eb0-4c6d-af94-85b963e7cf3a",
+        "kind": "fragment",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "stereotype": "loop",
+          "startOrder": 0,
+          "endOrder": 6,
+          "participantIds": [
+            "participant-677cea12-0449-4436-94fb-39f316a774b0",
+            "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
+            "participant-551ab4d6-2d93-4b92-856f-d08c7a84b2ff"
+          ]
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      },
+      {
+        "id": "operand-079c0754-e7d9-48a0-9150-77bd85a50b70",
+        "kind": "operand",
+        "ownerId": "fragment-8511ff2b-9eb0-4c6d-af94-85b963e7cf3a",
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "guard": "each callback while display link is active",
+          "startOrder": 0,
+          "endOrder": 6,
+          "order": 0
+        },
+        "createdAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-21T21:41:30.592Z"
+      }
+    ],
+    "views": [
+      {
+        "id": "view-990a9ed6-fe5d-4daa-a64d-68c3a7122fdd",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "participant-677cea12-0449-4436-94fb-39f316a774b0",
+        "parentViewId": null,
+        "style": {},
+        "slot": 0,
+        "offset": 150
+      },
+      {
+        "id": "view-d068367e-9913-4022-80af-e02c8c77f462",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
+        "parentViewId": null,
+        "style": {},
+        "slot": 1,
+        "offset": 370
+      },
+      {
+        "id": "view-0bd0723d-8ea0-4072-84f8-82b3b6d57e04",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "participant-551ab4d6-2d93-4b92-856f-d08c7a84b2ff",
+        "parentViewId": null,
+        "style": {},
+        "slot": 2,
+        "offset": 590
+      },
+      {
+        "id": "view-dd29b93b-3e28-4399-8a69-44e07ba33b21",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "message-f62d2277-146f-446d-9bb6-449d5aa9b153",
+        "parentViewId": null,
+        "style": {},
+        "slot": 0,
+        "offset": null
+      },
+      {
+        "id": "view-d330a252-4dfe-4d4f-848b-7e759d2a1f17",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "message-7b9c4048-7d56-4089-9117-cbaafd06841c",
+        "parentViewId": null,
+        "style": {},
+        "slot": 1,
+        "offset": null
+      },
+      {
+        "id": "view-1425a0e9-c1e2-4645-b867-43c2f25aa10f",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "message-8fc3289e-e2e3-4ea4-a1fe-962401a48151",
+        "parentViewId": null,
+        "style": {},
+        "slot": 2,
+        "offset": null
+      },
+      {
+        "id": "view-ec073774-baf4-4972-8695-54930340fcf0",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "message-4d6b2f88-7480-4250-a9ab-57ede35dd09b",
+        "parentViewId": null,
+        "style": {},
+        "slot": 3,
+        "offset": null
+      },
+      {
+        "id": "view-f22b4d07-f898-418d-9bc0-38e15e6341cf",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "message-13edf281-fe23-4b78-9f8d-1b3697696317",
+        "parentViewId": null,
+        "style": {},
+        "slot": 4,
+        "offset": null
+      },
+      {
+        "id": "view-9757a6a1-9dba-45c9-86ed-c9d818d20863",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "message-feffc9a7-7d98-42e5-afb2-e3d5b7dfa951",
+        "parentViewId": null,
+        "style": {},
+        "slot": 5,
+        "offset": null
+      },
+      {
+        "id": "view-142836b8-d1ba-4103-8786-9605b2d742bc",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "message-98801ff2-279d-4c6b-98de-7dd16a47a864",
+        "parentViewId": null,
+        "style": {},
+        "slot": 6,
+        "offset": null
+      },
+      {
+        "id": "view-597c0361-321e-4702-8fae-4c1252ae5488",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "fragment-8511ff2b-9eb0-4c6d-af94-85b963e7cf3a",
+        "parentViewId": null,
+        "style": {},
+        "slot": 0,
+        "offset": null
+      },
+      {
+        "id": "view-03b922e4-f968-4d8c-85be-71dc0db7e1ac",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "operand-079c0754-e7d9-48a0-9150-77bd85a50b70",
+        "parentViewId": null,
+        "style": {},
+        "slot": 0,
+        "offset": null
+      }
+    ]
+  }
+}

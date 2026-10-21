@@ -1,0 +1,144 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "diagram",
+  "project": {
+    "elements": [
+      {
+        "id": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "kind": "diagram",
+        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "name": "04 Verification Plan",
+        "documentation": "",
+        "properties": {
+          "diagramKind": "requirements",
+          "markdown": "# Verification and evidence\n\n## Status\n\nCoverage below was inspected in source. It is not a claim that the app tests passed in this documentation task. Native Plus-C file round trips, model validators, preview generation and documentation checks are recorded separately in systems/review/validation.json.\n\n| Contract | Existing evidence | Limits |\n| --- | --- | --- |\n| Contract REQ-001 local app | Xcode project and app source | Device/platform build not run in this task |\n| Contract REQ-002 movement | MarkerPhysicsTests | Display callback timing and dt cap need runtime check |\n| Contract REQ-003 classification | InZoneTests and dot_dashTests | Haptic perception is manual |\n| Contract REQ-004 progression | HandleTapHitPathTests; GameStateLifecycleTests | Visual particles and physical haptics need device check |\n| Contract REQ-005 miss / best | dot_dashTests | Persistence assertions mutate shared UserDefaults |\n| Contract REQ-006 reset / modes | GameStateLifecycleTests; dot_dashUITests | UI outcomes involving motion are nondeterministic |\n| Contract REQ-007 lifecycle | GameView source; manual scenario below | No dedicated scenePhase integration test found |\n| Contract REQ-008 placement | dot_dashTests bounded and statistical samples | Minimum movement is best effort, not guaranteed |\n| Contract REQ-009 appearance | dot_dashTests; testAppearanceButtonCyclesAndPersists | Visual contrast still needs inspection |\n| Contract REQ-010 migration | dot_dashTests legacy cases | Home reads before GameState first initializes |\n| Contract REQ-011 effects / themes | GameStateLifecycleTests | Frame-rate dependence and colors need runtime inspection |\n| Contract REQ-012 home / support | dot_dashUITests home and navigation | No automated external form submission check |\n\n## Automated command\n\nFrom the repository root, run xcodebuild -project dot-dash.xcodeproj -scheme dot-dash -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing:dot-dashTests test. Run the dot-dashUITests target separately or use Command-U in Xcode. Check available simulator destinations first. Unit tests use Swift Testing; UI tests use XCTest.\n\n## Manual acceptance\n\n- Exercise both modes: Start, hit, miss, replay, mid-run mode change, Back.\n- Background a live run and return: motion remains stopped until Start resets the run. Repeat while Game Over is visible; it should remain Game Over.\n- Verify bests remain separate, never regress, and update Home on return. Check a legacy-only installation.\n- Check Light, Dark, System and Increase Contrast on iPhone and iPad. Inspect help button edges and score rows.\n- On physical hardware, compare perfect and good haptics. Confirm misses have particle feedback.\n- Open Support from Home and confirm external form navigation. Do not submit a form as part of documentation verification.\n\n## Model verification\n\nUse the installed Plus-C application's model validators and split/merge round trips. The separate plus-c command-line binary on this machine uses a different, older format and cannot validate this application's native project parts.\n"
+        },
+        "createdAt": "2026-10-21T21:41:30.583Z",
+        "modifiedAt": "2026-10-21T21:41:30.583Z"
+      },
+      {
+        "id": "requirement-group-6b6a99d6-9234-4992-9aad-093f7d36f73d",
+        "kind": "requirement-group",
+        "ownerId": null,
+        "name": "Verification and evidence",
+        "documentation": "",
+        "properties": {
+          "key": "verification-and-evidence"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.510Z"
+      },
+      {
+        "id": "requirement-group-043d032e-810c-4fcf-9c73-171933eea303",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-6b6a99d6-9234-4992-9aad-093f7d36f73d",
+        "name": "Status",
+        "documentation": "",
+        "properties": {
+          "key": "verification-and-evidence/status"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.510Z"
+      },
+      {
+        "id": "requirement-group-759253b3-2102-4fdf-a724-2b796a99ea78",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-6b6a99d6-9234-4992-9aad-093f7d36f73d",
+        "name": "Automated command",
+        "documentation": "",
+        "properties": {
+          "key": "verification-and-evidence/automated-command"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.510Z"
+      },
+      {
+        "id": "requirement-group-e06e3fa6-ecfc-48f2-85f4-2221585b9f9e",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-6b6a99d6-9234-4992-9aad-093f7d36f73d",
+        "name": "Manual acceptance",
+        "documentation": "",
+        "properties": {
+          "key": "verification-and-evidence/manual-acceptance"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.510Z"
+      },
+      {
+        "id": "requirement-group-039be160-99f1-49d1-b727-f0b89fe58d2a",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-6b6a99d6-9234-4992-9aad-093f7d36f73d",
+        "name": "Model verification",
+        "documentation": "",
+        "properties": {
+          "key": "verification-and-evidence/model-verification"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.510Z"
+      }
+    ],
+    "views": [
+      {
+        "id": "view-099cb30c-b0e6-480d-84a9-25686bbf70a7",
+        "kind": "list",
+        "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "elementId": "requirement-group-6b6a99d6-9234-4992-9aad-093f7d36f73d",
+        "parentViewId": null,
+        "style": {
+          "level": 1,
+          "end": 36
+        },
+        "row": 0
+      },
+      {
+        "id": "view-57c5a52c-0303-4ed8-8fab-7812cd11005a",
+        "kind": "list",
+        "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "elementId": "requirement-group-043d032e-810c-4fcf-9c73-171933eea303",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 19
+        },
+        "row": 2
+      },
+      {
+        "id": "view-47442783-c1c1-4cf7-986e-d417b78d66f2",
+        "kind": "list",
+        "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "elementId": "requirement-group-759253b3-2102-4fdf-a724-2b796a99ea78",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 23
+        },
+        "row": 21
+      },
+      {
+        "id": "view-756a2f13-4dc2-4f1b-b82f-ea19bc3126e2",
+        "kind": "list",
+        "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "elementId": "requirement-group-e06e3fa6-ecfc-48f2-85f4-2221585b9f9e",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 32
+        },
+        "row": 25
+      },
+      {
+        "id": "view-4ed64e60-dc69-42b6-99e7-67d9a4c14dd3",
+        "kind": "list",
+        "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "elementId": "requirement-group-039be160-99f1-49d1-b727-f0b89fe58d2a",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 36
+        },
+        "row": 34
+      }
+    ]
+  }
+}

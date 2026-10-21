@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>01 Requirements — Dot Dash</title><link rel="stylesheet" href="styles.css"></head><body><header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark">•</span>Dot • Dash</a><nav class="site-nav"><a href="../index.html">Plus-C library</a></nav></header><main><section class="hero"><p class="eyebrow">Plus-C systems library</p><h1>Requirements</h1></section><article class="glass-panel" style="padding:clamp(1rem,4vw,3rem);overflow:auto"><h1 id="dot-dash-requirements">Dot Dash requirements</h1>
+<p>These are reconstructed contracts for the current implementation, not new feature requests. Source of truth: the checked-in Swift source and Xcode project.</p>
+<h2 id="req-001-local-reflex-play">REQ-001 Local reflex play</h2>
+<p>The app shall present a device-local reflex game on iOS and iPadOS 26.0 or later using SwiftUI and no third-party runtime dependencies.</p>
+<h2 id="req-002-bounded-marker-motion">REQ-002 Bounded marker motion</h2>
+<p>Each active display frame shall advance marker position by direction × speed × dt, cap dt at 0.05 seconds, clamp position at 0 or 1, and reverse direction at inclusive endpoints. Excess distance is discarded.</p>
+<h2 id="req-003-inclusive-hit-classification">REQ-003 Inclusive hit classification</h2>
+<p>A tap during a run shall count as a hit when zoneCenter − zoneWidth/2 ≤ markerPos ≤ zoneCenter + zoneWidth/2. Perfect classification shall use the inclusive inner band with half-width zoneWidth/2 × perfectZoneFrac.</p>
+<h2 id="req-004-hit-progression">REQ-004 Hit progression</h2>
+<p>Every hit shall add one point, emit haptics and 18 good particles, multiply speed and target width by mode and hit quality, relocate the target, and select the score theme. Classic width shall remain unchanged.</p>
+<h2 id="req-005-miss-and-durable-best">REQ-005 Miss and durable best</h2>
+<p>A miss shall emit 18 failure particles, stop the run, show Game Over, and persist max(previous best, score) under the current mode key without changing the other mode best.</p>
+<h2 id="req-006-mode-and-restart-behavior">REQ-006 Mode and restart behavior</h2>
+<p>Start, Play Again, or a non-running game-bar tap shall reset the run. Changing to a different mode shall discard the run, apply new settings, and show instructions. Selecting the same mode shall do nothing.</p>
+<h2 id="req-007-lifecycle-handling">REQ-007 Lifecycle handling</h2>
+<p>Entering inactive or background while running shall stop marker motion, show instructions, and stop the display link. Returning active shall restart only the display link; Start begins a fresh run. Leaving GameView shall invalidate the link.</p>
+<h2 id="req-008-target-placement">REQ-008 Target placement</h2>
+<p>After a hit, zoneCenter shall lie in 0.15...0.85. Relocation shall attempt up to 16 random candidates for movement ≥ max(0.08, min(0.22, zoneWidth × 0.9 + 0.06)), accepting the final candidate if the threshold is not met.</p>
+<h2 id="req-009-appearance-preference">REQ-009 Appearance preference</h2>
+<p>Home shall cycle Light → Dark → System → Light, persist the choice under dotdash_appearance_v1, and use System when the value is missing or invalid.</p>
+<h2 id="req-010-best-migration">REQ-010 Best migration</h2>
+<p>GameState initialization shall copy a positive legacy dotdash_best_v1 to dotdash_best_classic_v1 only when the stored Classic value is zero.</p>
+<h2 id="req-011-feedback-and-themes">REQ-011 Feedback and themes</h2>
+<p>A run shall use theme indices 0/1/2/3 at score thresholds 0/12/25/40. Particle age shall advance with dt while x/y advance by vx/vy per update, including while the run is stopped and the display link is active.</p>
+<h2 id="req-012-home-and-support">REQ-012 Home and support</h2>
+<p>Home shall expose mode selection, the selected best, Play, appearance, and support. Play shall navigate to instructions. Support shall open the configured Google Form externally.</p></article></main><footer class="page-footer"><a class="pill-link" href="../index.html">← Library</a></footer></body></html>

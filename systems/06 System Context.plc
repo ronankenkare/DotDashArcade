@@ -1,0 +1,322 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "diagram",
+  "project": {
+    "elements": [
+      {
+        "id": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "kind": "diagram",
+        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "name": "06 System Context",
+        "documentation": "",
+        "properties": {
+          "diagramKind": "context",
+          "autoOrganize": true
+        },
+        "createdAt": "2026-10-21T21:41:30.584Z",
+        "modifiedAt": "2026-10-21T21:41:30.584Z"
+      },
+      {
+        "id": "system-of-interest-97ca8917-3996-4c47-a286-6b6df07dbe27",
+        "kind": "system-of-interest",
+        "ownerId": null,
+        "name": "Dot Dash",
+        "documentation": "",
+        "properties": {},
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z"
+      },
+      {
+        "id": "entity-4b34be55-c583-4007-9cae-4e6f998e9146",
+        "kind": "external-entity",
+        "ownerId": null,
+        "name": "Player",
+        "documentation": "",
+        "properties": {
+          "category": "user"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z"
+      },
+      {
+        "id": "entity-c9142512-f8bb-4487-9f83-d983b9bf3920",
+        "kind": "external-entity",
+        "ownerId": null,
+        "name": "iOS / iPadOS",
+        "documentation": "",
+        "properties": {
+          "category": "system"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z"
+      },
+      {
+        "id": "entity-04fa3d95-bf23-45f8-a572-b3382d93cbdb",
+        "kind": "external-entity",
+        "ownerId": null,
+        "name": "UserDefaults",
+        "documentation": "",
+        "properties": {
+          "category": "system"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z"
+      },
+      {
+        "id": "entity-01f6a4d4-673a-4a2b-a6d3-046f9ba55650",
+        "kind": "external-entity",
+        "ownerId": null,
+        "name": "Google Support Form",
+        "documentation": "",
+        "properties": {
+          "category": "system"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z"
+      },
+      {
+        "id": "flow-48cb2c81-4d8b-4478-9ce5-5e6bade5fcc7",
+        "kind": "data",
+        "ownerId": null,
+        "name": "Mode, Play, appearance, tap",
+        "documentation": "",
+        "properties": {},
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z",
+        "sourceId": "entity-4b34be55-c583-4007-9cae-4e6f998e9146",
+        "targetId": "system-of-interest-97ca8917-3996-4c47-a286-6b6df07dbe27"
+      },
+      {
+        "id": "flow-8301dc98-967f-431a-8358-d65436f477bf",
+        "kind": "data",
+        "ownerId": null,
+        "name": "Score, bar, overlays, feedback",
+        "documentation": "",
+        "properties": {},
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z",
+        "sourceId": "system-of-interest-97ca8917-3996-4c47-a286-6b6df07dbe27",
+        "targetId": "entity-4b34be55-c583-4007-9cae-4e6f998e9146"
+      },
+      {
+        "id": "flow-d8af5c76-ae5a-40b8-8d65-ed885a87a957",
+        "kind": "data",
+        "ownerId": null,
+        "name": "Display timestamps and scenePhase",
+        "documentation": "",
+        "properties": {},
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z",
+        "sourceId": "entity-c9142512-f8bb-4487-9f83-d983b9bf3920",
+        "targetId": "system-of-interest-97ca8917-3996-4c47-a286-6b6df07dbe27"
+      },
+      {
+        "id": "flow-0901bc24-cca3-43dc-96c3-8dea131eeefa",
+        "kind": "data",
+        "ownerId": null,
+        "name": "Canvas output and haptic requests",
+        "documentation": "",
+        "properties": {},
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z",
+        "sourceId": "system-of-interest-97ca8917-3996-4c47-a286-6b6df07dbe27",
+        "targetId": "entity-c9142512-f8bb-4487-9f83-d983b9bf3920"
+      },
+      {
+        "id": "flow-b2126305-a134-4de1-b1c1-d1a6557897e2",
+        "kind": "data",
+        "ownerId": null,
+        "name": "Mode bests and appearance writes",
+        "documentation": "",
+        "properties": {},
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z",
+        "sourceId": "system-of-interest-97ca8917-3996-4c47-a286-6b6df07dbe27",
+        "targetId": "entity-04fa3d95-bf23-45f8-a572-b3382d93cbdb"
+      },
+      {
+        "id": "flow-cd6183f5-6b69-424f-b1d4-3fdc439ce0bf",
+        "kind": "data",
+        "ownerId": null,
+        "name": "Bests, legacy value, appearance reads",
+        "documentation": "",
+        "properties": {},
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z",
+        "sourceId": "entity-04fa3d95-bf23-45f8-a572-b3382d93cbdb",
+        "targetId": "system-of-interest-97ca8917-3996-4c47-a286-6b6df07dbe27"
+      },
+      {
+        "id": "flow-2e2aedba-84fc-493e-adc3-a02e879ada5c",
+        "kind": "data",
+        "ownerId": null,
+        "name": "External Support URL",
+        "documentation": "",
+        "properties": {},
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:41:30.591Z",
+        "sourceId": "system-of-interest-97ca8917-3996-4c47-a286-6b6df07dbe27",
+        "targetId": "entity-01f6a4d4-673a-4a2b-a6d3-046f9ba55650"
+      }
+    ],
+    "views": [
+      {
+        "id": "view-d7dc1d8b-e820-4992-b251-69ad26a237a7",
+        "kind": "shape",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "system-of-interest-97ca8917-3996-4c47-a286-6b6df07dbe27",
+        "parentViewId": null,
+        "style": {},
+        "x": 533,
+        "y": 358,
+        "width": 0,
+        "height": 0,
+        "collapsed": false
+      },
+      {
+        "id": "view-87b35ab6-9f6a-4128-90c1-28871bce74df",
+        "kind": "shape",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "entity-4b34be55-c583-4007-9cae-4e6f998e9146",
+        "parentViewId": null,
+        "style": {},
+        "x": 533,
+        "y": 131,
+        "width": 0,
+        "height": 0,
+        "collapsed": false
+      },
+      {
+        "id": "view-b88aeb7b-297b-4f29-984e-be9c3ad97e31",
+        "kind": "shape",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "entity-c9142512-f8bb-4487-9f83-d983b9bf3920",
+        "parentViewId": null,
+        "style": {},
+        "x": 186,
+        "y": 358,
+        "width": 0,
+        "height": 0,
+        "collapsed": false
+      },
+      {
+        "id": "view-53fcb93e-6b7a-4fa7-92a3-1d4a98f52d67",
+        "kind": "shape",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "entity-04fa3d95-bf23-45f8-a572-b3382d93cbdb",
+        "parentViewId": null,
+        "style": {},
+        "x": 532,
+        "y": 585,
+        "width": 0,
+        "height": 0,
+        "collapsed": false
+      },
+      {
+        "id": "view-ed896e25-189b-4178-998a-24f819b7e41b",
+        "kind": "shape",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "entity-01f6a4d4-673a-4a2b-a6d3-046f9ba55650",
+        "parentViewId": null,
+        "style": {},
+        "x": 879,
+        "y": 358,
+        "width": 0,
+        "height": 0,
+        "collapsed": false
+      },
+      {
+        "id": "view-4a962416-c097-42dd-9c48-c0d07d606bfb",
+        "kind": "edge",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "flow-48cb2c81-4d8b-4478-9ce5-5e6bade5fcc7",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-55d869e1-ff2f-4ab6-b564-1432f9d4950e",
+        "kind": "edge",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "flow-8301dc98-967f-431a-8358-d65436f477bf",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-1608d6e4-05b7-4b29-a08d-dadb39283fd9",
+        "kind": "edge",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "flow-d8af5c76-ae5a-40b8-8d65-ed885a87a957",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-fa3ef61d-0251-4c3e-9595-7f09102a3cb2",
+        "kind": "edge",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "flow-0901bc24-cca3-43dc-96c3-8dea131eeefa",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-3e916f04-6012-48bc-89fe-4b94a44c303b",
+        "kind": "edge",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "flow-b2126305-a134-4de1-b1c1-d1a6557897e2",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-c9e25dd6-d00e-4b46-acd8-5ccbc7b8a45f",
+        "kind": "edge",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "flow-cd6183f5-6b69-424f-b1d4-3fdc439ce0bf",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-7865429e-322d-42a4-b25d-fc5eab6dacb6",
+        "kind": "edge",
+        "diagramId": "diagram-ccccedf0-f706-4a7c-b318-f29c7857df63",
+        "elementId": "flow-2e2aedba-84fc-493e-adc3-a02e879ada5c",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      }
+    ]
+  }
+}

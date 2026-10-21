@@ -1,0 +1,372 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "diagram",
+  "project": {
+    "elements": [
+      {
+        "id": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "kind": "diagram",
+        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "name": "01 Requirements",
+        "documentation": "",
+        "properties": {
+          "diagramKind": "requirements",
+          "markdown": "# Dot Dash requirements\n\nThese are reconstructed contracts for the current implementation, not new feature requests. Source of truth: the checked-in Swift source and Xcode project.\n\n## REQ-001 Local reflex play\n\nThe app shall present a device-local reflex game on iOS and iPadOS 26.0 or later using SwiftUI and no third-party runtime dependencies.\n\n## REQ-002 Bounded marker motion\n\nEach active display frame shall advance marker position by direction × speed × dt, cap dt at 0.05 seconds, clamp position at 0 or 1, and reverse direction at inclusive endpoints. Excess distance is discarded.\n\n## REQ-003 Inclusive hit classification\n\nA tap during a run shall count as a hit when zoneCenter − zoneWidth/2 ≤ markerPos ≤ zoneCenter + zoneWidth/2. Perfect classification shall use the inclusive inner band with half-width zoneWidth/2 × perfectZoneFrac.\n\n## REQ-004 Hit progression\n\nEvery hit shall add one point, emit haptics and 18 good particles, multiply speed and target width by mode and hit quality, relocate the target, and select the score theme. Classic width shall remain unchanged.\n\n## REQ-005 Miss and durable best\n\nA miss shall emit 18 failure particles, stop the run, show Game Over, and persist max(previous best, score) under the current mode key without changing the other mode best.\n\n## REQ-006 Mode and restart behavior\n\nStart, Play Again, or a non-running game-bar tap shall reset the run. Changing to a different mode shall discard the run, apply new settings, and show instructions. Selecting the same mode shall do nothing.\n\n## REQ-007 Lifecycle handling\n\nEntering inactive or background while running shall stop marker motion, show instructions, and stop the display link. Returning active shall restart only the display link; Start begins a fresh run. Leaving GameView shall invalidate the link.\n\n## REQ-008 Target placement\n\nAfter a hit, zoneCenter shall lie in 0.15...0.85. Relocation shall attempt up to 16 random candidates for movement ≥ max(0.08, min(0.22, zoneWidth × 0.9 + 0.06)), accepting the final candidate if the threshold is not met.\n\n## REQ-009 Appearance preference\n\nHome shall cycle Light → Dark → System → Light, persist the choice under dotdash_appearance_v1, and use System when the value is missing or invalid.\n\n## REQ-010 Best migration\n\nGameState initialization shall copy a positive legacy dotdash_best_v1 to dotdash_best_classic_v1 only when the stored Classic value is zero.\n\n## REQ-011 Feedback and themes\n\nA run shall use theme indices 0/1/2/3 at score thresholds 0/12/25/40. Particle age shall advance with dt while x/y advance by vx/vy per update, including while the run is stopped and the display link is active.\n\n## REQ-012 Home and support\n\nHome shall expose mode selection, the selected best, Play, appearance, and support. Play shall navigate to instructions. Support shall open the configured Google Form externally.\n"
+        },
+        "createdAt": "2026-10-21T21:41:30.580Z",
+        "modifiedAt": "2026-10-21T21:41:30.580Z"
+      },
+      {
+        "id": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "kind": "requirement-group",
+        "ownerId": null,
+        "name": "Dot Dash requirements",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-requirements"
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.504Z"
+      },
+      {
+        "id": "document-requirement-28674e0e-dbcb-4c6f-8be0-ffd89e05866c",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-001 Local reflex play",
+        "documentation": "The app shall present a device-local reflex game on iOS and iPadOS 26.0 or later using SwiftUI and no third-party runtime dependencies.",
+        "properties": {
+          "key": "REQ-001",
+          "title": "Local reflex play",
+          "statement": "The app shall present a device-local reflex game on iOS and iPadOS 26.0 or later using SwiftUI and no third-party runtime dependencies."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      },
+      {
+        "id": "document-requirement-80846467-7843-4018-8e28-b30fffc7c306",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-002 Bounded marker motion",
+        "documentation": "Each active display frame shall advance marker position by direction × speed × dt, cap dt at 0.05 seconds, clamp position at 0 or 1, and reverse direction at inclusive endpoints. Excess distance is discarded.",
+        "properties": {
+          "key": "REQ-002",
+          "title": "Bounded marker motion",
+          "statement": "Each active display frame shall advance marker position by direction × speed × dt, cap dt at 0.05 seconds, clamp position at 0 or 1, and reverse direction at inclusive endpoints. Excess distance is discarded."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      },
+      {
+        "id": "document-requirement-19002146-a4e2-48d5-828a-92964f05b443",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-003 Inclusive hit classification",
+        "documentation": "A tap during a run shall count as a hit when zoneCenter − zoneWidth/2 ≤ markerPos ≤ zoneCenter + zoneWidth/2. Perfect classification shall use the inclusive inner band with half-width zoneWidth/2 × perfectZoneFrac.",
+        "properties": {
+          "key": "REQ-003",
+          "title": "Inclusive hit classification",
+          "statement": "A tap during a run shall count as a hit when zoneCenter − zoneWidth/2 ≤ markerPos ≤ zoneCenter + zoneWidth/2. Perfect classification shall use the inclusive inner band with half-width zoneWidth/2 × perfectZoneFrac."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      },
+      {
+        "id": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-004 Hit progression",
+        "documentation": "Every hit shall add one point, emit haptics and 18 good particles, multiply speed and target width by mode and hit quality, relocate the target, and select the score theme. Classic width shall remain unchanged.",
+        "properties": {
+          "key": "REQ-004",
+          "title": "Hit progression",
+          "statement": "Every hit shall add one point, emit haptics and 18 good particles, multiply speed and target width by mode and hit quality, relocate the target, and select the score theme. Classic width shall remain unchanged."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      },
+      {
+        "id": "document-requirement-4d81eb2e-751f-4421-a12b-5f51ef266265",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-005 Miss and durable best",
+        "documentation": "A miss shall emit 18 failure particles, stop the run, show Game Over, and persist max(previous best, score) under the current mode key without changing the other mode best.",
+        "properties": {
+          "key": "REQ-005",
+          "title": "Miss and durable best",
+          "statement": "A miss shall emit 18 failure particles, stop the run, show Game Over, and persist max(previous best, score) under the current mode key without changing the other mode best."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      },
+      {
+        "id": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-006 Mode and restart behavior",
+        "documentation": "Start, Play Again, or a non-running game-bar tap shall reset the run. Changing to a different mode shall discard the run, apply new settings, and show instructions. Selecting the same mode shall do nothing.",
+        "properties": {
+          "key": "REQ-006",
+          "title": "Mode and restart behavior",
+          "statement": "Start, Play Again, or a non-running game-bar tap shall reset the run. Changing to a different mode shall discard the run, apply new settings, and show instructions. Selecting the same mode shall do nothing."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      },
+      {
+        "id": "document-requirement-225241c8-d20c-41da-9e14-93338241070f",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-007 Lifecycle handling",
+        "documentation": "Entering inactive or background while running shall stop marker motion, show instructions, and stop the display link. Returning active shall restart only the display link; Start begins a fresh run. Leaving GameView shall invalidate the link.",
+        "properties": {
+          "key": "REQ-007",
+          "title": "Lifecycle handling",
+          "statement": "Entering inactive or background while running shall stop marker motion, show instructions, and stop the display link. Returning active shall restart only the display link; Start begins a fresh run. Leaving GameView shall invalidate the link."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      },
+      {
+        "id": "document-requirement-3370e181-ed49-41d1-b4fd-028ef81232be",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-008 Target placement",
+        "documentation": "After a hit, zoneCenter shall lie in 0.15...0.85. Relocation shall attempt up to 16 random candidates for movement ≥ max(0.08, min(0.22, zoneWidth × 0.9 + 0.06)), accepting the final candidate if the threshold is not met.",
+        "properties": {
+          "key": "REQ-008",
+          "title": "Target placement",
+          "statement": "After a hit, zoneCenter shall lie in 0.15...0.85. Relocation shall attempt up to 16 random candidates for movement ≥ max(0.08, min(0.22, zoneWidth × 0.9 + 0.06)), accepting the final candidate if the threshold is not met."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      },
+      {
+        "id": "document-requirement-c35ce3a1-da66-4b67-9c4c-c3ce2df7ea38",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-009 Appearance preference",
+        "documentation": "Home shall cycle Light → Dark → System → Light, persist the choice under dotdash_appearance_v1, and use System when the value is missing or invalid.",
+        "properties": {
+          "key": "REQ-009",
+          "title": "Appearance preference",
+          "statement": "Home shall cycle Light → Dark → System → Light, persist the choice under dotdash_appearance_v1, and use System when the value is missing or invalid."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      },
+      {
+        "id": "document-requirement-e04d54ff-d411-4d6c-8d24-f3f9c7937851",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-010 Best migration",
+        "documentation": "GameState initialization shall copy a positive legacy dotdash_best_v1 to dotdash_best_classic_v1 only when the stored Classic value is zero.",
+        "properties": {
+          "key": "REQ-010",
+          "title": "Best migration",
+          "statement": "GameState initialization shall copy a positive legacy dotdash_best_v1 to dotdash_best_classic_v1 only when the stored Classic value is zero."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      },
+      {
+        "id": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-011 Feedback and themes",
+        "documentation": "A run shall use theme indices 0/1/2/3 at score thresholds 0/12/25/40. Particle age shall advance with dt while x/y advance by vx/vy per update, including while the run is stopped and the display link is active.",
+        "properties": {
+          "key": "REQ-011",
+          "title": "Feedback and themes",
+          "statement": "A run shall use theme indices 0/1/2/3 at score thresholds 0/12/25/40. Particle age shall advance with dt while x/y advance by vx/vy per update, including while the run is stopped and the display link is active."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      },
+      {
+        "id": "document-requirement-a8539547-6a21-4bc2-8329-861d602d4eb2",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "name": "REQ-012 Home and support",
+        "documentation": "Home shall expose mode selection, the selected best, Play, appearance, and support. Play shall navigate to instructions. Support shall open the configured Google Form externally.",
+        "properties": {
+          "key": "REQ-012",
+          "title": "Home and support",
+          "statement": "Home shall expose mode selection, the selected best, Play, appearance, and support. Play shall navigate to instructions. Support shall open the configured Google Form externally."
+        },
+        "createdAt": "2026-10-21T21:41:30.591Z",
+        "modifiedAt": "2026-10-21T21:45:55.508Z"
+      }
+    ],
+    "views": [
+      {
+        "id": "view-5183e6b9-94ea-411b-8d95-edf5d8c68efe",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "requirement-group-98ce05bd-9372-416b-8dd7-afafa54ea651",
+        "parentViewId": null,
+        "style": {
+          "level": 1,
+          "end": 50
+        },
+        "row": 0
+      },
+      {
+        "id": "view-79e60252-fdc4-4075-ac8f-534b66f4c2cb",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-28674e0e-dbcb-4c6f-8be0-ffd89e05866c",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 6
+        },
+        "row": 4
+      },
+      {
+        "id": "view-aa230aee-ed63-46cc-99d5-000a392db9f4",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-80846467-7843-4018-8e28-b30fffc7c306",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 10
+        },
+        "row": 8
+      },
+      {
+        "id": "view-c5481dd7-49b1-4dee-98a5-ed837ae1f073",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-19002146-a4e2-48d5-828a-92964f05b443",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 14
+        },
+        "row": 12
+      },
+      {
+        "id": "view-642addb9-47ab-46cd-a28c-f72b9fb554c6",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 18
+        },
+        "row": 16
+      },
+      {
+        "id": "view-d8ab9085-8d8b-4b1f-a402-41b0ce7dcb91",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-4d81eb2e-751f-4421-a12b-5f51ef266265",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 22
+        },
+        "row": 20
+      },
+      {
+        "id": "view-583165ef-94c1-474e-9c36-7b4daf4a9c5d",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 26
+        },
+        "row": 24
+      },
+      {
+        "id": "view-feddd2dc-5a9d-414f-b4be-39624fe2af13",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-225241c8-d20c-41da-9e14-93338241070f",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 30
+        },
+        "row": 28
+      },
+      {
+        "id": "view-5333c400-9f1e-4d3e-bf56-aef07641dc70",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-3370e181-ed49-41d1-b4fd-028ef81232be",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 34
+        },
+        "row": 32
+      },
+      {
+        "id": "view-9de12c5d-14be-464e-8e18-23c37c48b870",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-c35ce3a1-da66-4b67-9c4c-c3ce2df7ea38",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 38
+        },
+        "row": 36
+      },
+      {
+        "id": "view-5b138f3d-67ab-457d-820b-293c31839d18",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-e04d54ff-d411-4d6c-8d24-f3f9c7937851",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 42
+        },
+        "row": 40
+      },
+      {
+        "id": "view-03f957d1-1375-461f-8aa8-a639da4902dc",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 46
+        },
+        "row": 44
+      },
+      {
+        "id": "view-6af7d30d-99db-4991-984b-2ae16054bf23",
+        "kind": "list",
+        "diagramId": "diagram-9449276c-a211-4bac-9a0b-6118630d9735",
+        "elementId": "document-requirement-a8539547-6a21-4bc2-8329-861d602d4eb2",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 50
+        },
+        "row": 48
+      }
+    ]
+  }
+}
