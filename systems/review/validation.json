@@ -2,12 +2,12 @@
   "format": "Dot Dash Plus-C documentation verification",
   "nativeApp": "Installed Plus-C app model APIs; legacy plus-c CLI format is incompatible",
   "diagramCount": 12,
-  "documentCount": 5,
-  "requirementCount": 12,
-  "elementCount": 288,
-  "viewCount": 228,
-  "sourceArtifacts": 9,
-  "traceCount": 33,
+  "documentCount": 7,
+  "requirementCount": 47,
+  "elementCount": 629,
+  "viewCount": 287,
+  "sourceArtifacts": 100,
+  "traceCount": 222,
   "roundTrip": "passed",
   "findings": [
     {
@@ -85,5 +85,51 @@
     "coverage": "Appearance cycle/persistence, equal control sizes, stationary support menu in portrait and landscape",
     "fullSuiteRun": false,
     "duoHomeCapture": "Refreshed and visually inspected after toolbar fix"
+  },
+  "diagramRefresh": {
+    "date": "2026-10-28",
+    "scope": "Source re-inspection of 07, 08 and 10 against the unchanged app source (all nine source hashes still match)",
+    "changes": [
+      "07 Software Architecture: added AppearancePreference (Swift enum) and the shared ModeTogglePill view with their ContentView and GameReadoutViews dependencies; existing classes moved down one row",
+      "08 Run State Machine: added the Instructions self-transition for changeMode to a different mode",
+      "10 Successful Tap Sequence: flash now precedes haptics, matching handleTap order"
+    ],
+    "svgPreviewsRegenerated": [
+      "07-software-architecture.svg",
+      "08-run-state-machine.svg",
+      "10-successful-tap-sequence.svg"
+    ],
+    "appTestsRun": false
+  },
+  "layeredTraceability": {
+    "date": "2026-10-28",
+    "levels": {
+      "stakeholderNeeds": 6,
+      "systemRequirements": 12,
+      "componentRequirements": 29
+    },
+    "documents": [
+      "systems/00 Stakeholder Needs.plc",
+      "systems/01 Requirements.plc",
+      "systems/18 Component Requirements.plc"
+    ],
+    "rules": "Each element traces only to the level directly above: REQ refines NEED; CMP refines (derives from) REQ and is allocated to a 07 class that satisfies it; code implements CMP and its 07 class; tests refine (verify) CMP or REQ. Design views 06–17 satisfy REQ.",
+    "traceKindConvention": "Plus-C has no derives or verifies kind; derivation and verification use refines with rationale beginning \"Derived from\" or \"Verifies\"",
+    "removed": "45 code → system-requirement implements traces (12 whole-file, 33 symbol-level) that skipped the component level",
+    "code": {
+      "appSymbolParts": 31,
+      "testSymbolParts": 60,
+      "wholeFileBaselines": 9,
+      "hash": "Plus-C line hash per part; SHA-256 per file"
+    },
+    "verificationCoverage": {
+      "componentWithTests": "18 of 29",
+      "systemWithUiTests": "4 of 12 (REQ-004, REQ-005, REQ-009, REQ-012)",
+      "needs": "Validated by manual acceptance only",
+      "basis": "Inspected in source; tests not executed"
+    },
+    "negativeChecks": "In scratch copies, edited traced lines, a shifted symbol, and an injected code → REQ trace were each rejected",
+    "systemRequirementsRewritten": "REQ-001…012 restated at observable behavior level; exact values moved to CMP-001…029",
+    "appTestsRun": false
   }
 }

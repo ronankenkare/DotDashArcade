@@ -124,13 +124,13 @@
         "id": "message-b7b4351f-bd36-4b51-bb8c-3dbec57a37d9",
         "kind": "synchronous",
         "ownerId": null,
-        "name": "inZone; inPerfect; score += 1",
+        "name": "inZone; inPerfect; score += 1; raise flash",
         "documentation": "",
         "properties": {
           "order": 2
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-28T17:14:21.299Z",
         "sourceId": "participant-0115c119-9efc-4d00-b728-7b9455e3a17c",
         "targetId": "participant-0115c119-9efc-4d00-b728-7b9455e3a17c"
       },
@@ -152,13 +152,13 @@
         "id": "message-a0495b9b-98b0-4198-93d5-cbceb6dd9eae",
         "kind": "synchronous",
         "ownerId": null,
-        "name": "flash; spawn 18 good particles",
+        "name": "spawn 18 good particles",
         "documentation": "",
         "properties": {
           "order": 4
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-10-28T17:14:21.299Z",
         "sourceId": "participant-0115c119-9efc-4d00-b728-7b9455e3a17c",
         "targetId": "participant-0115c119-9efc-4d00-b728-7b9455e3a17c"
       },

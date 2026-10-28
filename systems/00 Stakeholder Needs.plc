@@ -1,0 +1,234 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "diagram",
+  "project": {
+    "elements": [
+      {
+        "id": "diagram-3e04979a-7104-4bff-b69d-f252d9b3c82c",
+        "kind": "diagram",
+        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "name": "00 Stakeholder Needs",
+        "documentation": "",
+        "properties": {
+          "diagramKind": "requirements",
+          "markdown": "# Dot Dash stakeholder needs\n\nWhat players need from Dot Dash, in their own terms. These are the top of the trace tree: each system requirement in 01 Requirements refines one or more of these needs, and the manual acceptance checks in 04 Verification Plan validate them.\n\n## NEED-001 Quick offline play\n\nA player can open the app on iPhone or iPad and be playing a short reflex game within seconds, with no account, purchase or network connection.\n\n## NEED-002 Fair, escalating challenge\n\nSuccess depends only on the player's timing, the rules are easy to read, and the game gets harder as the player succeeds, with a gentler and a harder variant to choose from.\n\n## NEED-003 Durable progress\n\nA player's best result for each variant survives closing the app and updates, and is never lowered or lost.\n\n## NEED-004 Interruption-safe play\n\nA call, notification or switch to another app never lets the game keep running unattended or produce a result the player did not earn.\n\n## NEED-005 Comfortable presentation and feedback\n\nThe player can choose a light or dark presentation and gets clear visual and haptic feedback on success and failure.\n\n## NEED-006 Help when needed\n\nThe player can reach the developer for help from inside the app.\n\n## Trace summary\n\n| Need | Refined by system requirements |\n| --- | --- |\n| Quick offline play (NEED-001) | REQ-001, REQ-006, REQ-012 |\n| Fair, escalating challenge (NEED-002) | REQ-002, REQ-003, REQ-004, REQ-005, REQ-006, REQ-008 |\n| Durable progress (NEED-003) | REQ-005, REQ-010, REQ-012 |\n| Interruption-safe play (NEED-004) | REQ-007 |\n| Comfortable presentation and feedback (NEED-005) | REQ-004, REQ-009, REQ-011 |\n| Help when needed (NEED-006) | REQ-012 |"
+        },
+        "createdAt": "2026-10-28T17:30:31.612Z",
+        "modifiedAt": "2026-10-28T17:30:31.612Z"
+      },
+      {
+        "id": "requirement-group-4930802e-a5c6-469d-a5c2-779820fa1ca7",
+        "kind": "requirement-group",
+        "ownerId": null,
+        "name": "Dot Dash stakeholder needs",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-stakeholder-needs"
+        },
+        "createdAt": "2026-10-28T17:30:31.618Z",
+        "modifiedAt": "2026-10-28T17:30:31.618Z"
+      },
+      {
+        "id": "requirement-group-0b101dd0-e084-4dcd-86cf-dcef136d7a96",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-4930802e-a5c6-469d-a5c2-779820fa1ca7",
+        "name": "Trace summary",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-stakeholder-needs/trace-summary"
+        },
+        "createdAt": "2026-10-28T17:30:31.618Z",
+        "modifiedAt": "2026-10-28T17:30:31.618Z"
+      },
+      {
+        "id": "document-requirement-bba9ece4-59de-4b78-9b2a-cd9d76d2dfad",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-4930802e-a5c6-469d-a5c2-779820fa1ca7",
+        "name": "NEED-001 Quick offline play",
+        "documentation": "A player can open the app on iPhone or iPad and be playing a short reflex game within seconds, with no account, purchase or network connection.",
+        "properties": {
+          "key": "NEED-001",
+          "title": "Quick offline play",
+          "statement": "A player can open the app on iPhone or iPad and be playing a short reflex game within seconds, with no account, purchase or network connection."
+        },
+        "createdAt": "2026-10-28T17:30:31.618Z",
+        "modifiedAt": "2026-10-28T17:30:31.618Z"
+      },
+      {
+        "id": "document-requirement-90ea015f-4db8-44e3-8e63-84dc2a9a37f1",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-4930802e-a5c6-469d-a5c2-779820fa1ca7",
+        "name": "NEED-002 Fair, escalating challenge",
+        "documentation": "Success depends only on the player's timing, the rules are easy to read, and the game gets harder as the player succeeds, with a gentler and a harder variant to choose from.",
+        "properties": {
+          "key": "NEED-002",
+          "title": "Fair, escalating challenge",
+          "statement": "Success depends only on the player's timing, the rules are easy to read, and the game gets harder as the player succeeds, with a gentler and a harder variant to choose from."
+        },
+        "createdAt": "2026-10-28T17:30:31.618Z",
+        "modifiedAt": "2026-10-28T17:30:31.618Z"
+      },
+      {
+        "id": "document-requirement-1cadb6d5-ef0e-45c8-a7c5-08aa5c2b1685",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-4930802e-a5c6-469d-a5c2-779820fa1ca7",
+        "name": "NEED-003 Durable progress",
+        "documentation": "A player's best result for each variant survives closing the app and updates, and is never lowered or lost.",
+        "properties": {
+          "key": "NEED-003",
+          "title": "Durable progress",
+          "statement": "A player's best result for each variant survives closing the app and updates, and is never lowered or lost."
+        },
+        "createdAt": "2026-10-28T17:30:31.618Z",
+        "modifiedAt": "2026-10-28T17:30:31.618Z"
+      },
+      {
+        "id": "document-requirement-1e0d9bc2-6f05-4256-b525-a141c7125b21",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-4930802e-a5c6-469d-a5c2-779820fa1ca7",
+        "name": "NEED-004 Interruption-safe play",
+        "documentation": "A call, notification or switch to another app never lets the game keep running unattended or produce a result the player did not earn.",
+        "properties": {
+          "key": "NEED-004",
+          "title": "Interruption-safe play",
+          "statement": "A call, notification or switch to another app never lets the game keep running unattended or produce a result the player did not earn."
+        },
+        "createdAt": "2026-10-28T17:30:31.618Z",
+        "modifiedAt": "2026-10-28T17:30:31.618Z"
+      },
+      {
+        "id": "document-requirement-bd5703b0-7e3b-4a8d-91e3-14a7df9a6a43",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-4930802e-a5c6-469d-a5c2-779820fa1ca7",
+        "name": "NEED-005 Comfortable presentation and feedback",
+        "documentation": "The player can choose a light or dark presentation and gets clear visual and haptic feedback on success and failure.",
+        "properties": {
+          "key": "NEED-005",
+          "title": "Comfortable presentation and feedback",
+          "statement": "The player can choose a light or dark presentation and gets clear visual and haptic feedback on success and failure."
+        },
+        "createdAt": "2026-10-28T17:30:31.618Z",
+        "modifiedAt": "2026-10-28T17:30:31.618Z"
+      },
+      {
+        "id": "document-requirement-775054f2-7d9a-4b19-a68a-c176fecacd9c",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-4930802e-a5c6-469d-a5c2-779820fa1ca7",
+        "name": "NEED-006 Help when needed",
+        "documentation": "The player can reach the developer for help from inside the app.",
+        "properties": {
+          "key": "NEED-006",
+          "title": "Help when needed",
+          "statement": "The player can reach the developer for help from inside the app."
+        },
+        "createdAt": "2026-10-28T17:30:31.618Z",
+        "modifiedAt": "2026-10-28T17:30:31.618Z"
+      }
+    ],
+    "views": [
+      {
+        "id": "view-8d8ed9ce-35f9-4b95-9493-d8c50717b274",
+        "kind": "list",
+        "diagramId": "diagram-3e04979a-7104-4bff-b69d-f252d9b3c82c",
+        "elementId": "requirement-group-4930802e-a5c6-469d-a5c2-779820fa1ca7",
+        "parentViewId": null,
+        "style": {
+          "level": 1,
+          "end": 37
+        },
+        "row": 0
+      },
+      {
+        "id": "view-dc85964c-cdc3-4998-b5e4-46c732de779a",
+        "kind": "list",
+        "diagramId": "diagram-3e04979a-7104-4bff-b69d-f252d9b3c82c",
+        "elementId": "requirement-group-0b101dd0-e084-4dcd-86cf-dcef136d7a96",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 37
+        },
+        "row": 28
+      },
+      {
+        "id": "view-b3822659-2cee-4101-b8ff-0e5444d6c0b3",
+        "kind": "list",
+        "diagramId": "diagram-3e04979a-7104-4bff-b69d-f252d9b3c82c",
+        "elementId": "document-requirement-bba9ece4-59de-4b78-9b2a-cd9d76d2dfad",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 6
+        },
+        "row": 4
+      },
+      {
+        "id": "view-8e2c1d48-c902-4078-9aaa-8ca6861bf088",
+        "kind": "list",
+        "diagramId": "diagram-3e04979a-7104-4bff-b69d-f252d9b3c82c",
+        "elementId": "document-requirement-90ea015f-4db8-44e3-8e63-84dc2a9a37f1",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 10
+        },
+        "row": 8
+      },
+      {
+        "id": "view-3ccd43d8-8581-4998-bb48-ce33129c5e97",
+        "kind": "list",
+        "diagramId": "diagram-3e04979a-7104-4bff-b69d-f252d9b3c82c",
+        "elementId": "document-requirement-1cadb6d5-ef0e-45c8-a7c5-08aa5c2b1685",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 14
+        },
+        "row": 12
+      },
+      {
+        "id": "view-b3e936ce-f8d9-400f-b7a9-01346b089cec",
+        "kind": "list",
+        "diagramId": "diagram-3e04979a-7104-4bff-b69d-f252d9b3c82c",
+        "elementId": "document-requirement-1e0d9bc2-6f05-4256-b525-a141c7125b21",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 18
+        },
+        "row": 16
+      },
+      {
+        "id": "view-ff23ef3f-4644-4959-97f3-966e17dbb037",
+        "kind": "list",
+        "diagramId": "diagram-3e04979a-7104-4bff-b69d-f252d9b3c82c",
+        "elementId": "document-requirement-bd5703b0-7e3b-4a8d-91e3-14a7df9a6a43",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 22
+        },
+        "row": 20
+      },
+      {
+        "id": "view-14af2803-d971-417d-9f13-d9fde3c4f3ca",
+        "kind": "list",
+        "diagramId": "diagram-3e04979a-7104-4bff-b69d-f252d9b3c82c",
+        "elementId": "document-requirement-775054f2-7d9a-4b19-a68a-c176fecacd9c",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 2,
+          "end": 26
+        },
+        "row": 24
+      }
+    ]
+  }
+}

@@ -45,3 +45,54 @@ The gameplay path needs no backend. UIKit supplies notification and impact hapti
 - dot-dash/GameView.swift: game views, GameState, physics, rules, effects and storage.
 - dot-dashTests/: Swift Testing suites.
 - dot-dashUITests/: XCUITest flows and launch measurements.
+
+
+## Traceability
+
+Traceability runs one level at a time, and each element traces only to the level directly above it.
+
+| Level | Where | Traces upward |
+| --- | --- | --- |
+| Stakeholder needs | 00 Stakeholder Needs | Top of the tree |
+| System requirements | 01 Requirements | Refine needs; design views 06–17 satisfy them |
+| Component requirements | 18 Component Requirements | Derive from system requirements; allocated to 07 architecture classes, which satisfy them |
+| Code | Swift symbol parts in project.plc | Implement component requirements; Swift types also implement their 07 class |
+| Tests | Swift test functions in project.plc | Verify component requirements (unit tests) or system requirements (UI flows) |
+
+Plus-C has no derives or verifies trace kind, so derivation and verification are recorded as refines traces whose rationale begins "Derived from" or "Verifies". Code never traces to a need or a system requirement; the verification script rejects a trace that skips a level. Each requirements document ends with a trace summary.
+
+Each code part names a Swift symbol and its line range and records the Plus-C line hash, so the code editor marks traced lines and flags edits. The whole-file SHA-256 baselines remain for review of any source change. Line numbers below were inspected on October 28, 2026. Platform services drawn in 07 (CADisplayLink, UserDefaults and the haptic generators) are used by app code but not implemented by it, so they carry no code trace.
+
+| Code part | Lines | Implements |
+| --- | --- | --- |
+| dot_dashApp.swift · dot_dashApp | 11–17 | dot_dashApp class, CMP-029 |
+| ContentView.swift · AppearancePreference | 6–44 | AppearancePreference class, CMP-024 |
+| ContentView.swift · ContentView | 46–233 | ContentView class |
+| ContentView.swift · ContentView.appearance | 57–59 | CMP-025 |
+| ContentView.swift · ContentView.body | 61–87 | CMP-025 |
+| ContentView.swift · ContentView.refreshBests | 89–92 | CMP-026 |
+| ContentView.swift · ContentView.HomeView | 105–209 | CMP-027 |
+| GameView.swift · GameView | 15–71 | GameView class, CMP-019 |
+| GameView.swift · ModeTogglePill | 78–99 | ModeTogglePill class, CMP-028 |
+| GameView.swift · GameBarView | 104–155 | GameBarView class, CMP-020 |
+| GameView.swift · HelpOverlayView | 158–253 | GameReadoutViews class, CMP-021 |
+| GameView.swift · ModeBadgeView | 256–268 | GameReadoutViews class, CMP-022 |
+| GameView.swift · ScoreBarView | 271–289 | GameReadoutViews class, CMP-023 |
+| GameView.swift · GameState | 294–624 | GameState class |
+| GameView.swift · GameState.init | 380–388 | CMP-018 |
+| GameView.swift · GameState.deinit | 389–389 | CMP-017 |
+| GameView.swift · GameState.startLoop | 391–397 | CMP-017 |
+| GameView.swift · GameState.stopLoop | 399–402 | CMP-017 |
+| GameView.swift · GameState.reset | 404–419 | CMP-013 |
+| GameView.swift · GameState.pauseToHelp | 421–423 | CMP-016 |
+| GameView.swift · GameState.step | 427–442 | CMP-001 |
+| GameView.swift · GameState.advanceMarker | 445–452 | CMP-002 |
+| GameView.swift · GameState.updateParticles | 454–461 | CMP-010 |
+| GameView.swift · GameState.handleTap | 465–499 | CMP-006, CMP-007, CMP-008, CMP-014 |
+| GameView.swift · GameState.currentSettings | 501–526 | CMP-005 |
+| GameView.swift · GameState.changeMode | 528–557 | CMP-015 |
+| GameView.swift · GameState.inZone | 561–564 | CMP-003 |
+| GameView.swift · GameState.inPerfect | 566–570 | CMP-004 |
+| GameView.swift · GameState.pickThemeIndex | 574–579 | CMP-011 |
+| GameView.swift · GameState.spawnBurst | 588–604 | CMP-009 |
+| GameView.swift · GameState.pickNewZoneCenter | 606–623 | CMP-012 |

@@ -27,6 +27,13 @@
 <path fill="none" stroke="#93b4d7" d="M229.2,-412.75C229.2,-401.81 229.2,-377.72 229.2,-358.89"/>
 <polygon fill="#93b4d7" stroke="#93b4d7" points="231.65,-358.92 229.2,-351.92 226.75,-358.92 231.65,-358.92"/>
 </g>
+<!-- state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af&#45;&gt;state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af -->
+<g id="edge15" class="edge">
+<title>state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af&#45;&gt;state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af</title>
+<path fill="none" stroke="#93b4d7" d="M272.93,-341.2C293.96,-342.32 312.53,-339.3 312.53,-332.15 312.53,-325.95 298.57,-322.85 281.14,-322.87"/>
+<polygon fill="#93b4d7" stroke="#93b4d7" points="281.37,-320.41 274.44,-323.05 281.51,-325.31 281.37,-320.41"/>
+<text xml:space="preserve" text-anchor="middle" x="410.78" y="-328.27" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#c4d8ef">changeMode [different mode] / apply settings</text>
+</g>
 <!-- state&#45;213e8aaf&#45;4644&#45;4cdd&#45;b546&#45;a2c48ef2b815 -->
 <g id="node3" class="node">
 <title>state&#45;213e8aaf&#45;4644&#45;4cdd&#45;b546&#45;a2c48ef2b815</title>

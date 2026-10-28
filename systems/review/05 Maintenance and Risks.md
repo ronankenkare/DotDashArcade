@@ -4,7 +4,7 @@
 
 AGENTS.md requires the Plus-C systems materials to change alongside behavior, architecture, states, timing, difficulty, verification or visible UI changes. Update the affected native Plus-C views and documents under systems/ in the same task. Keep the Markdown, HTML and SVG review previews under systems/review/ synchronized. The source-checked Plus-C materials replace the retired HTML/Mermaid guide; the old guide and its dated simulator screenshots have been removed.
 
-The root project.plc retains the original project identity. systems/ contains native diagram parts for the installed Plus-C app. Open the repository folder in Plus-C. The systems/review/ previews are companion review artifacts, not separate authoritative models. Model traces point from implementing code and design elements toward requirements.
+The root project.plc retains the original project identity. systems/ contains native diagram parts for the installed Plus-C app. Open the repository folder in Plus-C. The systems/review/ previews are companion review artifacts, not separate authoritative models. Traces run one level at a time: code and tests to component requirements, component requirements to system requirements, and system requirements to stakeholder needs. Design views satisfy system requirements, and component requirements are allocated to architecture classes.
 
 ## Known constraints from source inspection
 
@@ -22,4 +22,4 @@ These are observed constraints and review candidates, not changes made by this d
 
 ## Review checklist
 
-After changes, run node scripts/verify-plusc.mjs to validate native models, split/merge round trips, trace endpoints and source hashes. Check identifiers, JavaScript syntax, local HTML links, SVG/XML and referenced assets. Inspect affected views in Plus-C. Any future simulator screenshots must be current, labeled captures stored with these materials; the retired screenshots are not evidence of the current UI.
+After changes, run node scripts/verify-plusc.mjs to validate native models, split/merge round trips, trace endpoints and source hashes. When Swift source changes, re-anchor the affected code parts in Plus-C (line range and hash), re-check their implements traces, and refresh the Traceability table in 02 System Design. When behavior changes, update the component requirement in 18 first, then confirm that its system requirement in 01 and need in 00 still hold, and re-check the tests that verify it. Check identifiers, JavaScript syntax, local HTML links, SVG/XML and referenced assets. Inspect affected views in Plus-C. Any future simulator screenshots must be current, labeled captures stored with these materials; the retired screenshots are not evidence of the current UI.

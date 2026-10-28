@@ -7,15 +7,15 @@
       {
         "id": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
         "kind": "diagram",
-        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "ownerId": null,
         "name": "04 Verification Plan",
         "documentation": "",
         "properties": {
           "diagramKind": "requirements",
-          "markdown": "# Verification and evidence\n\n## Status\n\nCoverage below was inspected in source. It is not a claim that the app tests passed in this documentation task. Native Plus-C file round trips, model validators, preview generation and documentation checks are recorded separately in systems/review/validation.json.\n\n| Contract | Existing evidence | Limits |\n| --- | --- | --- |\n| Contract REQ-001 local app | Xcode project and app source | Device/platform build not run in this task |\n| Contract REQ-002 movement | MarkerPhysicsTests | Display callback timing and dt cap need runtime check |\n| Contract REQ-003 classification | InZoneTests and dot_dashTests | Haptic perception is manual |\n| Contract REQ-004 progression | HandleTapHitPathTests; GameStateLifecycleTests | Visual particles and physical haptics need device check |\n| Contract REQ-005 miss / best | dot_dashTests | Persistence assertions mutate shared UserDefaults |\n| Contract REQ-006 reset / modes | GameStateLifecycleTests; dot_dashUITests | UI outcomes involving motion are nondeterministic |\n| Contract REQ-007 lifecycle | GameView source; manual scenario below | No dedicated scenePhase integration test found |\n| Contract REQ-008 placement | dot_dashTests bounded and statistical samples | Minimum movement is best effort, not guaranteed |\n| Contract REQ-009 appearance | dot_dashTests; testAppearanceButtonCyclesAndPersists | Visual contrast still needs inspection |\n| Contract REQ-010 migration | dot_dashTests legacy cases | Home reads before GameState first initializes |\n| Contract REQ-011 effects / themes | GameStateLifecycleTests | Frame-rate dependence and colors need runtime inspection |\n| Contract REQ-012 home / support | dot_dashUITests home and navigation; testSupportMenuKeepsBottomToolbarStationary | No automated external form submission check |\n\n## Automated command\n\nFrom the repository root, run xcodebuild -project dot-dash.xcodeproj -scheme dot-dash -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing:dot-dashTests test. Run the dot-dashUITests target separately or use Command-U in Xcode. Check available simulator destinations first. Unit tests use Swift Testing; UI tests use XCTest.\n\n## Manual acceptance\n\n- Exercise both modes: Start, hit, miss, replay, mid-run mode change, Back.\n- Background a live run and return: motion remains stopped until Start resets the run. Repeat while Game Over is visible; it should remain Game Over.\n- Verify bests remain separate, never regress, and update Home on return. Check a legacy-only installation.\n- Check Light, Dark, System and Increase Contrast on iPhone and iPad. Inspect help button edges and score rows.\n- On physical hardware, compare perfect and good haptics. Confirm misses have particle feedback.\n- Open and dismiss the Home support menu in portrait and landscape; confirm appearance and support remain aligned in the bottom toolbar. Open Support from Home and confirm external form navigation. Do not submit a form as part of documentation verification.\n\n## Model verification\n\nUse the installed Plus-C application's model validators and split/merge round trips. The separate plus-c command-line binary on this machine uses a different, older format and cannot validate this application's native project parts.\n\n## Bottom toolbar regression — October 21, 2026\n\nOn October 21, 2026, the simulator build and three focused UI tests passed on iPhone 17 (iOS 27.0): testAppearanceButtonCyclesAndPersists, testCornerButtonsStayTheSameSizeAcrossAppearances, and testSupportMenuKeepsBottomToolbarStationary. The support-menu test checks alignment and unchanged vertical positions before opening, while open, and after dismissal in portrait and landscape. The full test suite was not run. The refreshed Duo Home screenshot was visually inspected; Duo automated tests were stopped during runner startup.\n"
+          "markdown": "# Verification and evidence\n\n## Status\n\nCoverage below was inspected in source. It is not a claim that the app tests passed in this documentation task. Native Plus-C file round trips, model validators, preview generation and documentation checks are recorded separately in systems/review/validation.json.\n\n| Contract | Existing evidence | Limits |\n| --- | --- | --- |\n| Contract REQ-001 local app | Xcode project and app source | Device/platform build not run in this task |\n| Contract REQ-002 movement | MarkerPhysicsTests | Display callback timing and dt cap need runtime check |\n| Contract REQ-003 classification | InZoneTests and dot_dashTests | Haptic perception is manual |\n| Contract REQ-004 progression | HandleTapHitPathTests; GameStateLifecycleTests | Visual particles and physical haptics need device check |\n| Contract REQ-005 miss / best | dot_dashTests | Persistence assertions mutate shared UserDefaults |\n| Contract REQ-006 reset / modes | GameStateLifecycleTests; dot_dashUITests | UI outcomes involving motion are nondeterministic |\n| Contract REQ-007 lifecycle | GameView source; manual scenario below | No dedicated scenePhase integration test found |\n| Contract REQ-008 placement | dot_dashTests bounded and statistical samples | Minimum movement is best effort, not guaranteed |\n| Contract REQ-009 appearance | dot_dashTests; testAppearanceButtonCyclesAndPersists | Visual contrast still needs inspection |\n| Contract REQ-010 migration | dot_dashTests legacy cases | Home reads before GameState first initializes |\n| Contract REQ-011 effects / themes | GameStateLifecycleTests | Frame-rate dependence and colors need runtime inspection |\n| Contract REQ-012 home / support | dot_dashUITests home and navigation; testSupportMenuKeepsBottomToolbarStationary | No automated external form submission check |\n\nMost evidence above verifies component requirements that refine the listed system requirement; see Verification by level.\n\n## Automated command\n\nFrom the repository root, run xcodebuild -project dot-dash.xcodeproj -scheme dot-dash -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing:dot-dashTests test. Run the dot-dashUITests target separately or use Command-U in Xcode. Check available simulator destinations first. Unit tests use Swift Testing; UI tests use XCTest.\n\n## Manual acceptance\n\n- Exercise both modes: Start, hit, miss, replay, mid-run mode change, Back. Validates NEED-001 and NEED-002.\n- Background a live run and return: motion remains stopped until Start resets the run. Repeat while Game Over is visible; it should remain Game Over. Validates NEED-004.\n- Verify bests remain separate, never regress, and update Home on return. Check a legacy-only installation. Validates NEED-003.\n- Check Light, Dark, System and Increase Contrast on iPhone and iPad. Inspect help button edges and score rows. Validates NEED-005.\n- On physical hardware, compare perfect and good haptics. Confirm misses have particle feedback. Validates NEED-005.\n- Open and dismiss the Home support menu in portrait and landscape; confirm appearance and support remain aligned in the bottom toolbar. Open Support from Home and confirm external form navigation. Do not submit a form as part of documentation verification. Validates NEED-006.\n\n## Verification by level\n\nVerification follows the V: each level is checked against the level it came from. Test traces are refines traces whose rationale begins \"Verifies\", because Plus-C has no verifies kind. They record coverage inspected in source, not test results.\n\n| Level | Checked by | Traced coverage |\n| --- | --- | --- |\n| Stakeholder needs | Manual acceptance below | Validation by review; not automated |\n| System requirements | dot_dashUITests flows | 4 of 12: REQ-004, REQ-005, REQ-009, REQ-012 |\n| Component requirements | Swift Testing unit suites; two UI layout tests | 18 of 29 |\n\nSystem requirements without a UI-flow trace are covered only through their component requirements' unit tests and the manual acceptance checks.\n\n| Component requirement | Tests |\n| --- | --- |\n| Frame step (CMP-001) | None; manual: device frame-timing check |\n| Marker advance (CMP-002) | plainAdvanceMovesRightByDirSpeedDt, movingLeftDecreasesPositionSymmetrically, rightEdgeBounceClampsToOneAndFlipsDirection, leftEdgeBounceClampsToZeroAndFlipsDirection, landingExactlyOnOneTriggersBounceBecauseComparisonIsInclusive, overshootIsClampedNotReflected, zeroDtIsNoOp, tenSecondSimulationStaysInBoundsAndBouncesRepeatedly, degenerateHugeStepFromLeftEdgeClampsToRightEdge, degenerateHugeStepFromRightEdgeClampsToLeftEdge |\n| Target test (CMP-003) | inZoneAtZoneCenterIsTrue, inZoneJustInsideEdgesIsTrue, inZoneExactlyOnEdgesIsTrue, inZoneJustOutsideEdgesIsFalse, markerAtZeroVersusLeftEdgeZone, markerAtOneVersusRightEdgeZone, tinyZoneStillDetectsCenterHit |\n| Perfect band (CMP-004) | inPerfectAtZoneCenterIsTrue, inPerfectOutsideFullZoneIsFalse, inPerfectInsideFullZoneButOutsideInnerIsFalse, inPerfectAtInnerBoundaryIsTrue |\n| Mode settings (CMP-005) | perfectHitMultipliesSpeedBySpeedMulPerfect, goodHitMultipliesSpeedBySpeedMulGood, advancedPerfectHitShrinksZoneWidthByPointNine, advancedGoodHitShrinksZoneWidthByPointNineFour, classicHitLeavesZoneWidthUnchanged, advancedRepeatedHitsClampZoneWidthAtMinimum, classicSettingsMatchExpectedConstants, advancedSettingsMatchExpectedConstants |\n| Hit update (CMP-006) | inZoneTapScoresAndKeepsGameRunning, perfectHitMultipliesSpeedBySpeedMulPerfect, goodHitMultipliesSpeedBySpeedMulGood, advancedPerfectHitShrinksZoneWidthByPointNine, advancedGoodHitShrinksZoneWidthByPointNineFour, classicHitLeavesZoneWidthUnchanged, advancedRepeatedHitsClampZoneWidthAtMinimum, hitMovesZoneCenterAwayFromPreviousCenter, twelfthHitAdvancesThemeIdxToOne |\n| Hit feedback (CMP-007) | None; manual: haptics on physical hardware |\n| Miss handling (CMP-008) | gameOverPersistsNewBestClassic, gameOverDoesNotRegressBestClassic, gameOverPersistsNewBestAdvanced |\n| Particle bursts (CMP-009) | None; manual: visual particle check |\n| Particle update (CMP-010) | updateParticlesAgesMovesAndRemoves |\n| Theme thresholds (CMP-011) | twelfthHitAdvancesThemeIdxToOne, pickThemeIndexThresholds |\n| Target relocation (CMP-012) | pickNewZoneCenterStaysInBounds, pickNewZoneCenterMovesByMinMove, pickNewZoneCenterHandlesExtremePrevCenter, hitMovesZoneCenterAwayFromPreviousCenter |\n| Run reset (CMP-013) | tapWhileNotRunningResetsGame, resetRestoresClassicStartState, resetAppliesAdvancedStartValues |\n| Stopped tap (CMP-014) | tapWhileNotRunningResetsGame |\n| Mode change (CMP-015) | changeModeToSameModeIsNoOp, changeModeClassicToAdvancedResetsToAdvancedStartState, changeModeMidRunDiscardsTheRun, changeModeAdvancedToClassicAppliesClassicStartValues |\n| Pause to instructions (CMP-016) | None; manual: background a live run |\n| Display link ownership (CMP-017) | None; manual: lifecycle scenario |\n| Best loading and migration (CMP-018) | bestScoresLoadFromUserDefaults, legacyBestScoreMigratesToClassic, legacyMigrationDoesNotOverwriteExistingClassicBest |\n| Scene lifecycle (CMP-019) | None; manual: lifecycle scenario |\n| Game surface (CMP-020) | None; manual: play both modes |\n| Instructions and result (CMP-021) | None; manual: play, miss, replay |\n| In-game mode switch (CMP-022) | None; manual: mid-run mode change |\n| Score readout (CMP-023) | bestCurrentFollowsMode |\n| Appearance cycle (CMP-024) | appearancePreferenceCyclesLightDarkSystem, appearancePreferenceFallsBackToSystemForNewInstalls |\n| Navigation and appearance (CMP-025) | appearancePreferenceFallsBackToSystemForNewInstalls, testPlayNavigatesToGame |\n| Best refresh (CMP-026) | None; manual: Home best after Back |\n| Home controls (CMP-027) | testCornerButtonsStayTheSameSizeAcrossAppearances, testSupportMenuKeepsBottomToolbarStationary |\n| Shared mode pill (CMP-028) | testModeToggleFlipsLabel |\n| App entry and platform (CMP-029) | None; manual: Xcode build |\n\n## Model verification\n\nUse the installed Plus-C application's model validators and split/merge round trips. The separate plus-c command-line binary on this machine uses a different, older format and cannot validate this application's native project parts. The verification script also re-hashes every traced code part with the Plus-C line hash, fails when a traced symbol moves or its lines change, and requires every requirement and every app class in 07 Software Architecture to reach at least one code part through an implements trace.\n\n## Bottom toolbar regression — October 21, 2026\n\nOn October 21, 2026, the simulator build and three focused UI tests passed on iPhone 17 (iOS 27.0): testAppearanceButtonCyclesAndPersists, testCornerButtonsStayTheSameSizeAcrossAppearances, and testSupportMenuKeepsBottomToolbarStationary. The support-menu test checks alignment and unchanged vertical positions before opening, while open, and after dismissal in portrait and landscape. The full test suite was not run. The refreshed Duo Home screenshot was visually inspected; Duo automated tests were stopped during runner startup.\n"
         },
         "createdAt": "2026-10-21T21:41:30.583Z",
-        "modifiedAt": "2026-10-21T21:41:30.583Z"
+        "modifiedAt": "2026-10-28T17:30:31.695Z"
       },
       {
         "id": "requirement-group-6b6a99d6-9234-4992-9aad-093f7d36f73d",
@@ -27,7 +27,7 @@
           "key": "verification-and-evidence"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.510Z"
+        "modifiedAt": "2026-10-28T17:30:31.696Z"
       },
       {
         "id": "requirement-group-043d032e-810c-4fcf-9c73-171933eea303",
@@ -39,7 +39,7 @@
           "key": "verification-and-evidence/status"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.510Z"
+        "modifiedAt": "2026-10-28T17:30:31.696Z"
       },
       {
         "id": "requirement-group-759253b3-2102-4fdf-a724-2b796a99ea78",
@@ -51,7 +51,7 @@
           "key": "verification-and-evidence/automated-command"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.510Z"
+        "modifiedAt": "2026-10-28T17:30:31.696Z"
       },
       {
         "id": "requirement-group-e06e3fa6-ecfc-48f2-85f4-2221585b9f9e",
@@ -63,7 +63,19 @@
           "key": "verification-and-evidence/manual-acceptance"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.510Z"
+        "modifiedAt": "2026-10-28T17:30:31.696Z"
+      },
+      {
+        "id": "requirement-group-b813ea13-60ab-49fe-b058-9a09d2cc2b13",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-6b6a99d6-9234-4992-9aad-093f7d36f73d",
+        "name": "Verification by level",
+        "documentation": "",
+        "properties": {
+          "key": "verification-and-evidence/verification-by-level"
+        },
+        "createdAt": "2026-10-28T17:30:31.696Z",
+        "modifiedAt": "2026-10-28T17:30:31.696Z"
       },
       {
         "id": "requirement-group-039be160-99f1-49d1-b727-f0b89fe58d2a",
@@ -75,69 +87,105 @@
           "key": "verification-and-evidence/model-verification"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.510Z"
+        "modifiedAt": "2026-10-28T17:30:31.696Z"
+      },
+      {
+        "id": "requirement-group-df890a2a-52a1-477b-be20-ec5fd04bf39c",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-6b6a99d6-9234-4992-9aad-093f7d36f73d",
+        "name": "Bottom toolbar regression — October 21, 2026",
+        "documentation": "",
+        "properties": {
+          "key": "verification-and-evidence/bottom-toolbar-regression-october-21-2026"
+        },
+        "createdAt": "2026-10-28T17:22:36.574Z",
+        "modifiedAt": "2026-10-28T17:30:31.696Z"
       }
     ],
     "views": [
       {
-        "id": "view-099cb30c-b0e6-480d-84a9-25686bbf70a7",
+        "id": "view-55b688ae-e026-40f3-9436-e55411e89542",
         "kind": "list",
         "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
         "elementId": "requirement-group-6b6a99d6-9234-4992-9aad-093f7d36f73d",
         "parentViewId": null,
         "style": {
           "level": 1,
-          "end": 36
+          "end": 86
         },
         "row": 0
       },
       {
-        "id": "view-57c5a52c-0303-4ed8-8fab-7812cd11005a",
+        "id": "view-0590cc51-0b60-430f-91d9-819f0b6ef636",
         "kind": "list",
         "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
         "elementId": "requirement-group-043d032e-810c-4fcf-9c73-171933eea303",
         "parentViewId": null,
         "style": {
           "level": 2,
-          "end": 19
+          "end": 21
         },
         "row": 2
       },
       {
-        "id": "view-47442783-c1c1-4cf7-986e-d417b78d66f2",
+        "id": "view-41bc801e-5726-475f-8e0c-092aa8b94d02",
         "kind": "list",
         "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
         "elementId": "requirement-group-759253b3-2102-4fdf-a724-2b796a99ea78",
         "parentViewId": null,
         "style": {
           "level": 2,
-          "end": 23
+          "end": 25
         },
-        "row": 21
+        "row": 23
       },
       {
-        "id": "view-756a2f13-4dc2-4f1b-b82f-ea19bc3126e2",
+        "id": "view-caa7cf97-76d2-455e-a120-e85f1487032e",
         "kind": "list",
         "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
         "elementId": "requirement-group-e06e3fa6-ecfc-48f2-85f4-2221585b9f9e",
         "parentViewId": null,
         "style": {
           "level": 2,
-          "end": 32
+          "end": 34
         },
-        "row": 25
+        "row": 27
       },
       {
-        "id": "view-4ed64e60-dc69-42b6-99e7-67d9a4c14dd3",
+        "id": "view-3dc9a3a0-8249-4835-a724-cceb05666f17",
+        "kind": "list",
+        "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "elementId": "requirement-group-b813ea13-60ab-49fe-b058-9a09d2cc2b13",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 78
+        },
+        "row": 36
+      },
+      {
+        "id": "view-0667a072-dbd7-45d2-9e9b-69ce363fc3fc",
         "kind": "list",
         "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
         "elementId": "requirement-group-039be160-99f1-49d1-b727-f0b89fe58d2a",
         "parentViewId": null,
         "style": {
           "level": 2,
-          "end": 36
+          "end": 82
         },
-        "row": 34
+        "row": 80
+      },
+      {
+        "id": "view-e4c13e7a-caa0-40f7-b5f3-ad83013926af",
+        "kind": "list",
+        "diagramId": "diagram-63c69b33-7fbf-4d06-9db4-2b198fb13760",
+        "elementId": "requirement-group-df890a2a-52a1-477b-be20-ec5fd04bf39c",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 86
+        },
+        "row": 84
       }
     ]
   }
