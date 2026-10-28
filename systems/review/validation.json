@@ -4,8 +4,8 @@
   "diagramCount": 12,
   "documentCount": 5,
   "requirementCount": 12,
-  "elementCount": 288,
-  "viewCount": 228,
+  "elementCount": 294,
+  "viewCount": 234,
   "sourceArtifacts": 9,
   "traceCount": 33,
   "roundTrip": "passed",
@@ -85,5 +85,20 @@
     "coverage": "Appearance cycle/persistence, equal control sizes, stationary support menu in portrait and landscape",
     "fullSuiteRun": false,
     "duoHomeCapture": "Refreshed and visually inspected after toolbar fix"
+  },
+  "diagramRefresh": {
+    "date": "2026-10-28",
+    "scope": "Source re-inspection of 07, 08 and 10 against the unchanged app source (all nine source hashes still match)",
+    "changes": [
+      "07 Software Architecture: added AppearancePreference (Swift enum) and the shared ModeTogglePill view with their ContentView and GameReadoutViews dependencies; existing classes moved down one row",
+      "08 Run State Machine: added the Instructions self-transition for changeMode to a different mode",
+      "10 Successful Tap Sequence: flash now precedes haptics, matching handleTap order"
+    ],
+    "svgPreviewsRegenerated": [
+      "07-software-architecture.svg",
+      "08-run-state-machine.svg",
+      "10-successful-tap-sequence.svg"
+    ],
+    "appTestsRun": false
   }
 }

@@ -27,6 +27,13 @@
 <path fill="none" stroke="#93b4d7" d="M229.2,-412.75C229.2,-401.81 229.2,-377.72 229.2,-358.89"/>
 <polygon fill="#93b4d7" stroke="#93b4d7" points="231.65,-358.92 229.2,-351.92 226.75,-358.92 231.65,-358.92"/>
 </g>
+<!-- state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af&#45;&gt;state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af -->
+<g id="edge8" class="edge">
+<title>state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af&#45;&gt;state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af</title>
+<path fill="none" stroke="#93b4d7" d="M272.93,-341.2C293.96,-342.32 312.53,-339.3 312.53,-332.15 312.53,-325.95 298.57,-322.85 281.14,-322.87"/>
+<polygon fill="#93b4d7" stroke="#93b4d7" points="281.37,-320.41 274.44,-323.05 281.51,-325.31 281.37,-320.41"/>
+<text xml:space="preserve" text-anchor="middle" x="410.78" y="-328.27" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#c4d8ef">changeMode [different mode] / apply settings</text>
+</g>
 <!-- state&#45;213e8aaf&#45;4644&#45;4cdd&#45;b546&#45;a2c48ef2b815 -->
 <g id="node3" class="node">
 <title>state&#45;213e8aaf&#45;4644&#45;4cdd&#45;b546&#45;a2c48ef2b815</title>
@@ -47,14 +54,14 @@
 <ellipse fill="none" stroke="#66a9f1" cx="475.2" cy="-11.2" rx="11.2" ry="11.2"/>
 </g>
 <!-- state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af&#45;&gt;state&#45;final&#45;4153ef68&#45;46c2&#45;4038&#45;a6db&#45;015fc7ed22d6 -->
-<g id="edge11" class="edge">
+<g id="edge12" class="edge">
 <title>state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af&#45;&gt;state&#45;final&#45;4153ef68&#45;46c2&#45;4038&#45;a6db&#45;015fc7ed22d6</title>
 <path fill="none" stroke="#93b4d7" d="M185.59,-319.04C107.94,-295.24 -41.41,-238.08 11.2,-162.65 64.96,-85.57 374.26,-29.06 455.6,-15.39"/>
 <polygon fill="#93b4d7" stroke="#93b4d7" points="455.97,-17.81 462.47,-14.25 455.16,-12.98 455.97,-17.81"/>
 <text xml:space="preserve" text-anchor="middle" x="72.7" y="-164.4" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#c4d8ef">leave GameView / stopLoop</text>
 </g>
 <!-- state&#45;213e8aaf&#45;4644&#45;4cdd&#45;b546&#45;a2c48ef2b815&#45;&gt;state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af -->
-<g id="edge8" class="edge">
+<g id="edge9" class="edge">
 <title>state&#45;213e8aaf&#45;4644&#45;4cdd&#45;b546&#45;a2c48ef2b815&#45;&gt;state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af</title>
 <path fill="none" stroke="#93b4d7" d="M422.09,-225.78C361.98,-229.74 245.51,-241.27 220.45,-271.9 212.82,-281.22 213.89,-294.25 217.34,-305.71"/>
 <polygon fill="#93b4d7" stroke="#93b4d7" points="215.03,-306.51 219.68,-312.28 219.64,-304.86 215.03,-306.51"/>
@@ -94,14 +101,14 @@
 <text xml:space="preserve" text-anchor="middle" x="682.82" y="-164.4" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#c4d8ef">inactive / background / pauseToHelp; stopLoop</text>
 </g>
 <!-- state&#45;213e8aaf&#45;4644&#45;4cdd&#45;b546&#45;a2c48ef2b815&#45;&gt;state&#45;final&#45;4153ef68&#45;46c2&#45;4038&#45;a6db&#45;015fc7ed22d6 -->
-<g id="edge12" class="edge">
+<g id="edge13" class="edge">
 <title>state&#45;213e8aaf&#45;4644&#45;4cdd&#45;b546&#45;a2c48ef2b815&#45;&gt;state&#45;final&#45;4153ef68&#45;46c2&#45;4038&#45;a6db&#45;015fc7ed22d6</title>
 <path fill="none" stroke="#93b4d7" d="M475.29,-204.82C482.62,-196.29 490.37,-185.36 494.2,-173.9 511.13,-123.09 505.68,-105.71 494.2,-53.4 492.31,-44.81 488.46,-35.88 484.71,-28.54"/>
 <polygon fill="#93b4d7" stroke="#93b4d7" points="486.99,-27.6 481.5,-22.62 482.68,-29.94 486.99,-27.6"/>
 <text xml:space="preserve" text-anchor="middle" x="566.45" y="-109.78" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#c4d8ef">leave GameView / stopLoop</text>
 </g>
 <!-- state&#45;a619f139&#45;0518&#45;4173&#45;80af&#45;8c2f3d892e25&#45;&gt;state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af -->
-<g id="edge9" class="edge">
+<g id="edge10" class="edge">
 <title>state&#45;a619f139&#45;0518&#45;4173&#45;80af&#45;8c2f3d892e25&#45;&gt;state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af</title>
 <path fill="none" stroke="#93b4d7" d="M212.5,-122.47C189.48,-129.06 163.19,-141.03 149.2,-162.65 117.63,-211.4 169.55,-274.54 203.48,-307.98"/>
 <polygon fill="#93b4d7" stroke="#93b4d7" points="201.75,-309.72 208.49,-312.82 205.16,-306.2 201.75,-309.72"/>
@@ -115,14 +122,14 @@
 <text xml:space="preserve" text-anchor="middle" x="427.45" y="-164.4" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#c4d8ef">Play Again or bar tap / reset</text>
 </g>
 <!-- state&#45;a619f139&#45;0518&#45;4173&#45;80af&#45;8c2f3d892e25&#45;&gt;state&#45;final&#45;4153ef68&#45;46c2&#45;4038&#45;a6db&#45;015fc7ed22d6 -->
-<g id="edge13" class="edge">
+<g id="edge14" class="edge">
 <title>state&#45;a619f139&#45;0518&#45;4173&#45;80af&#45;8c2f3d892e25&#45;&gt;state&#45;final&#45;4153ef68&#45;46c2&#45;4038&#45;a6db&#45;015fc7ed22d6</title>
 <path fill="none" stroke="#93b4d7" d="M285.7,-95.16C307.31,-82.7 337.57,-66.01 365.2,-53.4 396.64,-39.05 434.67,-25.64 456.78,-18.22"/>
 <polygon fill="#93b4d7" stroke="#93b4d7" points="457.38,-20.6 463.25,-16.07 455.84,-15.95 457.38,-20.6"/>
 <text xml:space="preserve" text-anchor="middle" x="426.7" y="-55.15" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#c4d8ef">leave GameView / stopLoop</text>
 </g>
 <!-- state&#45;b82d5cc1&#45;b70e&#45;4390&#45;ba14&#45;597a51643f31&#45;&gt;state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af -->
-<g id="edge10" class="edge">
+<g id="edge11" class="edge">
 <title>state&#45;b82d5cc1&#45;b70e&#45;4390&#45;ba14&#45;597a51643f31&#45;&gt;state&#45;2a132424&#45;e7af&#45;4761&#45;9040&#45;1054c17911af</title>
 <path fill="none" stroke="#93b4d7" d="M866.27,-117.93C922.46,-123.29 986.59,-137.31 958.2,-173.9 874.51,-281.76 433.99,-318.63 281.33,-328.27"/>
 <polygon fill="#93b4d7" stroke="#93b4d7" points="281.33,-325.82 274.5,-328.69 281.64,-330.71 281.33,-325.82"/>
@@ -136,7 +143,7 @@
 <text xml:space="preserve" text-anchor="middle" x="872.79" y="-164.4" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#c4d8ef">Start or bar tap / reset, not resume</text>
 </g>
 <!-- state&#45;b82d5cc1&#45;b70e&#45;4390&#45;ba14&#45;597a51643f31&#45;&gt;state&#45;final&#45;4153ef68&#45;46c2&#45;4038&#45;a6db&#45;015fc7ed22d6 -->
-<g id="edge14" class="edge">
+<g id="edge15" class="edge">
 <title>state&#45;b82d5cc1&#45;b70e&#45;4390&#45;ba14&#45;597a51643f31&#45;&gt;state&#45;final&#45;4153ef68&#45;46c2&#45;4038&#45;a6db&#45;015fc7ed22d6</title>
 <path fill="none" stroke="#93b4d7" d="M738.63,-95.15C665.53,-72.13 540.84,-32.87 493.85,-18.07"/>
 <polygon fill="#93b4d7" stroke="#93b4d7" points="494.87,-15.83 487.45,-16.06 493.39,-20.5 494.87,-15.83"/>

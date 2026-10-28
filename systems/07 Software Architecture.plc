@@ -135,6 +135,32 @@
         "modifiedAt": "2026-10-21T21:41:30.592Z"
       },
       {
+        "id": "classifier-7105dc57-146f-4043-9ad1-d47f0f08132e",
+        "kind": "class",
+        "ownerId": null,
+        "name": "AppearancePreference",
+        "documentation": "Light → Dark → System cycle, storage key, color scheme",
+        "properties": {
+          "stereotype": "Swift enum",
+          "isAbstract": false
+        },
+        "createdAt": "2026-10-28T17:14:21.299Z",
+        "modifiedAt": "2026-10-28T17:14:21.299Z"
+      },
+      {
+        "id": "classifier-55943307-bcaf-4843-a474-e119d411eebb",
+        "kind": "class",
+        "ownerId": null,
+        "name": "ModeTogglePill",
+        "documentation": "Shared Classic / Advanced mode control",
+        "properties": {
+          "stereotype": "SwiftUI View",
+          "isAbstract": false
+        },
+        "createdAt": "2026-10-28T17:14:21.299Z",
+        "modifiedAt": "2026-10-28T17:14:21.299Z"
+      },
+      {
         "id": "class-relationship-1d67c405-1a7c-4f7b-a203-024c7fbe62f9",
         "kind": "dependency",
         "ownerId": null,
@@ -409,6 +435,75 @@
         "modifiedAt": "2026-10-21T21:41:30.592Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "classifier-f37885c0-a2bf-471e-ac1f-8af4f0874a01"
+      },
+      {
+        "id": "class-relationship-fe082ad9-d41f-4e82-ae0f-7440538d7e52",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "cycle / colorScheme",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-10-28T17:14:21.299Z",
+        "modifiedAt": "2026-10-28T17:14:21.299Z",
+        "sourceId": "classifier-d546a81e-1e5c-4d96-8385-7aaa6d8f0be1",
+        "targetId": "classifier-7105dc57-146f-4043-9ad1-d47f0f08132e"
+      },
+      {
+        "id": "class-relationship-f5a798f2-c02c-4fbe-9177-80af3f63eba5",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "home mode pill",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-10-28T17:14:21.299Z",
+        "modifiedAt": "2026-10-28T17:14:21.299Z",
+        "sourceId": "classifier-d546a81e-1e5c-4d96-8385-7aaa6d8f0be1",
+        "targetId": "classifier-55943307-bcaf-4843-a474-e119d411eebb"
+      },
+      {
+        "id": "class-relationship-b0be55c4-c74a-4e8f-a24b-23fd082b8771",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "in-game mode pill",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-10-28T17:14:21.299Z",
+        "modifiedAt": "2026-10-28T17:14:21.299Z",
+        "sourceId": "classifier-7af6b402-b1d1-4634-889f-5526e519b5fb",
+        "targetId": "classifier-55943307-bcaf-4843-a474-e119d411eebb"
       }
     ],
     "views": [
@@ -420,7 +515,7 @@
         "parentViewId": null,
         "style": {},
         "x": 180,
-        "y": 150,
+        "y": 400,
         "width": 290,
         "height": 120,
         "collapsed": false
@@ -433,7 +528,7 @@
         "parentViewId": null,
         "style": {},
         "x": 580,
-        "y": 150,
+        "y": 400,
         "width": 290,
         "height": 120,
         "collapsed": false
@@ -446,7 +541,7 @@
         "parentViewId": null,
         "style": {},
         "x": 980,
-        "y": 150,
+        "y": 400,
         "width": 290,
         "height": 120,
         "collapsed": false
@@ -459,7 +554,7 @@
         "parentViewId": null,
         "style": {},
         "x": 180,
-        "y": 400,
+        "y": 650,
         "width": 290,
         "height": 120,
         "collapsed": false
@@ -472,7 +567,7 @@
         "parentViewId": null,
         "style": {},
         "x": 580,
-        "y": 400,
+        "y": 650,
         "width": 290,
         "height": 120,
         "collapsed": false
@@ -485,7 +580,7 @@
         "parentViewId": null,
         "style": {},
         "x": 980,
-        "y": 400,
+        "y": 650,
         "width": 290,
         "height": 120,
         "collapsed": false
@@ -498,7 +593,7 @@
         "parentViewId": null,
         "style": {},
         "x": 180,
-        "y": 650,
+        "y": 900,
         "width": 290,
         "height": 120,
         "collapsed": false
@@ -511,7 +606,7 @@
         "parentViewId": null,
         "style": {},
         "x": 580,
-        "y": 650,
+        "y": 900,
         "width": 290,
         "height": 120,
         "collapsed": false
@@ -524,7 +619,7 @@
         "parentViewId": null,
         "style": {},
         "x": 980,
-        "y": 650,
+        "y": 900,
         "width": 290,
         "height": 120,
         "collapsed": false
@@ -677,6 +772,71 @@
         "kind": "edge",
         "diagramId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
         "elementId": "class-relationship-bb73a0ce-42ba-4f06-b542-c064b3e59839",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-a99c548c-2fb7-42a6-8c09-0326b46f6edf",
+        "kind": "shape",
+        "diagramId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
+        "elementId": "classifier-55943307-bcaf-4843-a474-e119d411eebb",
+        "parentViewId": null,
+        "style": {},
+        "x": 1380,
+        "y": 650,
+        "width": 290,
+        "height": 120,
+        "collapsed": false
+      },
+      {
+        "id": "view-597c8010-f9d9-40ac-8fc1-0b9d379682ca",
+        "kind": "shape",
+        "diagramId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
+        "elementId": "classifier-7105dc57-146f-4043-9ad1-d47f0f08132e",
+        "parentViewId": null,
+        "style": {},
+        "x": 580,
+        "y": 150,
+        "width": 290,
+        "height": 120,
+        "collapsed": false
+      },
+      {
+        "id": "view-e4a93579-aaeb-48a2-b5ab-f03f8c1d1241",
+        "kind": "edge",
+        "diagramId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
+        "elementId": "class-relationship-fe082ad9-d41f-4e82-ae0f-7440538d7e52",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-4079fbd5-6b74-4bcf-a45f-8d47c7fd086f",
+        "kind": "edge",
+        "diagramId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
+        "elementId": "class-relationship-f5a798f2-c02c-4fbe-9177-80af3f63eba5",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-80402adc-6c2d-4ab4-905f-4506a4934160",
+        "kind": "edge",
+        "diagramId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
+        "elementId": "class-relationship-b0be55c4-c74a-4e8f-a24b-23fd082b8771",
         "parentViewId": null,
         "style": {},
         "routeStyle": "orthogonal",
