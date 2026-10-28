@@ -1,0 +1,1095 @@
+{
+  "format": "plus-c-project-part",
+  "version": 1,
+  "part": "diagram",
+  "project": {
+    "elements": [
+      {
+        "id": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "kind": "diagram",
+        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "name": "18 Component Requirements",
+        "documentation": "",
+        "properties": {
+          "diagramKind": "requirements",
+          "markdown": "# Dot Dash component requirements\n\nContracts derived from the system requirements in 01 Requirements and allocated to the classes in 07 Software Architecture. They hold the exact values and behaviors the Swift implements; code traces implement these requirements, and unit tests verify them.\n\n## GameState: timing and motion\n\nAllocated to GameState.\n\n### CMP-001 Frame step\n\nGameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, fade the flash value, advance the marker only while a run is active, and update particles on every callback.\n\n### CMP-002 Marker advance\n\nadvanceMarker shall add direction × speed × dt to the position, clamp the result to 0...1, and reverse direction when the position reaches 0 or 1 inclusive, discarding any excess distance.\n\n## GameState: rules and difficulty\n\nAllocated to GameState.\n\n### CMP-003 Target test\n\ninZone shall be true exactly when zoneCenter − zoneWidth/2 ≤ markerPos ≤ zoneCenter + zoneWidth/2.\n\n### CMP-004 Perfect band\n\ninPerfect shall be true exactly when markerPos lies within zoneCenter ± zoneWidth/2 × perfectZoneFrac, bounds included.\n\n### CMP-005 Mode settings\n\nClassic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\n\n### CMP-006 Hit update\n\nOn a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\n\n### CMP-007 Hit feedback\n\nA perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.\n\n### CMP-008 Miss handling\n\nOn a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode's key.\n\n### CMP-009 Particle bursts\n\nspawnBurst shall emit 18 particles at the marker's screen position, evenly spread in angle with up to 0.2 rad jitter, speed 2–5 for a hit or 1–3 for a miss, and lifetime 0.6–1.0 s.\n\n### CMP-010 Particle update\n\nupdateParticles shall advance each particle's age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.\n\n### CMP-011 Theme thresholds\n\npickThemeIndex shall return 0 below 12, 1 from 12, 2 from 25 and 3 from 40.\n\n### CMP-012 Target relocation\n\npickNewZoneCenter shall sample centers in 0.15...0.85, trying up to 16 times for a move of at least max(0.08, min(0.22, zoneWidth × 0.9 + 0.06)) and otherwise accepting the last candidate.\n\n## GameState: run lifecycle and storage\n\nAllocated to GameState.\n\n### CMP-013 Run reset\n\nreset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.\n\n### CMP-014 Stopped tap\n\nhandleTap shall call reset whenever no run is active.\n\n### CMP-015 Mode change\n\nchangeMode to a different mode shall stop any run, apply that mode's start values and show instructions without a game-over result or saved best. changeMode to the current mode shall do nothing.\n\n### CMP-016 Pause to instructions\n\npauseToHelp shall stop an active run, show instructions and clear gameOver; it shall do nothing when no run is active.\n\n### CMP-017 Display link ownership\n\nstartLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.\n\n### CMP-018 Best loading and migration\n\nGameState shall load both mode bests from their keys at initialization and copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero.\n\n## GameView\n\nAllocated to GameView.\n\n### CMP-019 Scene lifecycle\n\nGameView shall apply the initial mode, show instructions and start the display link on appear; stop the link on disappear; pause to instructions and stop the link on inactive or background; and restart only the link on active.\n\n## GameBarView\n\nAllocated to GameBarView.\n\n### CMP-020 Game surface\n\nGameBarView shall draw the bar, target, marker and particles on a Canvas at 40% of its height and forward every tap, with its width, to handleTap.\n\n## Game readouts\n\nAllocated to GameReadoutViews.\n\n### CMP-021 Instructions and result\n\nHelpOverlayView shall show How To Play before a run and Game Over with mode, score and best after a miss, and its Start or Play Again button shall call reset.\n\n### CMP-022 In-game mode switch\n\nModeBadgeView shall switch between Classic and Advanced through changeMode.\n\n### CMP-023 Score readout\n\nScoreBarView shall show the current score and the current mode's best (GameState.bestCurrent).\n\n## AppearancePreference\n\nAllocated to AppearancePreference.\n\n### CMP-024 Appearance cycle\n\nAppearancePreference shall cycle Light → Dark → System → Light, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.\n\n## ContentView and Home\n\nAllocated to ContentView.\n\n### CMP-025 Navigation and appearance\n\nContentView shall open GameView in the chosen mode when Play is pressed, read a missing or unknown stored appearance as System, and apply the preference to the whole navigation hierarchy.\n\n### CMP-026 Best refresh\n\nContentView shall read both mode bests from UserDefaults whenever Home appears.\n\n### CMP-027 Home controls\n\nHomeView shall show the mode pill, the chosen mode's best, Play, and a fixed bottom toolbar whose appearance and Support menu buttons are the same size and stay in place while the menu opens; Support shall open the configured Google Form externally.\n\n## ModeTogglePill\n\nAllocated to ModeTogglePill.\n\n### CMP-028 Shared mode pill\n\nModeTogglePill shall render the shared \"Mode: Classic / Advanced\" control and leave the toggle action to its caller.\n\n## dot_dashApp\n\nAllocated to dot_dashApp.\n\n### CMP-029 App entry and platform\n\ndot_dashApp shall present ContentView in a WindowGroup, and the app target shall build with SwiftUI for iOS and iPadOS 26.0 with no third-party dependencies.\n\n## Trace summary\n\n| Component requirement | Refines | Allocated to |\n| --- | --- | --- |\n| Frame step (CMP-001) | REQ-002, REQ-011 | GameState |\n| Marker advance (CMP-002) | REQ-002 | GameState |\n| Target test (CMP-003) | REQ-003 | GameState |\n| Perfect band (CMP-004) | REQ-003 | GameState |\n| Mode settings (CMP-005) | REQ-004, REQ-006 | GameState |\n| Hit update (CMP-006) | REQ-004 | GameState |\n| Hit feedback (CMP-007) | REQ-004 | GameState |\n| Miss handling (CMP-008) | REQ-005 | GameState |\n| Particle bursts (CMP-009) | REQ-004, REQ-005, REQ-011 | GameState |\n| Particle update (CMP-010) | REQ-011 | GameState |\n| Theme thresholds (CMP-011) | REQ-011 | GameState |\n| Target relocation (CMP-012) | REQ-008 | GameState |\n| Run reset (CMP-013) | REQ-006 | GameState |\n| Stopped tap (CMP-014) | REQ-006 | GameState |\n| Mode change (CMP-015) | REQ-006 | GameState |\n| Pause to instructions (CMP-016) | REQ-007 | GameState |\n| Display link ownership (CMP-017) | REQ-007 | GameState |\n| Best loading and migration (CMP-018) | REQ-005, REQ-010 | GameState |\n| Scene lifecycle (CMP-019) | REQ-007 | GameView |\n| Game surface (CMP-020) | REQ-003, REQ-006 | GameBarView |\n| Instructions and result (CMP-021) | REQ-005, REQ-006 | GameReadoutViews |\n| In-game mode switch (CMP-022) | REQ-006 | GameReadoutViews |\n| Score readout (CMP-023) | REQ-004, REQ-005 | GameReadoutViews |\n| Appearance cycle (CMP-024) | REQ-009 | AppearancePreference |\n| Navigation and appearance (CMP-025) | REQ-009, REQ-012 | ContentView |\n| Best refresh (CMP-026) | REQ-012 | ContentView |\n| Home controls (CMP-027) | REQ-009, REQ-012 | ContentView |\n| Shared mode pill (CMP-028) | REQ-006, REQ-012 | ModeTogglePill |\n| App entry and platform (CMP-029) | REQ-001 | dot_dashApp |"
+        },
+        "createdAt": "2026-10-28T17:30:31.619Z",
+        "modifiedAt": "2026-10-28T17:30:31.619Z"
+      },
+      {
+        "id": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "kind": "requirement-group",
+        "ownerId": null,
+        "name": "Dot Dash component requirements",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "requirement-group-c29acbbb-74db-48a4-b9b0-c511f96727b5",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "name": "GameState: timing and motion",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements/gamestate-timing-and-motion"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "name": "GameState: rules and difficulty",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements/gamestate-rules-and-difficulty"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "requirement-group-b85d4bb8-055d-401c-b23e-b1dddbba271e",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "name": "GameState: run lifecycle and storage",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements/gamestate-run-lifecycle-and-storage"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "requirement-group-56d244a8-6e65-486c-8c88-b34b01b52a58",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "name": "GameView",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements/gameview"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "requirement-group-3a819d67-9b21-4c40-883b-74a98b2a7bfb",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "name": "GameBarView",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements/gamebarview"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "requirement-group-ad168060-e105-4225-8e83-33f8b9b9420d",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "name": "Game readouts",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements/game-readouts"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "requirement-group-76917545-4800-43f2-b036-c841f42ca8e4",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "name": "AppearancePreference",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements/appearancepreference"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "requirement-group-79ca5b14-68c7-4d3d-bea8-9f3b996e6438",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "name": "ContentView and Home",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements/contentview-and-home"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "requirement-group-c29736a7-c0e0-4562-a443-b739dabc052d",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "name": "ModeTogglePill",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements/modetogglepill"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "requirement-group-a20bfbd2-9844-4eb0-aec5-9e5166dc6e81",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "name": "dot_dashApp",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements/dotdashapp"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "requirement-group-9627944c-1bb7-45cc-965a-50580ab92055",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "name": "Trace summary",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-component-requirements/trace-summary"
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-01880288-5d90-46fc-8cfb-178b2d26322f",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-c29acbbb-74db-48a4-b9b0-c511f96727b5",
+        "name": "CMP-001 Frame step",
+        "documentation": "GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, fade the flash value, advance the marker only while a run is active, and update particles on every callback.",
+        "properties": {
+          "key": "CMP-001",
+          "title": "Frame step",
+          "statement": "GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, fade the flash value, advance the marker only while a run is active, and update particles on every callback."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-25b9dfce-6e50-4fa6-995c-91056e19fee5",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-c29acbbb-74db-48a4-b9b0-c511f96727b5",
+        "name": "CMP-002 Marker advance",
+        "documentation": "advanceMarker shall add direction × speed × dt to the position, clamp the result to 0...1, and reverse direction when the position reaches 0 or 1 inclusive, discarding any excess distance.",
+        "properties": {
+          "key": "CMP-002",
+          "title": "Marker advance",
+          "statement": "advanceMarker shall add direction × speed × dt to the position, clamp the result to 0...1, and reverse direction when the position reaches 0 or 1 inclusive, discarding any excess distance."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-08e0008e-bcc9-4baf-a11b-af4de9fd13af",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "name": "CMP-003 Target test",
+        "documentation": "inZone shall be true exactly when zoneCenter − zoneWidth/2 ≤ markerPos ≤ zoneCenter + zoneWidth/2.",
+        "properties": {
+          "key": "CMP-003",
+          "title": "Target test",
+          "statement": "inZone shall be true exactly when zoneCenter − zoneWidth/2 ≤ markerPos ≤ zoneCenter + zoneWidth/2."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-c59f4c55-1519-4eaa-be4d-ea3b48f40fb1",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "name": "CMP-004 Perfect band",
+        "documentation": "inPerfect shall be true exactly when markerPos lies within zoneCenter ± zoneWidth/2 × perfectZoneFrac, bounds included.",
+        "properties": {
+          "key": "CMP-004",
+          "title": "Perfect band",
+          "statement": "inPerfect shall be true exactly when markerPos lies within zoneCenter ± zoneWidth/2 × perfectZoneFrac, bounds included."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "name": "CMP-005 Mode settings",
+        "documentation": "Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.",
+        "properties": {
+          "key": "CMP-005",
+          "title": "Mode settings",
+          "statement": "Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "name": "CMP-006 Hit update",
+        "documentation": "On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.",
+        "properties": {
+          "key": "CMP-006",
+          "title": "Hit update",
+          "statement": "On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-fd1a0d87-731c-4089-9e52-5a425afdc50a",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "name": "CMP-007 Hit feedback",
+        "documentation": "A perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.",
+        "properties": {
+          "key": "CMP-007",
+          "title": "Hit feedback",
+          "statement": "A perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-3ceac3c6-6be6-4175-ac6f-b42f3dad6b5c",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "name": "CMP-008 Miss handling",
+        "documentation": "On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode's key.",
+        "properties": {
+          "key": "CMP-008",
+          "title": "Miss handling",
+          "statement": "On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode's key."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-8fcff39b-c7fc-4481-9cda-35a92ef5bb5b",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "name": "CMP-009 Particle bursts",
+        "documentation": "spawnBurst shall emit 18 particles at the marker's screen position, evenly spread in angle with up to 0.2 rad jitter, speed 2–5 for a hit or 1–3 for a miss, and lifetime 0.6–1.0 s.",
+        "properties": {
+          "key": "CMP-009",
+          "title": "Particle bursts",
+          "statement": "spawnBurst shall emit 18 particles at the marker's screen position, evenly spread in angle with up to 0.2 rad jitter, speed 2–5 for a hit or 1–3 for a miss, and lifetime 0.6–1.0 s."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "name": "CMP-010 Particle update",
+        "documentation": "updateParticles shall advance each particle's age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.",
+        "properties": {
+          "key": "CMP-010",
+          "title": "Particle update",
+          "statement": "updateParticles shall advance each particle's age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-efa3c199-3dd3-4f0d-811d-85a5a1937d73",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "name": "CMP-011 Theme thresholds",
+        "documentation": "pickThemeIndex shall return 0 below 12, 1 from 12, 2 from 25 and 3 from 40.",
+        "properties": {
+          "key": "CMP-011",
+          "title": "Theme thresholds",
+          "statement": "pickThemeIndex shall return 0 below 12, 1 from 12, 2 from 25 and 3 from 40."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-5d039f61-dbda-4bef-98a2-a72e7585a82d",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "name": "CMP-012 Target relocation",
+        "documentation": "pickNewZoneCenter shall sample centers in 0.15...0.85, trying up to 16 times for a move of at least max(0.08, min(0.22, zoneWidth × 0.9 + 0.06)) and otherwise accepting the last candidate.",
+        "properties": {
+          "key": "CMP-012",
+          "title": "Target relocation",
+          "statement": "pickNewZoneCenter shall sample centers in 0.15...0.85, trying up to 16 times for a move of at least max(0.08, min(0.22, zoneWidth × 0.9 + 0.06)) and otherwise accepting the last candidate."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-b85d4bb8-055d-401c-b23e-b1dddbba271e",
+        "name": "CMP-013 Run reset",
+        "documentation": "reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.",
+        "properties": {
+          "key": "CMP-013",
+          "title": "Run reset",
+          "statement": "reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-b85d4bb8-055d-401c-b23e-b1dddbba271e",
+        "name": "CMP-014 Stopped tap",
+        "documentation": "handleTap shall call reset whenever no run is active.",
+        "properties": {
+          "key": "CMP-014",
+          "title": "Stopped tap",
+          "statement": "handleTap shall call reset whenever no run is active."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-1fe03981-6e57-426f-b6ce-d2881e5c0284",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-b85d4bb8-055d-401c-b23e-b1dddbba271e",
+        "name": "CMP-015 Mode change",
+        "documentation": "changeMode to a different mode shall stop any run, apply that mode's start values and show instructions without a game-over result or saved best. changeMode to the current mode shall do nothing.",
+        "properties": {
+          "key": "CMP-015",
+          "title": "Mode change",
+          "statement": "changeMode to a different mode shall stop any run, apply that mode's start values and show instructions without a game-over result or saved best. changeMode to the current mode shall do nothing."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-b85d4bb8-055d-401c-b23e-b1dddbba271e",
+        "name": "CMP-016 Pause to instructions",
+        "documentation": "pauseToHelp shall stop an active run, show instructions and clear gameOver; it shall do nothing when no run is active.",
+        "properties": {
+          "key": "CMP-016",
+          "title": "Pause to instructions",
+          "statement": "pauseToHelp shall stop an active run, show instructions and clear gameOver; it shall do nothing when no run is active."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-b85d4bb8-055d-401c-b23e-b1dddbba271e",
+        "name": "CMP-017 Display link ownership",
+        "documentation": "startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.",
+        "properties": {
+          "key": "CMP-017",
+          "title": "Display link ownership",
+          "statement": "startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-000fbacd-98ba-4b73-9d1f-a2bfd860ae46",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-b85d4bb8-055d-401c-b23e-b1dddbba271e",
+        "name": "CMP-018 Best loading and migration",
+        "documentation": "GameState shall load both mode bests from their keys at initialization and copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero.",
+        "properties": {
+          "key": "CMP-018",
+          "title": "Best loading and migration",
+          "statement": "GameState shall load both mode bests from their keys at initialization and copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-b657c37d-7a9e-43e4-acad-ff555aaffdb4",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-56d244a8-6e65-486c-8c88-b34b01b52a58",
+        "name": "CMP-019 Scene lifecycle",
+        "documentation": "GameView shall apply the initial mode, show instructions and start the display link on appear; stop the link on disappear; pause to instructions and stop the link on inactive or background; and restart only the link on active.",
+        "properties": {
+          "key": "CMP-019",
+          "title": "Scene lifecycle",
+          "statement": "GameView shall apply the initial mode, show instructions and start the display link on appear; stop the link on disappear; pause to instructions and stop the link on inactive or background; and restart only the link on active."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-4155f774-8d79-4df6-a422-186b2712e2d3",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-3a819d67-9b21-4c40-883b-74a98b2a7bfb",
+        "name": "CMP-020 Game surface",
+        "documentation": "GameBarView shall draw the bar, target, marker and particles on a Canvas at 40% of its height and forward every tap, with its width, to handleTap.",
+        "properties": {
+          "key": "CMP-020",
+          "title": "Game surface",
+          "statement": "GameBarView shall draw the bar, target, marker and particles on a Canvas at 40% of its height and forward every tap, with its width, to handleTap."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-543bd57d-d153-435a-bfc7-7ef14ddd4dfd",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-ad168060-e105-4225-8e83-33f8b9b9420d",
+        "name": "CMP-021 Instructions and result",
+        "documentation": "HelpOverlayView shall show How To Play before a run and Game Over with mode, score and best after a miss, and its Start or Play Again button shall call reset.",
+        "properties": {
+          "key": "CMP-021",
+          "title": "Instructions and result",
+          "statement": "HelpOverlayView shall show How To Play before a run and Game Over with mode, score and best after a miss, and its Start or Play Again button shall call reset."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-ce113c3d-7f79-421a-9a68-0da38d82680d",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-ad168060-e105-4225-8e83-33f8b9b9420d",
+        "name": "CMP-022 In-game mode switch",
+        "documentation": "ModeBadgeView shall switch between Classic and Advanced through changeMode.",
+        "properties": {
+          "key": "CMP-022",
+          "title": "In-game mode switch",
+          "statement": "ModeBadgeView shall switch between Classic and Advanced through changeMode."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-3a47a5a6-50da-49ba-a179-ddf414e75d58",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-ad168060-e105-4225-8e83-33f8b9b9420d",
+        "name": "CMP-023 Score readout",
+        "documentation": "ScoreBarView shall show the current score and the current mode's best (GameState.bestCurrent).",
+        "properties": {
+          "key": "CMP-023",
+          "title": "Score readout",
+          "statement": "ScoreBarView shall show the current score and the current mode's best (GameState.bestCurrent)."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-42823379-92f0-42c8-b8e5-3f0c8e42c8fd",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-76917545-4800-43f2-b036-c841f42ca8e4",
+        "name": "CMP-024 Appearance cycle",
+        "documentation": "AppearancePreference shall cycle Light → Dark → System → Light, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.",
+        "properties": {
+          "key": "CMP-024",
+          "title": "Appearance cycle",
+          "statement": "AppearancePreference shall cycle Light → Dark → System → Light, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-afba40bf-134e-4944-b6dd-589c0050691d",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-79ca5b14-68c7-4d3d-bea8-9f3b996e6438",
+        "name": "CMP-025 Navigation and appearance",
+        "documentation": "ContentView shall open GameView in the chosen mode when Play is pressed, read a missing or unknown stored appearance as System, and apply the preference to the whole navigation hierarchy.",
+        "properties": {
+          "key": "CMP-025",
+          "title": "Navigation and appearance",
+          "statement": "ContentView shall open GameView in the chosen mode when Play is pressed, read a missing or unknown stored appearance as System, and apply the preference to the whole navigation hierarchy."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-78f8ae86-f853-4781-99b1-67bec30f6659",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-79ca5b14-68c7-4d3d-bea8-9f3b996e6438",
+        "name": "CMP-026 Best refresh",
+        "documentation": "ContentView shall read both mode bests from UserDefaults whenever Home appears.",
+        "properties": {
+          "key": "CMP-026",
+          "title": "Best refresh",
+          "statement": "ContentView shall read both mode bests from UserDefaults whenever Home appears."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-b3f94b80-920f-4183-a9b1-b9a82cfbe3cb",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-79ca5b14-68c7-4d3d-bea8-9f3b996e6438",
+        "name": "CMP-027 Home controls",
+        "documentation": "HomeView shall show the mode pill, the chosen mode's best, Play, and a fixed bottom toolbar whose appearance and Support menu buttons are the same size and stay in place while the menu opens; Support shall open the configured Google Form externally.",
+        "properties": {
+          "key": "CMP-027",
+          "title": "Home controls",
+          "statement": "HomeView shall show the mode pill, the chosen mode's best, Play, and a fixed bottom toolbar whose appearance and Support menu buttons are the same size and stay in place while the menu opens; Support shall open the configured Google Form externally."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-42ec56b9-7b8a-4fc0-bf6b-8958ba7bce94",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-c29736a7-c0e0-4562-a443-b739dabc052d",
+        "name": "CMP-028 Shared mode pill",
+        "documentation": "ModeTogglePill shall render the shared \"Mode: Classic / Advanced\" control and leave the toggle action to its caller.",
+        "properties": {
+          "key": "CMP-028",
+          "title": "Shared mode pill",
+          "statement": "ModeTogglePill shall render the shared \"Mode: Classic / Advanced\" control and leave the toggle action to its caller."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      },
+      {
+        "id": "document-requirement-024ac5e4-faf0-4982-89f1-124dd7133e24",
+        "kind": "document-requirement",
+        "ownerId": "requirement-group-a20bfbd2-9844-4eb0-aec5-9e5166dc6e81",
+        "name": "CMP-029 App entry and platform",
+        "documentation": "dot_dashApp shall present ContentView in a WindowGroup, and the app target shall build with SwiftUI for iOS and iPadOS 26.0 with no third-party dependencies.",
+        "properties": {
+          "key": "CMP-029",
+          "title": "App entry and platform",
+          "statement": "dot_dashApp shall present ContentView in a WindowGroup, and the app target shall build with SwiftUI for iOS and iPadOS 26.0 with no third-party dependencies."
+        },
+        "createdAt": "2026-10-28T17:30:31.621Z",
+        "modifiedAt": "2026-10-28T17:30:31.621Z"
+      }
+    ],
+    "views": [
+      {
+        "id": "view-10a460bb-9e81-44f8-be79-ac0c00b9fdd9",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-42c59965-03c1-4ccc-bad0-0ac67e29b32d",
+        "parentViewId": null,
+        "style": {
+          "level": 1,
+          "end": 192
+        },
+        "row": 0
+      },
+      {
+        "id": "view-45da8b96-c1cc-47af-817f-2c779bc31d62",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-c29acbbb-74db-48a4-b9b0-c511f96727b5",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 14
+        },
+        "row": 4
+      },
+      {
+        "id": "view-b4761764-4dfb-443e-b327-8aabcdd8c2cd",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-95033059-e5e6-4c55-8d1e-48ab0a65c687",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 58
+        },
+        "row": 16
+      },
+      {
+        "id": "view-c9f64169-7e37-4934-85cf-c0bc656c3859",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-b85d4bb8-055d-401c-b23e-b1dddbba271e",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 86
+        },
+        "row": 60
+      },
+      {
+        "id": "view-9e8ee22c-2416-44fa-9c45-dc0469680a98",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-56d244a8-6e65-486c-8c88-b34b01b52a58",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 94
+        },
+        "row": 88
+      },
+      {
+        "id": "view-3cd054fb-faa6-4d25-a680-ca7519677095",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-3a819d67-9b21-4c40-883b-74a98b2a7bfb",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 102
+        },
+        "row": 96
+      },
+      {
+        "id": "view-a209a89c-cb33-4a90-bc49-d1980d948e18",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-ad168060-e105-4225-8e83-33f8b9b9420d",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 118
+        },
+        "row": 104
+      },
+      {
+        "id": "view-0bf40aac-2a02-4910-91ea-efed5f4fede2",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-76917545-4800-43f2-b036-c841f42ca8e4",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 126
+        },
+        "row": 120
+      },
+      {
+        "id": "view-b0cbfd8c-1333-4296-bc71-8e756bfc35c5",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-79ca5b14-68c7-4d3d-bea8-9f3b996e6438",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 142
+        },
+        "row": 128
+      },
+      {
+        "id": "view-a4c06a0f-3851-45e2-b93d-87aea2902ef8",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-c29736a7-c0e0-4562-a443-b739dabc052d",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 150
+        },
+        "row": 144
+      },
+      {
+        "id": "view-8bf1606d-4d51-4719-95a7-607925a75901",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-a20bfbd2-9844-4eb0-aec5-9e5166dc6e81",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 158
+        },
+        "row": 152
+      },
+      {
+        "id": "view-bfec52a7-a7f2-4328-8788-f0da95408f40",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "requirement-group-9627944c-1bb7-45cc-965a-50580ab92055",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 192
+        },
+        "row": 160
+      },
+      {
+        "id": "view-6917e670-08d5-486b-8ffd-d653d198b2cf",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-01880288-5d90-46fc-8cfb-178b2d26322f",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 10
+        },
+        "row": 8
+      },
+      {
+        "id": "view-6e069937-8fa2-4576-a5a2-0b1a7e1f9f88",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-25b9dfce-6e50-4fa6-995c-91056e19fee5",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 14
+        },
+        "row": 12
+      },
+      {
+        "id": "view-75f33c97-0126-4e99-b4e1-a62019bd4ceb",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-08e0008e-bcc9-4baf-a11b-af4de9fd13af",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 22
+        },
+        "row": 20
+      },
+      {
+        "id": "view-91aa3f16-862a-4c78-b3bb-25a0a1ede6d4",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-c59f4c55-1519-4eaa-be4d-ea3b48f40fb1",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 26
+        },
+        "row": 24
+      },
+      {
+        "id": "view-fc49c85b-609b-4d8a-99c5-48ea6f02cc77",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 30
+        },
+        "row": 28
+      },
+      {
+        "id": "view-2f81780a-3c4f-44e0-9a76-c6cbc4d30734",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 34
+        },
+        "row": 32
+      },
+      {
+        "id": "view-4ca98258-5457-4ad5-aebc-9d37a5785abd",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-fd1a0d87-731c-4089-9e52-5a425afdc50a",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 38
+        },
+        "row": 36
+      },
+      {
+        "id": "view-fbddba06-8eba-4f36-82cd-e9e5fe4445ee",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-3ceac3c6-6be6-4175-ac6f-b42f3dad6b5c",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 42
+        },
+        "row": 40
+      },
+      {
+        "id": "view-77484463-01d5-49a4-a189-0f9d070996df",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-8fcff39b-c7fc-4481-9cda-35a92ef5bb5b",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 46
+        },
+        "row": 44
+      },
+      {
+        "id": "view-a566da61-9cbe-46e4-9e43-dc673826294d",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 50
+        },
+        "row": 48
+      },
+      {
+        "id": "view-f1f8e4f5-b72a-4cee-8a09-64fd13f4d848",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-efa3c199-3dd3-4f0d-811d-85a5a1937d73",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 54
+        },
+        "row": 52
+      },
+      {
+        "id": "view-7c907edd-7e58-4e9f-9a2b-51d305b3bd45",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-5d039f61-dbda-4bef-98a2-a72e7585a82d",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 58
+        },
+        "row": 56
+      },
+      {
+        "id": "view-5c2223c5-62f6-4802-b8f9-cd334f927ad7",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 66
+        },
+        "row": 64
+      },
+      {
+        "id": "view-c77a8315-6129-468b-92bd-21ddd452e732",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 70
+        },
+        "row": 68
+      },
+      {
+        "id": "view-8002e736-fdce-470d-95f9-f8cf1822d893",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-1fe03981-6e57-426f-b6ce-d2881e5c0284",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 74
+        },
+        "row": 72
+      },
+      {
+        "id": "view-a46e205d-1243-475d-8044-359a34cba77a",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 78
+        },
+        "row": 76
+      },
+      {
+        "id": "view-5b09668c-8c28-42b8-9502-a94ab0f6226a",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 82
+        },
+        "row": 80
+      },
+      {
+        "id": "view-11d48e35-e704-4a9a-86cb-a98d8c3adc9f",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-000fbacd-98ba-4b73-9d1f-a2bfd860ae46",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 86
+        },
+        "row": 84
+      },
+      {
+        "id": "view-424231c6-16db-459b-96c3-cf7dbc3e847c",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-b657c37d-7a9e-43e4-acad-ff555aaffdb4",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 94
+        },
+        "row": 92
+      },
+      {
+        "id": "view-c1622802-e403-412f-95bc-1e42e7bb9d17",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-4155f774-8d79-4df6-a422-186b2712e2d3",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 102
+        },
+        "row": 100
+      },
+      {
+        "id": "view-5c3623d2-0d5b-4301-b577-cd4e42c0050f",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-543bd57d-d153-435a-bfc7-7ef14ddd4dfd",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 110
+        },
+        "row": 108
+      },
+      {
+        "id": "view-bb001b1a-9593-4388-a266-71bd7aae636b",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-ce113c3d-7f79-421a-9a68-0da38d82680d",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 114
+        },
+        "row": 112
+      },
+      {
+        "id": "view-f0a5a362-0e49-4028-80cf-652a2e22b0d5",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-3a47a5a6-50da-49ba-a179-ddf414e75d58",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 118
+        },
+        "row": 116
+      },
+      {
+        "id": "view-9b4b4883-f5f1-4add-bda0-293fee9f30d8",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-42823379-92f0-42c8-b8e5-3f0c8e42c8fd",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 126
+        },
+        "row": 124
+      },
+      {
+        "id": "view-9e760ac4-0876-4de7-a0a8-6c74195aa2ab",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-afba40bf-134e-4944-b6dd-589c0050691d",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 134
+        },
+        "row": 132
+      },
+      {
+        "id": "view-b3f9559d-fc58-4006-998c-edfac313148c",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-78f8ae86-f853-4781-99b1-67bec30f6659",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 138
+        },
+        "row": 136
+      },
+      {
+        "id": "view-1b8fdcc0-b146-4f81-a63a-0ce66dade7e7",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-b3f94b80-920f-4183-a9b1-b9a82cfbe3cb",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 142
+        },
+        "row": 140
+      },
+      {
+        "id": "view-64a093ad-8753-4a70-bbc6-b941428e6629",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-42ec56b9-7b8a-4fc0-bf6b-8958ba7bce94",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 150
+        },
+        "row": 148
+      },
+      {
+        "id": "view-d4bb9d7e-2d3f-40fc-ae25-1113e3786723",
+        "kind": "list",
+        "diagramId": "diagram-626272f9-c059-416d-983b-14df74635730",
+        "elementId": "document-requirement-024ac5e4-faf0-4982-89f1-124dd7133e24",
+        "parentViewId": null,
+        "style": {
+          "form": "heading",
+          "level": 3,
+          "end": 158
+        },
+        "row": 156
+      }
+    ]
+  }
+}

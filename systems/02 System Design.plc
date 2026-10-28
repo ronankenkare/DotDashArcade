@@ -7,15 +7,15 @@
       {
         "id": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
         "kind": "diagram",
-        "ownerId": "project-46fd9abf-e819-45fa-ad0a-2c9c698d8d3b",
+        "ownerId": null,
         "name": "02 System Design",
         "documentation": "",
         "properties": {
           "diagramKind": "requirements",
-          "markdown": "# Dot Dash system design\n\n## Scope and architecture\n\nDot Dash is a universal iPhone/iPad reflex game. The deployment target is iOS 26.0. The app entry point in dot-dash/dot_dashApp.swift creates ContentView. ContentView owns NavigationStack, the selected home mode, best-score readout, and the persisted appearance preference. Home's Play selects a navigation destination; it does not start marker motion. HomeView places appearance and a native Support Menu in a horizontal HStack separated by a spacer, anchored with safeAreaInset(edge: .bottom). The system presents the menu outside toolbar layout, so opening it cannot enlarge the row or move the appearance control. The fixed bottom toolbar respects the safe area and stays horizontal on iPhone Duo, where native bottomBar items adapt into a trailing vertical rail in landscape.\n\nGameView owns a MainActor GameState through StateObject. GameState is an ObservableObject publishing score, flags, marker, target and particles. GameBarView renders a SwiftUI Canvas; ScoreBarView, HelpOverlayView and ModeBadgeView observe the same model. ModeTogglePill is shared with Home.\n\n## Timing and rendering\n\nGameView starts CADisplayLink on appear and on active scene phase. startLoop is idempotent; stopLoop invalidates and clears the link. step computes elapsed time and caps it at 50 ms. The marker moves only when running. Flash fades and particles age even when not running. Particle displacement is per frame, not velocity multiplied by dt; this is current behavior.\n\n## Rules and difficulty\n\n| Setting | Classic | Advanced |\n| --- | --- | --- |\n| Start width | 0.36 | 0.26 |\n| Start speed (normalized bar units/s) | 0.55 | 0.80 |\n| Perfect fraction | 0.45 | 0.30 |\n| Speed multiplier perfect / good | 1.10 / 1.05 | 1.15 / 1.10 |\n| Width multiplier perfect / good | 1.00 / 1.00 | 0.90 / 0.94 |\n| Minimum width | 0.10 | 0.06 |\n\nEach hit scores one point, regardless of perfect classification. There is no speed cap. Width is clamped between the mode minimum and 0.5 after multiplication. New centers are sampled within 0.15...0.85, with up to 16 attempts at the movement threshold. The target may extend beyond a bar endpoint when wide; its center is what is bounded. Theme thresholds are 12, 25 and 40.\n\n## Local persistence\n\n| Key | Owner | Write trigger |\n| --- | --- | --- |\n| dotdash_best_classic_v1 | GameState | Classic miss; eligible legacy migration |\n| dotdash_best_advanced_v1 | GameState | Advanced miss |\n| dotdash_best_v1 | GameState reads | Legacy migration input; not removed |\n| dotdash_appearance_v1 | ContentView AppStorage | Appearance button |\n\nHome refreshes bests on appear. GameState loads mode bests during initialization. Quitting, pausing, switching modes, or navigating back during a live run does not save that run as a new best.\n\n## External interfaces\n\nThe gameplay path needs no backend. UIKit supplies notification and impact haptics. SwiftUI scenePhase supplies lifecycle events. Support calls UIApplication.open for the Google Form URL in ContentView.swift. Form availability and network behavior are outside the game loop.\n\n## Source map\n\n- dot-dash/dot_dashApp.swift: application scene.\n- dot-dash/ContentView.swift: navigation, home, appearance, support and best refresh.\n- dot-dash/GameView.swift: game views, GameState, physics, rules, effects and storage.\n- dot-dashTests/: Swift Testing suites.\n- dot-dashUITests/: XCUITest flows and launch measurements.\n"
+          "markdown": "# Dot Dash system design\n\n## Scope and architecture\n\nDot Dash is a universal iPhone/iPad reflex game. The deployment target is iOS 26.0. The app entry point in dot-dash/dot_dashApp.swift creates ContentView. ContentView owns NavigationStack, the selected home mode, best-score readout, and the persisted appearance preference. Home's Play selects a navigation destination; it does not start marker motion. HomeView places appearance and a native Support Menu in a horizontal HStack separated by a spacer, anchored with safeAreaInset(edge: .bottom). The system presents the menu outside toolbar layout, so opening it cannot enlarge the row or move the appearance control. The fixed bottom toolbar respects the safe area and stays horizontal on iPhone Duo, where native bottomBar items adapt into a trailing vertical rail in landscape.\n\nGameView owns a MainActor GameState through StateObject. GameState is an ObservableObject publishing score, flags, marker, target and particles. GameBarView renders a SwiftUI Canvas; ScoreBarView, HelpOverlayView and ModeBadgeView observe the same model. ModeTogglePill is shared with Home.\n\n## Timing and rendering\n\nGameView starts CADisplayLink on appear and on active scene phase. startLoop is idempotent; stopLoop invalidates and clears the link. step computes elapsed time and caps it at 50 ms. The marker moves only when running. Flash fades and particles age even when not running. Particle displacement is per frame, not velocity multiplied by dt; this is current behavior.\n\n## Rules and difficulty\n\n| Setting | Classic | Advanced |\n| --- | --- | --- |\n| Start width | 0.36 | 0.26 |\n| Start speed (normalized bar units/s) | 0.55 | 0.80 |\n| Perfect fraction | 0.45 | 0.30 |\n| Speed multiplier perfect / good | 1.10 / 1.05 | 1.15 / 1.10 |\n| Width multiplier perfect / good | 1.00 / 1.00 | 0.90 / 0.94 |\n| Minimum width | 0.10 | 0.06 |\n\nEach hit scores one point, regardless of perfect classification. There is no speed cap. Width is clamped between the mode minimum and 0.5 after multiplication. New centers are sampled within 0.15...0.85, with up to 16 attempts at the movement threshold. The target may extend beyond a bar endpoint when wide; its center is what is bounded. Theme thresholds are 12, 25 and 40.\n\n## Local persistence\n\n| Key | Owner | Write trigger |\n| --- | --- | --- |\n| dotdash_best_classic_v1 | GameState | Classic miss; eligible legacy migration |\n| dotdash_best_advanced_v1 | GameState | Advanced miss |\n| dotdash_best_v1 | GameState reads | Legacy migration input; not removed |\n| dotdash_appearance_v1 | ContentView AppStorage | Appearance button |\n\nHome refreshes bests on appear. GameState loads mode bests during initialization. Quitting, pausing, switching modes, or navigating back during a live run does not save that run as a new best.\n\n## External interfaces\n\nThe gameplay path needs no backend. UIKit supplies notification and impact haptics. SwiftUI scenePhase supplies lifecycle events. Support calls UIApplication.open for the Google Form URL in ContentView.swift. Form availability and network behavior are outside the game loop.\n\n## Source map\n\n- dot-dash/dot_dashApp.swift: application scene.\n- dot-dash/ContentView.swift: navigation, home, appearance, support and best refresh.\n- dot-dash/GameView.swift: game views, GameState, physics, rules, effects and storage.\n- dot-dashTests/: Swift Testing suites.\n- dot-dashUITests/: XCUITest flows and launch measurements.\n\n\n## Traceability\n\nTraceability runs one level at a time, and each element traces only to the level directly above it.\n\n| Level | Where | Traces upward |\n| --- | --- | --- |\n| Stakeholder needs | 00 Stakeholder Needs | Top of the tree |\n| System requirements | 01 Requirements | Refine needs; design views 06–17 satisfy them |\n| Component requirements | 18 Component Requirements | Derive from system requirements; allocated to 07 architecture classes, which satisfy them |\n| Code | Swift symbol parts in project.plc | Implement component requirements; Swift types also implement their 07 class |\n| Tests | Swift test functions in project.plc | Verify component requirements (unit tests) or system requirements (UI flows) |\n\nPlus-C has no derives or verifies trace kind, so derivation and verification are recorded as refines traces whose rationale begins \"Derived from\" or \"Verifies\". Code never traces to a need or a system requirement; the verification script rejects a trace that skips a level. Each requirements document ends with a trace summary.\n\nEach code part names a Swift symbol and its line range and records the Plus-C line hash, so the code editor marks traced lines and flags edits. The whole-file SHA-256 baselines remain for review of any source change. Line numbers below were inspected on October 28, 2026. Platform services drawn in 07 (CADisplayLink, UserDefaults and the haptic generators) are used by app code but not implemented by it, so they carry no code trace.\n\n| Code part | Lines | Implements |\n| --- | --- | --- |\n| dot_dashApp.swift · dot_dashApp | 11–17 | dot_dashApp class, CMP-029 |\n| ContentView.swift · AppearancePreference | 6–44 | AppearancePreference class, CMP-024 |\n| ContentView.swift · ContentView | 46–233 | ContentView class |\n| ContentView.swift · ContentView.appearance | 57–59 | CMP-025 |\n| ContentView.swift · ContentView.body | 61–87 | CMP-025 |\n| ContentView.swift · ContentView.refreshBests | 89–92 | CMP-026 |\n| ContentView.swift · ContentView.HomeView | 105–209 | CMP-027 |\n| GameView.swift · GameView | 15–71 | GameView class, CMP-019 |\n| GameView.swift · ModeTogglePill | 78–99 | ModeTogglePill class, CMP-028 |\n| GameView.swift · GameBarView | 104–155 | GameBarView class, CMP-020 |\n| GameView.swift · HelpOverlayView | 158–253 | GameReadoutViews class, CMP-021 |\n| GameView.swift · ModeBadgeView | 256–268 | GameReadoutViews class, CMP-022 |\n| GameView.swift · ScoreBarView | 271–289 | GameReadoutViews class, CMP-023 |\n| GameView.swift · GameState | 294–624 | GameState class |\n| GameView.swift · GameState.init | 380–388 | CMP-018 |\n| GameView.swift · GameState.deinit | 389–389 | CMP-017 |\n| GameView.swift · GameState.startLoop | 391–397 | CMP-017 |\n| GameView.swift · GameState.stopLoop | 399–402 | CMP-017 |\n| GameView.swift · GameState.reset | 404–419 | CMP-013 |\n| GameView.swift · GameState.pauseToHelp | 421–423 | CMP-016 |\n| GameView.swift · GameState.step | 427–442 | CMP-001 |\n| GameView.swift · GameState.advanceMarker | 445–452 | CMP-002 |\n| GameView.swift · GameState.updateParticles | 454–461 | CMP-010 |\n| GameView.swift · GameState.handleTap | 465–499 | CMP-006, CMP-007, CMP-008, CMP-014 |\n| GameView.swift · GameState.currentSettings | 501–526 | CMP-005 |\n| GameView.swift · GameState.changeMode | 528–557 | CMP-015 |\n| GameView.swift · GameState.inZone | 561–564 | CMP-003 |\n| GameView.swift · GameState.inPerfect | 566–570 | CMP-004 |\n| GameView.swift · GameState.pickThemeIndex | 574–579 | CMP-011 |\n| GameView.swift · GameState.spawnBurst | 588–604 | CMP-009 |\n| GameView.swift · GameState.pickNewZoneCenter | 606–623 | CMP-012 |"
         },
         "createdAt": "2026-10-21T21:41:30.582Z",
-        "modifiedAt": "2026-10-21T21:41:30.582Z"
+        "modifiedAt": "2026-10-28T17:30:31.690Z"
       },
       {
         "id": "requirement-group-329483cd-92b5-478d-9afd-a2ce6e2892d3",
@@ -27,7 +27,7 @@
           "key": "dot-dash-system-design"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.509Z"
+        "modifiedAt": "2026-10-28T17:30:31.693Z"
       },
       {
         "id": "requirement-group-84d2fee6-6222-4fe6-86af-33ba30ba604a",
@@ -39,7 +39,7 @@
           "key": "dot-dash-system-design/scope-and-architecture"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.509Z"
+        "modifiedAt": "2026-10-28T17:30:31.694Z"
       },
       {
         "id": "requirement-group-9e4487bb-13b5-4cbf-8875-ad624a5523c0",
@@ -51,7 +51,7 @@
           "key": "dot-dash-system-design/timing-and-rendering"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.509Z"
+        "modifiedAt": "2026-10-28T17:30:31.694Z"
       },
       {
         "id": "requirement-group-0aa2f557-c34d-4cb9-9cd8-2d4dcb519630",
@@ -63,7 +63,7 @@
           "key": "dot-dash-system-design/rules-and-difficulty"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.509Z"
+        "modifiedAt": "2026-10-28T17:30:31.694Z"
       },
       {
         "id": "requirement-group-bd28cb82-660d-46c1-87ec-f0c432f8fc16",
@@ -75,7 +75,7 @@
           "key": "dot-dash-system-design/local-persistence"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.509Z"
+        "modifiedAt": "2026-10-28T17:30:31.694Z"
       },
       {
         "id": "requirement-group-1ea4d098-a57f-4d09-b005-d103f4989966",
@@ -87,7 +87,7 @@
           "key": "dot-dash-system-design/external-interfaces"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.509Z"
+        "modifiedAt": "2026-10-28T17:30:31.694Z"
       },
       {
         "id": "requirement-group-38157b03-47de-40b7-957b-add0508a23bb",
@@ -99,24 +99,36 @@
           "key": "dot-dash-system-design/source-map"
         },
         "createdAt": "2026-10-21T21:41:30.591Z",
-        "modifiedAt": "2026-10-21T21:45:55.509Z"
+        "modifiedAt": "2026-10-28T17:30:31.694Z"
+      },
+      {
+        "id": "requirement-group-0c08ec35-cbc4-4a24-87ce-7749a849b50f",
+        "kind": "requirement-group",
+        "ownerId": "requirement-group-329483cd-92b5-478d-9afd-a2ce6e2892d3",
+        "name": "Traceability",
+        "documentation": "",
+        "properties": {
+          "key": "dot-dash-system-design/traceability"
+        },
+        "createdAt": "2026-10-28T17:22:36.572Z",
+        "modifiedAt": "2026-10-28T17:30:31.694Z"
       }
     ],
     "views": [
       {
-        "id": "view-11d70512-50e5-45d9-b163-3c86b8d4ccba",
+        "id": "view-ecbad520-0961-4c06-9584-c09911d64a5f",
         "kind": "list",
         "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
         "elementId": "requirement-group-329483cd-92b5-478d-9afd-a2ce6e2892d3",
         "parentViewId": null,
         "style": {
           "level": 1,
-          "end": 46
+          "end": 97
         },
         "row": 0
       },
       {
-        "id": "view-525524fb-fa3e-4d15-b0dd-520d112a81ca",
+        "id": "view-a233b1d0-6002-4cf6-b510-7356c06b071e",
         "kind": "list",
         "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
         "elementId": "requirement-group-84d2fee6-6222-4fe6-86af-33ba30ba604a",
@@ -128,7 +140,7 @@
         "row": 2
       },
       {
-        "id": "view-f764966c-93a2-4b35-b450-a963506171e7",
+        "id": "view-5d8e2c14-0e6b-41a0-8bc4-8f1112719ea7",
         "kind": "list",
         "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
         "elementId": "requirement-group-9e4487bb-13b5-4cbf-8875-ad624a5523c0",
@@ -140,7 +152,7 @@
         "row": 8
       },
       {
-        "id": "view-0b1f214e-375c-4cc1-9d6f-184508df8cdc",
+        "id": "view-9b604a72-db52-48b4-a744-cbc5757fda27",
         "kind": "list",
         "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
         "elementId": "requirement-group-0aa2f557-c34d-4cb9-9cd8-2d4dcb519630",
@@ -152,7 +164,7 @@
         "row": 12
       },
       {
-        "id": "view-5b265a2f-68b5-4aac-8114-bbd460b4af96",
+        "id": "view-89cf5691-2dc0-449f-acd8-4d74336c8993",
         "kind": "list",
         "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
         "elementId": "requirement-group-bd28cb82-660d-46c1-87ec-f0c432f8fc16",
@@ -164,7 +176,7 @@
         "row": 25
       },
       {
-        "id": "view-c8be2778-6c2e-4e79-9c0a-3d018bf5c990",
+        "id": "view-b01e94af-4eca-4b1f-b34c-4233708e7002",
         "kind": "list",
         "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
         "elementId": "requirement-group-1ea4d098-a57f-4d09-b005-d103f4989966",
@@ -176,7 +188,7 @@
         "row": 36
       },
       {
-        "id": "view-76d28f1b-12c7-4191-b901-b87a93a95621",
+        "id": "view-f7ea281e-2ca9-4550-a18c-a19f07450cf5",
         "kind": "list",
         "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
         "elementId": "requirement-group-38157b03-47de-40b7-957b-add0508a23bb",
@@ -186,6 +198,18 @@
           "end": 46
         },
         "row": 40
+      },
+      {
+        "id": "view-1c56372d-0064-4122-8e0a-e278cd7afad1",
+        "kind": "list",
+        "diagramId": "diagram-d6ad32ce-0a0a-451b-a17d-3a86dd6520ae",
+        "elementId": "requirement-group-0c08ec35-cbc4-4a24-87ce-7749a849b50f",
+        "parentViewId": null,
+        "style": {
+          "level": 2,
+          "end": 97
+        },
+        "row": 49
       }
     ]
   }

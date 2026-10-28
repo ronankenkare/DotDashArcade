@@ -135,32 +135,6 @@
         "modifiedAt": "2026-10-21T21:41:30.592Z"
       },
       {
-        "id": "classifier-7105dc57-146f-4043-9ad1-d47f0f08132e",
-        "kind": "class",
-        "ownerId": null,
-        "name": "AppearancePreference",
-        "documentation": "Light → Dark → System cycle, storage key, color scheme",
-        "properties": {
-          "stereotype": "Swift enum",
-          "isAbstract": false
-        },
-        "createdAt": "2026-10-28T17:14:21.299Z",
-        "modifiedAt": "2026-10-28T17:14:21.299Z"
-      },
-      {
-        "id": "classifier-55943307-bcaf-4843-a474-e119d411eebb",
-        "kind": "class",
-        "ownerId": null,
-        "name": "ModeTogglePill",
-        "documentation": "Shared Classic / Advanced mode control",
-        "properties": {
-          "stereotype": "SwiftUI View",
-          "isAbstract": false
-        },
-        "createdAt": "2026-10-28T17:14:21.299Z",
-        "modifiedAt": "2026-10-28T17:14:21.299Z"
-      },
-      {
         "id": "class-relationship-1d67c405-1a7c-4f7b-a203-024c7fbe62f9",
         "kind": "dependency",
         "ownerId": null,
@@ -435,6 +409,32 @@
         "modifiedAt": "2026-10-21T21:41:30.592Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "classifier-f37885c0-a2bf-471e-ac1f-8af4f0874a01"
+      },
+      {
+        "id": "classifier-55943307-bcaf-4843-a474-e119d411eebb",
+        "kind": "class",
+        "ownerId": null,
+        "name": "ModeTogglePill",
+        "documentation": "Shared Classic / Advanced mode control",
+        "properties": {
+          "stereotype": "SwiftUI View",
+          "isAbstract": false
+        },
+        "createdAt": "2026-10-28T17:14:21.299Z",
+        "modifiedAt": "2026-10-28T17:14:21.299Z"
+      },
+      {
+        "id": "classifier-7105dc57-146f-4043-9ad1-d47f0f08132e",
+        "kind": "class",
+        "ownerId": null,
+        "name": "AppearancePreference",
+        "documentation": "Light → Dark → System cycle, storage key, color scheme",
+        "properties": {
+          "stereotype": "Swift enum",
+          "isAbstract": false
+        },
+        "createdAt": "2026-10-28T17:14:21.299Z",
+        "modifiedAt": "2026-10-28T17:14:21.299Z"
       },
       {
         "id": "class-relationship-fe082ad9-d41f-4e82-ae0f-7440538d7e52",

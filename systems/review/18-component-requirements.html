@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>18 Component Requirements — Dot Dash</title><link rel="stylesheet" href="styles.css"></head><body><header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark">•</span>Dot • Dash</a><nav class="site-nav"><a href="../index.html">Plus-C library</a></nav></header><main><section class="hero"><p class="eyebrow">Plus-C systems library</p><h1>Component Requirements</h1></section><article class="glass-panel" style="padding:clamp(1rem,4vw,3rem);overflow:auto"><h1 id="dot-dash-component-requirements">Dot Dash component requirements</h1>
+<p>Contracts derived from the system requirements in 01 Requirements and allocated to the classes in 07 Software Architecture. They hold the exact values and behaviors the Swift implements; code traces implement these requirements, and unit tests verify them.</p>
+<h2 id="gamestate-timing-and-motion">GameState: timing and motion</h2>
+<p>Allocated to GameState.</p>
+<h3 id="cmp-001-frame-step">CMP-001 Frame step</h3>
+<p>GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, fade the flash value, advance the marker only while a run is active, and update particles on every callback.</p>
+<h3 id="cmp-002-marker-advance">CMP-002 Marker advance</h3>
+<p>advanceMarker shall add direction × speed × dt to the position, clamp the result to 0...1, and reverse direction when the position reaches 0 or 1 inclusive, discarding any excess distance.</p>
+<h2 id="gamestate-rules-and-difficulty">GameState: rules and difficulty</h2>
+<p>Allocated to GameState.</p>
+<h3 id="cmp-003-target-test">CMP-003 Target test</h3>
+<p>inZone shall be true exactly when zoneCenter − zoneWidth/2 ≤ markerPos ≤ zoneCenter + zoneWidth/2.</p>
+<h3 id="cmp-004-perfect-band">CMP-004 Perfect band</h3>
+<p>inPerfect shall be true exactly when markerPos lies within zoneCenter ± zoneWidth/2 × perfectZoneFrac, bounds included.</p>
+<h3 id="cmp-005-mode-settings">CMP-005 Mode settings</h3>
+<p>Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.</p>
+<h3 id="cmp-006-hit-update">CMP-006 Hit update</h3>
+<p>On a hit, handleTap shall add one point, multiply speed and width by the mode&#39;s factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.</p>
+<h3 id="cmp-007-hit-feedback">CMP-007 Hit feedback</h3>
+<p>A perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.</p>
+<h3 id="cmp-008-miss-handling">CMP-008 Miss handling</h3>
+<p>On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode&#39;s key.</p>
+<h3 id="cmp-009-particle-bursts">CMP-009 Particle bursts</h3>
+<p>spawnBurst shall emit 18 particles at the marker&#39;s screen position, evenly spread in angle with up to 0.2 rad jitter, speed 2–5 for a hit or 1–3 for a miss, and lifetime 0.6–1.0 s.</p>
+<h3 id="cmp-010-particle-update">CMP-010 Particle update</h3>
+<p>updateParticles shall advance each particle&#39;s age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.</p>
+<h3 id="cmp-011-theme-thresholds">CMP-011 Theme thresholds</h3>
+<p>pickThemeIndex shall return 0 below 12, 1 from 12, 2 from 25 and 3 from 40.</p>
+<h3 id="cmp-012-target-relocation">CMP-012 Target relocation</h3>
+<p>pickNewZoneCenter shall sample centers in 0.15...0.85, trying up to 16 times for a move of at least max(0.08, min(0.22, zoneWidth × 0.9 + 0.06)) and otherwise accepting the last candidate.</p>
+<h2 id="gamestate-run-lifecycle-and-storage">GameState: run lifecycle and storage</h2>
+<p>Allocated to GameState.</p>
+<h3 id="cmp-013-run-reset">CMP-013 Run reset</h3>
+<p>reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.</p>
+<h3 id="cmp-014-stopped-tap">CMP-014 Stopped tap</h3>
+<p>handleTap shall call reset whenever no run is active.</p>
+<h3 id="cmp-015-mode-change">CMP-015 Mode change</h3>
+<p>changeMode to a different mode shall stop any run, apply that mode&#39;s start values and show instructions without a game-over result or saved best. changeMode to the current mode shall do nothing.</p>
+<h3 id="cmp-016-pause-to-instructions">CMP-016 Pause to instructions</h3>
+<p>pauseToHelp shall stop an active run, show instructions and clear gameOver; it shall do nothing when no run is active.</p>
+<h3 id="cmp-017-display-link-ownership">CMP-017 Display link ownership</h3>
+<p>startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.</p>
+<h3 id="cmp-018-best-loading-and-migration">CMP-018 Best loading and migration</h3>
+<p>GameState shall load both mode bests from their keys at initialization and copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero.</p>
+<h2 id="gameview">GameView</h2>
+<p>Allocated to GameView.</p>
+<h3 id="cmp-019-scene-lifecycle">CMP-019 Scene lifecycle</h3>
+<p>GameView shall apply the initial mode, show instructions and start the display link on appear; stop the link on disappear; pause to instructions and stop the link on inactive or background; and restart only the link on active.</p>
+<h2 id="gamebarview">GameBarView</h2>
+<p>Allocated to GameBarView.</p>
+<h3 id="cmp-020-game-surface">CMP-020 Game surface</h3>
+<p>GameBarView shall draw the bar, target, marker and particles on a Canvas at 40% of its height and forward every tap, with its width, to handleTap.</p>
+<h2 id="game-readouts">Game readouts</h2>
+<p>Allocated to GameReadoutViews.</p>
+<h3 id="cmp-021-instructions-and-result">CMP-021 Instructions and result</h3>
+<p>HelpOverlayView shall show How To Play before a run and Game Over with mode, score and best after a miss, and its Start or Play Again button shall call reset.</p>
+<h3 id="cmp-022-in-game-mode-switch">CMP-022 In-game mode switch</h3>
+<p>ModeBadgeView shall switch between Classic and Advanced through changeMode.</p>
+<h3 id="cmp-023-score-readout">CMP-023 Score readout</h3>
+<p>ScoreBarView shall show the current score and the current mode&#39;s best (GameState.bestCurrent).</p>
+<h2 id="appearancepreference">AppearancePreference</h2>
+<p>Allocated to AppearancePreference.</p>
+<h3 id="cmp-024-appearance-cycle">CMP-024 Appearance cycle</h3>
+<p>AppearancePreference shall cycle Light → Dark → System → Light, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.</p>
+<h2 id="contentview-and-home">ContentView and Home</h2>
+<p>Allocated to ContentView.</p>
+<h3 id="cmp-025-navigation-and-appearance">CMP-025 Navigation and appearance</h3>
+<p>ContentView shall open GameView in the chosen mode when Play is pressed, read a missing or unknown stored appearance as System, and apply the preference to the whole navigation hierarchy.</p>
+<h3 id="cmp-026-best-refresh">CMP-026 Best refresh</h3>
+<p>ContentView shall read both mode bests from UserDefaults whenever Home appears.</p>
+<h3 id="cmp-027-home-controls">CMP-027 Home controls</h3>
+<p>HomeView shall show the mode pill, the chosen mode&#39;s best, Play, and a fixed bottom toolbar whose appearance and Support menu buttons are the same size and stay in place while the menu opens; Support shall open the configured Google Form externally.</p>
+<h2 id="modetogglepill">ModeTogglePill</h2>
+<p>Allocated to ModeTogglePill.</p>
+<h3 id="cmp-028-shared-mode-pill">CMP-028 Shared mode pill</h3>
+<p>ModeTogglePill shall render the shared &quot;Mode: Classic / Advanced&quot; control and leave the toggle action to its caller.</p>
+<h2 id="dotdashapp">dot_dashApp</h2>
+<p>Allocated to dot_dashApp.</p>
+<h3 id="cmp-029-app-entry-and-platform">CMP-029 App entry and platform</h3>
+<p>dot_dashApp shall present ContentView in a WindowGroup, and the app target shall build with SwiftUI for iOS and iPadOS 26.0 with no third-party dependencies.</p>
+<h2 id="trace-summary">Trace summary</h2>
+<table><thead><tr><th>Component requirement</th><th>Refines</th><th>Allocated to</th></tr></thead><tbody><tr><td>Frame step (CMP-001)</td><td>REQ-002, REQ-011</td><td>GameState</td></tr><tr><td>Marker advance (CMP-002)</td><td>REQ-002</td><td>GameState</td></tr><tr><td>Target test (CMP-003)</td><td>REQ-003</td><td>GameState</td></tr><tr><td>Perfect band (CMP-004)</td><td>REQ-003</td><td>GameState</td></tr><tr><td>Mode settings (CMP-005)</td><td>REQ-004, REQ-006</td><td>GameState</td></tr><tr><td>Hit update (CMP-006)</td><td>REQ-004</td><td>GameState</td></tr><tr><td>Hit feedback (CMP-007)</td><td>REQ-004</td><td>GameState</td></tr><tr><td>Miss handling (CMP-008)</td><td>REQ-005</td><td>GameState</td></tr><tr><td>Particle bursts (CMP-009)</td><td>REQ-004, REQ-005, REQ-011</td><td>GameState</td></tr><tr><td>Particle update (CMP-010)</td><td>REQ-011</td><td>GameState</td></tr><tr><td>Theme thresholds (CMP-011)</td><td>REQ-011</td><td>GameState</td></tr><tr><td>Target relocation (CMP-012)</td><td>REQ-008</td><td>GameState</td></tr><tr><td>Run reset (CMP-013)</td><td>REQ-006</td><td>GameState</td></tr><tr><td>Stopped tap (CMP-014)</td><td>REQ-006</td><td>GameState</td></tr><tr><td>Mode change (CMP-015)</td><td>REQ-006</td><td>GameState</td></tr><tr><td>Pause to instructions (CMP-016)</td><td>REQ-007</td><td>GameState</td></tr><tr><td>Display link ownership (CMP-017)</td><td>REQ-007</td><td>GameState</td></tr><tr><td>Best loading and migration (CMP-018)</td><td>REQ-005, REQ-010</td><td>GameState</td></tr><tr><td>Scene lifecycle (CMP-019)</td><td>REQ-007</td><td>GameView</td></tr><tr><td>Game surface (CMP-020)</td><td>REQ-003, REQ-006</td><td>GameBarView</td></tr><tr><td>Instructions and result (CMP-021)</td><td>REQ-005, REQ-006</td><td>GameReadoutViews</td></tr><tr><td>In-game mode switch (CMP-022)</td><td>REQ-006</td><td>GameReadoutViews</td></tr><tr><td>Score readout (CMP-023)</td><td>REQ-004, REQ-005</td><td>GameReadoutViews</td></tr><tr><td>Appearance cycle (CMP-024)</td><td>REQ-009</td><td>AppearancePreference</td></tr><tr><td>Navigation and appearance (CMP-025)</td><td>REQ-009, REQ-012</td><td>ContentView</td></tr><tr><td>Best refresh (CMP-026)</td><td>REQ-012</td><td>ContentView</td></tr><tr><td>Home controls (CMP-027)</td><td>REQ-009, REQ-012</td><td>ContentView</td></tr><tr><td>Shared mode pill (CMP-028)</td><td>REQ-006, REQ-012</td><td>ModeTogglePill</td></tr><tr><td>App entry and platform (CMP-029)</td><td>REQ-001</td><td>dot_dashApp</td></tr></tbody></table></article></main><footer class="page-footer"><a class="pill-link" href="../index.html">← Library</a></footer></body></html>
