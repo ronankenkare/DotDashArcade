@@ -2,7 +2,7 @@
   "format": "plus-c-project-part",
   "version": 1,
   "part": "project",
-  "savedAt": "2026-10-28T17:30:31.697Z",
+  "savedAt": "2026-11-02T12:00:00.000Z",
   "project": {
     "elements": [
       {
@@ -76,7 +76,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "712c132600399e4c38f81b297ef3e22c916bb8f6df057efe5857196351709e42"
+          "contentHash": "db588f155f1af0fe17d690f0996b5df714bac37a49c1eaf560da8e0b3b684882"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-10-21T21:41:30.593Z"
@@ -211,7 +211,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "c22c27b8f058363f5916f2508bcc7837c3ebc6dd8a4c412de49db5e488b23838"
+          "contentHash": "92e01aad23e1c566eb35b45ff183f8d80bb6d5ac17ba9f007f64d15a3262d831"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-10-21T21:41:30.593Z"
@@ -292,11 +292,11 @@
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView",
           "startLine": 46,
-          "endLine": 233,
-          "contentHash": "60b1c8dd"
+          "endLine": 225,
+          "contentHash": "c7fd6a7c"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-4053d611-d1fd-4c22-ad72-aa6f6e5fe03c",
@@ -324,28 +324,28 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.body",
-          "startLine": 61,
-          "endLine": 87,
-          "contentHash": "cc75323d"
+          "startLine": 59,
+          "endLine": 80,
+          "contentHash": "31a60a9e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-2fc02206-651b-4589-87d4-53e91ac5f20a",
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/ContentView.swift#ContentView.refreshBests",
-        "documentation": "Reads both mode bests from UserDefaults on appear.",
+        "documentation": "Reads both mode bests through BestScores.load on appear.",
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.refreshBests",
-          "startLine": 89,
-          "endLine": 92,
-          "contentHash": "ba3b804d"
+          "startLine": 82,
+          "endLine": 84,
+          "contentHash": "41fd2c8c"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-a49b8314-25b4-40a6-974e-5a09ed320eb0",
@@ -356,12 +356,12 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.HomeView",
-          "startLine": 105,
-          "endLine": 209,
-          "contentHash": "ddfb31ec"
+          "startLine": 97,
+          "endLine": 201,
+          "contentHash": "9f4bf7cd"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-c905f899-3226-4de8-9e3a-16aa1fd5db69",
@@ -434,16 +434,16 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameBarView",
-        "documentation": "Canvas for bar, target, marker and particles; forwards taps to handleTap.",
+        "documentation": "Canvas for bar, target clipped to the bar, marker and particles; forwards touch-downs to handleTap.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameBarView",
           "startLine": 104,
-          "endLine": 155,
-          "contentHash": "189b5256"
+          "endLine": 159,
+          "contentHash": "9a6d6601"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-ff761012-06dd-4927-a063-e3705b77b7ae",
@@ -471,12 +471,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "HelpOverlayView",
-          "startLine": 158,
-          "endLine": 253,
+          "startLine": 162,
+          "endLine": 257,
           "contentHash": "939a1bf1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-2f6f5652-2218-433f-a08c-81291042049c",
@@ -504,12 +504,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "ModeBadgeView",
-          "startLine": 256,
-          "endLine": 268,
+          "startLine": 260,
+          "endLine": 272,
           "contentHash": "230e0363"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-bd3722f2-1b48-445a-9d54-95ba76fc00fd",
@@ -537,12 +537,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "ScoreBarView",
-          "startLine": 271,
-          "endLine": 289,
+          "startLine": 275,
+          "endLine": 293,
           "contentHash": "f27292f0"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-917898cc-43a2-4b15-8f03-592079779844",
@@ -570,12 +570,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState",
-          "startLine": 294,
-          "endLine": 624,
-          "contentHash": "f17dd7b7"
+          "startLine": 321,
+          "endLine": 655,
+          "contentHash": "66c8fc7c"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-906e5bf0-e804-469b-b3cb-b7d7e7dbe68d",
@@ -599,16 +599,16 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.init",
-        "documentation": "Prepares haptics and migrates the legacy best to Classic.",
+        "documentation": "Loads bests through BestScores from injected UserDefaults and prepares haptics.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.init",
-          "startLine": 380,
-          "endLine": 388,
-          "contentHash": "72ab03ea"
+          "startLine": 408,
+          "endLine": 412,
+          "contentHash": "699f0556"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-ca05e966-20ab-42fb-8312-e5c767bb9dd3",
@@ -619,12 +619,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.startLoop",
-          "startLine": 391,
-          "endLine": 397,
+          "startLine": 415,
+          "endLine": 421,
           "contentHash": "3e275a06"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-c42bdffb-6c65-4a5d-bd7f-3c936a6a58e7",
@@ -635,60 +635,60 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.stopLoop",
-          "startLine": 399,
-          "endLine": 402,
+          "startLine": 423,
+          "endLine": 426,
           "contentHash": "b6350e8f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-d3ef774a-ccd0-4d08-b3bf-a19faecfff5f",
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.reset",
-        "documentation": "Starts a fresh run with the current mode settings.",
+        "documentation": "Starts a fresh run with the current mode settings and wakes an idle display link.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.reset",
-          "startLine": 404,
-          "endLine": 419,
-          "contentHash": "00d659cc"
+          "startLine": 435,
+          "endLine": 440,
+          "contentHash": "b0fed442"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-c4ea922e-bfbf-4143-8600-95124bb03243",
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.pauseToHelp",
-        "documentation": "Stops a running run and shows instructions.",
+        "documentation": "Stops a running run, keeps a new best and shows instructions.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pauseToHelp",
-          "startLine": 421,
-          "endLine": 423,
-          "contentHash": "5cf194a6"
+          "startLine": 457,
+          "endLine": 462,
+          "contentHash": "73405f6e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-df66cc56-945d-4be2-bf13-92607dd1792c",
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.step",
-        "documentation": "Per-frame dt cap, flash fade, marker advance while running, particle update.",
+        "documentation": "Per-frame dt cap, marker advance while running, particle update, idle pause.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.step",
-          "startLine": 427,
-          "endLine": 442,
-          "contentHash": "c7a3e97b"
+          "startLine": 466,
+          "endLine": 479,
+          "contentHash": "00bda771"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-4ba055f4-b2cd-43fe-bd54-61865fd3fecd",
@@ -699,60 +699,60 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.advanceMarker",
-          "startLine": 445,
-          "endLine": 452,
+          "startLine": 482,
+          "endLine": 489,
           "contentHash": "b442c5ca"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-cc29da6a-272f-4588-b1ca-d5a8e39ae7c9",
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.updateParticles",
-        "documentation": "Ages particles by dt, moves them per update, removes expired ones.",
+        "documentation": "Skips an empty array; ages particles by dt, moves them by v × dt × 60, removes expired ones.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.updateParticles",
-          "startLine": 454,
-          "endLine": 461,
-          "contentHash": "5b8deef9"
+          "startLine": 493,
+          "endLine": 503,
+          "contentHash": "2d32dbf9"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-3a14db9e-64d0-4006-bcd2-af51ff8d70d0",
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.handleTap",
-        "documentation": "Restart when stopped; otherwise hit progression or miss with best persistence.",
+        "documentation": "Restart only from instructions; otherwise hit progression with a speed cap, or miss with best persistence.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.handleTap",
-          "startLine": 465,
-          "endLine": 499,
-          "contentHash": "ab9283e0"
+          "startLine": 507,
+          "endLine": 539,
+          "contentHash": "6fa3465c"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-9d58b26a-0e0e-40ab-aa89-bedaf8e1f6c2",
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.currentSettings",
-        "documentation": "Classic and Advanced difficulty constants.",
+        "documentation": "Classic and Advanced difficulty constants, including maximum speed.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.currentSettings",
-          "startLine": 501,
-          "endLine": 526,
-          "contentHash": "68aa2fe3"
+          "startLine": 551,
+          "endLine": 578,
+          "contentHash": "bf46c333"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-d88948fe-0bb0-4201-8d93-ee67ef6d2889",
@@ -763,12 +763,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.changeMode",
-          "startLine": 528,
-          "endLine": 557,
-          "contentHash": "5f49528d"
+          "startLine": 580,
+          "endLine": 588,
+          "contentHash": "a63a90a6"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-73d01c59-0af5-4f38-ba0a-0905cd6b7cdf",
@@ -779,12 +779,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inZone",
-          "startLine": 561,
-          "endLine": 564,
+          "startLine": 592,
+          "endLine": 595,
           "contentHash": "44f0424d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-80dd9cb1-d5cc-4ae4-b00b-1c0b6edfa178",
@@ -795,12 +795,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inPerfect",
-          "startLine": 566,
-          "endLine": 570,
+          "startLine": 597,
+          "endLine": 601,
           "contentHash": "4bd6431e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-93c60cab-70e5-422e-8525-6050bd09f399",
@@ -811,12 +811,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickThemeIndex",
-          "startLine": 574,
-          "endLine": 579,
+          "startLine": 605,
+          "endLine": 610,
           "contentHash": "80d5dad8"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-1a336edf-09ce-4223-b49f-457ed0e27090",
@@ -827,12 +827,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.spawnBurst",
-          "startLine": 588,
-          "endLine": 604,
+          "startLine": 619,
+          "endLine": 635,
           "contentHash": "3ac94ea1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-62ec77dd-781f-438e-89bb-b4e836fb3559",
@@ -843,12 +843,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickNewZoneCenter",
-          "startLine": 606,
-          "endLine": 623,
+          "startLine": 637,
+          "endLine": 654,
           "contentHash": "6a4c493f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "satisfies-352ffbd8-0fa1-4c97-b0ed-c76a7b459bfb",
@@ -978,7 +978,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "d28045c92e34f650415121cb929d7c5d47a08ada388a69c77d31b07f459ed8dc"
+          "contentHash": "c2f799c230cca02a9112417e02b2476cf980500a882e9caf2e3d11d1fcf1aef0"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-10-21T21:41:30.593Z"
@@ -1011,7 +1011,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "efebe631ade9034ef11ddbb23e9592bff22ecb2ffabad14a4df972fbf7dc1784"
+          "contentHash": "8ecf2d5a0ca816b9178e3924e8dc0022b15f6632a3ce05cfb616bd803d9894c3"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-10-21T21:41:30.593Z"
@@ -1044,7 +1044,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "16e6b00c33c8d37ba0ef1824f28ed16fe3a892daae73c9874222e2bbf7956017"
+          "contentHash": "c7b600f28a230ca18cd87b6f335d2bc3f7b8f925751ec51cb093f1fe99315865"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-10-21T21:41:30.593Z"
@@ -1077,7 +1077,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "82e288efa7faec1f3c03004cfd9c91f1102ca6cf1435db5f965c700dbe773648"
+          "contentHash": "66e2844bc6ee8426a56a1686e9e7feffdee344efea03d7b642e8f3ed7a870662"
         },
         "createdAt": "2026-10-21T21:41:30.594Z",
         "modifiedAt": "2026-10-21T21:41:30.594Z"
@@ -1465,10 +1465,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-011; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts, and the game's color theme shall change as the score passes fixed milestones.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts that look the same at any display refresh rate, and the game's color theme shall change as the score passes fixed milestones.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-01880288-5d90-46fc-8cfb-178b2d26322f",
         "targetId": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
         "soft": true
@@ -1482,10 +1482,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-001 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, fade the flash value, advance the marker only while a run is active, and update particles on every callback.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, update particles on every callback, and pause the display link once no run is active and no particles remain.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-01880288-5d90-46fc-8cfb-178b2d26322f",
         "soft": true
@@ -1533,10 +1533,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-003; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target, edges included, and a hit near the target's center shall be classified as perfect.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target at the moment the finger touches down, edges included; the drawn target shall cover exactly that range, and a hit near the target's center shall be classified as perfect.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-08e0008e-bcc9-4baf-a11b-af4de9fd13af",
         "targetId": "document-requirement-19002146-a4e2-48d5-828a-92964f05b443",
         "soft": true
@@ -1567,10 +1567,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-003; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target, edges included, and a hit near the target's center shall be classified as perfect.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target at the moment the finger touches down, edges included; the drawn target shall cover exactly that range, and a hit near the target's center shall be classified as perfect.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-c59f4c55-1519-4eaa-be4d-ea3b48f40fb1",
         "targetId": "document-requirement-19002146-a4e2-48d5-828a-92964f05b443",
         "soft": true
@@ -1601,10 +1601,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-004; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -1618,10 +1618,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -1635,10 +1635,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-005 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -1652,10 +1652,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-004; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -1669,10 +1669,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-006 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -1686,10 +1686,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-004; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-fd1a0d87-731c-4089-9e52-5a425afdc50a",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -1703,10 +1703,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-007 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-007 Hit feedback\",{\"key\":\"CMP-007\",\"title\":\"Hit feedback\",\"statement\":\"A perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-007 Hit feedback\",{\"key\":\"CMP-007\",\"title\":\"Hit feedback\",\"statement\":\"A perfect hit shall emit a success notification and a rigid impact at intensity 1.0; a good hit shall emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-fd1a0d87-731c-4089-9e52-5a425afdc50a",
         "soft": true
@@ -1737,10 +1737,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-008 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode's key.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1 in GameState's UserDefaults, and show the overlay. It shall not touch the other mode's key.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-3ceac3c6-6be6-4175-ac6f-b42f3dad6b5c",
         "soft": true
@@ -1754,10 +1754,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-004; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-8fcff39b-c7fc-4481-9cda-35a92ef5bb5b",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -1788,10 +1788,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-011; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts, and the game's color theme shall change as the score passes fixed milestones.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts that look the same at any display refresh rate, and the game's color theme shall change as the score passes fixed milestones.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-8fcff39b-c7fc-4481-9cda-35a92ef5bb5b",
         "targetId": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
         "soft": true
@@ -1822,10 +1822,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-011; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts, and the game's color theme shall change as the score passes fixed milestones.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts that look the same at any display refresh rate, and the game's color theme shall change as the score passes fixed milestones.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
         "targetId": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
         "soft": true
@@ -1839,10 +1839,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-010 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall do nothing when there are no particles; otherwise it shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
         "soft": true
@@ -1856,10 +1856,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-011; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts, and the game's color theme shall change as the score passes fixed milestones.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts that look the same at any display refresh rate, and the game's color theme shall change as the score passes fixed milestones.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-efa3c199-3dd3-4f0d-811d-85a5a1937d73",
         "targetId": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
         "soft": true
@@ -1924,10 +1924,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -1941,10 +1941,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-013 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "soft": true
@@ -1958,10 +1958,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -1975,10 +1975,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-014 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset whenever no run is active.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
         "soft": true
@@ -1992,10 +1992,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-1fe03981-6e57-426f-b6ce-d2881e5c0284",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -2026,10 +2026,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-007; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop, its score shall be kept as that mode's best if it beats the stored best, and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
         "targetId": "document-requirement-225241c8-d20c-41da-9e14-93338241070f",
         "soft": true
@@ -2043,10 +2043,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-016 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, keep its score as the current mode's best if it beats the stored best, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
         "soft": true
@@ -2060,10 +2060,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-007; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop, its score shall be kept as that mode's best if it beats the stored best, and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
         "targetId": "document-requirement-225241c8-d20c-41da-9e14-93338241070f",
         "soft": true
@@ -2077,10 +2077,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-017 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
         "soft": true
@@ -2111,10 +2111,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-010; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-010 Best migration\",{\"key\":\"REQ-010\",\"title\":\"Best migration\",\"statement\":\"A best score recorded by an earlier version of the app shall carry forward as the Classic best without replacing a Classic best recorded since.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-010 Best migration\",{\"key\":\"REQ-010\",\"title\":\"Best migration\",\"statement\":\"A best score recorded by an earlier version of the app shall carry forward as the Classic best, on Home as well as in the game, without replacing a Classic best recorded since.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-000fbacd-98ba-4b73-9d1f-a2bfd860ae46",
         "targetId": "document-requirement-e04d54ff-d411-4d6c-8d24-f3f9c7937851",
         "soft": true
@@ -2128,10 +2128,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-018 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"GameState shall load both mode bests from their keys at initialization and copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization from an injected UserDefaults, standard by default.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-000fbacd-98ba-4b73-9d1f-a2bfd860ae46",
         "soft": true
@@ -2145,10 +2145,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-007; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop, its score shall be kept as that mode's best if it beats the stored best, and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-b657c37d-7a9e-43e4-acad-ff555aaffdb4",
         "targetId": "document-requirement-225241c8-d20c-41da-9e14-93338241070f",
         "soft": true
@@ -2179,10 +2179,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-003; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target, edges included, and a hit near the target's center shall be classified as perfect.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target at the moment the finger touches down, edges included; the drawn target shall cover exactly that range, and a hit near the target's center shall be classified as perfect.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-4155f774-8d79-4df6-a422-186b2712e2d3",
         "targetId": "document-requirement-19002146-a4e2-48d5-828a-92964f05b443",
         "soft": true
@@ -2196,10 +2196,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-4155f774-8d79-4df6-a422-186b2712e2d3",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -2213,10 +2213,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-020 is allocated to the GameBarView class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-020 Game surface\",{\"key\":\"CMP-020\",\"title\":\"Game surface\",\"statement\":\"GameBarView shall draw the bar, target, marker and particles on a Canvas at 40% of its height and forward every tap, with its width, to handleTap.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-020 Game surface\",{\"key\":\"CMP-020\",\"title\":\"Game surface\",\"statement\":\"GameBarView shall draw the bar, the target clipped at both bar ends to exactly the range inZone accepts, the marker and particles on a Canvas at 40% of its height, and forward each touch-down, with its width, to handleTap.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-1ebd8fd1-7d42-4c71-86da-b9b5e9792974",
         "targetId": "document-requirement-4155f774-8d79-4df6-a422-186b2712e2d3",
         "soft": true
@@ -2247,10 +2247,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-543bd57d-d153-435a-bfc7-7ef14ddd4dfd",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -2281,10 +2281,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-ce113c3d-7f79-421a-9a68-0da38d82680d",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -2315,10 +2315,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-004; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-3a47a5a6-50da-49ba-a179-ddf414e75d58",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -2468,10 +2468,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-026 is allocated to the ContentView class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-026 Best refresh\",{\"key\":\"CMP-026\",\"title\":\"Best refresh\",\"statement\":\"ContentView shall read both mode bests from UserDefaults whenever Home appears.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-026 Best refresh\",{\"key\":\"CMP-026\",\"title\":\"Best refresh\",\"statement\":\"ContentView shall read both mode bests through BestScores.load, including the legacy migration, whenever Home appears.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-d546a81e-1e5c-4d96-8385-7aaa6d8f0be1",
         "targetId": "document-requirement-78f8ae86-f853-4781-99b1-67bec30f6659",
         "soft": true
@@ -2536,10 +2536,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-42ec56b9-7b8a-4fc0-bf6b-8958ba7bce94",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -2621,12 +2621,12 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.appearance",
-          "startLine": 57,
-          "endLine": 59,
+          "startLine": 55,
+          "endLine": 57,
           "contentHash": "0aab38db"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-93027b6a-9213-474a-89d3-2a79003ab1bd",
@@ -2637,12 +2637,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.deinit",
-          "startLine": 389,
-          "endLine": 389,
+          "startLine": 413,
+          "endLine": 413,
           "contentHash": "79eebad7"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-4816eafd-b84d-4e65-8777-0d2c76d704d6",
@@ -2721,10 +2721,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "ContentView.refreshBests implements CMP-026; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-026 Best refresh\",{\"key\":\"CMP-026\",\"title\":\"Best refresh\",\"statement\":\"ContentView shall read both mode bests from UserDefaults whenever Home appears.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-026 Best refresh\",{\"key\":\"CMP-026\",\"title\":\"Best refresh\",\"statement\":\"ContentView shall read both mode bests through BestScores.load, including the legacy migration, whenever Home appears.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-2fc02206-651b-4589-87d4-53e91ac5f20a",
         "targetId": "document-requirement-78f8ae86-f853-4781-99b1-67bec30f6659",
         "soft": true
@@ -2789,10 +2789,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameBarView implements CMP-020; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-020 Game surface\",{\"key\":\"CMP-020\",\"title\":\"Game surface\",\"statement\":\"GameBarView shall draw the bar, target, marker and particles on a Canvas at 40% of its height and forward every tap, with its width, to handleTap.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-020 Game surface\",{\"key\":\"CMP-020\",\"title\":\"Game surface\",\"statement\":\"GameBarView shall draw the bar, the target clipped at both bar ends to exactly the range inZone accepts, the marker and particles on a Canvas at 40% of its height, and forward each touch-down, with its width, to handleTap.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-0ec252cb-19c2-4afa-9d14-da11186a3525",
         "targetId": "document-requirement-4155f774-8d79-4df6-a422-186b2712e2d3",
         "soft": true
@@ -2857,10 +2857,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.init implements CMP-018; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"GameState shall load both mode bests from their keys at initialization and copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization from an injected UserDefaults, standard by default.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-8174ebe2-09a6-47b9-984f-c10018c72f6c",
         "targetId": "document-requirement-000fbacd-98ba-4b73-9d1f-a2bfd860ae46",
         "soft": true
@@ -2874,10 +2874,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.deinit implements CMP-017; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-93027b6a-9213-474a-89d3-2a79003ab1bd",
         "targetId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
         "soft": true
@@ -2891,10 +2891,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.startLoop implements CMP-017; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-ca05e966-20ab-42fb-8312-e5c767bb9dd3",
         "targetId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
         "soft": true
@@ -2908,10 +2908,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.stopLoop implements CMP-017; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-c42bdffb-6c65-4a5d-bd7f-3c936a6a58e7",
         "targetId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
         "soft": true
@@ -2925,10 +2925,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.reset implements CMP-013; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-d3ef774a-ccd0-4d08-b3bf-a19faecfff5f",
         "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "soft": true
@@ -2942,10 +2942,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.pauseToHelp implements CMP-016; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, keep its score as the current mode's best if it beats the stored best, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-c4ea922e-bfbf-4143-8600-95124bb03243",
         "targetId": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
         "soft": true
@@ -2959,10 +2959,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.step implements CMP-001; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, fade the flash value, advance the marker only while a run is active, and update particles on every callback.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, update particles on every callback, and pause the display link once no run is active and no particles remain.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-df66cc56-945d-4be2-bf13-92607dd1792c",
         "targetId": "document-requirement-01880288-5d90-46fc-8cfb-178b2d26322f",
         "soft": true
@@ -2993,10 +2993,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.updateParticles implements CMP-010; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall do nothing when there are no particles; otherwise it shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-cc29da6a-272f-4588-b1ca-d5a8e39ae7c9",
         "targetId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
         "soft": true
@@ -3010,10 +3010,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.handleTap implements CMP-006; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-3a14db9e-64d0-4006-bcd2-af51ff8d70d0",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3027,10 +3027,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.handleTap implements CMP-007; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-007 Hit feedback\",{\"key\":\"CMP-007\",\"title\":\"Hit feedback\",\"statement\":\"A perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-007 Hit feedback\",{\"key\":\"CMP-007\",\"title\":\"Hit feedback\",\"statement\":\"A perfect hit shall emit a success notification and a rigid impact at intensity 1.0; a good hit shall emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-3a14db9e-64d0-4006-bcd2-af51ff8d70d0",
         "targetId": "document-requirement-fd1a0d87-731c-4089-9e52-5a425afdc50a",
         "soft": true
@@ -3044,10 +3044,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.handleTap implements CMP-008; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode's key.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1 in GameState's UserDefaults, and show the overlay. It shall not touch the other mode's key.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-3a14db9e-64d0-4006-bcd2-af51ff8d70d0",
         "targetId": "document-requirement-3ceac3c6-6be6-4175-ac6f-b42f3dad6b5c",
         "soft": true
@@ -3061,10 +3061,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.handleTap implements CMP-014; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset whenever no run is active.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-3a14db9e-64d0-4006-bcd2-af51ff8d70d0",
         "targetId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
         "soft": true
@@ -3078,10 +3078,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.currentSettings implements CMP-005; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-9d58b26a-0e0e-40ab-aa89-bedaf8e1f6c2",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3511,12 +3511,12 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.bestScoresLoadFromUserDefaults",
-          "startLine": 118,
-          "endLine": 126,
-          "contentHash": "b3e88beb"
+          "startLine": 132,
+          "endLine": 139,
+          "contentHash": "51600e92"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-7a6ba02f-5ffb-4560-bfff-5c90d08e2f55",
@@ -3527,10 +3527,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-018; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"GameState shall load both mode bests from their keys at initialization and copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization from an injected UserDefaults, standard by default.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-dfee9904-53d4-48b8-92ae-25fac534b2e4",
         "targetId": "document-requirement-000fbacd-98ba-4b73-9d1f-a2bfd860ae46",
         "soft": true
@@ -3544,12 +3544,12 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.legacyBestScoreMigratesToClassic",
-          "startLine": 128,
-          "endLine": 135,
-          "contentHash": "a90bd574"
+          "startLine": 141,
+          "endLine": 147,
+          "contentHash": "1c6fec71"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-a7e9dcac-4a35-456d-bf05-93c10e33f351",
@@ -3560,10 +3560,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-018; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"GameState shall load both mode bests from their keys at initialization and copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization from an injected UserDefaults, standard by default.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-a8d79a22-b2b6-4989-a2c7-dd83a61dbc32",
         "targetId": "document-requirement-000fbacd-98ba-4b73-9d1f-a2bfd860ae46",
         "soft": true
@@ -3577,12 +3577,12 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.legacyMigrationDoesNotOverwriteExistingClassicBest",
-          "startLine": 137,
-          "endLine": 144,
-          "contentHash": "10ba0de4"
+          "startLine": 158,
+          "endLine": 164,
+          "contentHash": "1aca64e7"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-2fc7d8ef-caa3-488a-ba35-d89dec5d985f",
@@ -3593,10 +3593,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-018; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"GameState shall load both mode bests from their keys at initialization and copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization from an injected UserDefaults, standard by default.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-9065510d-5d02-44ac-b3dd-95848e8de0ff",
         "targetId": "document-requirement-000fbacd-98ba-4b73-9d1f-a2bfd860ae46",
         "soft": true
@@ -3610,12 +3610,12 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.gameOverPersistsNewBestClassic",
-          "startLine": 146,
-          "endLine": 161,
-          "contentHash": "3c3648c5"
+          "startLine": 166,
+          "endLine": 174,
+          "contentHash": "d1a2be7f"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-b006a42c-7bcc-441b-9c7e-11414f5b5c06",
@@ -3626,10 +3626,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-008; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode's key.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1 in GameState's UserDefaults, and show the overlay. It shall not touch the other mode's key.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-474988b7-a0df-48a4-acf9-e42b012fd51b",
         "targetId": "document-requirement-3ceac3c6-6be6-4175-ac6f-b42f3dad6b5c",
         "soft": true
@@ -3643,12 +3643,12 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.gameOverDoesNotRegressBestClassic",
-          "startLine": 163,
-          "endLine": 177,
-          "contentHash": "7229cc86"
+          "startLine": 176,
+          "endLine": 183,
+          "contentHash": "81e02aee"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-0b76c51b-be83-46b8-9dd6-7dba7594f5e1",
@@ -3659,10 +3659,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-008; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode's key.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1 in GameState's UserDefaults, and show the overlay. It shall not touch the other mode's key.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-50fc2297-fbaf-4e94-85a1-ef5d5219ee88",
         "targetId": "document-requirement-3ceac3c6-6be6-4175-ac6f-b42f3dad6b5c",
         "soft": true
@@ -3676,12 +3676,12 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.gameOverPersistsNewBestAdvanced",
-          "startLine": 179,
-          "endLine": 194,
-          "contentHash": "bc6a641c"
+          "startLine": 185,
+          "endLine": 193,
+          "contentHash": "cc7e8956"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-3aa8d607-c10e-4c7b-a87a-52c3baccc372",
@@ -3692,10 +3692,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-008; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode's key.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1 in GameState's UserDefaults, and show the overlay. It shall not touch the other mode's key.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
-        "modifiedAt": "2026-10-28T17:30:31.624Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-947b9c07-e629-4964-bf8c-158eb0fd993e",
         "targetId": "document-requirement-3ceac3c6-6be6-4175-ac6f-b42f3dad6b5c",
         "soft": true
@@ -3725,10 +3725,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-9d8c838a-5a3d-49de-a747-d55ea3eb8b8d",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3758,10 +3758,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-874e5047-1ce0-48ef-a96f-6e35389ae4af",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3775,10 +3775,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-874e5047-1ce0-48ef-a96f-6e35389ae4af",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3808,10 +3808,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-41f25244-30cf-4484-8afc-c13481915cbb",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3825,10 +3825,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-41f25244-30cf-4484-8afc-c13481915cbb",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3842,12 +3842,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.advancedPerfectHitShrinksZoneWidthByPointNine",
-          "startLine": 81,
-          "endLine": 85,
+          "startLine": 95,
+          "endLine": 99,
           "contentHash": "bbdf579c"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-6704db9f-0115-480f-aba3-3b39a2e1c5c3",
@@ -3858,10 +3858,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-b4316c4c-1351-4cca-a879-6d324cacb962",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3875,10 +3875,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-b4316c4c-1351-4cca-a879-6d324cacb962",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3892,12 +3892,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.advancedGoodHitShrinksZoneWidthByPointNineFour",
-          "startLine": 87,
-          "endLine": 91,
+          "startLine": 101,
+          "endLine": 105,
           "contentHash": "2ae0ae7e"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-8ea4b0bd-df63-4b20-a1a6-a875356c97fa",
@@ -3908,10 +3908,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-ba934641-024c-4315-96cd-3024c8b7161b",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3925,10 +3925,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-ba934641-024c-4315-96cd-3024c8b7161b",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3942,12 +3942,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.classicHitLeavesZoneWidthUnchanged",
-          "startLine": 93,
-          "endLine": 102,
+          "startLine": 107,
+          "endLine": 116,
           "contentHash": "de428b62"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-5b0dadea-8f20-49c7-a895-94e8fc9554d4",
@@ -3958,10 +3958,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-7a97a188-da29-4328-8285-9850b69a9fde",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3975,10 +3975,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-7a97a188-da29-4328-8285-9850b69a9fde",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3992,12 +3992,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.advancedRepeatedHitsClampZoneWidthAtMinimum",
-          "startLine": 104,
-          "endLine": 118,
+          "startLine": 118,
+          "endLine": 132,
           "contentHash": "6f3f0dcb"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-4b0d58eb-6158-443e-b912-bc6a858e8017",
@@ -4008,10 +4008,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-06e38f27-4db2-4ea9-b7bd-093b900e10ec",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -4025,10 +4025,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-06e38f27-4db2-4ea9-b7bd-093b900e10ec",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -4042,12 +4042,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.hitMovesZoneCenterAwayFromPreviousCenter",
-          "startLine": 122,
-          "endLine": 133,
+          "startLine": 136,
+          "endLine": 147,
           "contentHash": "cd54d0fb"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-6e231e9d-ec74-47f5-847e-6abb0104aa86",
@@ -4058,10 +4058,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-fa761b6f-971d-4a69-8bd8-89762b4db314",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -4092,12 +4092,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.tapWhileNotRunningResetsGame",
-          "startLine": 138,
-          "endLine": 158,
-          "contentHash": "6abd490c"
+          "startLine": 152,
+          "endLine": 172,
+          "contentHash": "867725fd"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-aa1fe028-4ca2-4b7f-bcde-cad5a662835c",
@@ -4108,10 +4108,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-013; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-e29b40ea-d51d-4e28-99a6-0b68cfa07a2a",
         "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "soft": true
@@ -4125,10 +4125,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-014; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset whenever no run is active.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-e29b40ea-d51d-4e28-99a6-0b68cfa07a2a",
         "targetId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
         "soft": true
@@ -4142,12 +4142,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.twelfthHitAdvancesThemeIdxToOne",
-          "startLine": 162,
-          "endLine": 169,
+          "startLine": 176,
+          "endLine": 183,
           "contentHash": "0b00a0d4"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-b765537e-cadf-4bc4-abf2-456bec6a71c7",
@@ -4158,10 +4158,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-119806c3-bbd7-4c4c-820c-aed993cde38e",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -4192,12 +4192,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.resetRestoresClassicStartState",
-          "startLine": 29,
-          "endLine": 58,
-          "contentHash": "e23517d5"
+          "startLine": 20,
+          "endLine": 47,
+          "contentHash": "2733e55c"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-1136c269-ad63-4834-87cc-69c5b00b3292",
@@ -4208,10 +4208,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-013; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-1908136d-4142-4349-bddb-074277eab9ab",
         "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "soft": true
@@ -4225,12 +4225,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.resetAppliesAdvancedStartValues",
-          "startLine": 60,
-          "endLine": 69,
+          "startLine": 49,
+          "endLine": 58,
           "contentHash": "6a3f8bfb"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-422d7bd4-fe62-4cce-98de-276a76678b0c",
@@ -4241,10 +4241,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-013; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-b2c06be3-3ec0-4303-8ef7-1b45cb65ff24",
         "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "soft": true
@@ -4258,12 +4258,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.changeModeToSameModeIsNoOp",
-          "startLine": 73,
-          "endLine": 83,
+          "startLine": 62,
+          "endLine": 72,
           "contentHash": "237430ca"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-12d42ab0-6068-4d49-a5fe-a2500324b940",
@@ -4291,12 +4291,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.changeModeClassicToAdvancedResetsToAdvancedStartState",
-          "startLine": 85,
-          "endLine": 104,
+          "startLine": 74,
+          "endLine": 93,
           "contentHash": "75942cfe"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-328ff4b7-3c9c-484f-9405-a82a0d41c706",
@@ -4324,12 +4324,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.changeModeMidRunDiscardsTheRun",
-          "startLine": 106,
-          "endLine": 117,
+          "startLine": 95,
+          "endLine": 106,
           "contentHash": "b9f38ff2"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-c4a25c3f-fb46-45ec-b9c0-4b6b608d8703",
@@ -4357,12 +4357,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.changeModeAdvancedToClassicAppliesClassicStartValues",
-          "startLine": 119,
-          "endLine": 132,
+          "startLine": 108,
+          "endLine": 121,
           "contentHash": "db942d51"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-60d66197-dbdb-48df-b07f-902899bfa9bc",
@@ -4390,12 +4390,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.pickThemeIndexThresholds",
-          "startLine": 142,
-          "endLine": 145,
+          "startLine": 131,
+          "endLine": 134,
           "contentHash": "9d491471"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-128568b6-a878-472c-b682-72b7a272ea72",
@@ -4423,12 +4423,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.classicSettingsMatchExpectedConstants",
-          "startLine": 149,
-          "endLine": 161,
+          "startLine": 138,
+          "endLine": 150,
           "contentHash": "3dce243f"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-b449ee21-65b9-4fbf-9ea0-09dc53814739",
@@ -4439,10 +4439,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-62b3c1ac-e93e-4358-9fca-85f68a1320ed",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -4456,12 +4456,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.advancedSettingsMatchExpectedConstants",
-          "startLine": 163,
-          "endLine": 175,
+          "startLine": 152,
+          "endLine": 164,
           "contentHash": "5f78a384"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-2ea7287b-1548-4188-a47e-034a004eca17",
@@ -4472,10 +4472,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-0f6b9720-c869-431d-aea7-f1a92f52ceb7",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -4489,12 +4489,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.bestCurrentFollowsMode",
-          "startLine": 179,
-          "endLine": 189,
-          "contentHash": "0e49a51f"
+          "startLine": 168,
+          "endLine": 176,
+          "contentHash": "669e5963"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-96f00781-99bc-45b1-b316-4559bbd23b7f",
@@ -4522,12 +4522,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.updateParticlesAgesMovesAndRemoves",
-          "startLine": 193,
-          "endLine": 208,
-          "contentHash": "d3d71fc6"
+          "startLine": 180,
+          "endLine": 196,
+          "contentHash": "0778e660"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-c96772b6-3636-41a7-a712-932a01f0af27",
@@ -4538,10 +4538,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-010; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall do nothing when there are no particles; otherwise it shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-9fed68b9-eeda-4f71-ad78-bb263fc6fd0d",
         "targetId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
         "soft": true
@@ -5350,10 +5350,10 @@
           "symbol": "dot_dashUITests.testTapScoresOrEndsGame",
           "startLine": 168,
           "endLine": 206,
-          "contentHash": "419f22fb"
+          "contentHash": "b0c9303a"
         },
         "createdAt": "2026-10-28T17:30:31.627Z",
-        "modifiedAt": "2026-10-28T17:30:31.627Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-4d1d0407-c743-4890-aff5-ead7d24d5afc",
@@ -5364,10 +5364,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies REQ-004; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.627Z",
-        "modifiedAt": "2026-10-28T17:30:31.627Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-fcd56fb5-1cb3-4cd7-8524-e7a2193a4ac1",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -5387,6 +5387,422 @@
         "modifiedAt": "2026-10-28T17:30:31.627Z",
         "sourceId": "code-artifact-fcd56fb5-1cb3-4cd7-8524-e7a2193a4ac1",
         "targetId": "document-requirement-4d81eb2e-751f-4421-a12b-5f51ef266265",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-4eeccad4-5a14-47d2-ad2f-c3eddac05ef0",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dash/GameView.swift#BestScores.load",
+        "documentation": "Reads both mode bests after migrating a legacy single best to Classic.",
+        "properties": {
+          "path": "dot-dash/GameView.swift",
+          "symbol": "BestScores.load",
+          "startLine": 309,
+          "endLine": 315,
+          "contentHash": "5939ff53"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "code-artifact-a8f028d9-a5bf-446f-9443-d5a49fcf2799",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dash/GameView.swift#GameState.wakeLoop",
+        "documentation": "Resumes a display link that step paused while idle.",
+        "properties": {
+          "path": "dot-dash/GameView.swift",
+          "symbol": "GameState.wakeLoop",
+          "startLine": 429,
+          "endLine": 433,
+          "contentHash": "6f353a10"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "code-artifact-f75d6606-84f9-4101-a990-82fbbda5017f",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dash/GameView.swift#GameState.applyStartState",
+        "documentation": "Restores the current mode's start values for reset and changeMode.",
+        "properties": {
+          "path": "dot-dash/GameView.swift",
+          "symbol": "GameState.applyStartState",
+          "startLine": 443,
+          "endLine": 455,
+          "contentHash": "1467484c"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "code-artifact-0640d0e2-5d04-4f47-bcfb-0c42a2946ac0",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dash/GameView.swift#GameState.recordBest",
+        "documentation": "Raises and persists the current mode's best.",
+        "properties": {
+          "path": "dot-dash/GameView.swift",
+          "symbol": "GameState.recordBest",
+          "startLine": 542,
+          "endLine": 549,
+          "contentHash": "57e8260a"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "code-artifact-43b3f9f5-1fc9-43c8-9ce6-8ba5fdba5ef2",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/dot_dashTests.swift#dot_dashTests.homeScreenLoadSeesMigratedLegacyBest",
+        "documentation": "Swift Testing unit test.",
+        "properties": {
+          "path": "dot-dashTests/dot_dashTests.swift",
+          "symbol": "dot_dashTests.homeScreenLoadSeesMigratedLegacyBest",
+          "startLine": 149,
+          "endLine": 156,
+          "contentHash": "b27b2d56"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "code-artifact-18154c98-5da9-4297-a2e4-58d89531c1a0",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/dot_dashTests.swift#dot_dashTests.pauseToHelpPersistsRunningScoreAsBest",
+        "documentation": "Swift Testing unit test.",
+        "properties": {
+          "path": "dot-dashTests/dot_dashTests.swift",
+          "symbol": "dot_dashTests.pauseToHelpPersistsRunningScoreAsBest",
+          "startLine": 195,
+          "endLine": 208,
+          "contentHash": "27e853e7"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "code-artifact-9fa0663d-db8d-4b36-a311-92b88d1fadb0",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/dot_dashTests.swift#dot_dashTests.tapAfterMissKeepsGameOverCard",
+        "documentation": "Swift Testing unit test.",
+        "properties": {
+          "path": "dot-dashTests/dot_dashTests.swift",
+          "symbol": "dot_dashTests.tapAfterMissKeepsGameOverCard",
+          "startLine": 210,
+          "endLine": 218,
+          "contentHash": "cf57b7d2"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "code-artifact-92abaaa9-62a1-4283-8aa2-e7c6a3493319",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/HandleTapHitPathTests.swift#HandleTapHitPathTests.repeatedHitsCapSpeedAtMaxSpeed",
+        "documentation": "Swift Testing unit test.",
+        "properties": {
+          "path": "dot-dashTests/HandleTapHitPathTests.swift",
+          "symbol": "HandleTapHitPathTests.repeatedHitsCapSpeedAtMaxSpeed",
+          "startLine": 80,
+          "endLine": 91,
+          "contentHash": "3ba9ccc2"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "code-artifact-000d26b2-d306-4e6e-b74e-d88dea4fa05a",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/GameStateLifecycleTests.swift#GameStateLifecycleTests.particleDistanceIsIndependentOfFrameRate",
+        "documentation": "Swift Testing unit test.",
+        "properties": {
+          "path": "dot-dashTests/GameStateLifecycleTests.swift",
+          "symbol": "GameStateLifecycleTests.particleDistanceIsIndependentOfFrameRate",
+          "startLine": 198,
+          "endLine": 208,
+          "contentHash": "210dfe8f"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "implements-73faf0fe-3662-4d24-8782-88c1ddd8178a",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "BestScores.load implements CMP-018; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization from an injected UserDefaults, standard by default.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-4eeccad4-5a14-47d2-ad2f-c3eddac05ef0",
+        "targetId": "document-requirement-000fbacd-98ba-4b73-9d1f-a2bfd860ae46",
+        "soft": true
+      },
+      {
+        "id": "implements-70aa3a98-9392-4211-9553-59a1e464d3a5",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "BestScores.load implements CMP-026; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-026 Best refresh\",{\"key\":\"CMP-026\",\"title\":\"Best refresh\",\"statement\":\"ContentView shall read both mode bests through BestScores.load, including the legacy migration, whenever Home appears.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-4eeccad4-5a14-47d2-ad2f-c3eddac05ef0",
+        "targetId": "document-requirement-78f8ae86-f853-4781-99b1-67bec30f6659",
+        "soft": true
+      },
+      {
+        "id": "implements-b648fb8c-0ae8-409b-9b31-5b36927d2ac8",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.wakeLoop implements CMP-013; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-a8f028d9-a5bf-446f-9443-d5a49fcf2799",
+        "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
+        "soft": true
+      },
+      {
+        "id": "implements-ba96573d-a856-4924-8576-633776a9c8bb",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.wakeLoop implements CMP-017; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-a8f028d9-a5bf-446f-9443-d5a49fcf2799",
+        "targetId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
+        "soft": true
+      },
+      {
+        "id": "implements-0303c6f5-8163-4799-9556-c8564a6546d6",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.applyStartState implements CMP-013; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-f75d6606-84f9-4101-a990-82fbbda5017f",
+        "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
+        "soft": true
+      },
+      {
+        "id": "implements-70c02685-7477-46c4-8840-d7ede95c3e3f",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.applyStartState implements CMP-015; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-015 Mode change\",{\"key\":\"CMP-015\",\"title\":\"Mode change\",\"statement\":\"changeMode to a different mode shall stop any run, apply that mode's start values and show instructions without a game-over result or saved best. changeMode to the current mode shall do nothing.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-f75d6606-84f9-4101-a990-82fbbda5017f",
+        "targetId": "document-requirement-1fe03981-6e57-426f-b6ce-d2881e5c0284",
+        "soft": true
+      },
+      {
+        "id": "implements-eb5ea292-5973-4e60-ac2b-bb07f56b1420",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.recordBest implements CMP-008; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1 in GameState's UserDefaults, and show the overlay. It shall not touch the other mode's key.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-0640d0e2-5d04-4f47-bcfb-0c42a2946ac0",
+        "targetId": "document-requirement-3ceac3c6-6be6-4175-ac6f-b42f3dad6b5c",
+        "soft": true
+      },
+      {
+        "id": "implements-1590fa08-9cfb-4ea9-a4d3-b59c171a1707",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.recordBest implements CMP-016; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, keep its score as the current mode's best if it beats the stored best, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-0640d0e2-5d04-4f47-bcfb-0c42a2946ac0",
+        "targetId": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
+        "soft": true
+      },
+      {
+        "id": "refines-089e2d9d-2029-4e6f-aef8-444ed6b2ec58",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-018; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-018 Best loading and migration\",{\"key\":\"CMP-018\",\"title\":\"Best loading and migration\",\"statement\":\"BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization from an injected UserDefaults, standard by default.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-43b3f9f5-1fc9-43c8-9ce6-8ba5fdba5ef2",
+        "targetId": "document-requirement-000fbacd-98ba-4b73-9d1f-a2bfd860ae46",
+        "soft": true
+      },
+      {
+        "id": "refines-c76aff15-e41f-4b71-bb35-ae9b8fc777aa",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-026; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-026 Best refresh\",{\"key\":\"CMP-026\",\"title\":\"Best refresh\",\"statement\":\"ContentView shall read both mode bests through BestScores.load, including the legacy migration, whenever Home appears.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-43b3f9f5-1fc9-43c8-9ce6-8ba5fdba5ef2",
+        "targetId": "document-requirement-78f8ae86-f853-4781-99b1-67bec30f6659",
+        "soft": true
+      },
+      {
+        "id": "refines-c6749406-266b-4bd1-bce8-79f8a7e27d2b",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-016; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, keep its score as the current mode's best if it beats the stored best, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-18154c98-5da9-4297-a2e4-58d89531c1a0",
+        "targetId": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
+        "soft": true
+      },
+      {
+        "id": "refines-c170c600-db51-4eda-bbbc-5b44521b14a9",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-014; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-9fa0663d-db8d-4b36-a311-92b88d1fadb0",
+        "targetId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
+        "soft": true
+      },
+      {
+        "id": "refines-76a0bdc5-1d5b-4f2f-8d48-a11c72607f1f",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-92abaaa9-62a1-4283-8aa2-e7c6a3493319",
+        "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
+        "soft": true
+      },
+      {
+        "id": "refines-303dadfa-bc87-4364-af29-63df836f0a0d",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-92abaaa9-62a1-4283-8aa2-e7c6a3493319",
+        "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
+        "soft": true
+      },
+      {
+        "id": "refines-7b256fb6-22c4-4289-bff7-d531f9169867",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-010; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall do nothing when there are no particles; otherwise it shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-000d26b2-d306-4e6e-b74e-d88dea4fa05a",
+        "targetId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
+        "soft": true
+      },
+      {
+        "id": "refines-7486575d-54fa-48e3-a4b6-cc6ee16645c3",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Derived from REQ-010; Plus-C has no derives kind, so derivation is recorded as refines.",
+          "targetFingerprint": "[\"document-requirement\",\"REQ-010 Best migration\",{\"key\":\"REQ-010\",\"title\":\"Best migration\",\"statement\":\"A best score recorded by an earlier version of the app shall carry forward as the Classic best, on Home as well as in the game, without replacing a Classic best recorded since.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "document-requirement-78f8ae86-f853-4781-99b1-67bec30f6659",
+        "targetId": "document-requirement-e04d54ff-d411-4d6c-8d24-f3f9c7937851",
         "soft": true
       }
     ],

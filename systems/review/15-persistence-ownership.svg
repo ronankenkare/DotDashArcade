@@ -16,8 +16,8 @@
 <path fill="#17283d" stroke="#66a9f1" d="M241.92,-272.28C241.92,-272.28 12,-272.28 12,-272.28 6,-272.28 0,-266.28 0,-260.28 0,-260.28 0,-216 0,-216 0,-210 6,-204 12,-204 12,-204 241.92,-204 241.92,-204 247.92,-204 253.92,-210 253.92,-216 253.92,-216 253.92,-260.28 253.92,-260.28 253.92,-266.28 247.92,-272.28 241.92,-272.28"/>
 <text xml:space="preserve" text-anchor="middle" x="126.96" y="-252.24" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">«Storage client»</text>
 <text xml:space="preserve" text-anchor="middle" x="126.96" y="-239.49" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">ContentView</text>
-<text xml:space="preserve" text-anchor="middle" x="126.96" y="-226.74" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">Reads bests on appear; writes appearance</text>
-<text xml:space="preserve" text-anchor="middle" x="126.96" y="-213.99" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">with AppStorage</text>
+<text xml:space="preserve" text-anchor="middle" x="126.96" y="-226.74" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">Reads bests via BestScores on appear;</text>
+<text xml:space="preserve" text-anchor="middle" x="126.96" y="-213.99" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">writes appearance with AppStorage</text>
 </g>
 <!-- classifier&#45;c6a8300f&#45;5f93&#45;4a67&#45;bc44&#45;46c83a90502c -->
 <g id="node3" class="node">
@@ -40,8 +40,8 @@
 <path fill="#17283d" stroke="#66a9f1" d="M223.92,-164.28C223.92,-164.28 30,-164.28 30,-164.28 24,-164.28 18,-158.28 18,-152.28 18,-152.28 18,-108 18,-108 18,-102 24,-96 30,-96 30,-96 223.92,-96 223.92,-96 229.92,-96 235.92,-102 235.92,-108 235.92,-108 235.92,-152.28 235.92,-152.28 235.92,-158.28 229.92,-164.28 223.92,-164.28"/>
 <text xml:space="preserve" text-anchor="middle" x="126.96" y="-144.24" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">«Storage client»</text>
 <text xml:space="preserve" text-anchor="middle" x="126.96" y="-131.49" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">GameState</text>
-<text xml:space="preserve" text-anchor="middle" x="126.96" y="-118.74" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">Loads bests, migrates legacy; writes</text>
-<text xml:space="preserve" text-anchor="middle" x="126.96" y="-105.99" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">current best on miss</text>
+<text xml:space="preserve" text-anchor="middle" x="126.96" y="-118.74" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">Loads bests via BestScores; writes</text>
+<text xml:space="preserve" text-anchor="middle" x="126.96" y="-105.99" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">current best on miss or pause</text>
 </g>
 <!-- classifier&#45;d2678e7b&#45;5ac4&#45;4beb&#45;a889&#45;8aea3cd2bd90&#45;&gt;classifier&#45;c6a8300f&#45;5f93&#45;4a67&#45;bc44&#45;46c83a90502c -->
 <g id="edge2" class="edge">

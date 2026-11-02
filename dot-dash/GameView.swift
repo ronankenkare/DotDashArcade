@@ -122,10 +122,11 @@ private struct GameBarView: View {
                     let half = barW * game.zoneWidth / 2
                     let zx = barX + (game.zoneCenter * barW) - half
                     let zw = barW * game.zoneWidth
+                    // Clip both ends to the bar so the drawn zone matches inZone's range.
                     let zoneRect = CGRect(
                         x: max(zx, barX),
                         y: barY - 12,
-                        width: min(zw, barX + barW - max(zx, barX)),
+                        width: min(zx + zw, barX + barW) - max(zx, barX),
                         height: 24
                     )
                     let zoneColor = (game.mode == .classic) ? Color("ClassicMode") : Color("AdvancedMode")
@@ -148,7 +149,10 @@ private struct GameBarView: View {
                     .contentShape(Rectangle())
                     .onAppear { game.cachedBarY = geo.size.height * 0.4 }
                     .onChange(of: geo.size.height) { _, h in game.cachedBarY = h * 0.4 }
-                    .onTapGesture { game.handleTap(screenWidth: geo.size.width) }
+                    // Judge the tap at touch-down, not lift-off, so press timing is what counts.
+                    .onLongPressGesture(minimumDuration: 0, maximumDistance: .infinity, perform: {}) { pressing in
+                        if pressing { game.handleTap(screenWidth: geo.size.width) }
+                    }
             }
         }
     }
@@ -288,11 +292,38 @@ private struct ScoreBarView: View {
     }
 }
 
+// MARK: - Best-score persistence
+
+/// Owns the best-score UserDefaults keys and the legacy single-best migration,
+/// so the Home screen and GameState read the same values.
+enum BestScores {
+    static let classicKey = "dotdash_best_classic_v1"
+    static let advancedKey = "dotdash_best_advanced_v1"
+    static let legacyKey = "dotdash_best_v1"
+
+    static func key(for mode: GameState.Mode) -> String {
+        mode == .classic ? classicKey : advancedKey
+    }
+
+    /// Reads both bests, first migrating a legacy single best (if present) to Classic.
+    static func load(from defaults: UserDefaults) -> (classic: Int, advanced: Int) {
+        let legacy = defaults.integer(forKey: legacyKey)
+        if legacy > 0 && defaults.integer(forKey: classicKey) == 0 {
+            defaults.set(legacy, forKey: classicKey)
+        }
+        return (defaults.integer(forKey: classicKey), defaults.integer(forKey: advancedKey))
+    }
+}
+
 // MARK: - GameState model (moved from ContentView.swift)
 
 @MainActor
 final class GameState: ObservableObject {
-    enum Mode { case classic, advanced; var title: String { self == .classic ? "Classic" : "Advanced" } }
+    enum Mode: String, Identifiable {
+        case classic, advanced
+        var id: String { rawValue }
+        var title: String { self == .classic ? "Classic" : "Advanced" }
+    }
 
     struct ModeSettings {
         let startZoneWidth: CGFloat
@@ -303,17 +334,19 @@ final class GameState: ObservableObject {
         let zoneShrinkPerfect: CGFloat
         let zoneShrinkGood: CGFloat
         let minZoneWidth: CGFloat
+        /// Cap that keeps a 60 Hz frame step (maxSpeed / 60) at most half of minZoneWidth,
+        /// so the marker is always drawn inside the zone on every pass.
+        let maxSpeed: CGFloat
     }
 
     // Output
     @Published var mode: Mode = .classic
     @Published var score: Int = 0
-    @Published var bestClassic: Int = UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1")
-    @Published var bestAdvanced: Int = UserDefaults.standard.integer(forKey: "dotdash_best_advanced_v1")
+    @Published var bestClassic: Int
+    @Published var bestAdvanced: Int
     var bestCurrent: Int { mode == .classic ? bestClassic : bestAdvanced }
     @Published var showHelp: Bool = true
     @Published var gameOver: Bool = false
-    @Published var flash: CGFloat = 0
 
     // World
     @Published var markerPos: CGFloat = 0.5   // 0..1
@@ -341,35 +374,30 @@ final class GameState: ObservableObject {
     private var link: CADisplayLink?
     private var lastTs: CFTimeInterval = CACurrentMediaTime()
 
+    // Persistence
+    private let defaults: UserDefaults
+
     // Haptics
     private let successHap = UINotificationFeedbackGenerator()
     private let impactHap = UIImpactFeedbackGenerator(style: .rigid)
 
     // Themes
-    struct Theme { let bg: Color; let bar: Color; let zone: Color; let mark: Color; let good: Color; let bad: Color }
+    struct Theme { let bg: Color; let bar: Color; let good: Color; let bad: Color }
     private let themes: [Theme] = [
         .init(bg: Color(red: 0.055, green: 0.059, blue: 0.075),
               bar: Color(red: 0.121, green: 0.161, blue: 0.215),
-              zone: Color(red: 0.38, green: 0.65, blue: 0.98),
-              mark: Color(red: 0.898, green: 0.905, blue: 0.922),
               good: Color(red: 0.133, green: 0.773, blue: 0.369),
               bad:  Color(red: 0.937, green: 0.267, blue: 0.267)),
         .init(bg: Color(red: 0.043, green: 0.055, blue: 0.071),
               bar: Color(red: 0.121, green: 0.161, blue: 0.215),
-              zone: Color(red: 0.96, green: 0.62, blue: 0.043),
-              mark: Color(red: 0.99, green: 0.90, blue: 0.54),
               good: Color(red: 0.52, green: 0.80, blue: 0.09),
               bad:  Color(red: 0.96, green: 0.25, blue: 0.37)),
         .init(bg: Color(red: 0.043, green: 0.043, blue: 0.067),
               bar: Color(red: 0.153, green: 0.153, blue: 0.165),
-              zone: Color(red: 0.66, green: 0.55, blue: 0.98),
-              mark: Color(red: 0.98, green: 0.98, blue: 0.98),
               good: Color(red: 0.20, green: 0.83, blue: 0.61),
               bad:  Color(red: 0.98, green: 0.44, blue: 0.52)),
         .init(bg: Color(red: 0.02, green: 0.04, blue: 0.04),
               bar: Color(red: 0.06, green: 0.09, blue: 0.165),
-              zone: Color(red: 0.20, green: 0.82, blue: 0.61),
-              mark: Color(red: 0.97, green: 0.98, blue: 1.00),
               good: Color(red: 0.13, green: 0.83, blue: 0.93),
               bad:  Color(red: 0.98, green: 0.45, blue: 0.09))
     ]
@@ -377,14 +405,10 @@ final class GameState: ObservableObject {
 
     // MARK: - Lifecycle
 
-    init() {
+    init(defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+        (bestClassic, bestAdvanced) = BestScores.load(from: defaults)
         successHap.prepare(); impactHap.prepare()
-        // Migrate legacy single-best (if present) to Classic
-        let legacy = UserDefaults.standard.integer(forKey: "dotdash_best_v1")
-        if legacy > 0 && UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1") == 0 {
-            bestClassic = legacy
-            UserDefaults.standard.set(legacy, forKey: "dotdash_best_classic_v1")
-        }
     }
     deinit { link?.invalidate() }
 
@@ -401,10 +425,23 @@ final class GameState: ObservableObject {
         l.invalidate(); link = nil
     }
 
+    /// Resumes a display link that `step` paused while idle.
+    private func wakeLoop() {
+        guard let l = link, l.isPaused else { return }
+        lastTs = CACurrentMediaTime()
+        l.isPaused = false
+    }
+
     func reset() {
+        applyStartState()
         running = true
-        gameOver = false
         showHelp = false
+        wakeLoop()
+    }
+
+    /// Restores the current mode's start values. Shared by reset() and changeMode(_:).
+    private func applyStartState() {
+        gameOver = false
         score = 0
         let s = currentSettings()
         speed = s.startSpeed
@@ -414,12 +451,14 @@ final class GameState: ObservableObject {
         zoneWidth = s.startZoneWidth
         perfectZoneFrac = s.perfectZoneFrac
         particles.removeAll()
-        flash = 0
         themeIdx = 0 // ensure theme resets each run
     }
 
     func pauseToHelp() {
-        if running { running = false; showHelp = true; gameOver = false }
+        guard running else { return }
+        // The paused run can't be resumed, so keep its score if it's a new best.
+        recordBest()
+        running = false; showHelp = true; gameOver = false
     }
 
     // MARK: - Loop
@@ -430,15 +469,13 @@ final class GameState: ObservableObject {
         lastTs = now
         dt = min(dt, 0.05)
 
-        // Fade flash
-        if flash > 0 { flash = max(0, flash - CGFloat(dt) * 1.6) }
-
-        guard running else { updateParticles(CGFloat(dt)); return }
-
-        // Move marker
-        (markerPos, markerDir) = Self.advanceMarker(pos: markerPos, dir: markerDir, speed: speed, dt: CGFloat(dt))
-
+        if running {
+            (markerPos, markerDir) = Self.advanceMarker(pos: markerPos, dir: markerDir, speed: speed, dt: CGFloat(dt))
+        }
         updateParticles(CGFloat(dt))
+
+        // Nothing moves while idle; pause until reset() wakes the loop.
+        if !running && particles.isEmpty { link.isPaused = true }
     }
 
     /// Pure marker movement + edge bounce. Extracted from step(_:) for testability.
@@ -451,11 +488,16 @@ final class GameState: ObservableObject {
         return (pos, dir)
     }
 
+    /// Particle velocities are in points per 60 Hz frame; scaling by dt keeps
+    /// burst distance the same at any refresh rate.
     func updateParticles(_ dt: CGFloat) {
+        // Mutating an empty @Published array would still publish a change every frame.
+        guard !particles.isEmpty else { return }
+        let frames = dt * 60
         for i in particles.indices {
             particles[i].age += dt
-            particles[i].x += particles[i].vx
-            particles[i].y += particles[i].vy
+            particles[i].x += particles[i].vx * frames
+            particles[i].y += particles[i].vy * frames
         }
         particles.removeAll(where: { !$0.alive })
     }
@@ -463,12 +505,16 @@ final class GameState: ObservableObject {
     // MARK: - Input
 
     func handleTap(screenWidth: CGFloat) {
-        guard running else { reset(); return }
+        guard running else {
+            // After a miss, only the Play Again button restarts, so a follow-up
+            // tap on the bar can't dismiss the Game Over card.
+            if !gameOver { reset() }
+            return
+        }
         if inZone(markerPos) {
             let wasPerfect = inPerfect(markerPos)
             score += 1
             // Feedback
-            flash = min(1, flash + (wasPerfect ? 0.5 : 0.35))
             successHap.notificationOccurred(wasPerfect ? .success : .warning)
             impactHap.impactOccurred(intensity: wasPerfect ? 1.0 : 0.6)
             successHap.prepare(); impactHap.prepare()
@@ -476,7 +522,7 @@ final class GameState: ObservableObject {
             spawnBurst(at: CGPoint(x: markerScreenX(screenWidth: screenWidth), y: cachedBarY), good: true)
             // Difficulty (mode-aware)
             let s = currentSettings()
-            speed *= wasPerfect ? s.speedMulPerfect : s.speedMulGood
+            speed = min(speed * (wasPerfect ? s.speedMulPerfect : s.speedMulGood), s.maxSpeed)
             zoneWidth = clamp(zoneWidth * (wasPerfect ? s.zoneShrinkPerfect : s.zoneShrinkGood), s.minZoneWidth, 0.5)
             // Move zone with guaranteed minimum movement
             zoneCenter = pickNewZoneCenter(prevCenter: zoneCenter, zoneWidth: zoneWidth)
@@ -487,15 +533,19 @@ final class GameState: ObservableObject {
             spawnBurst(at: CGPoint(x: markerScreenX(screenWidth: screenWidth), y: cachedBarY), good: false)
             running = false
             gameOver = true
-            if mode == .classic {
-                bestClassic = max(bestClassic, score)
-                UserDefaults.standard.set(bestClassic, forKey: "dotdash_best_classic_v1")
-            } else {
-                bestAdvanced = max(bestAdvanced, score)
-                UserDefaults.standard.set(bestAdvanced, forKey: "dotdash_best_advanced_v1")
-            }
+            recordBest()
             showHelp = true
         }
+    }
+
+    /// Raises the current mode's best to `score` if higher and persists it.
+    private func recordBest() {
+        if mode == .classic {
+            bestClassic = max(bestClassic, score)
+        } else {
+            bestAdvanced = max(bestAdvanced, score)
+        }
+        defaults.set(bestCurrent, forKey: BestScores.key(for: mode))
     }
 
     func currentSettings() -> ModeSettings {
@@ -509,7 +559,8 @@ final class GameState: ObservableObject {
                 speedMulGood: 1.05,
                 zoneShrinkPerfect: 1.0,
                 zoneShrinkGood: 1.0,
-                minZoneWidth: 0.10
+                minZoneWidth: 0.10,
+                maxSpeed: 3.0
             )
         case .advanced:
             return ModeSettings(
@@ -520,40 +571,20 @@ final class GameState: ObservableObject {
                 speedMulGood: 1.10,
                 zoneShrinkPerfect: 0.90,
                 zoneShrinkGood: 0.94,
-                minZoneWidth: 0.06
+                minZoneWidth: 0.06,
+                maxSpeed: 1.8
             )
         }
     }
 
     func changeMode(_ newMode: Mode) {
         guard mode != newMode else { return }
-        
-        // Pause the game if it's running
-        let wasRunning = running
-        if wasRunning {
-            running = false
-        }
-        
-        // Update mode first so reset() uses the new mode's settings
+        // Update mode first so the start state uses the new mode's settings
         mode = newMode
-        
-        // Reset game state with new mode settings
-        score = 0
-        let s = currentSettings()
-        speed = s.startSpeed
-        markerPos = CGFloat.random(in: 0...1)
-        markerDir = Bool.random() ? 1 : -1
-        zoneCenter = 0.5
-        zoneWidth = s.startZoneWidth
-        perfectZoneFrac = s.perfectZoneFrac
-        particles.removeAll()
-        flash = 0
-        themeIdx = 0
-        
-        // Reset UI state - pause and show help
+        applyStartState()
+        // Discard any run in progress and show help
         running = false
         showHelp = true
-        gameOver = false
     }
 
     // MARK: - Helpers

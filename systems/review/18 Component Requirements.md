@@ -8,7 +8,7 @@ Allocated to GameState.
 
 ### CMP-001 Frame step
 
-GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, fade the flash value, advance the marker only while a run is active, and update particles on every callback.
+GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, update particles on every callback, and pause the display link once no run is active and no particles remain.
 
 ### CMP-002 Marker advance
 
@@ -28,19 +28,19 @@ inPerfect shall be true exactly when markerPos lies within zoneCenter ± zoneWid
 
 ### CMP-005 Mode settings
 
-Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.
+Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.
 
 ### CMP-006 Hit update
 
-On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.
+On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.
 
 ### CMP-007 Hit feedback
 
-A perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.
+A perfect hit shall emit a success notification and a rigid impact at intensity 1.0; a good hit shall emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.
 
 ### CMP-008 Miss handling
 
-On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode's key.
+On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1 in GameState's UserDefaults, and show the overlay. It shall not touch the other mode's key.
 
 ### CMP-009 Particle bursts
 
@@ -48,7 +48,7 @@ spawnBurst shall emit 18 particles at the marker's screen position, evenly sprea
 
 ### CMP-010 Particle update
 
-updateParticles shall advance each particle's age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.
+updateParticles shall do nothing when there are no particles; otherwise it shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.
 
 ### CMP-011 Theme thresholds
 
@@ -64,11 +64,11 @@ Allocated to GameState.
 
 ### CMP-013 Run reset
 
-reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.
+reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.
 
 ### CMP-014 Stopped tap
 
-handleTap shall call reset whenever no run is active.
+handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.
 
 ### CMP-015 Mode change
 
@@ -76,15 +76,15 @@ changeMode to a different mode shall stop any run, apply that mode's start value
 
 ### CMP-016 Pause to instructions
 
-pauseToHelp shall stop an active run, show instructions and clear gameOver; it shall do nothing when no run is active.
+pauseToHelp shall stop an active run, keep its score as the current mode's best if it beats the stored best, show instructions and clear gameOver; it shall do nothing when no run is active.
 
 ### CMP-017 Display link ownership
 
-startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.
+startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.
 
 ### CMP-018 Best loading and migration
 
-GameState shall load both mode bests from their keys at initialization and copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero.
+BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization from an injected UserDefaults, standard by default.
 
 ## GameView
 
@@ -100,7 +100,7 @@ Allocated to GameBarView.
 
 ### CMP-020 Game surface
 
-GameBarView shall draw the bar, target, marker and particles on a Canvas at 40% of its height and forward every tap, with its width, to handleTap.
+GameBarView shall draw the bar, the target clipped at both bar ends to exactly the range inZone accepts, the marker and particles on a Canvas at 40% of its height, and forward each touch-down, with its width, to handleTap.
 
 ## Game readouts
 
@@ -136,7 +136,7 @@ ContentView shall open GameView in the chosen mode when Play is pressed, read a 
 
 ### CMP-026 Best refresh
 
-ContentView shall read both mode bests from UserDefaults whenever Home appears.
+ContentView shall read both mode bests through BestScores.load, including the legacy migration, whenever Home appears.
 
 ### CMP-027 Home controls
 
@@ -187,7 +187,7 @@ dot_dashApp shall present ContentView in a WindowGroup, and the app target shall
 | Score readout (CMP-023) | REQ-004, REQ-005 | GameReadoutViews |
 | Appearance cycle (CMP-024) | REQ-009 | AppearancePreference |
 | Navigation and appearance (CMP-025) | REQ-009, REQ-012 | ContentView |
-| Best refresh (CMP-026) | REQ-012 | ContentView |
+| Best refresh (CMP-026) | REQ-010, REQ-012 | ContentView |
 | Home controls (CMP-027) | REQ-009, REQ-012 | ContentView |
 | Shared mode pill (CMP-028) | REQ-006, REQ-012 | ModeTogglePill |
 | App entry and platform (CMP-029) | REQ-001 | dot_dashApp |

@@ -12,11 +12,11 @@ During a run, the marker shall move continuously along the bar at the run's curr
 
 ## REQ-003 Inclusive hit classification
 
-A tap during a run shall count as a hit exactly when the marker is inside the target, edges included, and a hit near the target's center shall be classified as perfect.
+A tap during a run shall count as a hit exactly when the marker is inside the target at the moment the finger touches down, edges included; the drawn target shall cover exactly that range, and a hit near the target's center shall be classified as perfect.
 
 ## REQ-004 Hit progression
 
-Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.
+Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.
 
 ## REQ-005 Miss and durable best
 
@@ -24,11 +24,11 @@ A miss shall end the run with failure feedback, show the mode, score and best, a
 
 ## REQ-006 Mode and restart behavior
 
-The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.
+The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.
 
 ## REQ-007 Lifecycle handling
 
-When the app becomes inactive or moves to the background during a run, the run shall stop and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.
+When the app becomes inactive or moves to the background during a run, the run shall stop, its score shall be kept as that mode's best if it beats the stored best, and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.
 
 ## REQ-008 Target placement
 
@@ -40,11 +40,11 @@ From Home, the player shall be able to choose Light, Dark or System appearance; 
 
 ## REQ-010 Best migration
 
-A best score recorded by an earlier version of the app shall carry forward as the Classic best without replacing a Classic best recorded since.
+A best score recorded by an earlier version of the app shall carry forward as the Classic best, on Home as well as in the game, without replacing a Classic best recorded since.
 
 ## REQ-011 Feedback and themes
 
-Hits and misses shall produce visibly different particle bursts, and the game's color theme shall change as the score passes fixed milestones.
+Hits and misses shall produce visibly different particle bursts that look the same at any display refresh rate, and the game's color theme shall change as the score passes fixed milestones.
 
 ## REQ-012 Home and support
 
@@ -63,6 +63,6 @@ Home shall let the player choose a mode, see that mode's best, start play, chang
 | Lifecycle handling (REQ-007) | NEED-004 | CMP-016, CMP-017, CMP-019 |
 | Target placement (REQ-008) | NEED-002 | CMP-012 |
 | Appearance preference (REQ-009) | NEED-005 | CMP-024, CMP-025, CMP-027 |
-| Best migration (REQ-010) | NEED-003 | CMP-018 |
+| Best migration (REQ-010) | NEED-003 | CMP-018, CMP-026 |
 | Feedback and themes (REQ-011) | NEED-005 | CMP-001, CMP-009, CMP-010, CMP-011 |
 | Home and support (REQ-012) | NEED-001, NEED-003, NEED-006 | CMP-025, CMP-026, CMP-027, CMP-028 |

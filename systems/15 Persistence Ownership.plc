@@ -22,26 +22,26 @@
         "kind": "class",
         "ownerId": null,
         "name": "ContentView",
-        "documentation": "Reads bests on appear; writes appearance with AppStorage",
+        "documentation": "Reads bests via BestScores on appear; writes appearance with AppStorage",
         "properties": {
           "stereotype": "Storage client",
           "isAbstract": false
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
-        "modifiedAt": "2026-10-21T21:41:30.593Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "classifier-d2678e7b-5ac4-4beb-a889-8aea3cd2bd90",
         "kind": "class",
         "ownerId": null,
         "name": "GameState",
-        "documentation": "Loads bests, migrates legacy; writes current best on miss",
+        "documentation": "Loads bests via BestScores; writes current best on miss or pause",
         "properties": {
           "stereotype": "Storage client",
           "isAbstract": false
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
-        "modifiedAt": "2026-10-21T21:41:30.593Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c",

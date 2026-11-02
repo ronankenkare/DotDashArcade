@@ -142,11 +142,11 @@
         "name": "",
         "documentation": "",
         "properties": {
-          "trigger": "Play Again or bar tap",
+          "trigger": "Play Again",
           "effect": "reset"
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:43:31.717Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "state-a619f139-0518-4173-80af-8c2f3d892e25",
         "targetId": "state-213e8aaf-4644-4cdd-b546-a2c48ef2b815"
       },

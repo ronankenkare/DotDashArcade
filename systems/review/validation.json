@@ -4,10 +4,10 @@
   "diagramCount": 12,
   "documentCount": 7,
   "requirementCount": 47,
-  "elementCount": 629,
+  "elementCount": 654,
   "viewCount": 287,
-  "sourceArtifacts": 100,
-  "traceCount": 222,
+  "sourceArtifacts": 109,
+  "traceCount": 238,
   "roundTrip": "passed",
   "findings": [
     {
@@ -131,5 +131,82 @@
     "negativeChecks": "In scratch copies, edited traced lines, a shifted symbol, and an injected code → REQ trace were each rejected",
     "systemRequirementsRewritten": "REQ-001…012 restated at observable behavior level; exact values moved to CMP-001…029",
     "appTestsRun": false
+  },
+  "codeReviewFixes": {
+    "date": "2026-11-02",
+    "scope": "Ten code-review findings fixed in ContentView.swift, GameView.swift and the unit tests",
+    "requirementsChanged": [
+      "REQ-003",
+      "REQ-004",
+      "REQ-006",
+      "REQ-007",
+      "REQ-010",
+      "REQ-011",
+      "CMP-001",
+      "CMP-005",
+      "CMP-006",
+      "CMP-007",
+      "CMP-008",
+      "CMP-010",
+      "CMP-013",
+      "CMP-014",
+      "CMP-016",
+      "CMP-017",
+      "CMP-018",
+      "CMP-020",
+      "CMP-026"
+    ],
+    "newCodeParts": [
+      "BestScores.load",
+      "GameState.wakeLoop",
+      "GameState.applyStartState",
+      "GameState.recordBest"
+    ],
+    "newTestParts": [
+      "homeScreenLoadSeesMigratedLegacyBest",
+      "pauseToHelpPersistsRunningScoreAsBest",
+      "tapAfterMissKeepsGameOverCard",
+      "repeatedHitsCapSpeedAtMaxSpeed",
+      "particleDistanceIsIndependentOfFrameRate"
+    ],
+    "newTraces": "CMP-026 refines REQ-010; new parts implement or verify their component requirements",
+    "reanchored": "All app and test symbol parts re-anchored and re-hashed; traces to edited requirements re-recorded after review",
+    "diagramsEdited": [
+      "07 Software Architecture",
+      "08 Run State Machine",
+      "10 Successful Tap Sequence",
+      "12 Display Frame Sequence",
+      "13 Hit Difficulty Progression",
+      "15 Persistence Ownership"
+    ],
+    "svgPreviewsRelabeled": [
+      "07-software-architecture.svg",
+      "08-run-state-machine.svg",
+      "10-successful-tap-sequence.svg",
+      "12-display-frame-sequence.svg",
+      "13-hit-difficulty-progression.svg",
+      "15-persistence-ownership.svg"
+    ],
+    "verificationCoverage": {
+      "componentWithTests": "20 of 29",
+      "systemWithUiTests": "4 of 12"
+    },
+    "appTestsRun": true,
+    "unitTests": {
+      "device": "iPhone 17 Pro simulator / iOS 27.0",
+      "target": "dot-dashTests",
+      "testCases": 69,
+      "failures": 0
+    },
+    "uiTests": {
+      "device": "iPhone 17 Pro simulator / iOS 27.0",
+      "run": [
+        "testPlayNavigatesToGame",
+        "testTapScoresOrEndsGame"
+      ],
+      "failures": 0,
+      "fullSuiteRun": false
+    },
+    "notCheckedOnDevice": "Target clipping, display-link idle pause, haptics"
   }
 }

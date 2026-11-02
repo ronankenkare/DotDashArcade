@@ -117,7 +117,7 @@
 <path fill="#17283d" stroke="#66a9f1" d="M1623.35,-459.03C1623.35,-459.03 1434.68,-459.03 1434.68,-459.03 1428.68,-459.03 1422.68,-453.03 1422.68,-447.03 1422.68,-447.03 1422.68,-415.5 1422.68,-415.5 1422.68,-409.5 1428.68,-403.5 1434.68,-403.5 1434.68,-403.5 1623.35,-403.5 1623.35,-403.5 1629.35,-403.5 1635.35,-409.5 1635.35,-415.5 1635.35,-415.5 1635.35,-447.03 1635.35,-447.03 1635.35,-453.03 1629.35,-459.03 1623.35,-459.03"/>
 <text xml:space="preserve" text-anchor="middle" x="1529.02" y="-438.99" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">«SwiftUI Canvas»</text>
 <text xml:space="preserve" text-anchor="middle" x="1529.02" y="-426.24" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">GameBarView</text>
-<text xml:space="preserve" text-anchor="middle" x="1529.02" y="-413.49" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">Draws world and receives tap input</text>
+<text xml:space="preserve" text-anchor="middle" x="1529.02" y="-413.49" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">Draws world; receives touch-downs</text>
 </g>
 <!-- classifier&#45;5283ed01&#45;ecd8&#45;44ad&#45;96be&#45;a58d872419a1&#45;&gt;classifier&#45;1ebd8fd1&#45;7d42&#45;4c71&#45;86da&#45;b9b5e9792974 -->
 <g id="edge4" class="edge">
