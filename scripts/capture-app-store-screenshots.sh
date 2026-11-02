@@ -14,7 +14,7 @@
 # "iPhone 18 Pro Max" (6.9") and "iPad Pro 13-inch (M5)" (13").
 #
 # Output: App_Store_Info/vVERSION/screenshots/<device>/<orientation>/, e.g.
-# iphone-18-pro-max/portrait/01-gameplay-hit.png.
+# iphone-18-pro-max/portrait/01-home.png.
 #
 # The game states are staged by a Debug-only hook
 # (scripts/app-store-screenshots/) that is added to the source for the build
@@ -59,13 +59,11 @@ if [ $# -eq 0 ]; then
 fi
 
 # file name|scene (empty = Home screen)|appearance
-SHOTS="01-gameplay-hit|hit|dark
-02-theme-40|theme40|dark
-03-advanced|advanced|dark
-04-home||dark
-05-how-to-play|help|dark
-06-game-over|gameover|dark
-07-light-gameplay|hit|light"
+SHOTS="01-home||dark
+02-gameplay-hit|hit|dark
+03-how-to-play|help|dark
+04-light-gameplay|hit|light
+05-game-over|gameover|dark"
 
 # --- Build with the staging hook, then restore the source -------------------
 
@@ -160,7 +158,9 @@ capture_set() {
     [ -n "$scene" ] && args+=(-screenshotScene "$scene")
     xcrun simctl launch "$udid" "$BUNDLE_ID" "${args[@]}" >/dev/null
     sleep "$SHOT_DELAY"
-    xcrun simctl io "$udid" screenshot --type=png "$dest/$shot.png" >/dev/null 2>&1
+    if ! xcrun simctl io "$udid" screenshot --type=png "$dest/$shot.png" >/dev/null 2>&1; then
+      xcrun simctl io "$udid" screenshot --display=1 --type=png "$dest/$shot.png" >/dev/null 2>&1
+    fi
     local w h
     w="$(sips -g pixelWidth "$dest/$shot.png" | awk '/pixelWidth/{print $2}')"
     h="$(sips -g pixelHeight "$dest/$shot.png" | awk '/pixelHeight/{print $2}')"
