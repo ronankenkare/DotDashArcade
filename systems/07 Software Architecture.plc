@@ -74,13 +74,13 @@
         "kind": "class",
         "ownerId": null,
         "name": "GameBarView",
-        "documentation": "Draws world and receives tap input",
+        "documentation": "Draws world; receives touch-downs",
         "properties": {
           "stereotype": "SwiftUI Canvas",
           "isAbstract": false
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:41:30.592Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "classifier-7af6b402-b1d1-4634-889f-5526e519b5fb",

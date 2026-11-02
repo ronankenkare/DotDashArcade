@@ -21,7 +21,7 @@ GameView starts CADisplayLink on appear and on active scene phase. startLoop is 
 | Width multiplier perfect / good | 1.00 / 1.00 | 0.90 / 0.94 |
 | Minimum width | 0.10 | 0.06 |
 
-Each hit scores one point, regardless of perfect classification. There is no speed cap. Width is clamped between the mode minimum and 0.5 after multiplication. New centers are sampled within 0.15...0.85, with up to 16 attempts at the movement threshold. The target may extend beyond a bar endpoint when wide; its center is what is bounded. GameBarView clips the drawn target at both bar ends, so the highlight covers exactly the range inZone accepts. Theme thresholds are 12, 25 and 40.
+Each hit scores one point, regardless of perfect classification. There is no speed cap. Width is clamped between the mode minimum and 0.5 after multiplication. New centers are sampled within 0.15...0.85, with up to 16 attempts at the movement threshold. The target may extend beyond a bar endpoint when wide; its center is what is bounded. GameBarView clips the drawn target at both bar ends, so the highlight covers exactly the range inZone accepts. The bar reacts at touch-down, not lift-off, so the marker position is sampled when the finger lands. Theme thresholds are 12, 25 and 40.
 
 ## Local persistence
 
@@ -74,25 +74,25 @@ Each code part names a Swift symbol and its line range and records the Plus-C li
 | ContentView.swift · ContentView.HomeView | 105–209 | CMP-027 |
 | GameView.swift · GameView | 15–71 | GameView class, CMP-019 |
 | GameView.swift · ModeTogglePill | 78–99 | ModeTogglePill class, CMP-028 |
-| GameView.swift · GameBarView | 104–156 | GameBarView class, CMP-020 |
-| GameView.swift · HelpOverlayView | 159–254 | GameReadoutViews class, CMP-021 |
-| GameView.swift · ModeBadgeView | 257–269 | GameReadoutViews class, CMP-022 |
-| GameView.swift · ScoreBarView | 272–290 | GameReadoutViews class, CMP-023 |
-| GameView.swift · GameState | 295–625 | GameState class |
-| GameView.swift · GameState.init | 381–389 | CMP-018 |
-| GameView.swift · GameState.deinit | 390–390 | CMP-017 |
-| GameView.swift · GameState.startLoop | 392–398 | CMP-017 |
-| GameView.swift · GameState.stopLoop | 400–403 | CMP-017 |
-| GameView.swift · GameState.reset | 405–420 | CMP-013 |
-| GameView.swift · GameState.pauseToHelp | 422–424 | CMP-016 |
-| GameView.swift · GameState.step | 428–443 | CMP-001 |
-| GameView.swift · GameState.advanceMarker | 446–453 | CMP-002 |
-| GameView.swift · GameState.updateParticles | 455–462 | CMP-010 |
-| GameView.swift · GameState.handleTap | 466–500 | CMP-006, CMP-007, CMP-008, CMP-014 |
-| GameView.swift · GameState.currentSettings | 502–527 | CMP-005 |
-| GameView.swift · GameState.changeMode | 529–558 | CMP-015 |
-| GameView.swift · GameState.inZone | 562–565 | CMP-003 |
-| GameView.swift · GameState.inPerfect | 567–571 | CMP-004 |
-| GameView.swift · GameState.pickThemeIndex | 575–580 | CMP-011 |
-| GameView.swift · GameState.spawnBurst | 589–605 | CMP-009 |
-| GameView.swift · GameState.pickNewZoneCenter | 607–624 | CMP-012 |
+| GameView.swift · GameBarView | 104–159 | GameBarView class, CMP-020 |
+| GameView.swift · HelpOverlayView | 162–257 | GameReadoutViews class, CMP-021 |
+| GameView.swift · ModeBadgeView | 260–272 | GameReadoutViews class, CMP-022 |
+| GameView.swift · ScoreBarView | 275–293 | GameReadoutViews class, CMP-023 |
+| GameView.swift · GameState | 298–628 | GameState class |
+| GameView.swift · GameState.init | 384–392 | CMP-018 |
+| GameView.swift · GameState.deinit | 393–393 | CMP-017 |
+| GameView.swift · GameState.startLoop | 395–401 | CMP-017 |
+| GameView.swift · GameState.stopLoop | 403–406 | CMP-017 |
+| GameView.swift · GameState.reset | 408–423 | CMP-013 |
+| GameView.swift · GameState.pauseToHelp | 425–427 | CMP-016 |
+| GameView.swift · GameState.step | 431–446 | CMP-001 |
+| GameView.swift · GameState.advanceMarker | 449–456 | CMP-002 |
+| GameView.swift · GameState.updateParticles | 458–465 | CMP-010 |
+| GameView.swift · GameState.handleTap | 469–503 | CMP-006, CMP-007, CMP-008, CMP-014 |
+| GameView.swift · GameState.currentSettings | 505–530 | CMP-005 |
+| GameView.swift · GameState.changeMode | 532–561 | CMP-015 |
+| GameView.swift · GameState.inZone | 565–568 | CMP-003 |
+| GameView.swift · GameState.inPerfect | 570–574 | CMP-004 |
+| GameView.swift · GameState.pickThemeIndex | 578–583 | CMP-011 |
+| GameView.swift · GameState.spawnBurst | 592–608 | CMP-009 |
+| GameView.swift · GameState.pickNewZoneCenter | 610–627 | CMP-012 |

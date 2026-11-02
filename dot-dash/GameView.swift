@@ -149,7 +149,10 @@ private struct GameBarView: View {
                     .contentShape(Rectangle())
                     .onAppear { game.cachedBarY = geo.size.height * 0.4 }
                     .onChange(of: geo.size.height) { _, h in game.cachedBarY = h * 0.4 }
-                    .onTapGesture { game.handleTap(screenWidth: geo.size.width) }
+                    // Judge the tap at touch-down, not lift-off, so press timing is what counts.
+                    .onLongPressGesture(minimumDuration: 0, maximumDistance: .infinity, perform: {}) { pressing in
+                        if pressing { game.handleTap(screenWidth: geo.size.width) }
+                    }
             }
         }
     }
