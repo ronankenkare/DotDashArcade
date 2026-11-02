@@ -5,7 +5,7 @@
 1. Open the app; Home defaults to Classic and follows the stored appearance or System.
 2. Choose Classic or Advanced and tap Play.
 3. Read How To Play and tap Start. A fresh run randomizes marker position and direction; target center begins at 0.5.
-4. Tap the game surface when the marker is inside the target; the tap counts the moment the finger touches down. Every hit adds one point. Perfect hits increase speed more strongly.
+4. Tap the game surface when the marker is inside the target; the tap counts the moment the finger touches down. Every hit adds one point. Perfect hits increase speed more strongly, up to the mode maximum.
 5. A miss shows Game Over, saves the mode best, and displays score, best and mode. Further taps on the game surface leave Game Over showing.
 6. Play Again begins a new run in the same mode. Back returns to Home, which refreshes bests.
 

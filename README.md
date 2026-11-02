@@ -1,6 +1,6 @@
 # Dot Dash
 
-A minimalist reflex game for iOS and iPadOS. A dot bounces back and forth across a bar — tap the moment it lands inside the target zone. Every hit speeds up the dot; Advanced mode also shrinks the target zone. One miss ends the run.
+A minimalist reflex game for iOS and iPadOS. A dot bounces back and forth across a bar — tap the moment it lands inside the target zone. Every hit speeds up the dot, up to a per-mode cap; Advanced mode also shrinks the target zone. One miss ends the run.
 
 - **Platform:** iOS / iPadOS 26.0+ (iPhone + iPad, universal)
 - **Stack:** SwiftUI, UIKit (haptics), `CADisplayLink` for the game loop

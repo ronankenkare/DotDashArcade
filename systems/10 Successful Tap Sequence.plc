@@ -166,13 +166,13 @@
         "id": "message-af8a7751-1c13-4d80-b26e-291d70057ab9",
         "kind": "synchronous",
         "ownerId": null,
-        "name": "multiply speed; clamp width",
+        "name": "scale, cap speed; clamp width",
         "documentation": "",
         "properties": {
           "order": 5
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "participant-0115c119-9efc-4d00-b728-7b9455e3a17c",
         "targetId": "participant-0115c119-9efc-4d00-b728-7b9455e3a17c"
       },

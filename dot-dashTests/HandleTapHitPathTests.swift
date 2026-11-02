@@ -21,11 +21,11 @@ struct HandleTapHitPathTests {
     private func expected(for mode: GameState.Mode)
         -> (startZoneWidth: CGFloat, startSpeed: CGFloat,
             speedMulPerfect: CGFloat, speedMulGood: CGFloat,
-            minZoneWidth: CGFloat)
+            minZoneWidth: CGFloat, maxSpeed: CGFloat)
     {
         switch mode {
-        case .classic:  return (0.36, 0.55, 1.10, 1.05, 0.10)
-        case .advanced: return (0.26, 0.80, 1.15, 1.10, 0.06)
+        case .classic:  return (0.36, 0.55, 1.10, 1.05, 0.10, 3.0)
+        case .advanced: return (0.26, 0.80, 1.15, 1.10, 0.06, 1.8)
         }
     }
 
@@ -74,6 +74,20 @@ struct HandleTapHitPathTests {
         let e = expected(for: mode)
         g.handleTap(screenWidth: 320)
         #expect(abs(g.speed - 0.6 * e.speedMulGood) < tolerance)
+    }
+
+    @Test(arguments: [GameState.Mode.classic, GameState.Mode.advanced])
+    func repeatedHitsCapSpeedAtMaxSpeed(mode: GameState.Mode) {
+        let g = makeRunningGame(mode: mode, markerPos: 0.5)
+        let e = expected(for: mode)
+        for _ in 0..<60 {
+            g.markerPos = g.zoneCenter
+            g.handleTap(screenWidth: 320)
+            #expect(g.speed <= e.maxSpeed + tolerance)
+        }
+        #expect(abs(g.speed - e.maxSpeed) < tolerance)
+        // A 60 Hz frame step never exceeds half the narrowest zone.
+        #expect(e.maxSpeed / 60 <= e.minZoneWidth / 2 + tolerance)
     }
 
     // MARK: - Zone width progression

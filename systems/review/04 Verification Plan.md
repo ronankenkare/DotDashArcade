@@ -52,8 +52,8 @@ System requirements without a UI-flow trace are covered only through their compo
 | Marker advance (CMP-002) | plainAdvanceMovesRightByDirSpeedDt, movingLeftDecreasesPositionSymmetrically, rightEdgeBounceClampsToOneAndFlipsDirection, leftEdgeBounceClampsToZeroAndFlipsDirection, landingExactlyOnOneTriggersBounceBecauseComparisonIsInclusive, overshootIsClampedNotReflected, zeroDtIsNoOp, tenSecondSimulationStaysInBoundsAndBouncesRepeatedly, degenerateHugeStepFromLeftEdgeClampsToRightEdge, degenerateHugeStepFromRightEdgeClampsToLeftEdge |
 | Target test (CMP-003) | inZoneAtZoneCenterIsTrue, inZoneJustInsideEdgesIsTrue, inZoneExactlyOnEdgesIsTrue, inZoneJustOutsideEdgesIsFalse, markerAtZeroVersusLeftEdgeZone, markerAtOneVersusRightEdgeZone, tinyZoneStillDetectsCenterHit |
 | Perfect band (CMP-004) | inPerfectAtZoneCenterIsTrue, inPerfectOutsideFullZoneIsFalse, inPerfectInsideFullZoneButOutsideInnerIsFalse, inPerfectAtInnerBoundaryIsTrue |
-| Mode settings (CMP-005) | perfectHitMultipliesSpeedBySpeedMulPerfect, goodHitMultipliesSpeedBySpeedMulGood, advancedPerfectHitShrinksZoneWidthByPointNine, advancedGoodHitShrinksZoneWidthByPointNineFour, classicHitLeavesZoneWidthUnchanged, advancedRepeatedHitsClampZoneWidthAtMinimum, classicSettingsMatchExpectedConstants, advancedSettingsMatchExpectedConstants |
-| Hit update (CMP-006) | inZoneTapScoresAndKeepsGameRunning, perfectHitMultipliesSpeedBySpeedMulPerfect, goodHitMultipliesSpeedBySpeedMulGood, advancedPerfectHitShrinksZoneWidthByPointNine, advancedGoodHitShrinksZoneWidthByPointNineFour, classicHitLeavesZoneWidthUnchanged, advancedRepeatedHitsClampZoneWidthAtMinimum, hitMovesZoneCenterAwayFromPreviousCenter, twelfthHitAdvancesThemeIdxToOne |
+| Mode settings (CMP-005) | perfectHitMultipliesSpeedBySpeedMulPerfect, goodHitMultipliesSpeedBySpeedMulGood, advancedPerfectHitShrinksZoneWidthByPointNine, advancedGoodHitShrinksZoneWidthByPointNineFour, classicHitLeavesZoneWidthUnchanged, advancedRepeatedHitsClampZoneWidthAtMinimum, classicSettingsMatchExpectedConstants, advancedSettingsMatchExpectedConstants, repeatedHitsCapSpeedAtMaxSpeed |
+| Hit update (CMP-006) | inZoneTapScoresAndKeepsGameRunning, perfectHitMultipliesSpeedBySpeedMulPerfect, goodHitMultipliesSpeedBySpeedMulGood, advancedPerfectHitShrinksZoneWidthByPointNine, advancedGoodHitShrinksZoneWidthByPointNineFour, classicHitLeavesZoneWidthUnchanged, advancedRepeatedHitsClampZoneWidthAtMinimum, hitMovesZoneCenterAwayFromPreviousCenter, twelfthHitAdvancesThemeIdxToOne, repeatedHitsCapSpeedAtMaxSpeed |
 | Hit feedback (CMP-007) | None; manual: haptics on physical hardware |
 | Miss handling (CMP-008) | gameOverPersistsNewBestClassic, gameOverDoesNotRegressBestClassic, gameOverPersistsNewBestAdvanced |
 | Particle bursts (CMP-009) | None; manual: visual particle check |
@@ -93,5 +93,6 @@ On November 2, 2026, with the fixes below applied, the dot-dashTests target and 
 - The drawn target is clipped at both bar ends to match inZone.
 - The bar reacts at touch-down instead of lift-off.
 - Taps on the bar no longer dismiss Game Over; only Play Again restarts.
+- Speed is capped per mode (3.0 Classic, 1.8 Advanced).
 
-New tests: tapAfterMissKeepsGameOverCard.
+New tests: tapAfterMissKeepsGameOverCard, repeatedHitsCapSpeedAtMaxSpeed.

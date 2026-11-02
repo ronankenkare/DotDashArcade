@@ -16,7 +16,7 @@ A tap during a run shall count as a hit exactly when the marker is inside the ta
 
 ## REQ-004 Hit progression
 
-Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.
+Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.
 
 ## REQ-005 Miss and durable best
 

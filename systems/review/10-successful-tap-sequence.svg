@@ -86,9 +86,9 @@
 <!-- m5 -->
 <g id="node7" class="node">
 <title>m5</title>
-<path fill="#17283d" stroke="#66a9f1" d="M239.58,-363.12C239.58,-363.12 86.92,-363.12 86.92,-363.12 80.92,-363.12 74.92,-357.12 74.92,-351.12 74.92,-351.12 74.92,-330.09 74.92,-330.09 74.92,-324.09 80.92,-318.09 86.92,-318.09 86.92,-318.09 239.58,-318.09 239.58,-318.09 245.58,-318.09 251.58,-324.09 251.58,-330.09 251.58,-330.09 251.58,-351.12 251.58,-351.12 251.58,-357.12 245.58,-363.12 239.58,-363.12"/>
+<path fill="#17283d" stroke="#66a9f1" d="M244.08,-363.12C244.08,-363.12 82.42,-363.12 82.42,-363.12 76.42,-363.12 70.42,-357.12 70.42,-351.12 70.42,-351.12 70.42,-330.09 70.42,-330.09 70.42,-324.09 76.42,-318.09 82.42,-318.09 82.42,-318.09 244.08,-318.09 244.08,-318.09 250.08,-318.09 256.08,-324.09 256.08,-330.09 256.08,-330.09 256.08,-351.12 256.08,-351.12 256.08,-357.12 250.08,-363.12 244.08,-363.12"/>
 <text xml:space="preserve" text-anchor="middle" x="163.25" y="-343.08" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">6. GameState → GameState</text>
-<text xml:space="preserve" text-anchor="middle" x="163.25" y="-328.08" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">multiply speed; clamp width</text>
+<text xml:space="preserve" text-anchor="middle" x="163.25" y="-328.08" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">scale, cap speed; clamp width</text>
 </g>
 <!-- m4&#45;&gt;m5 -->
 <g id="edge6" class="edge">

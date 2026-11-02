@@ -15,7 +15,7 @@ The root project.plc retains the original project identity. systems/ contains na
 - After a miss, only Play Again restarts; taps on the game surface are ignored while Game Over shows.
 - Particle x/y use per-update increments while age uses elapsed time; their displacement varies with refresh rate.
 - CADisplayLink targets GameState strongly and requires explicit stopLoop on disappear/inactive. Verify lifecycle teardown when changing ownership.
-- Speed has no maximum; movement clamps overshoot rather than reflecting remaining travel.
+- Speed is capped per mode (3.0 Classic, 1.8 Advanced); movement clamps overshoot rather than reflecting remaining travel.
 - Classic's initial instruction preview can use initializer world defaults until reset because same-mode changeMode is a no-op.
 - Support is an external form whose availability is not controlled by this repository.
 

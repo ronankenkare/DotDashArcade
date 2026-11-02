@@ -76,7 +76,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "daf6937db47451bcd02a890bc8c5df25a1266927c42103037984324d72d75b3b"
+          "contentHash": "955e80029a08740b68ba7ea432c2144f5d1672cb77594e0e0eb55469c1d1e32e"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -571,8 +571,8 @@
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState",
           "startLine": 298,
-          "endLine": 633,
-          "contentHash": "70af36dc"
+          "endLine": 638,
+          "contentHash": "abf9afe9"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -603,8 +603,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.init",
-          "startLine": 384,
-          "endLine": 392,
+          "startLine": 387,
+          "endLine": 395,
           "contentHash": "72ab03ea"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -619,8 +619,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.startLoop",
-          "startLine": 395,
-          "endLine": 401,
+          "startLine": 398,
+          "endLine": 404,
           "contentHash": "3e275a06"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -635,8 +635,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.stopLoop",
-          "startLine": 403,
-          "endLine": 406,
+          "startLine": 406,
+          "endLine": 409,
           "contentHash": "b6350e8f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -651,8 +651,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.reset",
-          "startLine": 408,
-          "endLine": 423,
+          "startLine": 411,
+          "endLine": 426,
           "contentHash": "00d659cc"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -667,8 +667,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pauseToHelp",
-          "startLine": 425,
-          "endLine": 427,
+          "startLine": 428,
+          "endLine": 430,
           "contentHash": "5cf194a6"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -683,8 +683,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.step",
-          "startLine": 431,
-          "endLine": 446,
+          "startLine": 434,
+          "endLine": 449,
           "contentHash": "c7a3e97b"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -699,8 +699,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.advanceMarker",
-          "startLine": 449,
-          "endLine": 456,
+          "startLine": 452,
+          "endLine": 459,
           "contentHash": "b442c5ca"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -715,8 +715,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.updateParticles",
-          "startLine": 458,
-          "endLine": 465,
+          "startLine": 461,
+          "endLine": 468,
           "contentHash": "5b8deef9"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -727,13 +727,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.handleTap",
-        "documentation": "Restart only from instructions; otherwise hit progression or miss with best persistence.",
+        "documentation": "Restart only from instructions; otherwise hit progression with a speed cap, or miss with best persistence.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.handleTap",
-          "startLine": 469,
-          "endLine": 508,
-          "contentHash": "ee06b727"
+          "startLine": 472,
+          "endLine": 511,
+          "contentHash": "213abecc"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -743,13 +743,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.currentSettings",
-        "documentation": "Classic and Advanced difficulty constants.",
+        "documentation": "Classic and Advanced difficulty constants, including maximum speed.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.currentSettings",
-          "startLine": 510,
-          "endLine": 535,
-          "contentHash": "68aa2fe3"
+          "startLine": 513,
+          "endLine": 540,
+          "contentHash": "bf46c333"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -763,8 +763,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.changeMode",
-          "startLine": 537,
-          "endLine": 566,
+          "startLine": 542,
+          "endLine": 571,
           "contentHash": "5f49528d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -779,8 +779,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inZone",
-          "startLine": 570,
-          "endLine": 573,
+          "startLine": 575,
+          "endLine": 578,
           "contentHash": "44f0424d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -795,8 +795,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inPerfect",
-          "startLine": 575,
-          "endLine": 579,
+          "startLine": 580,
+          "endLine": 584,
           "contentHash": "4bd6431e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -811,8 +811,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickThemeIndex",
-          "startLine": 583,
-          "endLine": 588,
+          "startLine": 588,
+          "endLine": 593,
           "contentHash": "80d5dad8"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -827,8 +827,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.spawnBurst",
-          "startLine": 597,
-          "endLine": 613,
+          "startLine": 602,
+          "endLine": 618,
           "contentHash": "3ac94ea1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -843,8 +843,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickNewZoneCenter",
-          "startLine": 615,
-          "endLine": 632,
+          "startLine": 620,
+          "endLine": 637,
           "contentHash": "6a4c493f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -978,7 +978,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "a2d4d04423ccbcaee159de07120a8f2d66def1b2bc74238f0e91516b23aef047"
+          "contentHash": "c2f799c230cca02a9112417e02b2476cf980500a882e9caf2e3d11d1fcf1aef0"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -1601,10 +1601,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-004; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -1635,10 +1635,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-005 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -1652,10 +1652,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-004; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -1669,10 +1669,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-006 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -1686,10 +1686,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-004; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-fd1a0d87-731c-4089-9e52-5a425afdc50a",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -1754,10 +1754,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-004; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-8fcff39b-c7fc-4481-9cda-35a92ef5bb5b",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -2315,10 +2315,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-004; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-3a47a5a6-50da-49ba-a179-ddf414e75d58",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -2637,8 +2637,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.deinit",
-          "startLine": 393,
-          "endLine": 393,
+          "startLine": 396,
+          "endLine": 396,
           "contentHash": "79eebad7"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
@@ -3010,10 +3010,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.handleTap implements CMP-006; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-3a14db9e-64d0-4006-bcd2-af51ff8d70d0",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3078,10 +3078,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.currentSettings implements CMP-005; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-9d58b26a-0e0e-40ab-aa89-bedaf8e1f6c2",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3725,10 +3725,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-9d8c838a-5a3d-49de-a747-d55ea3eb8b8d",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3758,10 +3758,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-874e5047-1ce0-48ef-a96f-6e35389ae4af",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3775,10 +3775,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-874e5047-1ce0-48ef-a96f-6e35389ae4af",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3808,10 +3808,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-41f25244-30cf-4484-8afc-c13481915cbb",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3825,10 +3825,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-41f25244-30cf-4484-8afc-c13481915cbb",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3842,12 +3842,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.advancedPerfectHitShrinksZoneWidthByPointNine",
-          "startLine": 81,
-          "endLine": 85,
+          "startLine": 95,
+          "endLine": 99,
           "contentHash": "bbdf579c"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-6704db9f-0115-480f-aba3-3b39a2e1c5c3",
@@ -3858,10 +3858,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-b4316c4c-1351-4cca-a879-6d324cacb962",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3875,10 +3875,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-b4316c4c-1351-4cca-a879-6d324cacb962",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3892,12 +3892,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.advancedGoodHitShrinksZoneWidthByPointNineFour",
-          "startLine": 87,
-          "endLine": 91,
+          "startLine": 101,
+          "endLine": 105,
           "contentHash": "2ae0ae7e"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-8ea4b0bd-df63-4b20-a1a6-a875356c97fa",
@@ -3908,10 +3908,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-ba934641-024c-4315-96cd-3024c8b7161b",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3925,10 +3925,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-ba934641-024c-4315-96cd-3024c8b7161b",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3942,12 +3942,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.classicHitLeavesZoneWidthUnchanged",
-          "startLine": 93,
-          "endLine": 102,
+          "startLine": 107,
+          "endLine": 116,
           "contentHash": "de428b62"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-5b0dadea-8f20-49c7-a895-94e8fc9554d4",
@@ -3958,10 +3958,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-7a97a188-da29-4328-8285-9850b69a9fde",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -3975,10 +3975,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-7a97a188-da29-4328-8285-9850b69a9fde",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -3992,12 +3992,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.advancedRepeatedHitsClampZoneWidthAtMinimum",
-          "startLine": 104,
-          "endLine": 118,
+          "startLine": 118,
+          "endLine": 132,
           "contentHash": "6f3f0dcb"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-4b0d58eb-6158-443e-b912-bc6a858e8017",
@@ -4008,10 +4008,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-06e38f27-4db2-4ea9-b7bd-093b900e10ec",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -4025,10 +4025,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-06e38f27-4db2-4ea9-b7bd-093b900e10ec",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -4042,12 +4042,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.hitMovesZoneCenterAwayFromPreviousCenter",
-          "startLine": 122,
-          "endLine": 133,
+          "startLine": 136,
+          "endLine": 147,
           "contentHash": "cd54d0fb"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-6e231e9d-ec74-47f5-847e-6abb0104aa86",
@@ -4058,10 +4058,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-fa761b6f-971d-4a69-8bd8-89762b4db314",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -4092,8 +4092,8 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.tapWhileNotRunningResetsGame",
-          "startLine": 138,
-          "endLine": 158,
+          "startLine": 152,
+          "endLine": 172,
           "contentHash": "867725fd"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
@@ -4142,12 +4142,12 @@
         "properties": {
           "path": "dot-dashTests/HandleTapHitPathTests.swift",
           "symbol": "HandleTapHitPathTests.twelfthHitAdvancesThemeIdxToOne",
-          "startLine": 162,
-          "endLine": 169,
+          "startLine": 176,
+          "endLine": 183,
           "contentHash": "0b00a0d4"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-b765537e-cadf-4bc4-abf2-456bec6a71c7",
@@ -4158,10 +4158,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-119806c3-bbd7-4c4c-820c-aed993cde38e",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
@@ -4439,10 +4439,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-62b3c1ac-e93e-4358-9fca-85f68a1320ed",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -4472,10 +4472,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-0f6b9720-c869-431d-aea7-f1a92f52ceb7",
         "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "soft": true
@@ -5364,10 +5364,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies REQ-004; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-004 Hit progression\",{\"key\":\"REQ-004\",\"title\":\"Hit progression\",\"statement\":\"Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.627Z",
-        "modifiedAt": "2026-10-28T17:30:31.627Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-fcd56fb5-1cb3-4cd7-8524-e7a2193a4ac1",
         "targetId": "document-requirement-f916f443-8f86-46be-acd3-ddc943ded324",
         "soft": true
@@ -5420,6 +5420,56 @@
         "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-65219132-b760-5567-9f8b-449b2d0ba81f",
         "targetId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-011727ad-c046-5ef3-91ba-ad8d52222f4c",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/HandleTapHitPathTests.swift#HandleTapHitPathTests.repeatedHitsCapSpeedAtMaxSpeed",
+        "documentation": "Swift Testing unit test.",
+        "properties": {
+          "path": "dot-dashTests/HandleTapHitPathTests.swift",
+          "symbol": "HandleTapHitPathTests.repeatedHitsCapSpeedAtMaxSpeed",
+          "startLine": 80,
+          "endLine": 91,
+          "contentHash": "3ba9ccc2"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "refines-270f1789-1213-50b7-9626-a1953929acac",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-005; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-005 Mode settings\",{\"key\":\"CMP-005\",\"title\":\"Mode settings\",\"statement\":\"Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-011727ad-c046-5ef3-91ba-ad8d52222f4c",
+        "targetId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
+        "soft": true
+      },
+      {
+        "id": "refines-9788c757-1453-5f73-ba58-7e78668a9c7f",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-006; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-006 Hit update\",{\"key\":\"CMP-006\",\"title\":\"Hit update\",\"statement\":\"On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-011727ad-c046-5ef3-91ba-ad8d52222f4c",
+        "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
         "soft": true
       }
     ],

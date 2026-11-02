@@ -8,7 +8,7 @@
 <h2 id="req-003-inclusive-hit-classification">REQ-003 Inclusive hit classification</h2>
 <p>A tap during a run shall count as a hit exactly when the marker is inside the target at the moment the finger touches down, edges included; the drawn target shall cover exactly that range, and a hit near the target&#39;s center shall be classified as perfect.</p>
 <h2 id="req-004-hit-progression">REQ-004 Hit progression</h2>
-<p>Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.</p>
+<p>Each hit shall score one point, give success feedback, speed the marker up (more for a perfect hit) to no more than a mode maximum at which the marker is still drawn inside the narrowest target on every pass, and move the target; in Advanced mode each hit shall also narrow the target, down to a minimum width.</p>
 <h2 id="req-005-miss-and-durable-best">REQ-005 Miss and durable best</h2>
 <p>A miss shall end the run with failure feedback, show the mode, score and best, and keep the score as that mode&#39;s best only if it beats the stored best, leaving the other mode&#39;s best unchanged.</p>
 <h2 id="req-006-mode-and-restart-behavior">REQ-006 Mode and restart behavior</h2>

@@ -307,6 +307,9 @@ final class GameState: ObservableObject {
         let zoneShrinkPerfect: CGFloat
         let zoneShrinkGood: CGFloat
         let minZoneWidth: CGFloat
+        /// Cap that keeps a 60 Hz frame step (maxSpeed / 60) at most half of minZoneWidth,
+        /// so the marker is always drawn inside the zone on every pass.
+        let maxSpeed: CGFloat
     }
 
     // Output
@@ -485,7 +488,7 @@ final class GameState: ObservableObject {
             spawnBurst(at: CGPoint(x: markerScreenX(screenWidth: screenWidth), y: cachedBarY), good: true)
             // Difficulty (mode-aware)
             let s = currentSettings()
-            speed *= wasPerfect ? s.speedMulPerfect : s.speedMulGood
+            speed = min(speed * (wasPerfect ? s.speedMulPerfect : s.speedMulGood), s.maxSpeed)
             zoneWidth = clamp(zoneWidth * (wasPerfect ? s.zoneShrinkPerfect : s.zoneShrinkGood), s.minZoneWidth, 0.5)
             // Move zone with guaranteed minimum movement
             zoneCenter = pickNewZoneCenter(prevCenter: zoneCenter, zoneWidth: zoneWidth)
@@ -518,7 +521,8 @@ final class GameState: ObservableObject {
                 speedMulGood: 1.05,
                 zoneShrinkPerfect: 1.0,
                 zoneShrinkGood: 1.0,
-                minZoneWidth: 0.10
+                minZoneWidth: 0.10,
+                maxSpeed: 3.0
             )
         case .advanced:
             return ModeSettings(
@@ -529,7 +533,8 @@ final class GameState: ObservableObject {
                 speedMulGood: 1.10,
                 zoneShrinkPerfect: 0.90,
                 zoneShrinkGood: 0.94,
-                minZoneWidth: 0.06
+                minZoneWidth: 0.06,
+                maxSpeed: 1.8
             )
         }
     }

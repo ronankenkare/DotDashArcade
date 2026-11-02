@@ -28,11 +28,11 @@ inPerfect shall be true exactly when markerPos lies within zoneCenter ± zoneWid
 
 ### CMP-005 Mode settings
 
-Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.
+Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode's minimum width.
 
 ### CMP-006 Hit update
 
-On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.
+On a hit, handleTap shall add one point, multiply speed and width by the mode's factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.
 
 ### CMP-007 Hit feedback
 

@@ -4,10 +4,10 @@
   "diagramCount": 12,
   "documentCount": 7,
   "requirementCount": 47,
-  "elementCount": 632,
+  "elementCount": 635,
   "viewCount": 288,
-  "sourceArtifacts": 101,
-  "traceCount": 223,
+  "sourceArtifacts": 102,
+  "traceCount": 225,
   "roundTrip": "passed",
   "findings": [
     {
@@ -137,10 +137,12 @@
     "fixesApplied": [
       "zone-clip",
       "touch-down",
-      "game-over-taps"
+      "game-over-taps",
+      "speed-cap"
     ],
     "newTestParts": [
-      "tapAfterMissKeepsGameOverCard"
+      "tapAfterMissKeepsGameOverCard",
+      "repeatedHitsCapSpeedAtMaxSpeed"
     ],
     "verificationCoverage": {
       "componentWithTests": "18 of 29",
@@ -150,7 +152,8 @@
       "07-software-architecture.svg",
       "08-run-state-machine.svg",
       "10-successful-tap-sequence.svg",
-      "11-miss-and-persistence-sequence.svg"
+      "11-miss-and-persistence-sequence.svg",
+      "13-hit-difficulty-progression.svg (relabeled)"
     ],
     "svgGenerator": "Graphviz from the native models; sequence previews reproduce the earlier output exactly, state and class layouts use the same style with recalibrated spacing",
     "appTestsRun": true,

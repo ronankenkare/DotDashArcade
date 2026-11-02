@@ -14,9 +14,9 @@
 <h3 id="cmp-004-perfect-band">CMP-004 Perfect band</h3>
 <p>inPerfect shall be true exactly when markerPos lies within zoneCenter ± zoneWidth/2 × perfectZoneFrac, bounds included.</p>
 <h3 id="cmp-005-mode-settings">CMP-005 Mode settings</h3>
-<p>Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00 and minimum width 0.10. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94 and minimum 0.06.</p>
+<p>Classic shall start at width 0.36, speed 0.55 and perfect fraction 0.45, with speed × 1.10 perfect / 1.05 good, width × 1.00, minimum width 0.10 and maximum speed 3.0. Advanced shall start at 0.26, 0.80 and 0.30, with speed × 1.15 / 1.10, width × 0.90 / 0.94, minimum 0.06 and maximum speed 1.8. Each maximum keeps a 60 Hz frame step at most half the mode&#39;s minimum width.</p>
 <h3 id="cmp-006-hit-update">CMP-006 Hit update</h3>
-<p>On a hit, handleTap shall add one point, multiply speed and width by the mode&#39;s factors for the hit quality, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score. Speed shall have no maximum.</p>
+<p>On a hit, handleTap shall add one point, multiply speed and width by the mode&#39;s factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.</p>
 <h3 id="cmp-007-hit-feedback">CMP-007 Hit feedback</h3>
 <p>A perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.</p>
 <h3 id="cmp-008-miss-handling">CMP-008 Miss handling</h3>
