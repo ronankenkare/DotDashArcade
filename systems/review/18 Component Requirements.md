@@ -76,7 +76,7 @@ changeMode to a different mode shall stop any run, apply that mode's start value
 
 ### CMP-016 Pause to instructions
 
-pauseToHelp shall stop an active run, show instructions and clear gameOver; it shall do nothing when no run is active.
+pauseToHelp shall stop an active run, keep its score as the current mode's best if it beats the stored best, show instructions and clear gameOver; it shall do nothing when no run is active.
 
 ### CMP-017 Display link ownership
 

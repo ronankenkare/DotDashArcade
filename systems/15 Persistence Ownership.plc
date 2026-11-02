@@ -35,7 +35,7 @@
         "kind": "class",
         "ownerId": null,
         "name": "GameState",
-        "documentation": "Loads bests through BestScores; writes current best on miss",
+        "documentation": "Loads bests through BestScores; writes current best on miss or pause",
         "properties": {
           "stereotype": "Storage client",
           "isAbstract": false

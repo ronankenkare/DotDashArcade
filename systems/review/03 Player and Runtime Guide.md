@@ -11,7 +11,7 @@
 
 ## Interruptions
 
-Inactive/background pauses a running run to instructions and invalidates CADisplayLink. Foreground resumes display callbacks only. The Start button resets score, position, difficulty, particles and theme; it does not resume the interrupted run. An inactive event on an already stopped game does not replace its existing overlay.
+Inactive/background pauses a running run to instructions, keeps its score as the mode best if it is higher, and invalidates CADisplayLink. Foreground resumes display callbacks only. The Start button resets score, position, difficulty, particles and theme; it does not resume the interrupted run. An inactive event on an already stopped game does not replace its existing overlay.
 
 ## Changing mode
 

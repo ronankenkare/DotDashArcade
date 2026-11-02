@@ -58,7 +58,7 @@
 <text xml:space="preserve" text-anchor="middle" x="116.88" y="-159.24" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">«Storage client»</text>
 <text xml:space="preserve" text-anchor="middle" x="116.88" y="-146.49" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">GameState</text>
 <text xml:space="preserve" text-anchor="middle" x="116.88" y="-133.74" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">Loads bests through BestScores; writes</text>
-<text xml:space="preserve" text-anchor="middle" x="116.88" y="-120.99" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">current best on miss</text>
+<text xml:space="preserve" text-anchor="middle" x="116.88" y="-120.99" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">current best on miss or pause</text>
 </g>
 <!-- classifier&#45;d2678e7b&#45;5ac4&#45;4beb&#45;a889&#45;8aea3cd2bd90&#45;&gt;classifier&#45;c6a8300f&#45;5f93&#45;4a67&#45;bc44&#45;46c83a90502c -->
 <g id="edge2" class="edge">

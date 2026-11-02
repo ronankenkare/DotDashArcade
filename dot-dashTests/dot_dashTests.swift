@@ -192,6 +192,21 @@ struct dot_dashTests {
         #expect(d.integer(forKey: BestScores.classicKey) == 0)
     }
 
+    @Test func pauseToHelpPersistsRunningScoreAsBest() {
+        let d = makeDefaults()
+        d.set(20, forKey: BestScores.classicKey)
+        let g = GameState(defaults: d)
+        g.mode = .classic
+        g.running = true
+        g.score = 30
+        g.pauseToHelp()
+        #expect(g.running == false)
+        #expect(g.showHelp == true)
+        #expect(g.gameOver == false)
+        #expect(g.bestClassic == 30)
+        #expect(d.integer(forKey: BestScores.classicKey) == 30)
+    }
+
     @Test func tapAfterMissKeepsGameOverCard() {
         let g = makeMissingGame(mode: .classic, score: 4, defaults: makeDefaults())
         g.handleTap(screenWidth: 320)   // miss → game over
