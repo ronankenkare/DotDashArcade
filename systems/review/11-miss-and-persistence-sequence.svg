@@ -73,9 +73,9 @@
 <!-- m4 -->
 <g id="node6" class="node">
 <title>m4</title>
-<path fill="#17283d" stroke="#66a9f1" d="M292.08,-469.15C292.08,-469.15 101.17,-469.15 101.17,-469.15 95.17,-469.15 89.17,-463.15 89.17,-457.15 89.17,-457.15 89.17,-436.12 89.17,-436.12 89.17,-430.12 95.17,-424.12 101.17,-424.12 101.17,-424.12 292.08,-424.12 292.08,-424.12 298.08,-424.12 304.08,-430.12 304.08,-436.12 304.08,-436.12 304.08,-457.15 304.08,-457.15 304.08,-463.15 298.08,-469.15 292.08,-469.15"/>
+<path fill="#17283d" stroke="#66a9f1" d="M323.96,-469.15C323.96,-469.15 69.29,-469.15 69.29,-469.15 63.29,-469.15 57.29,-463.15 57.29,-457.15 57.29,-457.15 57.29,-436.12 57.29,-436.12 57.29,-430.12 63.29,-424.12 69.29,-424.12 69.29,-424.12 323.96,-424.12 323.96,-424.12 329.96,-424.12 335.96,-430.12 335.96,-436.12 335.96,-436.12 335.96,-457.15 335.96,-457.15 335.96,-463.15 329.96,-469.15 323.96,-469.15"/>
 <text xml:space="preserve" text-anchor="middle" x="196.62" y="-449.11" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">5. GameState → GameState</text>
-<text xml:space="preserve" text-anchor="middle" x="196.62" y="-434.11" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">mode best = max(mode best, score)</text>
+<text xml:space="preserve" text-anchor="middle" x="196.62" y="-434.11" font-family="Helvetica,sans-Serif" font-size="12.00" fill="#f1f5fb">recordBest: mode best = max(mode best, score)</text>
 </g>
 <!-- m3&#45;&gt;m4 -->
 <g id="edge5" class="edge">

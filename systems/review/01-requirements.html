@@ -14,7 +14,7 @@
 <h2 id="req-006-mode-and-restart-behavior">REQ-006 Mode and restart behavior</h2>
 <p>The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen&#39;s Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode&#39;s difficulty.</p>
 <h2 id="req-007-lifecycle-handling">REQ-007 Lifecycle handling</h2>
-<p>When the app becomes inactive or moves to the background during a run, the run shall stop and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.</p>
+<p>When the app becomes inactive or moves to the background during a run, the run shall stop, its score shall be kept as that mode&#39;s best if it beats the stored best, and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.</p>
 <h2 id="req-008-target-placement">REQ-008 Target placement</h2>
 <p>After each hit, the target shall move to a new position that stays well inside the bar and is, whenever possible, clearly away from its previous position.</p>
 <h2 id="req-009-appearance-preference">REQ-009 Appearance preference</h2>

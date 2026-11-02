@@ -4,10 +4,10 @@
   "diagramCount": 12,
   "documentCount": 7,
   "requirementCount": 47,
-  "elementCount": 666,
+  "elementCount": 671,
   "viewCount": 302,
-  "sourceArtifacts": 108,
-  "traceCount": 236,
+  "sourceArtifacts": 110,
+  "traceCount": 239,
   "roundTrip": "passed",
   "findings": [
     {
@@ -143,16 +143,18 @@
       "cleanup",
       "idle-loop",
       "best-scores",
-      "test-defaults"
+      "test-defaults",
+      "pause-best"
     ],
     "newTestParts": [
       "tapAfterMissKeepsGameOverCard",
       "repeatedHitsCapSpeedAtMaxSpeed",
       "particleDistanceIsIndependentOfFrameRate",
-      "homeScreenLoadSeesMigratedLegacyBest"
+      "homeScreenLoadSeesMigratedLegacyBest",
+      "pauseToHelpPersistsRunningScoreAsBest"
     ],
     "verificationCoverage": {
-      "componentWithTests": "19 of 29",
+      "componentWithTests": "20 of 29",
       "systemWithUiTests": "4 of 12"
     },
     "svgPreviewsRegenerated": [

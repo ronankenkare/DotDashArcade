@@ -28,7 +28,7 @@ The player shall be able to start a fresh run from the instructions or by tappin
 
 ## REQ-007 Lifecycle handling
 
-When the app becomes inactive or moves to the background during a run, the run shall stop and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.
+When the app becomes inactive or moves to the background during a run, the run shall stop, its score shall be kept as that mode's best if it beats the stored best, and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.
 
 ## REQ-008 Target placement
 

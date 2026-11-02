@@ -76,7 +76,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "f0f73eaca8650a0c57988d30cc43bb42b3b773d9c50cbfb082c3b1b3eee86f47"
+          "contentHash": "db588f155f1af0fe17d690f0996b5df714bac37a49c1eaf560da8e0b3b684882"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -571,8 +571,8 @@
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState",
           "startLine": 321,
-          "endLine": 647,
-          "contentHash": "5af64e68"
+          "endLine": 655,
+          "contentHash": "66c8fc7c"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -663,13 +663,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.pauseToHelp",
-        "documentation": "Stops a running run and shows instructions.",
+        "documentation": "Stops a running run, keeps a new best and shows instructions.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pauseToHelp",
           "startLine": 457,
-          "endLine": 459,
-          "contentHash": "5cf194a6"
+          "endLine": 462,
+          "contentHash": "73405f6e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -683,8 +683,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.step",
-          "startLine": 463,
-          "endLine": 476,
+          "startLine": 466,
+          "endLine": 479,
           "contentHash": "00bda771"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -699,8 +699,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.advanceMarker",
-          "startLine": 479,
-          "endLine": 486,
+          "startLine": 482,
+          "endLine": 489,
           "contentHash": "b442c5ca"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -715,8 +715,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.updateParticles",
-          "startLine": 490,
-          "endLine": 500,
+          "startLine": 493,
+          "endLine": 503,
           "contentHash": "2d32dbf9"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -731,9 +731,9 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.handleTap",
-          "startLine": 504,
-          "endLine": 541,
-          "contentHash": "a3c2a40c"
+          "startLine": 507,
+          "endLine": 539,
+          "contentHash": "6fa3465c"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -747,8 +747,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.currentSettings",
-          "startLine": 543,
-          "endLine": 570,
+          "startLine": 551,
+          "endLine": 578,
           "contentHash": "bf46c333"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -763,8 +763,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.changeMode",
-          "startLine": 572,
-          "endLine": 580,
+          "startLine": 580,
+          "endLine": 588,
           "contentHash": "a63a90a6"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -779,8 +779,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inZone",
-          "startLine": 584,
-          "endLine": 587,
+          "startLine": 592,
+          "endLine": 595,
           "contentHash": "44f0424d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -795,8 +795,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inPerfect",
-          "startLine": 589,
-          "endLine": 593,
+          "startLine": 597,
+          "endLine": 601,
           "contentHash": "4bd6431e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -811,8 +811,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickThemeIndex",
-          "startLine": 597,
-          "endLine": 602,
+          "startLine": 605,
+          "endLine": 610,
           "contentHash": "80d5dad8"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -827,8 +827,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.spawnBurst",
-          "startLine": 611,
-          "endLine": 627,
+          "startLine": 619,
+          "endLine": 635,
           "contentHash": "3ac94ea1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -843,8 +843,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickNewZoneCenter",
-          "startLine": 629,
-          "endLine": 646,
+          "startLine": 637,
+          "endLine": 654,
           "contentHash": "6a4c493f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -1044,7 +1044,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "a33602a9898842a6e9186f17a3b90a5e2440b5d4dbcd88b387ba403d77cb134f"
+          "contentHash": "c7b600f28a230ca18cd87b6f335d2bc3f7b8f925751ec51cb093f1fe99315865"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -2026,10 +2026,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-007; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop, its score shall be kept as that mode's best if it beats the stored best, and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
         "targetId": "document-requirement-225241c8-d20c-41da-9e14-93338241070f",
         "soft": true
@@ -2043,10 +2043,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-016 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, keep its score as the current mode's best if it beats the stored best, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
         "soft": true
@@ -2060,10 +2060,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-007; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop, its score shall be kept as that mode's best if it beats the stored best, and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
         "targetId": "document-requirement-225241c8-d20c-41da-9e14-93338241070f",
         "soft": true
@@ -2145,10 +2145,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-007; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-007 Lifecycle handling\",{\"key\":\"REQ-007\",\"title\":\"Lifecycle handling\",\"statement\":\"When the app becomes inactive or moves to the background during a run, the run shall stop, its score shall be kept as that mode's best if it beats the stored best, and the instructions shall be shown; returning shall not resume it. Leaving the game screen shall stop all game timing.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-b657c37d-7a9e-43e4-acad-ff555aaffdb4",
         "targetId": "document-requirement-225241c8-d20c-41da-9e14-93338241070f",
         "soft": true
@@ -2942,10 +2942,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.pauseToHelp implements CMP-016; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, keep its score as the current mode's best if it beats the stored best, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-c4ea922e-bfbf-4143-8600-95124bb03243",
         "targetId": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
         "soft": true
@@ -5398,8 +5398,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.tapAfterMissKeepsGameOverCard",
-          "startLine": 195,
-          "endLine": 203,
+          "startLine": 210,
+          "endLine": 218,
           "contentHash": "cf57b7d2"
         },
         "createdAt": "2026-11-02T12:00:00.000Z",
@@ -5753,6 +5753,89 @@
         "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-78f8ae86-f853-4781-99b1-67bec30f6659",
         "targetId": "document-requirement-e04d54ff-d411-4d6c-8d24-f3f9c7937851",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-78ac481f-c320-5f33-82fe-f846a4190c56",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dash/GameView.swift#GameState.recordBest",
+        "documentation": "Raises and persists the current mode's best.",
+        "properties": {
+          "path": "dot-dash/GameView.swift",
+          "symbol": "GameState.recordBest",
+          "startLine": 542,
+          "endLine": 549,
+          "contentHash": "57e8260a"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "implements-4b63a1ef-736d-5512-85ba-5e5d44ab1bbc",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.recordBest implements CMP-008; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-008 Miss handling\",{\"key\":\"CMP-008\",\"title\":\"Miss handling\",\"statement\":\"On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1 in GameState's UserDefaults, and show the overlay. It shall not touch the other mode's key.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-78ac481f-c320-5f33-82fe-f846a4190c56",
+        "targetId": "document-requirement-3ceac3c6-6be6-4175-ac6f-b42f3dad6b5c",
+        "soft": true
+      },
+      {
+        "id": "implements-6a08f8bb-e1f4-525f-9de7-4b03f6aa3b6f",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.recordBest implements CMP-016; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, keep its score as the current mode's best if it beats the stored best, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-78ac481f-c320-5f33-82fe-f846a4190c56",
+        "targetId": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-1046accd-7b56-5f52-8b32-16fcaf37ea1f",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/dot_dashTests.swift#dot_dashTests.pauseToHelpPersistsRunningScoreAsBest",
+        "documentation": "Swift Testing unit test.",
+        "properties": {
+          "path": "dot-dashTests/dot_dashTests.swift",
+          "symbol": "dot_dashTests.pauseToHelpPersistsRunningScoreAsBest",
+          "startLine": 195,
+          "endLine": 208,
+          "contentHash": "27e853e7"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "refines-1ba16da7-7f7a-53fc-a453-1317b5f0fe51",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-016; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-016 Pause to instructions\",{\"key\":\"CMP-016\",\"title\":\"Pause to instructions\",\"statement\":\"pauseToHelp shall stop an active run, keep its score as the current mode's best if it beats the stored best, show instructions and clear gameOver; it shall do nothing when no run is active.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-1046accd-7b56-5f52-8b32-16fcaf37ea1f",
+        "targetId": "document-requirement-c36c7b35-83bf-4f91-98a0-33f7c134fadb",
         "soft": true
       }
     ],

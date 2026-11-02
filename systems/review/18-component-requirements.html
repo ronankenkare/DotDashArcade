@@ -38,7 +38,7 @@
 <h3 id="cmp-015-mode-change">CMP-015 Mode change</h3>
 <p>changeMode to a different mode shall stop any run, apply that mode&#39;s start values and show instructions without a game-over result or saved best. changeMode to the current mode shall do nothing.</p>
 <h3 id="cmp-016-pause-to-instructions">CMP-016 Pause to instructions</h3>
-<p>pauseToHelp shall stop an active run, show instructions and clear gameOver; it shall do nothing when no run is active.</p>
+<p>pauseToHelp shall stop an active run, keep its score as the current mode&#39;s best if it beats the stored best, show instructions and clear gameOver; it shall do nothing when no run is active.</p>
 <h3 id="cmp-017-display-link-ownership">CMP-017 Display link ownership</h3>
 <p>startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.</p>
 <h3 id="cmp-018-best-loading-and-migration">CMP-018 Best loading and migration</h3>
