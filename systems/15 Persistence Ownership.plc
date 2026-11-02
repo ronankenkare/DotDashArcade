@@ -15,33 +15,33 @@
           "autoOrganize": false
         },
         "createdAt": "2026-10-21T21:41:30.585Z",
-        "modifiedAt": "2026-10-21T21:41:30.585Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "classifier-af92bcb3-0f2c-456e-a4ee-35bb89af44d6",
         "kind": "class",
         "ownerId": null,
         "name": "ContentView",
-        "documentation": "Reads bests on appear; writes appearance with AppStorage",
+        "documentation": "Reads bests through BestScores on appear; writes appearance with AppStorage",
         "properties": {
           "stereotype": "Storage client",
           "isAbstract": false
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
-        "modifiedAt": "2026-10-21T21:41:30.593Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "classifier-d2678e7b-5ac4-4beb-a889-8aea3cd2bd90",
         "kind": "class",
         "ownerId": null,
         "name": "GameState",
-        "documentation": "Loads bests, migrates legacy; writes current best on miss",
+        "documentation": "Loads bests through BestScores; writes current best on miss or pause",
         "properties": {
           "stereotype": "Storage client",
           "isAbstract": false
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
-        "modifiedAt": "2026-10-21T21:41:30.593Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c",
@@ -112,7 +112,7 @@
         "id": "class-relationship-18afe5e4-7fa5-4b6f-913a-7abb883281a3",
         "kind": "dependency",
         "ownerId": null,
-        "name": "read bests; write appearance",
+        "name": "write appearance",
         "documentation": "",
         "properties": {
           "sourceEnd": {
@@ -127,7 +127,7 @@
           }
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
-        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-af92bcb3-0f2c-456e-a4ee-35bb89af44d6",
         "targetId": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c"
       },
@@ -135,7 +135,7 @@
         "id": "class-relationship-257c3c73-19e6-4d92-bdb7-2c687bfe47ac",
         "kind": "dependency",
         "ownerId": null,
-        "name": "read / write bests",
+        "name": "write bests",
         "documentation": "",
         "properties": {
           "sourceEnd": {
@@ -150,7 +150,7 @@
           }
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
-        "modifiedAt": "2026-10-21T21:41:30.593Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-d2678e7b-5ac4-4beb-a889-8aea3cd2bd90",
         "targetId": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c"
       },
@@ -245,6 +245,88 @@
         "modifiedAt": "2026-10-21T21:41:30.593Z",
         "sourceId": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c",
         "targetId": "classifier-089133b0-dc6c-49c7-a810-6222d99c9676"
+      },
+      {
+        "id": "classifier-19e834dc-95e4-5264-8348-a20ca964f754",
+        "kind": "class",
+        "ownerId": null,
+        "name": "BestScores",
+        "documentation": "Owns best keys; load() migrates the legacy best and returns both bests",
+        "properties": {
+          "stereotype": "Key owner",
+          "isAbstract": false
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "class-relationship-8f898936-c5c5-5119-8004-fe7c0da2676b",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "load bests",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "classifier-af92bcb3-0f2c-456e-a4ee-35bb89af44d6",
+        "targetId": "classifier-19e834dc-95e4-5264-8348-a20ca964f754"
+      },
+      {
+        "id": "class-relationship-9c3c7353-d180-5f58-b230-d9e0388e17c7",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "load bests",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "classifier-d2678e7b-5ac4-4beb-a889-8aea3cd2bd90",
+        "targetId": "classifier-19e834dc-95e4-5264-8348-a20ca964f754"
+      },
+      {
+        "id": "class-relationship-9cfbbe00-a0c9-55ef-8677-a1e80caff823",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "read bests; migrate legacy",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "classifier-19e834dc-95e4-5264-8348-a20ca964f754",
+        "targetId": "classifier-c6a8300f-5f93-4a67-bc44-46c83a90502c"
       }
     ],
     "views": [
@@ -409,6 +491,58 @@
         "kind": "edge",
         "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
         "elementId": "class-relationship-74defb86-ac0b-4098-8112-1db8c6ab30c0",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-35fedc85-308a-5d0d-a71c-d7ef92d89c53",
+        "kind": "shape",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "classifier-19e834dc-95e4-5264-8348-a20ca964f754",
+        "parentViewId": null,
+        "style": {},
+        "x": 580,
+        "y": 650,
+        "width": 290,
+        "height": 120,
+        "collapsed": false
+      },
+      {
+        "id": "view-8ab2db65-44f3-54d8-abbe-c4ae1b910c60",
+        "kind": "edge",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "class-relationship-8f898936-c5c5-5119-8004-fe7c0da2676b",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-34b536f1-5990-5114-9c81-f419120b5a44",
+        "kind": "edge",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "class-relationship-9c3c7353-d180-5f58-b230-d9e0388e17c7",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-fa77c5f5-73c7-5adf-a6ee-a5e7518c48f2",
+        "kind": "edge",
+        "diagramId": "diagram-195917d4-1d6f-47b5-97fe-afc9a4e34df4",
+        "elementId": "class-relationship-9cfbbe00-a0c9-55ef-8677-a1e80caff823",
         "parentViewId": null,
         "style": {},
         "routeStyle": "orthogonal",
