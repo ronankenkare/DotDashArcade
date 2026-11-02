@@ -8,10 +8,10 @@
 <li>Classic width does not shrink, despite the README introduction suggesting every hit shrinks the zone.</li>
 <li>Target movement is attempted at most 16 times. The final candidate can move less than the preferred threshold.</li>
 <li>Foreground does not resume a paused run. Start resets it.</li>
-<li>Bests are saved on misses, so a discarded live run is not persisted.</li>
-<li>Particle x/y use per-update increments while age uses elapsed time; their displacement varies with refresh rate.</li>
-<li>CADisplayLink targets GameState strongly and requires explicit stopLoop on disappear/inactive. Verify lifecycle teardown when changing ownership.</li>
-<li>Speed has no maximum; movement clamps overshoot rather than reflecting remaining travel.</li>
+<li>Bests are saved on misses and when an interruption pauses a run; a run abandoned by changing mode or going Back is not persisted.</li>
+<li>After a miss, only Play Again restarts; taps on the game surface are ignored while Game Over shows.</li>
+<li>CADisplayLink targets GameState strongly and requires explicit stopLoop on disappear/inactive. Verify lifecycle teardown when changing ownership. step pauses the link while idle, so any new code that starts motion outside reset must resume it.</li>
+<li>Speed is capped per mode (3.0 Classic, 1.8 Advanced); movement clamps overshoot rather than reflecting remaining travel.</li>
 <li>Classic&#39;s initial instruction preview can use initializer world defaults until reset because same-mode changeMode is a no-op.</li>
 <li>Support is an external form whose availability is not controlled by this repository.</li>
 </ul>
