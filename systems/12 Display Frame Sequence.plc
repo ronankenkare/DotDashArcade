@@ -122,13 +122,13 @@
         "id": "message-13edf281-fe23-4b78-9f8d-1b3697696317",
         "kind": "synchronous",
         "ownerId": null,
-        "name": "age particles by dt; x += vx; y += vy",
+        "name": "age particles by dt; move by v × dt × 60",
         "documentation": "",
         "properties": {
           "order": 4
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
         "targetId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78"
       },

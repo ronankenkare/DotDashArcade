@@ -76,7 +76,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "955e80029a08740b68ba7ea432c2144f5d1672cb77594e0e0eb55469c1d1e32e"
+          "contentHash": "cad0fc9b449fbb71e8e5b3adfb5febad652da233406535a2361eaa5db2f16ec0"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -571,8 +571,8 @@
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState",
           "startLine": 298,
-          "endLine": 638,
-          "contentHash": "abf9afe9"
+          "endLine": 641,
+          "contentHash": "8d0ad0fb"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -711,13 +711,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.updateParticles",
-        "documentation": "Ages particles by dt, moves them per update, removes expired ones.",
+        "documentation": "Ages particles by dt, moves them by v × dt × 60, removes expired ones.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.updateParticles",
-          "startLine": 461,
-          "endLine": 468,
-          "contentHash": "5b8deef9"
+          "startLine": 463,
+          "endLine": 471,
+          "contentHash": "54d40799"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -731,8 +731,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.handleTap",
-          "startLine": 472,
-          "endLine": 511,
+          "startLine": 475,
+          "endLine": 514,
           "contentHash": "213abecc"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -747,8 +747,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.currentSettings",
-          "startLine": 513,
-          "endLine": 540,
+          "startLine": 516,
+          "endLine": 543,
           "contentHash": "bf46c333"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -763,8 +763,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.changeMode",
-          "startLine": 542,
-          "endLine": 571,
+          "startLine": 545,
+          "endLine": 574,
           "contentHash": "5f49528d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -779,8 +779,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inZone",
-          "startLine": 575,
-          "endLine": 578,
+          "startLine": 578,
+          "endLine": 581,
           "contentHash": "44f0424d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -795,8 +795,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inPerfect",
-          "startLine": 580,
-          "endLine": 584,
+          "startLine": 583,
+          "endLine": 587,
           "contentHash": "4bd6431e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -811,8 +811,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickThemeIndex",
-          "startLine": 588,
-          "endLine": 593,
+          "startLine": 591,
+          "endLine": 596,
           "contentHash": "80d5dad8"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -827,8 +827,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.spawnBurst",
-          "startLine": 602,
-          "endLine": 618,
+          "startLine": 605,
+          "endLine": 621,
           "contentHash": "3ac94ea1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -843,8 +843,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickNewZoneCenter",
-          "startLine": 620,
-          "endLine": 637,
+          "startLine": 623,
+          "endLine": 640,
           "contentHash": "6a4c493f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -1011,10 +1011,10 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "efebe631ade9034ef11ddbb23e9592bff22ecb2ffabad14a4df972fbf7dc1784"
+          "contentHash": "4c64d2c391fef48b1ddc504306314eb363fbabc4a6011d87c7ca4b7566ace613"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
-        "modifiedAt": "2026-10-21T21:41:30.593Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-c42cc0ac-3059-4abb-b58e-5ed02fe0c1c7",
@@ -1465,10 +1465,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-011; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts, and the game's color theme shall change as the score passes fixed milestones.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts that look the same at any display refresh rate, and the game's color theme shall change as the score passes fixed milestones.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-01880288-5d90-46fc-8cfb-178b2d26322f",
         "targetId": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
         "soft": true
@@ -1788,10 +1788,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-011; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts, and the game's color theme shall change as the score passes fixed milestones.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts that look the same at any display refresh rate, and the game's color theme shall change as the score passes fixed milestones.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-8fcff39b-c7fc-4481-9cda-35a92ef5bb5b",
         "targetId": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
         "soft": true
@@ -1822,10 +1822,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-011; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts, and the game's color theme shall change as the score passes fixed milestones.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts that look the same at any display refresh rate, and the game's color theme shall change as the score passes fixed milestones.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
         "targetId": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
         "soft": true
@@ -1839,10 +1839,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-010 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
         "soft": true
@@ -1856,10 +1856,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-011; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts, and the game's color theme shall change as the score passes fixed milestones.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-011 Feedback and themes\",{\"key\":\"REQ-011\",\"title\":\"Feedback and themes\",\"statement\":\"Hits and misses shall produce visibly different particle bursts that look the same at any display refresh rate, and the game's color theme shall change as the score passes fixed milestones.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-efa3c199-3dd3-4f0d-811d-85a5a1937d73",
         "targetId": "document-requirement-46c257a8-8bfc-4ed5-8b12-271c954ce19d",
         "soft": true
@@ -2993,10 +2993,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.updateParticles implements CMP-010; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-cc29da6a-272f-4588-b1ca-d5a8e39ae7c9",
         "targetId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
         "soft": true
@@ -4523,11 +4523,11 @@
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.updateParticlesAgesMovesAndRemoves",
           "startLine": 193,
-          "endLine": 208,
-          "contentHash": "d3d71fc6"
+          "endLine": 209,
+          "contentHash": "0778e660"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-c96772b6-3636-41a7-a712-932a01f0af27",
@@ -4538,10 +4538,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-010; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-9fed68b9-eeda-4f71-ad78-bb263fc6fd0d",
         "targetId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
         "soft": true
@@ -5470,6 +5470,39 @@
         "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-011727ad-c046-5ef3-91ba-ad8d52222f4c",
         "targetId": "document-requirement-41d811aa-0e88-4e49-9f09-e15d80f0580b",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-2a3fb46b-3cad-5c59-83aa-817e9cd35fa4",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/GameStateLifecycleTests.swift#GameStateLifecycleTests.particleDistanceIsIndependentOfFrameRate",
+        "documentation": "Swift Testing unit test.",
+        "properties": {
+          "path": "dot-dashTests/GameStateLifecycleTests.swift",
+          "symbol": "GameStateLifecycleTests.particleDistanceIsIndependentOfFrameRate",
+          "startLine": 211,
+          "endLine": 221,
+          "contentHash": "210dfe8f"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "refines-bacf6688-51a7-59e4-ac2b-35495c3200c9",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-010; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-2a3fb46b-3cad-5c59-83aa-817e9cd35fa4",
+        "targetId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
         "soft": true
       }
     ],

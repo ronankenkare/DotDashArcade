@@ -48,7 +48,7 @@ spawnBurst shall emit 18 particles at the marker's screen position, evenly sprea
 
 ### CMP-010 Particle update
 
-updateParticles shall advance each particle's age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.
+updateParticles shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.
 
 ### CMP-011 Theme thresholds
 

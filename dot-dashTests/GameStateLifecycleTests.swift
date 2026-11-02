@@ -194,16 +194,29 @@ struct GameStateLifecycleTests {
         let g = GameState()
         g.particles.append(GameState.Particle(x: 0, y: 0, vx: 2, vy: -1, life: 1.0, age: 0, good: true))
 
+        // Velocity is per 60 Hz frame, so 0.5 s moves the particle 30 frames' worth.
         g.updateParticles(0.5)
 
         #expect(g.particles.count == 1)
-        #expect(g.particles[0].x == 2)
-        #expect(g.particles[0].y == -1)
+        #expect(g.particles[0].x == 60)
+        #expect(g.particles[0].y == -30)
         #expect(g.particles[0].age == 0.5)
 
         // Second step pushes age past life (1.1 > 1.0) → particle removed.
         g.updateParticles(0.6)
 
         #expect(g.particles.isEmpty)
+    }
+
+    @Test func particleDistanceIsIndependentOfFrameRate() {
+        let at60 = GameState()
+        let at120 = GameState()
+        at60.particles.append(GameState.Particle(x: 0, y: 0, vx: 3, vy: 0, life: 1.0, age: 0, good: true))
+        at120.particles.append(GameState.Particle(x: 0, y: 0, vx: 3, vy: 0, life: 1.0, age: 0, good: true))
+
+        for _ in 0..<6 { at60.updateParticles(1.0 / 60) }
+        for _ in 0..<12 { at120.updateParticles(1.0 / 120) }
+
+        #expect(abs(at60.particles[0].x - at120.particles[0].x) < 0.0001)
     }
 }

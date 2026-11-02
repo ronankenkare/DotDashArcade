@@ -24,7 +24,7 @@
 <h3 id="cmp-009-particle-bursts">CMP-009 Particle bursts</h3>
 <p>spawnBurst shall emit 18 particles at the marker&#39;s screen position, evenly spread in angle with up to 0.2 rad jitter, speed 2–5 for a hit or 1–3 for a miss, and lifetime 0.6–1.0 s.</p>
 <h3 id="cmp-010-particle-update">CMP-010 Particle update</h3>
-<p>updateParticles shall advance each particle&#39;s age by dt and its position by vx and vy per update, and remove particles whose alpha has reached zero.</p>
+<p>updateParticles shall advance each particle&#39;s age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.</p>
 <h3 id="cmp-011-theme-thresholds">CMP-011 Theme thresholds</h3>
 <p>pickThemeIndex shall return 0 below 12, 1 from 12, 2 from 25 and 3 from 40.</p>
 <h3 id="cmp-012-target-relocation">CMP-012 Target relocation</h3>

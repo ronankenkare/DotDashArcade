@@ -458,11 +458,14 @@ final class GameState: ObservableObject {
         return (pos, dir)
     }
 
+    /// Particle velocities are in points per 60 Hz frame; scaling by dt keeps
+    /// burst distance the same at any refresh rate.
     func updateParticles(_ dt: CGFloat) {
+        let frames = dt * 60
         for i in particles.indices {
             particles[i].age += dt
-            particles[i].x += particles[i].vx
-            particles[i].y += particles[i].vy
+            particles[i].x += particles[i].vx * frames
+            particles[i].y += particles[i].vy * frames
         }
         particles.removeAll(where: { !$0.alive })
     }

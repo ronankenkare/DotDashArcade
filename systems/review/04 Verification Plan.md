@@ -16,7 +16,7 @@ Coverage below was inspected in source. It is not a claim that the app tests pas
 | Contract REQ-008 placement | dot_dashTests bounded and statistical samples | Minimum movement is best effort, not guaranteed |
 | Contract REQ-009 appearance | dot_dashTests; testAppearanceButtonCyclesAndPersists | Visual contrast still needs inspection |
 | Contract REQ-010 migration | dot_dashTests legacy cases | Home reads before GameState first initializes |
-| Contract REQ-011 effects / themes | GameStateLifecycleTests | Frame-rate dependence and colors need runtime inspection |
+| Contract REQ-011 effects / themes | GameStateLifecycleTests, including particleDistanceIsIndependentOfFrameRate | Colors need runtime inspection |
 | Contract REQ-012 home / support | dot_dashUITests home and navigation; testSupportMenuKeepsBottomToolbarStationary | No automated external form submission check |
 
 Most evidence above verifies component requirements that refine the listed system requirement; see Verification by level.
@@ -57,7 +57,7 @@ System requirements without a UI-flow trace are covered only through their compo
 | Hit feedback (CMP-007) | None; manual: haptics on physical hardware |
 | Miss handling (CMP-008) | gameOverPersistsNewBestClassic, gameOverDoesNotRegressBestClassic, gameOverPersistsNewBestAdvanced |
 | Particle bursts (CMP-009) | None; manual: visual particle check |
-| Particle update (CMP-010) | updateParticlesAgesMovesAndRemoves |
+| Particle update (CMP-010) | updateParticlesAgesMovesAndRemoves, particleDistanceIsIndependentOfFrameRate |
 | Theme thresholds (CMP-011) | twelfthHitAdvancesThemeIdxToOne, pickThemeIndexThresholds |
 | Target relocation (CMP-012) | pickNewZoneCenterStaysInBounds, pickNewZoneCenterMovesByMinMove, pickNewZoneCenterHandlesExtremePrevCenter, hitMovesZoneCenterAwayFromPreviousCenter |
 | Run reset (CMP-013) | tapWhileNotRunningResetsGame, resetRestoresClassicStartState, resetAppliesAdvancedStartValues |
@@ -94,5 +94,6 @@ On November 2, 2026, with the fixes below applied, the dot-dashTests target and 
 - The bar reacts at touch-down instead of lift-off.
 - Taps on the bar no longer dismiss Game Over; only Play Again restarts.
 - Speed is capped per mode (3.0 Classic, 1.8 Advanced).
+- Particle motion is scaled by dt, so bursts match at any refresh rate.
 
-New tests: tapAfterMissKeepsGameOverCard, repeatedHitsCapSpeedAtMaxSpeed.
+New tests: tapAfterMissKeepsGameOverCard, repeatedHitsCapSpeedAtMaxSpeed, particleDistanceIsIndependentOfFrameRate.

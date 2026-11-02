@@ -44,7 +44,7 @@ A best score recorded by an earlier version of the app shall carry forward as th
 
 ## REQ-011 Feedback and themes
 
-Hits and misses shall produce visibly different particle bursts, and the game's color theme shall change as the score passes fixed milestones.
+Hits and misses shall produce visibly different particle bursts that look the same at any display refresh rate, and the game's color theme shall change as the score passes fixed milestones.
 
 ## REQ-012 Home and support
 
