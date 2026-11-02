@@ -4,10 +4,10 @@
   "diagramCount": 12,
   "documentCount": 7,
   "requirementCount": 47,
-  "elementCount": 637,
-  "viewCount": 288,
-  "sourceArtifacts": 103,
-  "traceCount": 226,
+  "elementCount": 671,
+  "viewCount": 302,
+  "sourceArtifacts": 110,
+  "traceCount": 239,
   "roundTrip": "passed",
   "findings": [
     {
@@ -139,23 +139,32 @@
       "touch-down",
       "game-over-taps",
       "speed-cap",
-      "particle-dt"
+      "particle-dt",
+      "cleanup",
+      "idle-loop",
+      "best-scores",
+      "test-defaults",
+      "pause-best"
     ],
     "newTestParts": [
       "tapAfterMissKeepsGameOverCard",
       "repeatedHitsCapSpeedAtMaxSpeed",
-      "particleDistanceIsIndependentOfFrameRate"
+      "particleDistanceIsIndependentOfFrameRate",
+      "homeScreenLoadSeesMigratedLegacyBest",
+      "pauseToHelpPersistsRunningScoreAsBest"
     ],
     "verificationCoverage": {
-      "componentWithTests": "18 of 29",
+      "componentWithTests": "20 of 29",
       "systemWithUiTests": "4 of 12"
     },
     "svgPreviewsRegenerated": [
       "07-software-architecture.svg",
       "08-run-state-machine.svg",
+      "09-display-link-lifecycle.svg",
       "10-successful-tap-sequence.svg",
       "11-miss-and-persistence-sequence.svg",
       "12-display-frame-sequence.svg",
+      "15-persistence-ownership.svg",
       "13-hit-difficulty-progression.svg (relabeled)"
     ],
     "svgGenerator": "Graphviz from the native models; sequence previews reproduce the earlier output exactly, state and class layouts use the same style with recalibrated spacing",

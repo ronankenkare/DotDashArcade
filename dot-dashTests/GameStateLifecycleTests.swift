@@ -15,15 +15,6 @@ import UIKit
 @Suite(.serialized)
 struct GameStateLifecycleTests {
 
-    // MARK: - Helpers
-
-    private func clearBestScoreKeys() {
-        let d = UserDefaults.standard
-        d.removeObject(forKey: "dotdash_best_classic_v1")
-        d.removeObject(forKey: "dotdash_best_advanced_v1")
-        d.removeObject(forKey: "dotdash_best_v1")
-    }
-
     // MARK: - reset()
 
     @Test func resetRestoresClassicStartState() {
@@ -35,7 +26,6 @@ struct GameStateLifecycleTests {
         g.showHelp = true
         g.running = false
         g.themeIdx = 3
-        g.flash = 0.7
         g.particles.append(GameState.Particle(x: 1, y: 1, vx: 0, vy: 0, life: 1, age: 0, good: true))
         g.particles.append(GameState.Particle(x: 2, y: 2, vx: 0, vy: 0, life: 1, age: 0, good: false))
         g.zoneCenter = 0.2
@@ -47,7 +37,6 @@ struct GameStateLifecycleTests {
         #expect(g.gameOver == false)
         #expect(g.showHelp == false)
         #expect(g.themeIdx == 0)
-        #expect(g.flash == 0)
         #expect(g.particles.isEmpty)
         #expect(g.zoneCenter == 0.5)
         #expect(g.zoneWidth == 0.36)
@@ -177,8 +166,6 @@ struct GameStateLifecycleTests {
     // MARK: - bestCurrent
 
     @Test func bestCurrentFollowsMode() {
-        clearBestScoreKeys()
-        defer { clearBestScoreKeys() }
         let g = GameState()
         g.bestClassic = 4
         g.bestAdvanced = 9

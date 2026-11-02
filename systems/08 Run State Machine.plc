@@ -158,10 +158,10 @@
         "documentation": "",
         "properties": {
           "trigger": "inactive / background",
-          "effect": "pauseToHelp; stopLoop"
+          "effect": "pauseToHelp (keep new best); stopLoop"
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:43:31.717Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "state-213e8aaf-4644-4cdd-b546-a2c48ef2b815",
         "targetId": "state-b82d5cc1-b70e-4390-ba14-597a51643f31"
       },

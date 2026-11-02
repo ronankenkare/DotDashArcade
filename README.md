@@ -52,6 +52,7 @@ dot-dash/
 
 All game state and rendering live in one file to keep the dependency graph trivial:
 
+- `BestScores` — best-score UserDefaults keys and the legacy single-best migration, shared by Home and `GameState`.
 - `GameState` (`@MainActor ObservableObject`) — marker position, zone, score, mode, particles, haptics, best-score persistence, and the `CADisplayLink` loop (`startLoop` / `stopLoop` / `step`).
 - `GameBarView` — `Canvas`-based bar, zone, marker, and particle burst rendering.
 - `HelpOverlayView` — how-to-play and game-over card.
