@@ -91,3 +91,4 @@ On October 21, 2026, the simulator build and three focused UI tests passed on iP
 On November 2, 2026, with the fixes below applied, the dot-dashTests target and the UI tests testPlayNavigatesToGame and testTapScoresOrEndsGame passed on the iPhone 17 Pro simulator (iOS 27.0). The rest of the UI suite was not run, and no fix was checked on a physical device.
 
 - The drawn target is clipped at both bar ends to match inZone.
+- The bar reacts at touch-down instead of lift-off.

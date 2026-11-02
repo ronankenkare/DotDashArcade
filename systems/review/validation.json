@@ -135,14 +135,19 @@
   "codeReviewFixes": {
     "date": "2026-11-02",
     "fixesApplied": [
-      "zone-clip"
+      "zone-clip",
+      "touch-down"
     ],
     "newTestParts": [],
     "verificationCoverage": {
       "componentWithTests": "18 of 29",
       "systemWithUiTests": "4 of 12"
     },
-    "svgPreviewsRegenerated": [],
+    "svgPreviewsRegenerated": [
+      "07-software-architecture.svg",
+      "10-successful-tap-sequence.svg",
+      "11-miss-and-persistence-sequence.svg"
+    ],
     "svgGenerator": "Graphviz from the native models; sequence previews reproduce the earlier output exactly, state and class layouts use the same style with recalibrated spacing",
     "appTestsRun": true,
     "unitTests": {
