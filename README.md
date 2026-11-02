@@ -85,14 +85,14 @@ Four visual themes unlock by score inside a run (0 / 12 / 25 / 40). See `GameSta
 
 ## App Store Info
 
-App Store listing copy and metadata are kept as dated snapshots in `App_Store_Info/`. The current one is [v2026.11.02](App_Store_Info/v2026.11.02.md):
+App Store listing copy and metadata are kept as dated snapshots in `App_Store_Info/`. The current one is [v2026.11.02](App_Store_Info/v2026.11.02/v2026.11.02.md):
 
 - **App Store name:** Dot Dash Arcade — *Pure Focus. Pure Fun.* (Games › Casual, Age 4+)
 - **Support URL:** [Google support form](https://docs.google.com/forms/d/e/1FAIpQLSc363RKRky1eFwkpDa4Eu2jDMwhBiBsOTacm03HsBZbZKctYQ/viewform?usp=dialog) (also opened by the in-app Support button)
 - **Privacy Policy URL:** [Google Drive folder](https://drive.google.com/drive/u/0/folders/1C8FPoMXLpXEHZUfzMExzftD3FauxDxUS)
 - **App Privacy:** Data Not Collected
 
-When the listing changes, add a new `vYYYY.MM.DD.md` snapshot rather than editing an older one.
+When the listing changes, add a new `vYYYY.MM.DD/` folder with its `vYYYY.MM.DD.md` snapshot (and any screenshots) rather than editing an older one.
 
 ## Plus-C systems library
 
