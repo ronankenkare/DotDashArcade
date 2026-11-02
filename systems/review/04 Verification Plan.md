@@ -14,7 +14,7 @@ Coverage below was inspected in source. It is not a claim that the app tests pas
 | Contract REQ-006 reset / modes | GameStateLifecycleTests; dot_dashUITests | UI outcomes involving motion are nondeterministic |
 | Contract REQ-007 lifecycle | GameView source; manual scenario below | No dedicated scenePhase integration test found |
 | Contract REQ-008 placement | dot_dashTests bounded and statistical samples | Minimum movement is best effort, not guaranteed |
-| Contract REQ-009 appearance | dot_dashTests; testAppearanceButtonCyclesAndPersists | Visual contrast still needs inspection |
+| Contract REQ-009 appearance | dot_dashTests; testAppearanceMenuSelectsAndPersists | Visual contrast still needs inspection |
 | Contract REQ-010 migration | dot_dashTests legacy cases | Home reads before GameState first initializes |
 | Contract REQ-011 effects / themes | GameStateLifecycleTests | Frame-rate dependence and colors need runtime inspection |
 | Contract REQ-012 home / support | dot_dashUITests home and navigation; testSupportMenuKeepsBottomToolbarStationary | No automated external form submission check |
@@ -71,7 +71,7 @@ System requirements without a UI-flow trace are covered only through their compo
 | Instructions and result (CMP-021) | None; manual: play, miss, replay |
 | In-game mode switch (CMP-022) | None; manual: mid-run mode change |
 | Score readout (CMP-023) | bestCurrentFollowsMode |
-| Appearance cycle (CMP-024) | appearancePreferenceCyclesLightDarkSystem, appearancePreferenceFallsBackToSystemForNewInstalls |
+| Appearance options (CMP-024) | appearancePreferenceMenuListsLightDarkSystem, appearancePreferenceFallsBackToSystemForNewInstalls |
 | Navigation and appearance (CMP-025) | appearancePreferenceFallsBackToSystemForNewInstalls, testPlayNavigatesToGame |
 | Best refresh (CMP-026) | None; manual: Home best after Back |
 | Home controls (CMP-027) | testCornerButtonsStayTheSameSizeAcrossAppearances, testSupportMenuKeepsBottomToolbarStationary |
@@ -92,3 +92,7 @@ On November 2, 2026, with the fixes below applied, the dot-dashTests target and 
 
 - The drawn target is clipped at both bar ends to match inZone.
 - The bar reacts at touch-down instead of lift-off.
+
+## Appearance menu — November 2, 2026
+
+On November 2, 2026, after the Home appearance control changed from tap-to-cycle to a menu of Light, Dark and System, the dot_dashTests suite and the UI tests testAppearanceMenuSelectsAndPersists and testCornerButtonsStayTheSameSizeAcrossAppearances passed on the iPhone 17 Pro simulator (iOS 27.0). The open menu was inspected in the simulator with System checked. The rest of the UI suite was not run, and the change was not checked on a physical device.

@@ -30,7 +30,7 @@ Each hit scores one point, regardless of perfect classification. There is no spe
 | dotdash_best_classic_v1 | GameState | Classic miss; eligible legacy migration |
 | dotdash_best_advanced_v1 | GameState | Advanced miss |
 | dotdash_best_v1 | GameState reads | Legacy migration input; not removed |
-| dotdash_appearance_v1 | ContentView AppStorage | Appearance button |
+| dotdash_appearance_v1 | ContentView AppStorage | Appearance menu |
 
 Home refreshes bests on appear. GameState loads mode bests during initialization. Quitting, pausing, switching modes, or navigating back during a live run does not save that run as a new best.
 
