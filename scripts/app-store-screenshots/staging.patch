@@ -1,0 +1,32 @@
+diff --git a/dot-dash/ContentView.swift b/dot-dash/ContentView.swift
+index 7292bdf..65c2953 100644
+--- a/dot-dash/ContentView.swift
++++ b/dot-dash/ContentView.swift
+@@ -68,7 +68,12 @@ struct ContentView: View {
+             .navigationDestination(item: $selection) { mode in
+                 GameView(initialMode: mode)
+             }
+-            .onAppear { refreshBests() }
++            .onAppear {
++                refreshBests()
++                #if DEBUG
++                if let m = ScreenshotStaging.modeToOpen { chosenMode = m; selection = m } // TEMPORARY
++                #endif
++            }
+         }
+         .preferredColorScheme(appearance.colorScheme)
+     }
+diff --git a/dot-dash/GameView.swift b/dot-dash/GameView.swift
+index 22e22a0..f5bde91 100644
+--- a/dot-dash/GameView.swift
++++ b/dot-dash/GameView.swift
+@@ -46,6 +46,9 @@ struct GameView: View {
+             game.running = false
+             game.showHelp = true
+             game.startLoop()
++            #if DEBUG
++            game.applyScreenshotScene() // TEMPORARY screenshot staging
++            #endif
+         }
+         .onDisappear { game.stopLoop() }
+         .onChange(of: scenePhase) { _, newPhase in

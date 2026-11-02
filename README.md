@@ -85,14 +85,31 @@ Four visual themes unlock by score inside a run (0 / 12 / 25 / 40). See `GameSta
 
 ## App Store Info
 
-App Store listing copy and metadata are kept as dated snapshots in `App_Store_Info/`. The current one is [v2026.11.02](App_Store_Info/v2026.11.02.md):
+App Store listing copy and metadata are kept as dated snapshots in `App_Store_Info/`. The current one is [v2026.11.02](App_Store_Info/v2026.11.02/v2026.11.02.md):
 
 - **App Store name:** Dot Dash Arcade — *Pure Focus. Pure Fun.* (Games › Casual, Age 4+)
 - **Support URL:** [Google support form](https://docs.google.com/forms/d/e/1FAIpQLSc363RKRky1eFwkpDa4Eu2jDMwhBiBsOTacm03HsBZbZKctYQ/viewform?usp=dialog) (also opened by the in-app Support button)
 - **Privacy Policy URL:** [Google Drive folder](https://drive.google.com/drive/u/0/folders/1C8FPoMXLpXEHZUfzMExzftD3FauxDxUS)
 - **App Privacy:** Data Not Collected
 
-When the listing changes, add a new `vYYYY.MM.DD.md` snapshot rather than editing an older one.
+When the listing changes, add a new `vYYYY.MM.DD/` folder with its `vYYYY.MM.DD.md` snapshot (and any screenshots) rather than editing an older one.
+
+### Capturing screenshots
+
+`scripts/capture-app-store-screenshots.sh` builds a Debug copy of the app and captures the seven-shot set on each simulator you name (by name or UDID). It defaults to the required 6.9" iPhone and 13" iPad:
+
+```bash
+scripts/capture-app-store-screenshots.sh
+scripts/capture-app-store-screenshots.sh -v 2026.11.02 -r both "iPhone 17e" "iPad Pro 11-inch (M5)"
+```
+
+| Option | Meaning |
+|--------|---------|
+| `-v VERSION` | Version folder to save into, e.g. `2026.11.02` or `v2026.11.02` (default: today). Created if it doesn't exist. |
+| `-r ORIENTATION` | `portrait` (default), `landscape` or `both`. The app is portrait-only on iPhone, so iPhones skip landscape. |
+| `-o DIR` | Save somewhere other than `App_Store_Info/vVERSION/screenshots`. |
+
+Each device and orientation gets its own folder: `App_Store_Info/vVERSION/screenshots/<device>/<orientation>/`, for example `ipad-pro-13-inch-m5/landscape/`. The script sets the status bar to 9:41, switches iPads to Full Screen Apps and seeds the best scores through launch arguments. To freeze each game state, it adds the Debug-only hook in `scripts/app-store-screenshots/` for the build and removes it before capturing, so the app source is left as it was. iPads are rotated with a temporary UI test from the same folder, because iPadOS won't let a full-screen app rotate itself and `simctl` has no rotate command. If `GameView.swift` or `ContentView.swift` changes and `staging.patch` stops applying, regenerate the patch. Set `SHOT_DELAY` (in seconds, default 6) on slow machines.
 
 ## Plus-C systems library
 
