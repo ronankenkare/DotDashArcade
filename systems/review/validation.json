@@ -4,10 +4,10 @@
   "diagramCount": 12,
   "documentCount": 7,
   "requirementCount": 47,
-  "elementCount": 639,
-  "viewCount": 287,
-  "sourceArtifacts": 104,
-  "traceCount": 228,
+  "elementCount": 649,
+  "viewCount": 294,
+  "sourceArtifacts": 105,
+  "traceCount": 230,
   "roundTrip": "passed",
   "findings": [
     {
@@ -140,7 +140,8 @@
       "game-over-taps",
       "speed-cap",
       "particle-dt",
-      "cleanup"
+      "cleanup",
+      "idle-loop"
     ],
     "newTestParts": [
       "tapAfterMissKeepsGameOverCard",
@@ -154,6 +155,7 @@
     "svgPreviewsRegenerated": [
       "07-software-architecture.svg",
       "08-run-state-machine.svg",
+      "09-display-link-lifecycle.svg",
       "10-successful-tap-sequence.svg",
       "11-miss-and-persistence-sequence.svg",
       "12-display-frame-sequence.svg",

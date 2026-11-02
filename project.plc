@@ -76,7 +76,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "58740d713767ef1d56342752bcd15678dfa9b6a657cf105b08d8f26283584470"
+          "contentHash": "444757fd909169d364e5803c3e7a5d4652d283d01de85e6b7003c6b059fe703b"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -571,8 +571,8 @@
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState",
           "startLine": 298,
-          "endLine": 615,
-          "contentHash": "b5d52177"
+          "endLine": 626,
+          "contentHash": "704b80f1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -647,13 +647,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.reset",
-        "documentation": "Starts a fresh run with the current mode settings.",
+        "documentation": "Starts a fresh run with the current mode settings and wakes an idle display link.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.reset",
-          "startLine": 406,
-          "endLine": 410,
-          "contentHash": "9e5c3dfd"
+          "startLine": 413,
+          "endLine": 418,
+          "contentHash": "b0fed442"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -667,8 +667,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pauseToHelp",
-          "startLine": 427,
-          "endLine": 429,
+          "startLine": 435,
+          "endLine": 437,
           "contentHash": "5cf194a6"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -679,13 +679,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.step",
-        "documentation": "Per-frame dt cap, marker advance while running, particle update.",
+        "documentation": "Per-frame dt cap, marker advance while running, particle update, idle pause.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.step",
-          "startLine": 433,
-          "endLine": 445,
-          "contentHash": "e296466b"
+          "startLine": 441,
+          "endLine": 454,
+          "contentHash": "00bda771"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -699,8 +699,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.advanceMarker",
-          "startLine": 448,
-          "endLine": 455,
+          "startLine": 457,
+          "endLine": 464,
           "contentHash": "b442c5ca"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -711,13 +711,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.updateParticles",
-        "documentation": "Ages particles by dt, moves them by v × dt × 60, removes expired ones.",
+        "documentation": "Skips an empty array; ages particles by dt, moves them by v × dt × 60, removes expired ones.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.updateParticles",
-          "startLine": 459,
-          "endLine": 467,
-          "contentHash": "54d40799"
+          "startLine": 468,
+          "endLine": 478,
+          "contentHash": "2d32dbf9"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -731,8 +731,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.handleTap",
-          "startLine": 471,
-          "endLine": 509,
+          "startLine": 482,
+          "endLine": 520,
           "contentHash": "54b0c3eb"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -747,8 +747,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.currentSettings",
-          "startLine": 511,
-          "endLine": 538,
+          "startLine": 522,
+          "endLine": 549,
           "contentHash": "bf46c333"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -763,8 +763,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.changeMode",
-          "startLine": 540,
-          "endLine": 548,
+          "startLine": 551,
+          "endLine": 559,
           "contentHash": "a63a90a6"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -779,8 +779,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inZone",
-          "startLine": 552,
-          "endLine": 555,
+          "startLine": 563,
+          "endLine": 566,
           "contentHash": "44f0424d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -795,8 +795,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inPerfect",
-          "startLine": 557,
-          "endLine": 561,
+          "startLine": 568,
+          "endLine": 572,
           "contentHash": "4bd6431e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -811,8 +811,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickThemeIndex",
-          "startLine": 565,
-          "endLine": 570,
+          "startLine": 576,
+          "endLine": 581,
           "contentHash": "80d5dad8"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -827,8 +827,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.spawnBurst",
-          "startLine": 579,
-          "endLine": 595,
+          "startLine": 590,
+          "endLine": 606,
           "contentHash": "3ac94ea1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -843,8 +843,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickNewZoneCenter",
-          "startLine": 597,
-          "endLine": 614,
+          "startLine": 608,
+          "endLine": 625,
           "contentHash": "6a4c493f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -1482,7 +1482,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-001 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, and update particles on every callback.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, update particles on every callback, and pause the display link once no run is active and no particles remain.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -1839,7 +1839,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-010 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall do nothing when there are no particles; otherwise it shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -1941,7 +1941,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-013 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -2077,10 +2077,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-017 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
         "soft": true
@@ -2874,10 +2874,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.deinit implements CMP-017; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-93027b6a-9213-474a-89d3-2a79003ab1bd",
         "targetId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
         "soft": true
@@ -2891,10 +2891,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.startLoop implements CMP-017; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-ca05e966-20ab-42fb-8312-e5c767bb9dd3",
         "targetId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
         "soft": true
@@ -2908,10 +2908,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.stopLoop implements CMP-017; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-c42bdffb-6c65-4a5d-bd7f-3c936a6a58e7",
         "targetId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
         "soft": true
@@ -2925,7 +2925,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.reset implements CMP-013; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -2959,7 +2959,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.step implements CMP-001; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, and update particles on every callback.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, update particles on every callback, and pause the display link once no run is active and no particles remain.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -2993,7 +2993,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.updateParticles implements CMP-010; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall do nothing when there are no particles; otherwise it shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -4108,7 +4108,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-013; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -4208,7 +4208,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-013; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -4241,7 +4241,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-013; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -4538,7 +4538,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-010; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall do nothing when there are no particles; otherwise it shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -5497,7 +5497,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-010; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-010 Particle update\",{\"key\":\"CMP-010\",\"title\":\"Particle update\",\"statement\":\"updateParticles shall do nothing when there are no particles; otherwise it shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.\"}]"
         },
         "createdAt": "2026-11-02T12:00:00.000Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -5514,8 +5514,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.applyStartState",
-          "startLine": 413,
-          "endLine": 425,
+          "startLine": 421,
+          "endLine": 433,
           "contentHash": "1467484c"
         },
         "createdAt": "2026-11-02T12:00:00.000Z",
@@ -5530,7 +5530,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.applyStartState implements CMP-013; symbol range inspected 2026-11-02.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
         },
         "createdAt": "2026-11-02T12:00:00.000Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -5553,6 +5553,56 @@
         "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-79ff0d5c-a2c2-5aa0-9bca-513e601e893f",
         "targetId": "document-requirement-1fe03981-6e57-426f-b6ce-d2881e5c0284",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-f2ba037c-5e9f-5a47-85cb-1d0d9d2eee5c",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dash/GameView.swift#GameState.wakeLoop",
+        "documentation": "Resumes a display link that step paused while idle.",
+        "properties": {
+          "path": "dot-dash/GameView.swift",
+          "symbol": "GameState.wakeLoop",
+          "startLine": 407,
+          "endLine": 411,
+          "contentHash": "6f353a10"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "implements-59b75e63-8042-5e5e-9303-688903e2bfc9",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.wakeLoop implements CMP-013; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-f2ba037c-5e9f-5a47-85cb-1d0d9d2eee5c",
+        "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
+        "soft": true
+      },
+      {
+        "id": "implements-6c35c879-459b-5776-aa4b-1436d37a55e7",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.wakeLoop implements CMP-017; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-017 Display link ownership\",{\"key\":\"CMP-017\",\"title\":\"Display link ownership\",\"statement\":\"startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-f2ba037c-5e9f-5a47-85cb-1d0d9d2eee5c",
+        "targetId": "document-requirement-9cc4b821-cf83-4e2e-89ca-f74ad3d329bd",
         "soft": true
       }
     ],

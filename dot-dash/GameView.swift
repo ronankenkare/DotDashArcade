@@ -403,10 +403,18 @@ final class GameState: ObservableObject {
         l.invalidate(); link = nil
     }
 
+    /// Resumes a display link that `step` paused while idle.
+    private func wakeLoop() {
+        guard let l = link, l.isPaused else { return }
+        lastTs = CACurrentMediaTime()
+        l.isPaused = false
+    }
+
     func reset() {
         applyStartState()
         running = true
         showHelp = false
+        wakeLoop()
     }
 
     /// Restores the current mode's start values. Shared by reset() and changeMode(_:).
@@ -436,12 +444,13 @@ final class GameState: ObservableObject {
         lastTs = now
         dt = min(dt, 0.05)
 
-        guard running else { updateParticles(CGFloat(dt)); return }
-
-        // Move marker
-        (markerPos, markerDir) = Self.advanceMarker(pos: markerPos, dir: markerDir, speed: speed, dt: CGFloat(dt))
-
+        if running {
+            (markerPos, markerDir) = Self.advanceMarker(pos: markerPos, dir: markerDir, speed: speed, dt: CGFloat(dt))
+        }
         updateParticles(CGFloat(dt))
+
+        // Nothing moves while idle; pause until reset() wakes the loop.
+        if !running && particles.isEmpty { link.isPaused = true }
     }
 
     /// Pure marker movement + edge bounce. Extracted from step(_:) for testability.
@@ -457,6 +466,8 @@ final class GameState: ObservableObject {
     /// Particle velocities are in points per 60 Hz frame; scaling by dt keeps
     /// burst distance the same at any refresh rate.
     func updateParticles(_ dt: CGFloat) {
+        // Mutating an empty @Published array would still publish a change every frame.
+        guard !particles.isEmpty else { return }
         let frames = dt * 60
         for i in particles.indices {
             particles[i].age += dt

@@ -96,5 +96,6 @@ On November 2, 2026, with the fixes below applied, the dot-dashTests target and 
 - Speed is capped per mode (3.0 Classic, 1.8 Advanced).
 - Particle motion is scaled by dt, so bursts match at any refresh rate.
 - reset and changeMode share applyStartState; the unused flash and theme fields and ContentView.ModeSelection are removed.
+- Idle frames publish nothing and the display link pauses until reset.
 
 New tests: tapAfterMissKeepsGameOverCard, repeatedHitsCapSpeedAtMaxSpeed, particleDistanceIsIndependentOfFrameRate.

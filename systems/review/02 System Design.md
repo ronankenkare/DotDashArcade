@@ -8,7 +8,7 @@ GameView owns a MainActor GameState through StateObject. Home and GameView share
 
 ## Timing and rendering
 
-GameView starts CADisplayLink on appear and on active scene phase. startLoop is idempotent; stopLoop invalidates and clears the link. step computes elapsed time and caps it at 50 ms. The marker moves only when running; particles age even when not running. Particle velocities are points per 60 Hz frame and are scaled by dt × 60, so bursts travel the same distance at any refresh rate.
+GameView starts CADisplayLink on appear and on active scene phase. startLoop is idempotent; stopLoop invalidates and clears the link. step computes elapsed time and caps it at 50 ms. The marker moves only when running; particles age even when not running. Particle velocities are points per 60 Hz frame and are scaled by dt × 60, so bursts travel the same distance at any refresh rate. updateParticles returns early when there are no particles, so an idle frame publishes nothing. Once no run is active and no particles remain, step pauses the display link; reset resumes it with a fresh timestamp.
 
 ## Rules and difficulty
 
@@ -79,22 +79,23 @@ Each code part names a Swift symbol and its line range and records the Plus-C li
 | GameView.swift · HelpOverlayView | 162–257 | GameReadoutViews class, CMP-021 |
 | GameView.swift · ModeBadgeView | 260–272 | GameReadoutViews class, CMP-022 |
 | GameView.swift · ScoreBarView | 275–293 | GameReadoutViews class, CMP-023 |
-| GameView.swift · GameState | 298–615 | GameState class |
+| GameView.swift · GameState | 298–626 | GameState class |
 | GameView.swift · GameState.init | 382–390 | CMP-018 |
 | GameView.swift · GameState.deinit | 391–391 | CMP-017 |
 | GameView.swift · GameState.startLoop | 393–399 | CMP-017 |
 | GameView.swift · GameState.stopLoop | 401–404 | CMP-017 |
-| GameView.swift · GameState.reset | 406–410 | CMP-013 |
-| GameView.swift · GameState.applyStartState | 413–425 | CMP-013, CMP-015 |
-| GameView.swift · GameState.pauseToHelp | 427–429 | CMP-016 |
-| GameView.swift · GameState.step | 433–445 | CMP-001 |
-| GameView.swift · GameState.advanceMarker | 448–455 | CMP-002 |
-| GameView.swift · GameState.updateParticles | 459–467 | CMP-010 |
-| GameView.swift · GameState.handleTap | 471–509 | CMP-006, CMP-007, CMP-008, CMP-014 |
-| GameView.swift · GameState.currentSettings | 511–538 | CMP-005 |
-| GameView.swift · GameState.changeMode | 540–548 | CMP-015 |
-| GameView.swift · GameState.inZone | 552–555 | CMP-003 |
-| GameView.swift · GameState.inPerfect | 557–561 | CMP-004 |
-| GameView.swift · GameState.pickThemeIndex | 565–570 | CMP-011 |
-| GameView.swift · GameState.spawnBurst | 579–595 | CMP-009 |
-| GameView.swift · GameState.pickNewZoneCenter | 597–614 | CMP-012 |
+| GameView.swift · GameState.wakeLoop | 407–411 | CMP-013, CMP-017 |
+| GameView.swift · GameState.reset | 413–418 | CMP-013 |
+| GameView.swift · GameState.applyStartState | 421–433 | CMP-013, CMP-015 |
+| GameView.swift · GameState.pauseToHelp | 435–437 | CMP-016 |
+| GameView.swift · GameState.step | 441–454 | CMP-001 |
+| GameView.swift · GameState.advanceMarker | 457–464 | CMP-002 |
+| GameView.swift · GameState.updateParticles | 468–478 | CMP-010 |
+| GameView.swift · GameState.handleTap | 482–520 | CMP-006, CMP-007, CMP-008, CMP-014 |
+| GameView.swift · GameState.currentSettings | 522–549 | CMP-005 |
+| GameView.swift · GameState.changeMode | 551–559 | CMP-015 |
+| GameView.swift · GameState.inZone | 563–566 | CMP-003 |
+| GameView.swift · GameState.inPerfect | 568–572 | CMP-004 |
+| GameView.swift · GameState.pickThemeIndex | 576–581 | CMP-011 |
+| GameView.swift · GameState.spawnBurst | 590–606 | CMP-009 |
+| GameView.swift · GameState.pickNewZoneCenter | 608–625 | CMP-012 |

@@ -13,7 +13,7 @@ The root project.plc retains the original project identity. systems/ contains na
 - Foreground does not resume a paused run. Start resets it.
 - Bests are saved on misses, so a discarded live run is not persisted.
 - After a miss, only Play Again restarts; taps on the game surface are ignored while Game Over shows.
-- CADisplayLink targets GameState strongly and requires explicit stopLoop on disappear/inactive. Verify lifecycle teardown when changing ownership.
+- CADisplayLink targets GameState strongly and requires explicit stopLoop on disappear/inactive. Verify lifecycle teardown when changing ownership. step pauses the link while idle, so any new code that starts motion outside reset must resume it.
 - Speed is capped per mode (3.0 Classic, 1.8 Advanced); movement clamps overshoot rather than reflecting remaining travel.
 - Classic's initial instruction preview can use initializer world defaults until reset because same-mode changeMode is a no-op.
 - Support is an external form whose availability is not controlled by this repository.

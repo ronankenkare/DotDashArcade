@@ -8,7 +8,7 @@ Allocated to GameState.
 
 ### CMP-001 Frame step
 
-GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, and update particles on every callback.
+GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, update particles on every callback, and pause the display link once no run is active and no particles remain.
 
 ### CMP-002 Marker advance
 
@@ -48,7 +48,7 @@ spawnBurst shall emit 18 particles at the marker's screen position, evenly sprea
 
 ### CMP-010 Particle update
 
-updateParticles shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.
+updateParticles shall do nothing when there are no particles; otherwise it shall advance each particle's age by dt and its position by vx and vy scaled by dt × 60 (velocities are per 60 Hz frame), and remove particles whose alpha has reached zero.
 
 ### CMP-011 Theme thresholds
 
@@ -64,7 +64,7 @@ Allocated to GameState.
 
 ### CMP-013 Run reset
 
-reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.
+reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0, and resume a display link that step paused.
 
 ### CMP-014 Stopped tap
 
@@ -80,7 +80,7 @@ pauseToHelp shall stop an active run, show instructions and clear gameOver; it s
 
 ### CMP-017 Display link ownership
 
-startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it.
+startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.
 
 ### CMP-018 Best loading and migration
 

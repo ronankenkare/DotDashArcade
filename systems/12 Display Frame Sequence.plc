@@ -108,7 +108,7 @@
         "id": "message-13edf281-fe23-4b78-9f8d-1b3697696317",
         "kind": "synchronous",
         "ownerId": null,
-        "name": "age particles by dt; move by v × dt × 60",
+        "name": "if particles: age by dt; move by v × dt × 60",
         "documentation": "",
         "properties": {
           "order": 3
@@ -139,7 +139,7 @@
         "name": "Publish render state",
         "documentation": "",
         "properties": {
-          "order": 5
+          "order": 6
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z",
@@ -155,7 +155,7 @@
         "properties": {
           "stereotype": "loop",
           "startOrder": 0,
-          "endOrder": 5,
+          "endOrder": 6,
           "participantIds": [
             "participant-677cea12-0449-4436-94fb-39f316a774b0",
             "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
@@ -172,13 +172,27 @@
         "name": "",
         "documentation": "",
         "properties": {
-          "guard": "each callback while display link is active",
+          "guard": "each callback while the link is unpaused",
           "startOrder": 0,
-          "endOrder": 5,
+          "endOrder": 6,
           "order": 0
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "message-4e8a43de-1863-5703-8a3a-10e623d9ee32",
+        "kind": "synchronous",
+        "ownerId": null,
+        "name": "if idle and no particles: pause link",
+        "documentation": "",
+        "properties": {
+          "order": 5
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78",
+        "targetId": "participant-b5f31ffb-64aa-47b7-93df-6af8594abc78"
       }
     ],
     "views": [
@@ -269,7 +283,7 @@
         "elementId": "message-98801ff2-279d-4c6b-98de-7dd16a47a864",
         "parentViewId": null,
         "style": {},
-        "slot": 5,
+        "slot": 6,
         "offset": null
       },
       {
@@ -290,6 +304,16 @@
         "parentViewId": null,
         "style": {},
         "slot": 0,
+        "offset": null
+      },
+      {
+        "id": "view-14913a6f-a2a4-5b45-b0ab-98d18645245e",
+        "kind": "slot",
+        "diagramId": "diagram-74003e66-a950-4789-86cd-897b6cba5fbd",
+        "elementId": "message-4e8a43de-1863-5703-8a3a-10e623d9ee32",
+        "parentViewId": null,
+        "style": {},
+        "slot": 5,
         "offset": null
       }
     ]
