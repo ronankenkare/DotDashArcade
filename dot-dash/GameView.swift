@@ -292,6 +292,29 @@ private struct ScoreBarView: View {
     }
 }
 
+// MARK: - Best-score persistence
+
+/// Owns the best-score UserDefaults keys and the legacy single-best migration,
+/// so the Home screen and GameState read the same values.
+enum BestScores {
+    static let classicKey = "dotdash_best_classic_v1"
+    static let advancedKey = "dotdash_best_advanced_v1"
+    static let legacyKey = "dotdash_best_v1"
+
+    static func key(for mode: GameState.Mode) -> String {
+        mode == .classic ? classicKey : advancedKey
+    }
+
+    /// Reads both bests, first migrating a legacy single best (if present) to Classic.
+    static func load(from defaults: UserDefaults) -> (classic: Int, advanced: Int) {
+        let legacy = defaults.integer(forKey: legacyKey)
+        if legacy > 0 && defaults.integer(forKey: classicKey) == 0 {
+            defaults.set(legacy, forKey: classicKey)
+        }
+        return (defaults.integer(forKey: classicKey), defaults.integer(forKey: advancedKey))
+    }
+}
+
 // MARK: - GameState model (moved from ContentView.swift)
 
 @MainActor
@@ -319,8 +342,8 @@ final class GameState: ObservableObject {
     // Output
     @Published var mode: Mode = .classic
     @Published var score: Int = 0
-    @Published var bestClassic: Int = UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1")
-    @Published var bestAdvanced: Int = UserDefaults.standard.integer(forKey: "dotdash_best_advanced_v1")
+    @Published var bestClassic: Int
+    @Published var bestAdvanced: Int
     var bestCurrent: Int { mode == .classic ? bestClassic : bestAdvanced }
     @Published var showHelp: Bool = true
     @Published var gameOver: Bool = false
@@ -351,6 +374,9 @@ final class GameState: ObservableObject {
     private var link: CADisplayLink?
     private var lastTs: CFTimeInterval = CACurrentMediaTime()
 
+    // Persistence
+    private let defaults: UserDefaults
+
     // Haptics
     private let successHap = UINotificationFeedbackGenerator()
     private let impactHap = UIImpactFeedbackGenerator(style: .rigid)
@@ -379,14 +405,10 @@ final class GameState: ObservableObject {
 
     // MARK: - Lifecycle
 
-    init() {
+    init(defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+        (bestClassic, bestAdvanced) = BestScores.load(from: defaults)
         successHap.prepare(); impactHap.prepare()
-        // Migrate legacy single-best (if present) to Classic
-        let legacy = UserDefaults.standard.integer(forKey: "dotdash_best_v1")
-        if legacy > 0 && UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1") == 0 {
-            bestClassic = legacy
-            UserDefaults.standard.set(legacy, forKey: "dotdash_best_classic_v1")
-        }
     }
     deinit { link?.invalidate() }
 
@@ -403,10 +425,18 @@ final class GameState: ObservableObject {
         l.invalidate(); link = nil
     }
 
+    /// Resumes a display link that `step` paused while idle.
+    private func wakeLoop() {
+        guard let l = link, l.isPaused else { return }
+        lastTs = CACurrentMediaTime()
+        l.isPaused = false
+    }
+
     func reset() {
         applyStartState()
         running = true
         showHelp = false
+        wakeLoop()
     }
 
     /// Restores the current mode's start values. Shared by reset() and changeMode(_:).
@@ -425,7 +455,10 @@ final class GameState: ObservableObject {
     }
 
     func pauseToHelp() {
-        if running { running = false; showHelp = true; gameOver = false }
+        guard running else { return }
+        // The paused run can't be resumed, so keep its score if it's a new best.
+        recordBest()
+        running = false; showHelp = true; gameOver = false
     }
 
     // MARK: - Loop
@@ -436,12 +469,13 @@ final class GameState: ObservableObject {
         lastTs = now
         dt = min(dt, 0.05)
 
-        guard running else { updateParticles(CGFloat(dt)); return }
-
-        // Move marker
-        (markerPos, markerDir) = Self.advanceMarker(pos: markerPos, dir: markerDir, speed: speed, dt: CGFloat(dt))
-
+        if running {
+            (markerPos, markerDir) = Self.advanceMarker(pos: markerPos, dir: markerDir, speed: speed, dt: CGFloat(dt))
+        }
         updateParticles(CGFloat(dt))
+
+        // Nothing moves while idle; pause until reset() wakes the loop.
+        if !running && particles.isEmpty { link.isPaused = true }
     }
 
     /// Pure marker movement + edge bounce. Extracted from step(_:) for testability.
@@ -457,6 +491,8 @@ final class GameState: ObservableObject {
     /// Particle velocities are in points per 60 Hz frame; scaling by dt keeps
     /// burst distance the same at any refresh rate.
     func updateParticles(_ dt: CGFloat) {
+        // Mutating an empty @Published array would still publish a change every frame.
+        guard !particles.isEmpty else { return }
         let frames = dt * 60
         for i in particles.indices {
             particles[i].age += dt
@@ -497,15 +533,19 @@ final class GameState: ObservableObject {
             spawnBurst(at: CGPoint(x: markerScreenX(screenWidth: screenWidth), y: cachedBarY), good: false)
             running = false
             gameOver = true
-            if mode == .classic {
-                bestClassic = max(bestClassic, score)
-                UserDefaults.standard.set(bestClassic, forKey: "dotdash_best_classic_v1")
-            } else {
-                bestAdvanced = max(bestAdvanced, score)
-                UserDefaults.standard.set(bestAdvanced, forKey: "dotdash_best_advanced_v1")
-            }
+            recordBest()
             showHelp = true
         }
+    }
+
+    /// Raises the current mode's best to `score` if higher and persists it.
+    private func recordBest() {
+        if mode == .classic {
+            bestClassic = max(bestClassic, score)
+        } else {
+            bestAdvanced = max(bestAdvanced, score)
+        }
+        defaults.set(bestCurrent, forKey: BestScores.key(for: mode))
     }
 
     func currentSettings() -> ModeSettings {
