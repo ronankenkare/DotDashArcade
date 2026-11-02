@@ -467,7 +467,12 @@ final class GameState: ObservableObject {
     // MARK: - Input
 
     func handleTap(screenWidth: CGFloat) {
-        guard running else { reset(); return }
+        guard running else {
+            // After a miss, only the Play Again button restarts, so a follow-up
+            // tap on the bar can't dismiss the Game Over card.
+            if !gameOver { reset() }
+            return
+        }
         if inZone(markerPos) {
             let wasPerfect = inPerfect(markerPos)
             score += 1

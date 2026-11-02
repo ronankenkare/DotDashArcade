@@ -28,7 +28,7 @@ From the repository root, run xcodebuild -project dot-dash.xcodeproj -scheme dot
 ## Manual acceptance
 
 - Exercise both modes: Start, hit, miss, replay, mid-run mode change, Back. Validates NEED-001 and NEED-002.
-- Background a live run and return: motion remains stopped until Start resets the run. Repeat while Game Over is visible; it should remain Game Over. Validates NEED-004.
+- Background a live run and return: motion remains stopped until Start resets the run. Repeat while Game Over is visible; it should remain Game Over. Tap the bar while Game Over shows; it should stay. Validates NEED-004.
 - Verify bests remain separate, never regress, and update Home on return. Check a legacy-only installation. Validates NEED-003.
 - Check Light, Dark, System and Increase Contrast on iPhone and iPad. Inspect help button edges and score rows. Validates NEED-005.
 - On physical hardware, compare perfect and good haptics. Confirm misses have particle feedback. Validates NEED-005.
@@ -61,7 +61,7 @@ System requirements without a UI-flow trace are covered only through their compo
 | Theme thresholds (CMP-011) | twelfthHitAdvancesThemeIdxToOne, pickThemeIndexThresholds |
 | Target relocation (CMP-012) | pickNewZoneCenterStaysInBounds, pickNewZoneCenterMovesByMinMove, pickNewZoneCenterHandlesExtremePrevCenter, hitMovesZoneCenterAwayFromPreviousCenter |
 | Run reset (CMP-013) | tapWhileNotRunningResetsGame, resetRestoresClassicStartState, resetAppliesAdvancedStartValues |
-| Stopped tap (CMP-014) | tapWhileNotRunningResetsGame |
+| Stopped tap (CMP-014) | tapWhileNotRunningResetsGame, tapAfterMissKeepsGameOverCard |
 | Mode change (CMP-015) | changeModeToSameModeIsNoOp, changeModeClassicToAdvancedResetsToAdvancedStartState, changeModeMidRunDiscardsTheRun, changeModeAdvancedToClassicAppliesClassicStartValues |
 | Pause to instructions (CMP-016) | None; manual: background a live run |
 | Display link ownership (CMP-017) | None; manual: lifecycle scenario |
@@ -92,3 +92,6 @@ On November 2, 2026, with the fixes below applied, the dot-dashTests target and 
 
 - The drawn target is clipped at both bar ends to match inZone.
 - The bar reacts at touch-down instead of lift-off.
+- Taps on the bar no longer dismiss Game Over; only Play Again restarts.
+
+New tests: tapAfterMissKeepsGameOverCard.

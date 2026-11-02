@@ -24,7 +24,7 @@ A miss shall end the run with failure feedback, show the mode, score and best, a
 
 ## REQ-006 Mode and restart behavior
 
-The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.
+The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.
 
 ## REQ-007 Lifecycle handling
 

@@ -12,6 +12,7 @@ The root project.plc retains the original project identity. systems/ contains na
 - Target movement is attempted at most 16 times. The final candidate can move less than the preferred threshold.
 - Foreground does not resume a paused run. Start resets it.
 - Bests are saved on misses, so a discarded live run is not persisted.
+- After a miss, only Play Again restarts; taps on the game surface are ignored while Game Over shows.
 - Particle x/y use per-update increments while age uses elapsed time; their displacement varies with refresh rate.
 - CADisplayLink targets GameState strongly and requires explicit stopLoop on disappear/inactive. Verify lifecycle teardown when changing ownership.
 - Speed has no maximum; movement clamps overshoot rather than reflecting remaining travel.

@@ -192,4 +192,22 @@ struct dot_dashTests {
         // Classic must not be touched by an advanced-mode miss.
         #expect(UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1") == 0)
     }
+
+    @Test func tapAfterMissKeepsGameOverCard() {
+        clearBestScoreKeys()
+        defer { clearBestScoreKeys() }
+        let g = GameState()
+        g.mode = .classic
+        g.running = true
+        g.score = 4
+        g.zoneCenter = 0.2
+        g.zoneWidth = 0.1    // zone 0.15...0.25
+        g.markerPos = 0.9    // clearly a miss
+        g.handleTap(screenWidth: 320)   // miss → game over
+        g.handleTap(screenWidth: 320)   // follow-up tap on the bar
+        #expect(g.gameOver == true)
+        #expect(g.running == false)
+        #expect(g.showHelp == true)
+        #expect(g.score == 4)
+    }
 }

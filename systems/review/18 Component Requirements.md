@@ -68,7 +68,7 @@ reset shall start a run in the current mode with its start speed, width and perf
 
 ### CMP-014 Stopped tap
 
-handleTap shall call reset whenever no run is active.
+handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.
 
 ### CMP-015 Mode change
 

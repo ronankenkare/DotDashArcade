@@ -34,7 +34,7 @@
 <h3 id="cmp-013-run-reset">CMP-013 Run reset</h3>
 <p>reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.</p>
 <h3 id="cmp-014-stopped-tap">CMP-014 Stopped tap</h3>
-<p>handleTap shall call reset whenever no run is active.</p>
+<p>handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.</p>
 <h3 id="cmp-015-mode-change">CMP-015 Mode change</h3>
 <p>changeMode to a different mode shall stop any run, apply that mode&#39;s start values and show instructions without a game-over result or saved best. changeMode to the current mode shall do nothing.</p>
 <h3 id="cmp-016-pause-to-instructions">CMP-016 Pause to instructions</h3>

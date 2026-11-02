@@ -4,10 +4,10 @@
   "diagramCount": 12,
   "documentCount": 7,
   "requirementCount": 47,
-  "elementCount": 629,
-  "viewCount": 287,
-  "sourceArtifacts": 100,
-  "traceCount": 222,
+  "elementCount": 632,
+  "viewCount": 288,
+  "sourceArtifacts": 101,
+  "traceCount": 223,
   "roundTrip": "passed",
   "findings": [
     {
@@ -136,15 +136,19 @@
     "date": "2026-11-02",
     "fixesApplied": [
       "zone-clip",
-      "touch-down"
+      "touch-down",
+      "game-over-taps"
     ],
-    "newTestParts": [],
+    "newTestParts": [
+      "tapAfterMissKeepsGameOverCard"
+    ],
     "verificationCoverage": {
       "componentWithTests": "18 of 29",
       "systemWithUiTests": "4 of 12"
     },
     "svgPreviewsRegenerated": [
       "07-software-architecture.svg",
+      "08-run-state-machine.svg",
       "10-successful-tap-sequence.svg",
       "11-miss-and-persistence-sequence.svg"
     ],

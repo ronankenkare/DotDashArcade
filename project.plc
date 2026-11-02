@@ -76,7 +76,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "d191e064264e8361fe97356b5a19c8d6109223f6985d6854c302e517ee3d261c"
+          "contentHash": "daf6937db47451bcd02a890bc8c5df25a1266927c42103037984324d72d75b3b"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -571,8 +571,8 @@
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState",
           "startLine": 298,
-          "endLine": 628,
-          "contentHash": "f17dd7b7"
+          "endLine": 633,
+          "contentHash": "70af36dc"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -727,13 +727,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.handleTap",
-        "documentation": "Restart when stopped; otherwise hit progression or miss with best persistence.",
+        "documentation": "Restart only from instructions; otherwise hit progression or miss with best persistence.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.handleTap",
           "startLine": 469,
-          "endLine": 503,
-          "contentHash": "ab9283e0"
+          "endLine": 508,
+          "contentHash": "ee06b727"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -747,8 +747,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.currentSettings",
-          "startLine": 505,
-          "endLine": 530,
+          "startLine": 510,
+          "endLine": 535,
           "contentHash": "68aa2fe3"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -763,8 +763,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.changeMode",
-          "startLine": 532,
-          "endLine": 561,
+          "startLine": 537,
+          "endLine": 566,
           "contentHash": "5f49528d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -779,8 +779,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inZone",
-          "startLine": 565,
-          "endLine": 568,
+          "startLine": 570,
+          "endLine": 573,
           "contentHash": "44f0424d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -795,8 +795,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inPerfect",
-          "startLine": 570,
-          "endLine": 574,
+          "startLine": 575,
+          "endLine": 579,
           "contentHash": "4bd6431e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -811,8 +811,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickThemeIndex",
-          "startLine": 578,
-          "endLine": 583,
+          "startLine": 583,
+          "endLine": 588,
           "contentHash": "80d5dad8"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -827,8 +827,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.spawnBurst",
-          "startLine": 592,
-          "endLine": 608,
+          "startLine": 597,
+          "endLine": 613,
           "contentHash": "3ac94ea1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -843,8 +843,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickNewZoneCenter",
-          "startLine": 610,
-          "endLine": 627,
+          "startLine": 615,
+          "endLine": 632,
           "contentHash": "6a4c493f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -978,10 +978,10 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "d28045c92e34f650415121cb929d7c5d47a08ada388a69c77d31b07f459ed8dc"
+          "contentHash": "a2d4d04423ccbcaee159de07120a8f2d66def1b2bc74238f0e91516b23aef047"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
-        "modifiedAt": "2026-10-21T21:41:30.593Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-0edd5372-f664-4609-a39d-24352b7e2080",
@@ -1044,10 +1044,10 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "16e6b00c33c8d37ba0ef1824f28ed16fe3a892daae73c9874222e2bbf7956017"
+          "contentHash": "e94d0548844535b8bd4dce7368fcdf5810f0dccfc2790ba6e5a2aec62b9a874e"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
-        "modifiedAt": "2026-10-21T21:41:30.593Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-0743e150-3579-40cf-bd5e-72cc426315bc",
@@ -1077,10 +1077,10 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "82e288efa7faec1f3c03004cfd9c91f1102ca6cf1435db5f965c700dbe773648"
+          "contentHash": "66e2844bc6ee8426a56a1686e9e7feffdee344efea03d7b642e8f3ed7a870662"
         },
         "createdAt": "2026-10-21T21:41:30.594Z",
-        "modifiedAt": "2026-10-21T21:41:30.594Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-c79abe12-8297-4b2a-a16a-241f4ced2191",
@@ -1618,10 +1618,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-7b35a0a7-a474-41e5-aebf-adde8225ce6a",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -1924,10 +1924,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -1958,10 +1958,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -1975,10 +1975,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-014 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset whenever no run is active.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
         "soft": true
@@ -1992,10 +1992,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-1fe03981-6e57-426f-b6ce-d2881e5c0284",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -2196,10 +2196,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-4155f774-8d79-4df6-a422-186b2712e2d3",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -2247,10 +2247,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-543bd57d-d153-435a-bfc7-7ef14ddd4dfd",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -2281,10 +2281,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-ce113c3d-7f79-421a-9a68-0da38d82680d",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -2536,10 +2536,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-006; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions, from the result screen, or by tapping the stopped game. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-006 Mode and restart behavior\",{\"key\":\"REQ-006\",\"title\":\"Mode and restart behavior\",\"statement\":\"The player shall be able to start a fresh run from the instructions or by tapping the game before a run, and from the result screen's Play Again; taps on the game while the result shows shall leave it showing. Choosing a different mode shall abandon the current run, without saving it, and apply that mode's difficulty.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-42ec56b9-7b8a-4fc0-bf6b-8958ba7bce94",
         "targetId": "document-requirement-819ace33-0a83-4c81-b148-bf76112859b9",
         "soft": true
@@ -3061,10 +3061,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.handleTap implements CMP-014; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset whenever no run is active.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-3a14db9e-64d0-4006-bcd2-af51ff8d70d0",
         "targetId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
         "soft": true
@@ -4094,10 +4094,10 @@
           "symbol": "HandleTapHitPathTests.tapWhileNotRunningResetsGame",
           "startLine": 138,
           "endLine": 158,
-          "contentHash": "6abd490c"
+          "contentHash": "867725fd"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-aa1fe028-4ca2-4b7f-bcde-cad5a662835c",
@@ -4125,10 +4125,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-014; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset whenever no run is active.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-e29b40ea-d51d-4e28-99a6-0b68cfa07a2a",
         "targetId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
         "soft": true
@@ -5350,10 +5350,10 @@
           "symbol": "dot_dashUITests.testTapScoresOrEndsGame",
           "startLine": 168,
           "endLine": 206,
-          "contentHash": "419f22fb"
+          "contentHash": "b0c9303a"
         },
         "createdAt": "2026-10-28T17:30:31.627Z",
-        "modifiedAt": "2026-10-28T17:30:31.627Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-4d1d0407-c743-4890-aff5-ead7d24d5afc",
@@ -5387,6 +5387,39 @@
         "modifiedAt": "2026-10-28T17:30:31.627Z",
         "sourceId": "code-artifact-fcd56fb5-1cb3-4cd7-8524-e7a2193a4ac1",
         "targetId": "document-requirement-4d81eb2e-751f-4421-a12b-5f51ef266265",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-65219132-b760-5567-9f8b-449b2d0ba81f",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dashTests/dot_dashTests.swift#dot_dashTests.tapAfterMissKeepsGameOverCard",
+        "documentation": "Swift Testing unit test.",
+        "properties": {
+          "path": "dot-dashTests/dot_dashTests.swift",
+          "symbol": "dot_dashTests.tapAfterMissKeepsGameOverCard",
+          "startLine": 196,
+          "endLine": 212,
+          "contentHash": "235cb66a"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "refines-0141bfb8-0e40-54d1-9aa7-cc873fddfba4",
+        "kind": "refines",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Verifies CMP-014; Plus-C has no verifies kind, so verification is recorded as refines. Executed 2026-11-02: passed on the iPhone 17 Pro simulator (iOS 27.0).",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-014 Stopped tap\",{\"key\":\"CMP-014\",\"title\":\"Stopped tap\",\"statement\":\"handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-65219132-b760-5567-9f8b-449b2d0ba81f",
+        "targetId": "document-requirement-81403b55-3819-4c47-9293-d75f9066936e",
         "soft": true
       }
     ],

@@ -140,7 +140,7 @@ struct HandleTapHitPathTests {
         g.mode = mode
         g.running = false
         g.showHelp = true
-        g.gameOver = true
+        g.gameOver = false   // the How To Play card; after a miss see tapAfterMissKeepsGameOverCard
         g.score = 5
         g.themeIdx = 2
         let e = expected(for: mode)
