@@ -10,7 +10,7 @@ Coverage below was inspected in source. It is not a claim that the app tests pas
 | Contract REQ-002 movement | MarkerPhysicsTests | Display callback timing and dt cap need runtime check |
 | Contract REQ-003 classification | InZoneTests and dot_dashTests | Haptic perception is manual |
 | Contract REQ-004 progression | HandleTapHitPathTests; GameStateLifecycleTests | Visual particles and physical haptics need device check |
-| Contract REQ-005 miss / best | dot_dashTests | Persistence assertions mutate shared UserDefaults |
+| Contract REQ-005 miss / best | dot_dashTests | Persistence tests use a throwaway UserDefaults suite per test |
 | Contract REQ-006 reset / modes | GameStateLifecycleTests; dot_dashUITests | UI outcomes involving motion are nondeterministic |
 | Contract REQ-007 lifecycle | GameView source; manual scenario below | No dedicated scenePhase integration test found |
 | Contract REQ-008 placement | dot_dashTests bounded and statistical samples | Minimum movement is best effort, not guaranteed |
@@ -98,5 +98,6 @@ On November 2, 2026, with the fixes below applied, the dot-dashTests target and 
 - reset and changeMode share applyStartState; the unused flash and theme fields and ContentView.ModeSelection are removed.
 - Idle frames publish nothing and the display link pauses until reset.
 - BestScores owns the best keys and legacy migration; Home reads bests through it.
+- GameState takes an injected UserDefaults; tests use a throwaway suite each.
 
 New tests: tapAfterMissKeepsGameOverCard, repeatedHitsCapSpeedAtMaxSpeed, particleDistanceIsIndependentOfFrameRate, homeScreenLoadSeesMigratedLegacyBest.

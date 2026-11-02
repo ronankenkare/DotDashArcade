@@ -33,7 +33,7 @@ Each hit scores one point, regardless of perfect classification. Speed is capped
 | dotdash_best_v1 | BestScores reads | Legacy migration input; not removed |
 | dotdash_appearance_v1 | ContentView AppStorage | Appearance button |
 
-BestScores in GameView.swift owns the best-score keys and the legacy migration. Home refreshes bests on appear through BestScores.load, so a migrated legacy best shows before any game is opened. GameState loads its bests through the same call during initialization. Quitting, pausing, switching modes, or navigating back during a live run does not save that run as a new best.
+BestScores in GameView.swift owns the best-score keys and the legacy migration. Home refreshes bests on appear through BestScores.load, so a migrated legacy best shows before any game is opened. GameState loads its bests through the same call during initialization, from an injected UserDefaults that defaults to standard; unit tests pass a throwaway suite. Quitting, pausing, switching modes, or navigating back during a live run does not save that run as a new best.
 
 ## External interfaces
 
@@ -81,23 +81,23 @@ Each code part names a Swift symbol and its line range and records the Plus-C li
 | GameView.swift · ScoreBarView | 275–293 | GameReadoutViews class, CMP-023 |
 | GameView.swift · BestScores | 299–316 | BestScores class |
 | GameView.swift · BestScores.load | 309–315 | CMP-018, CMP-026 |
-| GameView.swift · GameState | 321–643 | GameState class |
-| GameView.swift · GameState.init | 405–408 | CMP-018 |
-| GameView.swift · GameState.deinit | 409–409 | CMP-017 |
-| GameView.swift · GameState.startLoop | 411–417 | CMP-017 |
-| GameView.swift · GameState.stopLoop | 419–422 | CMP-017 |
-| GameView.swift · GameState.wakeLoop | 425–429 | CMP-013, CMP-017 |
-| GameView.swift · GameState.reset | 431–436 | CMP-013 |
-| GameView.swift · GameState.applyStartState | 439–451 | CMP-013, CMP-015 |
-| GameView.swift · GameState.pauseToHelp | 453–455 | CMP-016 |
-| GameView.swift · GameState.step | 459–472 | CMP-001 |
-| GameView.swift · GameState.advanceMarker | 475–482 | CMP-002 |
-| GameView.swift · GameState.updateParticles | 486–496 | CMP-010 |
-| GameView.swift · GameState.handleTap | 500–537 | CMP-006, CMP-007, CMP-008, CMP-014 |
-| GameView.swift · GameState.currentSettings | 539–566 | CMP-005 |
-| GameView.swift · GameState.changeMode | 568–576 | CMP-015 |
-| GameView.swift · GameState.inZone | 580–583 | CMP-003 |
-| GameView.swift · GameState.inPerfect | 585–589 | CMP-004 |
-| GameView.swift · GameState.pickThemeIndex | 593–598 | CMP-011 |
-| GameView.swift · GameState.spawnBurst | 607–623 | CMP-009 |
-| GameView.swift · GameState.pickNewZoneCenter | 625–642 | CMP-012 |
+| GameView.swift · GameState | 321–647 | GameState class |
+| GameView.swift · GameState.init | 408–412 | CMP-018 |
+| GameView.swift · GameState.deinit | 413–413 | CMP-017 |
+| GameView.swift · GameState.startLoop | 415–421 | CMP-017 |
+| GameView.swift · GameState.stopLoop | 423–426 | CMP-017 |
+| GameView.swift · GameState.wakeLoop | 429–433 | CMP-013, CMP-017 |
+| GameView.swift · GameState.reset | 435–440 | CMP-013 |
+| GameView.swift · GameState.applyStartState | 443–455 | CMP-013, CMP-015 |
+| GameView.swift · GameState.pauseToHelp | 457–459 | CMP-016 |
+| GameView.swift · GameState.step | 463–476 | CMP-001 |
+| GameView.swift · GameState.advanceMarker | 479–486 | CMP-002 |
+| GameView.swift · GameState.updateParticles | 490–500 | CMP-010 |
+| GameView.swift · GameState.handleTap | 504–541 | CMP-006, CMP-007, CMP-008, CMP-014 |
+| GameView.swift · GameState.currentSettings | 543–570 | CMP-005 |
+| GameView.swift · GameState.changeMode | 572–580 | CMP-015 |
+| GameView.swift · GameState.inZone | 584–587 | CMP-003 |
+| GameView.swift · GameState.inPerfect | 589–593 | CMP-004 |
+| GameView.swift · GameState.pickThemeIndex | 597–602 | CMP-011 |
+| GameView.swift · GameState.spawnBurst | 611–627 | CMP-009 |
+| GameView.swift · GameState.pickNewZoneCenter | 629–646 | CMP-012 |

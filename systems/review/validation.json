@@ -142,7 +142,8 @@
       "particle-dt",
       "cleanup",
       "idle-loop",
-      "best-scores"
+      "best-scores",
+      "test-defaults"
     ],
     "newTestParts": [
       "tapAfterMissKeepsGameOverCard",

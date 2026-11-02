@@ -20,7 +20,7 @@
 <h3 id="cmp-007-hit-feedback">CMP-007 Hit feedback</h3>
 <p>A perfect hit shall emit a success notification and a rigid impact at intensity 1.0; a good hit shall emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.</p>
 <h3 id="cmp-008-miss-handling">CMP-008 Miss handling</h3>
-<p>On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode&#39;s key.</p>
+<p>On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1 in GameState&#39;s UserDefaults, and show the overlay. It shall not touch the other mode&#39;s key.</p>
 <h3 id="cmp-009-particle-bursts">CMP-009 Particle bursts</h3>
 <p>spawnBurst shall emit 18 particles at the marker&#39;s screen position, evenly spread in angle with up to 0.2 rad jitter, speed 2–5 for a hit or 1–3 for a miss, and lifetime 0.6–1.0 s.</p>
 <h3 id="cmp-010-particle-update">CMP-010 Particle update</h3>
@@ -42,7 +42,7 @@
 <h3 id="cmp-017-display-link-ownership">CMP-017 Display link ownership</h3>
 <p>startLoop shall create and schedule one CADisplayLink on the main run loop in common modes only when none exists; stopLoop and deinit shall invalidate it. A link that step paused while idle shall be resumed, with a fresh timestamp, by reset.</p>
 <h3 id="cmp-018-best-loading-and-migration">CMP-018 Best loading and migration</h3>
-<p>BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization.</p>
+<p>BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization from an injected UserDefaults, standard by default.</p>
 <h2 id="gameview">GameView</h2>
 <p>Allocated to GameView.</p>
 <h3 id="cmp-019-scene-lifecycle">CMP-019 Scene lifecycle</h3>

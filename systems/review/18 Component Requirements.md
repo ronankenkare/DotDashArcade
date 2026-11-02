@@ -40,7 +40,7 @@ A perfect hit shall emit a success notification and a rigid impact at intensity 
 
 ### CMP-008 Miss handling
 
-On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode's key.
+On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1 in GameState's UserDefaults, and show the overlay. It shall not touch the other mode's key.
 
 ### CMP-009 Particle bursts
 
@@ -84,7 +84,7 @@ startLoop shall create and schedule one CADisplayLink on the main run loop in co
 
 ### CMP-018 Best loading and migration
 
-BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization.
+BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization from an injected UserDefaults, standard by default.
 
 ## GameView
 

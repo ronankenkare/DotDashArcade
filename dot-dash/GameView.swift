@@ -374,6 +374,9 @@ final class GameState: ObservableObject {
     private var link: CADisplayLink?
     private var lastTs: CFTimeInterval = CACurrentMediaTime()
 
+    // Persistence
+    private let defaults: UserDefaults
+
     // Haptics
     private let successHap = UINotificationFeedbackGenerator()
     private let impactHap = UIImpactFeedbackGenerator(style: .rigid)
@@ -402,8 +405,9 @@ final class GameState: ObservableObject {
 
     // MARK: - Lifecycle
 
-    init() {
-        (bestClassic, bestAdvanced) = BestScores.load(from: .standard)
+    init(defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+        (bestClassic, bestAdvanced) = BestScores.load(from: defaults)
         successHap.prepare(); impactHap.prepare()
     }
     deinit { link?.invalidate() }
@@ -531,7 +535,7 @@ final class GameState: ObservableObject {
             } else {
                 bestAdvanced = max(bestAdvanced, score)
             }
-            UserDefaults.standard.set(bestCurrent, forKey: BestScores.key(for: mode))
+            defaults.set(bestCurrent, forKey: BestScores.key(for: mode))
             showHelp = true
         }
     }
