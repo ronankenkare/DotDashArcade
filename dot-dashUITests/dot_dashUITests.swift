@@ -64,7 +64,7 @@ final class dot_dashUITests: XCTestCase {
     }
 
     @MainActor
-    func testAppearanceButtonCyclesAndPersists() throws {
+    func testAppearanceMenuSelectsAndPersists() throws {
         let app = XCUIApplication()
         app.launch()
 
@@ -72,16 +72,16 @@ final class dot_dashUITests: XCTestCase {
         XCTAssertTrue(appearanceButton.waitForExistence(timeout: 10),
                       "Appearance button should be visible on the home screen")
 
-        let cycle = ["Light": "Dark", "Dark": "System", "System": "Light"]
-        guard let current = cycle.keys.first(where: { appearanceButton.label.contains($0) }),
-              let expected = cycle[current] else {
+        let options = ["Light", "Dark", "System"]
+        guard let current = options.first(where: { appearanceButton.label.contains($0) }) else {
             XCTFail("Appearance label should mention Light, Dark, or System; was '\(appearanceButton.label)'")
             return
         }
+        let expected = current == "Dark" ? "Light" : "Dark"
 
-        appearanceButton.tap()
+        selectAppearance(expected, in: app)
         XCTAssertTrue(waitForLabel(of: appearanceButton, toContain: expected),
-                      "Appearance should advance from \(current) to \(expected)")
+                      "Appearance should change from \(current) to \(expected)")
 
         app.terminate()
         app.launch()
@@ -105,11 +105,21 @@ final class dot_dashUITests: XCTestCase {
         XCTAssertTrue(supportButton.waitForExistence(timeout: 5),
                       "Support button should be visible on the home screen")
 
-        for _ in 0..<3 {
+        for option in ["Light", "Dark", "System"] {
+            selectAppearance(option, in: app)
+            XCTAssertTrue(waitForLabel(of: appearanceButton, toContain: option))
             XCTAssertEqual(appearanceButton.frame.width, supportButton.frame.width, accuracy: 0.5)
             XCTAssertEqual(appearanceButton.frame.height, supportButton.frame.height, accuracy: 0.5)
-            appearanceButton.tap()
         }
+    }
+
+    /// Opens the appearance menu and picks the named option.
+    @MainActor
+    private func selectAppearance(_ option: String, in app: XCUIApplication) {
+        app.buttons["home.appearanceButton"].firstMatch.tap()
+        let item = app.buttons[option].firstMatch
+        XCTAssertTrue(item.waitForExistence(timeout: 5), "Appearance menu should offer \(option)")
+        item.tap()
     }
 
     @MainActor

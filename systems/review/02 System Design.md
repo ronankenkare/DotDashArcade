@@ -31,7 +31,7 @@ Each hit scores one point, regardless of perfect classification. Speed is capped
 | dotdash_best_classic_v1 | GameState; BestScores | Classic miss or pause with a higher score; eligible legacy migration |
 | dotdash_best_advanced_v1 | GameState | Advanced miss or pause with a higher score |
 | dotdash_best_v1 | BestScores reads | Legacy migration input; not removed |
-| dotdash_appearance_v1 | ContentView AppStorage | Appearance button |
+| dotdash_appearance_v1 | ContentView AppStorage | Appearance menu |
 
 BestScores in GameView.swift owns the best-score keys and the legacy migration. Home refreshes bests on appear through BestScores.load, so a migrated legacy best shows before any game is opened. GameState loads its bests through the same call during initialization, from an injected UserDefaults that defaults to standard; unit tests pass a throwaway suite. A pause caused by the app going inactive or to the background saves the live run as the mode best if it is higher. Quitting, switching modes or navigating back during a live run does not save it.
 

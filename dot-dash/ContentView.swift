@@ -33,14 +33,6 @@ enum AppearancePreference: String, CaseIterable {
         case .system: "laptopcomputer"
         }
     }
-
-    var next: AppearancePreference {
-        switch self {
-        case .light: .dark
-        case .dark: .system
-        case .system: .light
-        }
-    }
 }
 
 struct ContentView: View {
@@ -65,8 +57,10 @@ struct ContentView: View {
                     chosenMode: $chosenMode,
                     classicBest: bestClassic,
                     advancedBest: bestAdvanced,
-                    appearance: appearance,
-                    cycleAppearance: { appearanceRawValue = appearance.next.rawValue },
+                    appearance: Binding(
+                        get: { appearance },
+                        set: { appearanceRawValue = $0.rawValue }
+                    ),
                     start: { selection = chosenMode }
                 )
             }
@@ -98,8 +92,7 @@ struct ContentView: View {
         @Binding var chosenMode: GameState.Mode
         let classicBest: Int
         let advancedBest: Int
-        let appearance: AppearancePreference
-        let cycleAppearance: () -> Void
+        @Binding var appearance: AppearancePreference
         let start: () -> Void
         @Environment(\.colorScheme) var colorScheme
 
@@ -162,14 +155,22 @@ struct ContentView: View {
             }
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 HStack {
-                    Button(action: cycleAppearance) {
+                    Menu {
+                        Picker("Appearance", selection: $appearance) {
+                            ForEach(AppearancePreference.allCases, id: \.self) { option in
+                                Label(option.displayName, systemImage: option.symbolName)
+                                    .tag(option)
+                            }
+                        }
+                        .pickerStyle(.inline)
+                    } label: {
                         Image(systemName: appearance.symbolName)
                             .font(.title2)
                             .frame(width: Self.cornerButtonSize, height: Self.cornerButtonSize)
                     }
                     .accessibilityIdentifier("home.appearanceButton")
                     .accessibilityLabel("Appearance: \(appearance.displayName)")
-                    .accessibilityHint("Cycles between Light, Dark, and System appearance")
+                    .accessibilityHint("Opens a menu to choose Light, Dark, or System appearance")
                     .buttonStyle(.plain)
                     .glassEffect(.clear, in: .circle)
 

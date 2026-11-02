@@ -122,9 +122,9 @@ ScoreBarView shall show the current score and the current mode's best (GameState
 
 Allocated to AppearancePreference.
 
-### CMP-024 Appearance cycle
+### CMP-024 Appearance options
 
-AppearancePreference shall cycle Light → Dark → System → Light, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.
+AppearancePreference shall list Light, Dark and System, in that order, as the appearance menu options, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.
 
 ## ContentView and Home
 
@@ -185,7 +185,7 @@ dot_dashApp shall present ContentView in a WindowGroup, and the app target shall
 | Instructions and result (CMP-021) | REQ-005, REQ-006 | GameReadoutViews |
 | In-game mode switch (CMP-022) | REQ-006 | GameReadoutViews |
 | Score readout (CMP-023) | REQ-004, REQ-005 | GameReadoutViews |
-| Appearance cycle (CMP-024) | REQ-009 | AppearancePreference |
+| Appearance options (CMP-024) | REQ-009 | AppearancePreference |
 | Navigation and appearance (CMP-025) | REQ-009, REQ-012 | ContentView |
 | Best refresh (CMP-026) | REQ-010, REQ-012 | ContentView |
 | Home controls (CMP-027) | REQ-009, REQ-012 | ContentView |

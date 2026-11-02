@@ -428,7 +428,7 @@
         "kind": "class",
         "ownerId": null,
         "name": "AppearancePreference",
-        "documentation": "Light → Dark → System cycle, storage key, color scheme",
+        "documentation": "Light / Dark / System options, storage key, color scheme",
         "properties": {
           "stereotype": "Swift enum",
           "isAbstract": false
@@ -440,7 +440,7 @@
         "id": "class-relationship-fe082ad9-d41f-4e82-ae0f-7440538d7e52",
         "kind": "dependency",
         "ownerId": null,
-        "name": "cycle / colorScheme",
+        "name": "options / colorScheme",
         "documentation": "",
         "properties": {
           "sourceEnd": {

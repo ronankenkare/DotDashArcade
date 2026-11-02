@@ -211,7 +211,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "92e01aad23e1c566eb35b45ff183f8d80bb6d5ac17ba9f007f64d15a3262d831"
+          "contentHash": "074ce12216c5dbf162438082b6d60966e5286206354f2badb7e90e4713b89a03"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -254,13 +254,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/ContentView.swift#AppearancePreference",
-        "documentation": "Light → Dark → System cycle, storage key and color scheme.",
+        "documentation": "Light / Dark / System options, storage key and color scheme.",
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "AppearancePreference",
           "startLine": 6,
-          "endLine": 44,
-          "contentHash": "570550d1"
+          "endLine": 36,
+          "contentHash": "516c1968"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-10-28T17:19:53.689Z"
@@ -291,9 +291,9 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView",
-          "startLine": 46,
-          "endLine": 225,
-          "contentHash": "c7fd6a7c"
+          "startLine": 38,
+          "endLine": 226,
+          "contentHash": "e04b1b75"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -324,9 +324,9 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.body",
-          "startLine": 59,
-          "endLine": 80,
-          "contentHash": "31a60a9e"
+          "startLine": 51,
+          "endLine": 74,
+          "contentHash": "90715173"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -340,8 +340,8 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.refreshBests",
-          "startLine": 82,
-          "endLine": 84,
+          "startLine": 76,
+          "endLine": 78,
           "contentHash": "41fd2c8c"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -356,9 +356,9 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.HomeView",
-          "startLine": 97,
-          "endLine": 201,
-          "contentHash": "9f4bf7cd"
+          "startLine": 91,
+          "endLine": 202,
+          "contentHash": "5e5bfb1d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -1044,7 +1044,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "c7b600f28a230ca18cd87b6f335d2bc3f7b8f925751ec51cb093f1fe99315865"
+          "contentHash": "e365294f49c8c9af13a7a8a869314294a408f59242f816cd4123adbf5b34d38b"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -1077,7 +1077,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "66e2844bc6ee8426a56a1686e9e7feffdee344efea03d7b642e8f3ed7a870662"
+          "contentHash": "eb079de472fecee9254fb8538d2a02016adfb8624f4958d5e02522b42cb7604c"
         },
         "createdAt": "2026-10-21T21:41:30.594Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -2383,7 +2383,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-024 is allocated to the AppearancePreference class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-024 Appearance cycle\",{\"key\":\"CMP-024\",\"title\":\"Appearance cycle\",\"statement\":\"AppearancePreference shall cycle Light → Dark → System → Light, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-024 Appearance options\",{\"key\":\"CMP-024\",\"title\":\"Appearance options\",\"statement\":\"AppearancePreference shall list Light, Dark and System, in that order, as the appearance menu options, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
         "modifiedAt": "2026-10-28T17:30:31.622Z",
@@ -2621,8 +2621,8 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.appearance",
-          "startLine": 55,
-          "endLine": 57,
+          "startLine": 47,
+          "endLine": 49,
           "contentHash": "0aab38db"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
@@ -2670,7 +2670,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "AppearancePreference implements CMP-024; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-024 Appearance cycle\",{\"key\":\"CMP-024\",\"title\":\"Appearance cycle\",\"statement\":\"AppearancePreference shall cycle Light → Dark → System → Light, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-024 Appearance options\",{\"key\":\"CMP-024\",\"title\":\"Appearance options\",\"statement\":\"AppearancePreference shall list Light, Dark and System, in that order, as the appearance menu options, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
         "modifiedAt": "2026-10-28T17:30:31.623Z",
@@ -3192,14 +3192,14 @@
         "id": "code-artifact-0ed40176-d10d-4f2d-9e66-36e72918435d",
         "kind": "code-artifact",
         "ownerId": null,
-        "name": "dot-dashTests/dot_dashTests.swift#dot_dashTests.appearancePreferenceCyclesLightDarkSystem",
+        "name": "dot-dashTests/dot_dashTests.swift#dot_dashTests.appearancePreferenceMenuListsLightDarkSystem",
         "documentation": "Swift Testing unit test.",
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
-          "symbol": "dot_dashTests.appearancePreferenceCyclesLightDarkSystem",
+          "symbol": "dot_dashTests.appearancePreferenceMenuListsLightDarkSystem",
           "startLine": 18,
-          "endLine": 22,
-          "contentHash": "9b01d01c"
+          "endLine": 20,
+          "contentHash": "6b4d540b"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
         "modifiedAt": "2026-10-28T17:30:31.624Z"
@@ -3213,7 +3213,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-024; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-024 Appearance cycle\",{\"key\":\"CMP-024\",\"title\":\"Appearance cycle\",\"statement\":\"AppearancePreference shall cycle Light → Dark → System → Light, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-024 Appearance options\",{\"key\":\"CMP-024\",\"title\":\"Appearance options\",\"statement\":\"AppearancePreference shall list Light, Dark and System, in that order, as the appearance menu options, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
         "modifiedAt": "2026-10-28T17:30:31.624Z",
@@ -3230,8 +3230,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.appearancePreferenceFallsBackToSystemForNewInstalls",
-          "startLine": 24,
-          "endLine": 29,
+          "startLine": 22,
+          "endLine": 27,
           "contentHash": "f3c71609"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3246,7 +3246,7 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-024; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-024 Appearance cycle\",{\"key\":\"CMP-024\",\"title\":\"Appearance cycle\",\"statement\":\"AppearancePreference shall cycle Light → Dark → System → Light, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-024 Appearance options\",{\"key\":\"CMP-024\",\"title\":\"Appearance options\",\"statement\":\"AppearancePreference shall list Light, Dark and System, in that order, as the appearance menu options, map to a light, dark or unforced color scheme, and name its storage key dotdash_appearance_v1.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
         "modifiedAt": "2026-10-28T17:30:31.624Z",
@@ -3280,8 +3280,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.inPerfectAtZoneCenterIsTrue",
-          "startLine": 33,
-          "endLine": 39,
+          "startLine": 31,
+          "endLine": 37,
           "contentHash": "faa1bb2f"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3313,8 +3313,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.inPerfectOutsideFullZoneIsFalse",
-          "startLine": 41,
-          "endLine": 48,
+          "startLine": 39,
+          "endLine": 46,
           "contentHash": "2d321289"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3346,8 +3346,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.inPerfectInsideFullZoneButOutsideInnerIsFalse",
-          "startLine": 50,
-          "endLine": 57,
+          "startLine": 48,
+          "endLine": 55,
           "contentHash": "cc5f56bc"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3379,8 +3379,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.inPerfectAtInnerBoundaryIsTrue",
-          "startLine": 59,
-          "endLine": 67,
+          "startLine": 57,
+          "endLine": 65,
           "contentHash": "cb29d2eb"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3412,8 +3412,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.pickNewZoneCenterStaysInBounds",
-          "startLine": 71,
-          "endLine": 80,
+          "startLine": 69,
+          "endLine": 78,
           "contentHash": "ba118f25"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3445,8 +3445,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.pickNewZoneCenterMovesByMinMove",
-          "startLine": 82,
-          "endLine": 95,
+          "startLine": 80,
+          "endLine": 93,
           "contentHash": "1d007751"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3478,8 +3478,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.pickNewZoneCenterHandlesExtremePrevCenter",
-          "startLine": 97,
-          "endLine": 107,
+          "startLine": 95,
+          "endLine": 105,
           "contentHash": "d85ae956"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3511,8 +3511,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.bestScoresLoadFromUserDefaults",
-          "startLine": 132,
-          "endLine": 139,
+          "startLine": 130,
+          "endLine": 137,
           "contentHash": "51600e92"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3544,8 +3544,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.legacyBestScoreMigratesToClassic",
-          "startLine": 141,
-          "endLine": 147,
+          "startLine": 139,
+          "endLine": 145,
           "contentHash": "1c6fec71"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3577,8 +3577,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.legacyMigrationDoesNotOverwriteExistingClassicBest",
-          "startLine": 158,
-          "endLine": 164,
+          "startLine": 156,
+          "endLine": 162,
           "contentHash": "1aca64e7"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3610,8 +3610,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.gameOverPersistsNewBestClassic",
-          "startLine": 166,
-          "endLine": 174,
+          "startLine": 164,
+          "endLine": 172,
           "contentHash": "d1a2be7f"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3643,8 +3643,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.gameOverDoesNotRegressBestClassic",
-          "startLine": 176,
-          "endLine": 183,
+          "startLine": 174,
+          "endLine": 181,
           "contentHash": "81e02aee"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -3676,8 +3676,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.gameOverPersistsNewBestAdvanced",
-          "startLine": 185,
-          "endLine": 193,
+          "startLine": 183,
+          "endLine": 191,
           "contentHash": "cc7e8956"
         },
         "createdAt": "2026-10-28T17:30:31.624Z",
@@ -5194,14 +5194,14 @@
         "id": "code-artifact-1e78e7e4-55a5-4c83-8325-56b23e083c26",
         "kind": "code-artifact",
         "ownerId": null,
-        "name": "dot-dashUITests/dot_dashUITests.swift#dot_dashUITests.testAppearanceButtonCyclesAndPersists",
+        "name": "dot-dashUITests/dot_dashUITests.swift#dot_dashUITests.testAppearanceMenuSelectsAndPersists",
         "documentation": "XCUITest flow.",
         "properties": {
           "path": "dot-dashUITests/dot_dashUITests.swift",
-          "symbol": "dot_dashUITests.testAppearanceButtonCyclesAndPersists",
+          "symbol": "dot_dashUITests.testAppearanceMenuSelectsAndPersists",
           "startLine": 67,
           "endLine": 94,
-          "contentHash": "04f1501d"
+          "contentHash": "033b815d"
         },
         "createdAt": "2026-10-28T17:30:31.626Z",
         "modifiedAt": "2026-10-28T17:30:31.626Z"
@@ -5233,8 +5233,8 @@
           "path": "dot-dashUITests/dot_dashUITests.swift",
           "symbol": "dot_dashUITests.testCornerButtonsStayTheSameSizeAcrossAppearances",
           "startLine": 97,
-          "endLine": 113,
-          "contentHash": "5b41cad6"
+          "endLine": 114,
+          "contentHash": "de2535bc"
         },
         "createdAt": "2026-10-28T17:30:31.626Z",
         "modifiedAt": "2026-10-28T17:30:31.626Z"
@@ -5265,8 +5265,8 @@
         "properties": {
           "path": "dot-dashUITests/dot_dashUITests.swift",
           "symbol": "dot_dashUITests.testSupportMenuKeepsBottomToolbarStationary",
-          "startLine": 116,
-          "endLine": 147,
+          "startLine": 126,
+          "endLine": 157,
           "contentHash": "9bd2b1cb"
         },
         "createdAt": "2026-10-28T17:30:31.627Z",
@@ -5298,8 +5298,8 @@
         "properties": {
           "path": "dot-dashUITests/dot_dashUITests.swift",
           "symbol": "dot_dashUITests.testPlayNavigatesToGame",
-          "startLine": 150,
-          "endLine": 165,
+          "startLine": 160,
+          "endLine": 175,
           "contentHash": "b045199f"
         },
         "createdAt": "2026-10-28T17:30:31.627Z",
@@ -5348,8 +5348,8 @@
         "properties": {
           "path": "dot-dashUITests/dot_dashUITests.swift",
           "symbol": "dot_dashUITests.testTapScoresOrEndsGame",
-          "startLine": 168,
-          "endLine": 206,
+          "startLine": 178,
+          "endLine": 216,
           "contentHash": "b0c9303a"
         },
         "createdAt": "2026-10-28T17:30:31.627Z",
@@ -5398,8 +5398,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.tapAfterMissKeepsGameOverCard",
-          "startLine": 210,
-          "endLine": 218,
+          "startLine": 208,
+          "endLine": 216,
           "contentHash": "cf57b7d2"
         },
         "createdAt": "2026-11-02T12:00:00.000Z",
@@ -5697,8 +5697,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.homeScreenLoadSeesMigratedLegacyBest",
-          "startLine": 149,
-          "endLine": 156,
+          "startLine": 147,
+          "endLine": 154,
           "contentHash": "b27b2d56"
         },
         "createdAt": "2026-11-02T12:00:00.000Z",
@@ -5814,8 +5814,8 @@
         "properties": {
           "path": "dot-dashTests/dot_dashTests.swift",
           "symbol": "dot_dashTests.pauseToHelpPersistsRunningScoreAsBest",
-          "startLine": 195,
-          "endLine": 208,
+          "startLine": 193,
+          "endLine": 206,
           "contentHash": "27e853e7"
         },
         "createdAt": "2026-11-02T12:00:00.000Z",

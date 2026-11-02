@@ -15,10 +15,8 @@ struct dot_dashTests {
 
     // MARK: - Appearance preference
 
-    @Test func appearancePreferenceCyclesLightDarkSystem() {
-        #expect(AppearancePreference.light.next == .dark)
-        #expect(AppearancePreference.dark.next == .system)
-        #expect(AppearancePreference.system.next == .light)
+    @Test func appearancePreferenceMenuListsLightDarkSystem() {
+        #expect(AppearancePreference.allCases == [.light, .dark, .system])
     }
 
     @Test func appearancePreferenceFallsBackToSystemForNewInstalls() {
