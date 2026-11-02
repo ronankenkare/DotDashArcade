@@ -2,7 +2,7 @@
   "format": "plus-c-project-part",
   "version": 1,
   "part": "project",
-  "savedAt": "2026-10-28T17:30:31.697Z",
+  "savedAt": "2026-11-02T12:00:00.000Z",
   "project": {
     "elements": [
       {
@@ -76,10 +76,10 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "712c132600399e4c38f81b297ef3e22c916bb8f6df057efe5857196351709e42"
+          "contentHash": "ad1b4675701f51b0463de12e5de7219a122b95ddc226ffb854a4becbac483d68"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
-        "modifiedAt": "2026-10-21T21:41:30.593Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "satisfies-8183b955-7e3d-42c2-b051-8fd0349b23f2",
@@ -434,16 +434,16 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameBarView",
-        "documentation": "Canvas for bar, target, marker and particles; forwards taps to handleTap.",
+        "documentation": "Canvas for bar, target clipped to the bar, marker and particles; forwards taps to handleTap.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameBarView",
           "startLine": 104,
-          "endLine": 155,
-          "contentHash": "189b5256"
+          "endLine": 156,
+          "contentHash": "632de317"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-ff761012-06dd-4927-a063-e3705b77b7ae",
@@ -471,12 +471,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "HelpOverlayView",
-          "startLine": 158,
-          "endLine": 253,
+          "startLine": 159,
+          "endLine": 254,
           "contentHash": "939a1bf1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-2f6f5652-2218-433f-a08c-81291042049c",
@@ -504,12 +504,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "ModeBadgeView",
-          "startLine": 256,
-          "endLine": 268,
+          "startLine": 257,
+          "endLine": 269,
           "contentHash": "230e0363"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-bd3722f2-1b48-445a-9d54-95ba76fc00fd",
@@ -537,12 +537,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "ScoreBarView",
-          "startLine": 271,
-          "endLine": 289,
+          "startLine": 272,
+          "endLine": 290,
           "contentHash": "f27292f0"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-917898cc-43a2-4b15-8f03-592079779844",
@@ -570,12 +570,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState",
-          "startLine": 294,
-          "endLine": 624,
+          "startLine": 295,
+          "endLine": 625,
           "contentHash": "f17dd7b7"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-906e5bf0-e804-469b-b3cb-b7d7e7dbe68d",
@@ -603,12 +603,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.init",
-          "startLine": 380,
-          "endLine": 388,
+          "startLine": 381,
+          "endLine": 389,
           "contentHash": "72ab03ea"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-ca05e966-20ab-42fb-8312-e5c767bb9dd3",
@@ -619,12 +619,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.startLoop",
-          "startLine": 391,
-          "endLine": 397,
+          "startLine": 392,
+          "endLine": 398,
           "contentHash": "3e275a06"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-c42bdffb-6c65-4a5d-bd7f-3c936a6a58e7",
@@ -635,12 +635,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.stopLoop",
-          "startLine": 399,
-          "endLine": 402,
+          "startLine": 400,
+          "endLine": 403,
           "contentHash": "b6350e8f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-d3ef774a-ccd0-4d08-b3bf-a19faecfff5f",
@@ -651,12 +651,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.reset",
-          "startLine": 404,
-          "endLine": 419,
+          "startLine": 405,
+          "endLine": 420,
           "contentHash": "00d659cc"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-c4ea922e-bfbf-4143-8600-95124bb03243",
@@ -667,12 +667,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pauseToHelp",
-          "startLine": 421,
-          "endLine": 423,
+          "startLine": 422,
+          "endLine": 424,
           "contentHash": "5cf194a6"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-df66cc56-945d-4be2-bf13-92607dd1792c",
@@ -683,12 +683,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.step",
-          "startLine": 427,
-          "endLine": 442,
+          "startLine": 428,
+          "endLine": 443,
           "contentHash": "c7a3e97b"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-4ba055f4-b2cd-43fe-bd54-61865fd3fecd",
@@ -699,12 +699,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.advanceMarker",
-          "startLine": 445,
-          "endLine": 452,
+          "startLine": 446,
+          "endLine": 453,
           "contentHash": "b442c5ca"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-cc29da6a-272f-4588-b1ca-d5a8e39ae7c9",
@@ -715,12 +715,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.updateParticles",
-          "startLine": 454,
-          "endLine": 461,
+          "startLine": 455,
+          "endLine": 462,
           "contentHash": "5b8deef9"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-3a14db9e-64d0-4006-bcd2-af51ff8d70d0",
@@ -731,12 +731,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.handleTap",
-          "startLine": 465,
-          "endLine": 499,
+          "startLine": 466,
+          "endLine": 500,
           "contentHash": "ab9283e0"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-9d58b26a-0e0e-40ab-aa89-bedaf8e1f6c2",
@@ -747,12 +747,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.currentSettings",
-          "startLine": 501,
-          "endLine": 526,
+          "startLine": 502,
+          "endLine": 527,
           "contentHash": "68aa2fe3"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-d88948fe-0bb0-4201-8d93-ee67ef6d2889",
@@ -763,12 +763,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.changeMode",
-          "startLine": 528,
-          "endLine": 557,
+          "startLine": 529,
+          "endLine": 558,
           "contentHash": "5f49528d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-73d01c59-0af5-4f38-ba0a-0905cd6b7cdf",
@@ -779,12 +779,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inZone",
-          "startLine": 561,
-          "endLine": 564,
+          "startLine": 562,
+          "endLine": 565,
           "contentHash": "44f0424d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-80dd9cb1-d5cc-4ae4-b00b-1c0b6edfa178",
@@ -795,12 +795,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inPerfect",
-          "startLine": 566,
-          "endLine": 570,
+          "startLine": 567,
+          "endLine": 571,
           "contentHash": "4bd6431e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-93c60cab-70e5-422e-8525-6050bd09f399",
@@ -811,12 +811,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickThemeIndex",
-          "startLine": 574,
-          "endLine": 579,
+          "startLine": 575,
+          "endLine": 580,
           "contentHash": "80d5dad8"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-1a336edf-09ce-4223-b49f-457ed0e27090",
@@ -827,12 +827,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.spawnBurst",
-          "startLine": 588,
-          "endLine": 604,
+          "startLine": 589,
+          "endLine": 605,
           "contentHash": "3ac94ea1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-62ec77dd-781f-438e-89bb-b4e836fb3559",
@@ -843,12 +843,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickNewZoneCenter",
-          "startLine": 606,
-          "endLine": 623,
+          "startLine": 607,
+          "endLine": 624,
           "contentHash": "6a4c493f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "satisfies-352ffbd8-0fa1-4c97-b0ed-c76a7b459bfb",
@@ -1533,10 +1533,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-003; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target, edges included, and a hit near the target's center shall be classified as perfect.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target, edges included; the drawn target shall cover exactly that range, and a hit near the target's center shall be classified as perfect.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-08e0008e-bcc9-4baf-a11b-af4de9fd13af",
         "targetId": "document-requirement-19002146-a4e2-48d5-828a-92964f05b443",
         "soft": true
@@ -1567,10 +1567,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-003; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target, edges included, and a hit near the target's center shall be classified as perfect.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target, edges included; the drawn target shall cover exactly that range, and a hit near the target's center shall be classified as perfect.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-c59f4c55-1519-4eaa-be4d-ea3b48f40fb1",
         "targetId": "document-requirement-19002146-a4e2-48d5-828a-92964f05b443",
         "soft": true
@@ -2179,10 +2179,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Derived from REQ-003; Plus-C has no derives kind, so derivation is recorded as refines.",
-          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target, edges included, and a hit near the target's center shall be classified as perfect.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"REQ-003 Inclusive hit classification\",{\"key\":\"REQ-003\",\"title\":\"Inclusive hit classification\",\"statement\":\"A tap during a run shall count as a hit exactly when the marker is inside the target, edges included; the drawn target shall cover exactly that range, and a hit near the target's center shall be classified as perfect.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "document-requirement-4155f774-8d79-4df6-a422-186b2712e2d3",
         "targetId": "document-requirement-19002146-a4e2-48d5-828a-92964f05b443",
         "soft": true
@@ -2213,10 +2213,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-020 is allocated to the GameBarView class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-020 Game surface\",{\"key\":\"CMP-020\",\"title\":\"Game surface\",\"statement\":\"GameBarView shall draw the bar, target, marker and particles on a Canvas at 40% of its height and forward every tap, with its width, to handleTap.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-020 Game surface\",{\"key\":\"CMP-020\",\"title\":\"Game surface\",\"statement\":\"GameBarView shall draw the bar, the target clipped at both bar ends to exactly the range inZone accepts, the marker and particles on a Canvas at 40% of its height, and forward every tap, with its width, to handleTap.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-1ebd8fd1-7d42-4c71-86da-b9b5e9792974",
         "targetId": "document-requirement-4155f774-8d79-4df6-a422-186b2712e2d3",
         "soft": true
@@ -2637,12 +2637,12 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.deinit",
-          "startLine": 389,
-          "endLine": 389,
+          "startLine": 390,
+          "endLine": 390,
           "contentHash": "79eebad7"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-4816eafd-b84d-4e65-8777-0d2c76d704d6",
@@ -2789,10 +2789,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameBarView implements CMP-020; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-020 Game surface\",{\"key\":\"CMP-020\",\"title\":\"Game surface\",\"statement\":\"GameBarView shall draw the bar, target, marker and particles on a Canvas at 40% of its height and forward every tap, with its width, to handleTap.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-020 Game surface\",{\"key\":\"CMP-020\",\"title\":\"Game surface\",\"statement\":\"GameBarView shall draw the bar, the target clipped at both bar ends to exactly the range inZone accepts, the marker and particles on a Canvas at 40% of its height, and forward every tap, with its width, to handleTap.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-0ec252cb-19c2-4afa-9d14-da11186a3525",
         "targetId": "document-requirement-4155f774-8d79-4df6-a422-186b2712e2d3",
         "soft": true
