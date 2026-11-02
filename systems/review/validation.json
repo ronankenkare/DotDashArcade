@@ -131,5 +131,34 @@
     "negativeChecks": "In scratch copies, edited traced lines, a shifted symbol, and an injected code → REQ trace were each rejected",
     "systemRequirementsRewritten": "REQ-001…012 restated at observable behavior level; exact values moved to CMP-001…029",
     "appTestsRun": false
+  },
+  "codeReviewFixes": {
+    "date": "2026-11-02",
+    "fixesApplied": [
+      "zone-clip"
+    ],
+    "newTestParts": [],
+    "verificationCoverage": {
+      "componentWithTests": "18 of 29",
+      "systemWithUiTests": "4 of 12"
+    },
+    "svgPreviewsRegenerated": [],
+    "svgGenerator": "Graphviz from the native models; sequence previews reproduce the earlier output exactly, state and class layouts use the same style with recalibrated spacing",
+    "appTestsRun": true,
+    "unitTests": {
+      "device": "iPhone 17 Pro simulator / iOS 27.0",
+      "target": "dot-dashTests",
+      "failures": 0
+    },
+    "uiTests": {
+      "device": "iPhone 17 Pro simulator / iOS 27.0",
+      "run": [
+        "testPlayNavigatesToGame",
+        "testTapScoresOrEndsGame"
+      ],
+      "failures": 0,
+      "fullSuiteRun": false
+    },
+    "deviceChecked": false
   }
 }

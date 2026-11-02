@@ -85,3 +85,9 @@ Use the installed Plus-C application's model validators and split/merge round tr
 ## Bottom toolbar regression — October 21, 2026
 
 On October 21, 2026, the simulator build and three focused UI tests passed on iPhone 17 (iOS 27.0): testAppearanceButtonCyclesAndPersists, testCornerButtonsStayTheSameSizeAcrossAppearances, and testSupportMenuKeepsBottomToolbarStationary. The support-menu test checks alignment and unchanged vertical positions before opening, while open, and after dismissal in portrait and landscape. The full test suite was not run. The refreshed Duo Home screenshot was visually inspected; Duo automated tests were stopped during runner startup.
+
+## Code-review fixes — November 2, 2026
+
+On November 2, 2026, with the fixes below applied, the dot-dashTests target and the UI tests testPlayNavigatesToGame and testTapScoresOrEndsGame passed on the iPhone 17 Pro simulator (iOS 27.0). The rest of the UI suite was not run, and no fix was checked on a physical device.
+
+- The drawn target is clipped at both bar ends to match inZone.

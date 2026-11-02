@@ -12,7 +12,7 @@ During a run, the marker shall move continuously along the bar at the run's curr
 
 ## REQ-003 Inclusive hit classification
 
-A tap during a run shall count as a hit exactly when the marker is inside the target, edges included, and a hit near the target's center shall be classified as perfect.
+A tap during a run shall count as a hit exactly when the marker is inside the target, edges included; the drawn target shall cover exactly that range, and a hit near the target's center shall be classified as perfect.
 
 ## REQ-004 Hit progression
 

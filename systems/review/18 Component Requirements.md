@@ -100,7 +100,7 @@ Allocated to GameBarView.
 
 ### CMP-020 Game surface
 
-GameBarView shall draw the bar, target, marker and particles on a Canvas at 40% of its height and forward every tap, with its width, to handleTap.
+GameBarView shall draw the bar, the target clipped at both bar ends to exactly the range inZone accepts, the marker and particles on a Canvas at 40% of its height, and forward every tap, with its width, to handleTap.
 
 ## Game readouts
 

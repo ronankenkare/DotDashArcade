@@ -122,10 +122,11 @@ private struct GameBarView: View {
                     let half = barW * game.zoneWidth / 2
                     let zx = barX + (game.zoneCenter * barW) - half
                     let zw = barW * game.zoneWidth
+                    // Clip both ends to the bar so the drawn zone matches inZone's range.
                     let zoneRect = CGRect(
                         x: max(zx, barX),
                         y: barY - 12,
-                        width: min(zw, barX + barW - max(zx, barX)),
+                        width: min(zx + zw, barX + barW) - max(zx, barX),
                         height: 24
                     )
                     let zoneColor = (game.mode == .classic) ? Color("ClassicMode") : Color("AdvancedMode")
