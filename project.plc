@@ -5804,6 +5804,39 @@
         "sourceId": "document-requirement-78f8ae86-f853-4781-99b1-67bec30f6659",
         "targetId": "document-requirement-e04d54ff-d411-4d6c-8d24-f3f9c7937851",
         "soft": true
+      },
+      {
+        "id": "code-artifact-ca02aebf-00cb-4e97-8188-defee6b1aa50",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dash/GameView.swift#BestScores",
+        "documentation": "Best-score UserDefaults keys and the legacy single-best migration, shared by Home and GameState.",
+        "properties": {
+          "path": "dot-dash/GameView.swift",
+          "symbol": "BestScores",
+          "startLine": 299,
+          "endLine": 316,
+          "contentHash": "39116d21"
+        },
+        "createdAt": "2026-11-02T18:00:00.000Z",
+        "modifiedAt": "2026-11-02T18:00:00.000Z"
+      },
+      {
+        "id": "implements-2a4b004f-a1d7-48f2-ac7f-b6151ccc0abe",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "Swift type realizing the BestScores architecture class; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"class\",\"BestScores\",{\"stereotype\":\"Swift enum\",\"isAbstract\":false}]"
+        },
+        "createdAt": "2026-11-02T18:00:00.000Z",
+        "modifiedAt": "2026-11-02T18:00:00.000Z",
+        "sourceId": "code-artifact-ca02aebf-00cb-4e97-8188-defee6b1aa50",
+        "targetId": "classifier-054fd19f-b85c-4848-b84c-7e33b2731cb7",
+        "soft": true
       }
     ],
     "views": []

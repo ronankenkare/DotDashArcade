@@ -96,13 +96,13 @@
         "id": "message-7f9457ac-683a-4ade-885a-1b8cd2835510",
         "kind": "synchronous",
         "ownerId": null,
-        "name": "Tap game surface",
+        "name": "Touch down on game surface",
         "documentation": "",
         "properties": {
           "order": 0
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-11-02T18:00:00.000Z",
         "sourceId": "participant-744706d8-2c94-4767-9223-a552c9de551b",
         "targetId": "participant-5493826a-cddb-48a4-9e37-37e70dfb2894"
       },

@@ -79,6 +79,7 @@ Each code part names a Swift symbol and its line range and records the Plus-C li
 | GameView.swift · HelpOverlayView | 162–257 | GameReadoutViews class, CMP-021 |
 | GameView.swift · ModeBadgeView | 260–272 | GameReadoutViews class, CMP-022 |
 | GameView.swift · ScoreBarView | 275–293 | GameReadoutViews class, CMP-023 |
+| GameView.swift · BestScores | 299–316 | BestScores class |
 | GameView.swift · BestScores.load | 309–315 | CMP-018, CMP-026 |
 | GameView.swift · GameState | 321–655 | GameState class |
 | GameView.swift · GameState.init | 408–412 | CMP-018 |

@@ -4,10 +4,10 @@
   "diagramCount": 12,
   "documentCount": 7,
   "requirementCount": 47,
-  "elementCount": 654,
-  "viewCount": 287,
-  "sourceArtifacts": 109,
-  "traceCount": 238,
+  "elementCount": 671,
+  "viewCount": 302,
+  "sourceArtifacts": 110,
+  "traceCount": 239,
   "roundTrip": "passed",
   "findings": [
     {
@@ -208,5 +208,27 @@
       "fullSuiteRun": false
     },
     "notCheckedOnDevice": "Target clipping, display-link idle pause, haptics"
+  },
+  "codeReviewDiagramRefresh": {
+    "date": "2026-11-02",
+    "changes": [
+      "07 Software Architecture: added BestScores (Swift enum) with ContentView and GameState reads and its UserDefaults dependency; ContentView → UserDefaults is now appearance only; GameState → UserDefaults is best writes",
+      "08 Run State Machine: Game Over ignores bar taps; the pause transition keeps a new best",
+      "09 Display Link Lifecycle: added Link paused (idle), entered from step when nothing moves and left by reset, stopLoop or model release",
+      "10 Successful Tap and 11 Miss sequences: the bar acts at touch-down; 11 records the best through recordBest",
+      "15 Persistence Ownership: added BestScores between both clients and UserDefaults for loading and legacy migration"
+    ],
+    "codeTrace": "dot-dash/GameView.swift#BestScores implements the BestScores architecture class",
+    "svgPreviewsRegenerated": [
+      "07-software-architecture.svg",
+      "08-run-state-machine.svg",
+      "09-display-link-lifecycle.svg",
+      "10-successful-tap-sequence.svg",
+      "11-miss-and-persistence-sequence.svg",
+      "12-display-frame-sequence.svg",
+      "15-persistence-ownership.svg"
+    ],
+    "svgGenerator": "Graphviz from the native models; sequence previews reproduce the earlier output exactly, state and class layouts use the same style with recalibrated spacing",
+    "appTestsRun": false
   }
 }
