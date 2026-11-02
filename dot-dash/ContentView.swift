@@ -80,8 +80,7 @@ struct ContentView: View {
     }
 
     private func refreshBests() {
-        bestClassic = UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1")
-        bestAdvanced = UserDefaults.standard.integer(forKey: "dotdash_best_advanced_v1")
+        (bestClassic, bestAdvanced) = BestScores.load(from: .standard)
     }
 
     private struct AppBackground: View {
