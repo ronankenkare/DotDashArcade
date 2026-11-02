@@ -1,6 +1,6 @@
 # Dot Dash
 
-A minimalist reflex game for iOS and iPadOS. A dot bounces back and forth across a bar — tap the moment it lands inside the target zone. Every hit speeds up the dot; Advanced mode also shrinks the target zone. One miss ends the run.
+A minimalist reflex game for iOS and iPadOS. A dot bounces back and forth across a bar — tap the moment it lands inside the target zone. Every hit speeds up the dot, up to a per-mode cap; Advanced mode also shrinks the target zone. One miss ends the run.
 
 - **Platform:** iOS / iPadOS 26.0+ (iPhone + iPad, universal)
 - **Stack:** SwiftUI, UIKit (haptics), `CADisplayLink` for the game loop
@@ -52,6 +52,7 @@ dot-dash/
 
 All game state and rendering live in one file to keep the dependency graph trivial:
 
+- `BestScores` — best-score UserDefaults keys and the legacy single-best migration, shared by Home and `GameState`.
 - `GameState` (`@MainActor ObservableObject`) — marker position, zone, score, mode, particles, haptics, best-score persistence, and the `CADisplayLink` loop (`startLoop` / `stopLoop` / `step`).
 - `GameBarView` — `Canvas`-based bar, zone, marker, and particle burst rendering.
 - `HelpOverlayView` — how-to-play and game-over card.

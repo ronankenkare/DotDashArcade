@@ -106,88 +106,112 @@ struct dot_dashTests {
 
     // MARK: - Best-score persistence
 
-    private func clearBestScoreKeys() {
-        let d = UserDefaults.standard
-        d.removeObject(forKey: "dotdash_best_classic_v1")
-        d.removeObject(forKey: "dotdash_best_advanced_v1")
-        d.removeObject(forKey: "dotdash_best_v1")
+    /// A throwaway defaults domain per test, so suites running in parallel never
+    /// share best-score keys and the real app's bests are never touched.
+    private func makeDefaults() -> UserDefaults {
+        let name = "dotdash-tests-\(UUID().uuidString)"
+        let d = UserDefaults(suiteName: name)!
+        d.removePersistentDomain(forName: name)
+        return d
+    }
+
+    /// A running game whose marker is clearly outside the zone (0.15...0.25).
+    private func makeMissingGame(mode: GameState.Mode, score: Int, defaults: UserDefaults) -> GameState {
+        let g = GameState(defaults: defaults)
+        g.mode = mode
+        g.running = true
+        g.score = score
+        g.zoneCenter = 0.2
+        g.zoneWidth = 0.1
+        g.markerPos = 0.9
+        return g
     }
 
     @Test func bestScoresLoadFromUserDefaults() {
-        clearBestScoreKeys()
-        defer { clearBestScoreKeys() }
-        UserDefaults.standard.set(7, forKey: "dotdash_best_classic_v1")
-        UserDefaults.standard.set(12, forKey: "dotdash_best_advanced_v1")
-        let g = GameState()
+        let d = makeDefaults()
+        d.set(7, forKey: BestScores.classicKey)
+        d.set(12, forKey: BestScores.advancedKey)
+        let g = GameState(defaults: d)
         #expect(g.bestClassic == 7)
         #expect(g.bestAdvanced == 12)
     }
 
     @Test func legacyBestScoreMigratesToClassic() {
-        clearBestScoreKeys()
-        defer { clearBestScoreKeys() }
-        UserDefaults.standard.set(9, forKey: "dotdash_best_v1")
-        let g = GameState()
+        let d = makeDefaults()
+        d.set(9, forKey: BestScores.legacyKey)
+        let g = GameState(defaults: d)
         #expect(g.bestClassic == 9)
-        #expect(UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1") == 9)
+        #expect(d.integer(forKey: BestScores.classicKey) == 9)
+    }
+
+    @Test func homeScreenLoadSeesMigratedLegacyBest() {
+        // ContentView reads bests through BestScores.load without creating a GameState.
+        let d = makeDefaults()
+        d.set(15, forKey: BestScores.legacyKey)
+        let bests = BestScores.load(from: d)
+        #expect(bests.classic == 15)
+        #expect(bests.advanced == 0)
     }
 
     @Test func legacyMigrationDoesNotOverwriteExistingClassicBest() {
-        clearBestScoreKeys()
-        defer { clearBestScoreKeys() }
-        UserDefaults.standard.set(9, forKey: "dotdash_best_v1")
-        UserDefaults.standard.set(20, forKey: "dotdash_best_classic_v1")
-        let g = GameState()
+        let d = makeDefaults()
+        d.set(9, forKey: BestScores.legacyKey)
+        d.set(20, forKey: BestScores.classicKey)
+        let g = GameState(defaults: d)
         #expect(g.bestClassic == 20)
     }
 
     @Test func gameOverPersistsNewBestClassic() {
-        clearBestScoreKeys()
-        defer { clearBestScoreKeys() }
-        UserDefaults.standard.set(2, forKey: "dotdash_best_classic_v1")
-        let g = GameState()
-        g.mode = .classic
-        g.running = true
-        g.score = 5
-        g.zoneCenter = 0.2
-        g.zoneWidth = 0.1    // zone 0.15...0.25
-        g.markerPos = 0.9    // clearly a miss
+        let d = makeDefaults()
+        d.set(2, forKey: BestScores.classicKey)
+        let g = makeMissingGame(mode: .classic, score: 5, defaults: d)
         g.handleTap(screenWidth: 320)
         #expect(g.gameOver == true)
         #expect(g.bestClassic == 5)
-        #expect(UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1") == 5)
+        #expect(d.integer(forKey: BestScores.classicKey) == 5)
     }
 
     @Test func gameOverDoesNotRegressBestClassic() {
-        clearBestScoreKeys()
-        defer { clearBestScoreKeys() }
-        UserDefaults.standard.set(10, forKey: "dotdash_best_classic_v1")
-        let g = GameState()
-        g.mode = .classic
-        g.running = true
-        g.score = 3
-        g.zoneCenter = 0.2
-        g.zoneWidth = 0.1
-        g.markerPos = 0.9
+        let d = makeDefaults()
+        d.set(10, forKey: BestScores.classicKey)
+        let g = makeMissingGame(mode: .classic, score: 3, defaults: d)
         g.handleTap(screenWidth: 320)
         #expect(g.bestClassic == 10)
-        #expect(UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1") == 10)
+        #expect(d.integer(forKey: BestScores.classicKey) == 10)
     }
 
     @Test func gameOverPersistsNewBestAdvanced() {
-        clearBestScoreKeys()
-        defer { clearBestScoreKeys() }
-        let g = GameState()
-        g.mode = .advanced
-        g.running = true
-        g.score = 8
-        g.zoneCenter = 0.2
-        g.zoneWidth = 0.1
-        g.markerPos = 0.9
+        let d = makeDefaults()
+        let g = makeMissingGame(mode: .advanced, score: 8, defaults: d)
         g.handleTap(screenWidth: 320)
         #expect(g.bestAdvanced == 8)
-        #expect(UserDefaults.standard.integer(forKey: "dotdash_best_advanced_v1") == 8)
+        #expect(d.integer(forKey: BestScores.advancedKey) == 8)
         // Classic must not be touched by an advanced-mode miss.
-        #expect(UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1") == 0)
+        #expect(d.integer(forKey: BestScores.classicKey) == 0)
+    }
+
+    @Test func pauseToHelpPersistsRunningScoreAsBest() {
+        let d = makeDefaults()
+        d.set(20, forKey: BestScores.classicKey)
+        let g = GameState(defaults: d)
+        g.mode = .classic
+        g.running = true
+        g.score = 30
+        g.pauseToHelp()
+        #expect(g.running == false)
+        #expect(g.showHelp == true)
+        #expect(g.gameOver == false)
+        #expect(g.bestClassic == 30)
+        #expect(d.integer(forKey: BestScores.classicKey) == 30)
+    }
+
+    @Test func tapAfterMissKeepsGameOverCard() {
+        let g = makeMissingGame(mode: .classic, score: 4, defaults: makeDefaults())
+        g.handleTap(screenWidth: 320)   // miss → game over
+        g.handleTap(screenWidth: 320)   // follow-up tap on the bar
+        #expect(g.gameOver == true)
+        #expect(g.running == false)
+        #expect(g.showHelp == true)
+        #expect(g.score == 4)
     }
 }

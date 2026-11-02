@@ -142,11 +142,11 @@
         "name": "",
         "documentation": "",
         "properties": {
-          "trigger": "Play Again or bar tap",
+          "trigger": "Play Again",
           "effect": "reset"
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:43:31.717Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "state-a619f139-0518-4173-80af-8c2f3d892e25",
         "targetId": "state-213e8aaf-4644-4cdd-b546-a2c48ef2b815"
       },
@@ -158,10 +158,10 @@
         "documentation": "",
         "properties": {
           "trigger": "inactive / background",
-          "effect": "pauseToHelp; stopLoop"
+          "effect": "pauseToHelp (keep new best); stopLoop"
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:43:31.717Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "state-213e8aaf-4644-4cdd-b546-a2c48ef2b815",
         "targetId": "state-b82d5cc1-b70e-4390-ba14-597a51643f31"
       },
@@ -303,6 +303,21 @@
         "modifiedAt": "2026-10-28T17:14:21.299Z",
         "sourceId": "state-2a132424-e7af-4761-9040-1054c17911af",
         "targetId": "state-2a132424-e7af-4761-9040-1054c17911af"
+      },
+      {
+        "id": "transition-d497074b-4765-52bb-ba2c-b9640153f172",
+        "kind": "transition",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "trigger": "bar tap",
+          "effect": "ignored"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "state-a619f139-0518-4173-80af-8c2f3d892e25",
+        "targetId": "state-a619f139-0518-4173-80af-8c2f3d892e25"
       }
     ],
     "views": [
@@ -553,6 +568,19 @@
         "kind": "edge",
         "diagramId": "diagram-dd108326-a2c0-4953-9a4c-8fb023a10365",
         "elementId": "transition-dc7c5643-ab69-42bc-a5b1-80fd6482df6b",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "straight",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-2e4f32f6-ff1f-5c24-b502-924574a7b1fc",
+        "kind": "edge",
+        "diagramId": "diagram-dd108326-a2c0-4953-9a4c-8fb023a10365",
+        "elementId": "transition-d497074b-4765-52bb-ba2c-b9640153f172",
         "parentViewId": null,
         "style": {},
         "routeStyle": "straight",

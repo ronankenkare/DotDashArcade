@@ -81,11 +81,11 @@
         "id": "action-334f5afa-860c-41fc-a400-8c73dd12196b",
         "kind": "action",
         "ownerId": null,
-        "name": "Clamp width to mode minimum ... 0.5",
+        "name": "Cap speed; clamp width to minimum ... 0.5",
         "documentation": "",
         "properties": {},
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:41:30.592Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "action-0a90b0ff-f0d2-4c49-a692-e7f5aa0efe84",

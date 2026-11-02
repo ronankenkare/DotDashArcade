@@ -15,15 +15,6 @@ import UIKit
 @Suite(.serialized)
 struct GameStateLifecycleTests {
 
-    // MARK: - Helpers
-
-    private func clearBestScoreKeys() {
-        let d = UserDefaults.standard
-        d.removeObject(forKey: "dotdash_best_classic_v1")
-        d.removeObject(forKey: "dotdash_best_advanced_v1")
-        d.removeObject(forKey: "dotdash_best_v1")
-    }
-
     // MARK: - reset()
 
     @Test func resetRestoresClassicStartState() {
@@ -35,7 +26,6 @@ struct GameStateLifecycleTests {
         g.showHelp = true
         g.running = false
         g.themeIdx = 3
-        g.flash = 0.7
         g.particles.append(GameState.Particle(x: 1, y: 1, vx: 0, vy: 0, life: 1, age: 0, good: true))
         g.particles.append(GameState.Particle(x: 2, y: 2, vx: 0, vy: 0, life: 1, age: 0, good: false))
         g.zoneCenter = 0.2
@@ -47,7 +37,6 @@ struct GameStateLifecycleTests {
         #expect(g.gameOver == false)
         #expect(g.showHelp == false)
         #expect(g.themeIdx == 0)
-        #expect(g.flash == 0)
         #expect(g.particles.isEmpty)
         #expect(g.zoneCenter == 0.5)
         #expect(g.zoneWidth == 0.36)
@@ -177,8 +166,6 @@ struct GameStateLifecycleTests {
     // MARK: - bestCurrent
 
     @Test func bestCurrentFollowsMode() {
-        clearBestScoreKeys()
-        defer { clearBestScoreKeys() }
         let g = GameState()
         g.bestClassic = 4
         g.bestAdvanced = 9
@@ -194,16 +181,29 @@ struct GameStateLifecycleTests {
         let g = GameState()
         g.particles.append(GameState.Particle(x: 0, y: 0, vx: 2, vy: -1, life: 1.0, age: 0, good: true))
 
+        // Velocity is per 60 Hz frame, so 0.5 s moves the particle 30 frames' worth.
         g.updateParticles(0.5)
 
         #expect(g.particles.count == 1)
-        #expect(g.particles[0].x == 2)
-        #expect(g.particles[0].y == -1)
+        #expect(g.particles[0].x == 60)
+        #expect(g.particles[0].y == -30)
         #expect(g.particles[0].age == 0.5)
 
         // Second step pushes age past life (1.1 > 1.0) → particle removed.
         g.updateParticles(0.6)
 
         #expect(g.particles.isEmpty)
+    }
+
+    @Test func particleDistanceIsIndependentOfFrameRate() {
+        let at60 = GameState()
+        let at120 = GameState()
+        at60.particles.append(GameState.Particle(x: 0, y: 0, vx: 3, vy: 0, life: 1.0, age: 0, good: true))
+        at120.particles.append(GameState.Particle(x: 0, y: 0, vx: 3, vy: 0, life: 1.0, age: 0, good: true))
+
+        for _ in 0..<6 { at60.updateParticles(1.0 / 60) }
+        for _ in 0..<12 { at120.updateParticles(1.0 / 120) }
+
+        #expect(abs(at60.particles[0].x - at120.particles[0].x) < 0.0001)
     }
 }

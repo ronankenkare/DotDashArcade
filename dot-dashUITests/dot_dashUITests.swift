@@ -189,7 +189,7 @@ final class dot_dashUITests: XCTestCase {
 
         // Tap the center of the screen up to 30 times. The dot moves randomly, so
         // each tap may score or miss; a miss ends the run. Break as soon as the
-        // game-over overlay shows up — further taps would restart the game.
+        // game-over overlay shows up.
         let gameOverTitle = app.staticTexts["Game Over"].firstMatch
         let center = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
         var sawGameOver = false
