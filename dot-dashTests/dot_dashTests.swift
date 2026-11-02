@@ -134,6 +134,16 @@ struct dot_dashTests {
         #expect(UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1") == 9)
     }
 
+    @Test func homeScreenLoadSeesMigratedLegacyBest() {
+        // ContentView reads bests through BestScores.load without creating a GameState.
+        clearBestScoreKeys()
+        defer { clearBestScoreKeys() }
+        UserDefaults.standard.set(15, forKey: BestScores.legacyKey)
+        let bests = BestScores.load(from: .standard)
+        #expect(bests.classic == 15)
+        #expect(bests.advanced == 0)
+    }
+
     @Test func legacyMigrationDoesNotOverwriteExistingClassicBest() {
         clearBestScoreKeys()
         defer { clearBestScoreKeys() }

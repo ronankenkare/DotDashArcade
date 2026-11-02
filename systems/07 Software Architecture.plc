@@ -15,7 +15,7 @@
           "autoOrganize": false
         },
         "createdAt": "2026-10-21T21:41:30.584Z",
-        "modifiedAt": "2026-10-21T21:41:30.584Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "classifier-36219201-6208-4f02-949d-d90380181a93",
@@ -345,7 +345,7 @@
         "id": "class-relationship-099ebdae-6107-4cdc-8348-e8fe7b46cfbf",
         "kind": "dependency",
         "ownerId": null,
-        "name": "bests",
+        "name": "best writes",
         "documentation": "",
         "properties": {
           "sourceEnd": {
@@ -360,7 +360,7 @@
           }
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "classifier-11e326a3-ce95-4a3d-8773-9f3f098cd8e6"
       },
@@ -368,7 +368,7 @@
         "id": "class-relationship-c5a43cb8-23e4-4b2a-9715-17fff2504852",
         "kind": "dependency",
         "ownerId": null,
-        "name": "appearance / best read",
+        "name": "appearance",
         "documentation": "",
         "properties": {
           "sourceEnd": {
@@ -383,7 +383,7 @@
           }
         },
         "createdAt": "2026-10-21T21:41:30.592Z",
-        "modifiedAt": "2026-10-21T21:41:30.592Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-d546a81e-1e5c-4d96-8385-7aaa6d8f0be1",
         "targetId": "classifier-11e326a3-ce95-4a3d-8773-9f3f098cd8e6"
       },
@@ -504,6 +504,88 @@
         "modifiedAt": "2026-10-28T17:14:21.299Z",
         "sourceId": "classifier-7af6b402-b1d1-4634-889f-5526e519b5fb",
         "targetId": "classifier-55943307-bcaf-4843-a474-e119d411eebb"
+      },
+      {
+        "id": "classifier-560a8083-3d5b-573d-9fee-91e74390e5f4",
+        "kind": "class",
+        "ownerId": null,
+        "name": "BestScores",
+        "documentation": "Best keys; load() migrates legacy best",
+        "properties": {
+          "stereotype": "Swift enum",
+          "isAbstract": false
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "class-relationship-0a5219e4-de59-56c8-89e9-5b700517fedb",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "best read",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "classifier-d546a81e-1e5c-4d96-8385-7aaa6d8f0be1",
+        "targetId": "classifier-560a8083-3d5b-573d-9fee-91e74390e5f4"
+      },
+      {
+        "id": "class-relationship-b1767414-1c7f-544f-8156-98dfc324b370",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "best load / keys",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
+        "targetId": "classifier-560a8083-3d5b-573d-9fee-91e74390e5f4"
+      },
+      {
+        "id": "class-relationship-b653c40c-ab4e-5a1c-a4f2-7f877da01bca",
+        "kind": "dependency",
+        "ownerId": null,
+        "name": "bests, legacy key",
+        "documentation": "",
+        "properties": {
+          "sourceEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          },
+          "targetEnd": {
+            "role": "",
+            "multiplicity": "",
+            "navigable": false
+          }
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "classifier-560a8083-3d5b-573d-9fee-91e74390e5f4",
+        "targetId": "classifier-11e326a3-ce95-4a3d-8773-9f3f098cd8e6"
       }
     ],
     "views": [
@@ -837,6 +919,58 @@
         "kind": "edge",
         "diagramId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
         "elementId": "class-relationship-b0be55c4-c74a-4e8f-a24b-23fd082b8771",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-e5b3fcd9-76b1-5dd5-bb12-3cfde65e912a",
+        "kind": "shape",
+        "diagramId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
+        "elementId": "classifier-560a8083-3d5b-573d-9fee-91e74390e5f4",
+        "parentViewId": null,
+        "style": {},
+        "x": 1380,
+        "y": 900,
+        "width": 290,
+        "height": 120,
+        "collapsed": false
+      },
+      {
+        "id": "view-58aa52e5-130b-54b7-837d-263561c54e40",
+        "kind": "edge",
+        "diagramId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
+        "elementId": "class-relationship-0a5219e4-de59-56c8-89e9-5b700517fedb",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-6676a8cd-1032-513e-8053-dca317d4f0e8",
+        "kind": "edge",
+        "diagramId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
+        "elementId": "class-relationship-b1767414-1c7f-544f-8156-98dfc324b370",
+        "parentViewId": null,
+        "style": {},
+        "routeStyle": "orthogonal",
+        "sourceAnchor": null,
+        "targetAnchor": null,
+        "routeBerth": null,
+        "waypoints": []
+      },
+      {
+        "id": "view-0778fbec-096d-587e-950f-f21d607d7c58",
+        "kind": "edge",
+        "diagramId": "diagram-9348361e-7221-4107-b9fb-e95dc67283e9",
+        "elementId": "class-relationship-b653c40c-ab4e-5a1c-a4f2-7f877da01bca",
         "parentViewId": null,
         "style": {},
         "routeStyle": "orthogonal",

@@ -84,7 +84,7 @@ startLoop shall create and schedule one CADisplayLink on the main run loop in co
 
 ### CMP-018 Best loading and migration
 
-GameState shall load both mode bests from their keys at initialization and copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero.
+BestScores.load shall copy a positive dotdash_best_v1 into dotdash_best_classic_v1 only when the stored Classic best is zero, then return both mode bests. GameState shall load its bests through it at initialization.
 
 ## GameView
 
@@ -136,7 +136,7 @@ ContentView shall open GameView in the chosen mode when Play is pressed, read a 
 
 ### CMP-026 Best refresh
 
-ContentView shall read both mode bests from UserDefaults whenever Home appears.
+ContentView shall read both mode bests through BestScores.load, including the legacy migration, whenever Home appears.
 
 ### CMP-027 Home controls
 
@@ -187,7 +187,7 @@ dot_dashApp shall present ContentView in a WindowGroup, and the app target shall
 | Score readout (CMP-023) | REQ-004, REQ-005 | GameReadoutViews |
 | Appearance cycle (CMP-024) | REQ-009 | AppearancePreference |
 | Navigation and appearance (CMP-025) | REQ-009, REQ-012 | ContentView |
-| Best refresh (CMP-026) | REQ-012 | ContentView |
+| Best refresh (CMP-026) | REQ-010, REQ-012 | ContentView |
 | Home controls (CMP-027) | REQ-009, REQ-012 | ContentView |
 | Shared mode pill (CMP-028) | REQ-006, REQ-012 | ModeTogglePill |
 | App entry and platform (CMP-029) | REQ-001 | dot_dashApp |

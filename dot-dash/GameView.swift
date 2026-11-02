@@ -292,6 +292,29 @@ private struct ScoreBarView: View {
     }
 }
 
+// MARK: - Best-score persistence
+
+/// Owns the best-score UserDefaults keys and the legacy single-best migration,
+/// so the Home screen and GameState read the same values.
+enum BestScores {
+    static let classicKey = "dotdash_best_classic_v1"
+    static let advancedKey = "dotdash_best_advanced_v1"
+    static let legacyKey = "dotdash_best_v1"
+
+    static func key(for mode: GameState.Mode) -> String {
+        mode == .classic ? classicKey : advancedKey
+    }
+
+    /// Reads both bests, first migrating a legacy single best (if present) to Classic.
+    static func load(from defaults: UserDefaults) -> (classic: Int, advanced: Int) {
+        let legacy = defaults.integer(forKey: legacyKey)
+        if legacy > 0 && defaults.integer(forKey: classicKey) == 0 {
+            defaults.set(legacy, forKey: classicKey)
+        }
+        return (defaults.integer(forKey: classicKey), defaults.integer(forKey: advancedKey))
+    }
+}
+
 // MARK: - GameState model (moved from ContentView.swift)
 
 @MainActor
@@ -319,8 +342,8 @@ final class GameState: ObservableObject {
     // Output
     @Published var mode: Mode = .classic
     @Published var score: Int = 0
-    @Published var bestClassic: Int = UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1")
-    @Published var bestAdvanced: Int = UserDefaults.standard.integer(forKey: "dotdash_best_advanced_v1")
+    @Published var bestClassic: Int
+    @Published var bestAdvanced: Int
     var bestCurrent: Int { mode == .classic ? bestClassic : bestAdvanced }
     @Published var showHelp: Bool = true
     @Published var gameOver: Bool = false
@@ -380,13 +403,8 @@ final class GameState: ObservableObject {
     // MARK: - Lifecycle
 
     init() {
+        (bestClassic, bestAdvanced) = BestScores.load(from: .standard)
         successHap.prepare(); impactHap.prepare()
-        // Migrate legacy single-best (if present) to Classic
-        let legacy = UserDefaults.standard.integer(forKey: "dotdash_best_v1")
-        if legacy > 0 && UserDefaults.standard.integer(forKey: "dotdash_best_classic_v1") == 0 {
-            bestClassic = legacy
-            UserDefaults.standard.set(legacy, forKey: "dotdash_best_classic_v1")
-        }
     }
     deinit { link?.invalidate() }
 
@@ -510,11 +528,10 @@ final class GameState: ObservableObject {
             gameOver = true
             if mode == .classic {
                 bestClassic = max(bestClassic, score)
-                UserDefaults.standard.set(bestClassic, forKey: "dotdash_best_classic_v1")
             } else {
                 bestAdvanced = max(bestAdvanced, score)
-                UserDefaults.standard.set(bestAdvanced, forKey: "dotdash_best_advanced_v1")
             }
+            UserDefaults.standard.set(bestCurrent, forKey: BestScores.key(for: mode))
             showHelp = true
         }
     }

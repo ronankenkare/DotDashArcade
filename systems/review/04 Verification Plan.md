@@ -15,7 +15,7 @@ Coverage below was inspected in source. It is not a claim that the app tests pas
 | Contract REQ-007 lifecycle | GameView source; manual scenario below | No dedicated scenePhase integration test found |
 | Contract REQ-008 placement | dot_dashTests bounded and statistical samples | Minimum movement is best effort, not guaranteed |
 | Contract REQ-009 appearance | dot_dashTests; testAppearanceButtonCyclesAndPersists | Visual contrast still needs inspection |
-| Contract REQ-010 migration | dot_dashTests legacy cases | Home reads before GameState first initializes |
+| Contract REQ-010 migration | dot_dashTests legacy cases, including homeScreenLoadSeesMigratedLegacyBest | Home view itself is not driven by a UI test |
 | Contract REQ-011 effects / themes | GameStateLifecycleTests, including particleDistanceIsIndependentOfFrameRate | Colors need runtime inspection |
 | Contract REQ-012 home / support | dot_dashUITests home and navigation; testSupportMenuKeepsBottomToolbarStationary | No automated external form submission check |
 
@@ -42,7 +42,7 @@ Verification follows the V: each level is checked against the level it came from
 | --- | --- | --- |
 | Stakeholder needs | Manual acceptance below | Validation by review; not automated |
 | System requirements | dot_dashUITests flows | 4 of 12: REQ-004, REQ-005, REQ-009, REQ-012 |
-| Component requirements | Swift Testing unit suites; two UI layout tests | 18 of 29 |
+| Component requirements | Swift Testing unit suites; two UI layout tests | 19 of 29 |
 
 System requirements without a UI-flow trace are covered only through their component requirements' unit tests and the manual acceptance checks.
 
@@ -65,7 +65,7 @@ System requirements without a UI-flow trace are covered only through their compo
 | Mode change (CMP-015) | changeModeToSameModeIsNoOp, changeModeClassicToAdvancedResetsToAdvancedStartState, changeModeMidRunDiscardsTheRun, changeModeAdvancedToClassicAppliesClassicStartValues |
 | Pause to instructions (CMP-016) | None; manual: background a live run |
 | Display link ownership (CMP-017) | None; manual: lifecycle scenario |
-| Best loading and migration (CMP-018) | bestScoresLoadFromUserDefaults, legacyBestScoreMigratesToClassic, legacyMigrationDoesNotOverwriteExistingClassicBest |
+| Best loading and migration (CMP-018) | bestScoresLoadFromUserDefaults, legacyBestScoreMigratesToClassic, legacyMigrationDoesNotOverwriteExistingClassicBest, homeScreenLoadSeesMigratedLegacyBest |
 | Scene lifecycle (CMP-019) | None; manual: lifecycle scenario |
 | Game surface (CMP-020) | None; manual: play both modes |
 | Instructions and result (CMP-021) | None; manual: play, miss, replay |
@@ -73,7 +73,7 @@ System requirements without a UI-flow trace are covered only through their compo
 | Score readout (CMP-023) | bestCurrentFollowsMode |
 | Appearance cycle (CMP-024) | appearancePreferenceCyclesLightDarkSystem, appearancePreferenceFallsBackToSystemForNewInstalls |
 | Navigation and appearance (CMP-025) | appearancePreferenceFallsBackToSystemForNewInstalls, testPlayNavigatesToGame |
-| Best refresh (CMP-026) | None; manual: Home best after Back |
+| Best refresh (CMP-026) | homeScreenLoadSeesMigratedLegacyBest |
 | Home controls (CMP-027) | testCornerButtonsStayTheSameSizeAcrossAppearances, testSupportMenuKeepsBottomToolbarStationary |
 | Shared mode pill (CMP-028) | testModeToggleFlipsLabel |
 | App entry and platform (CMP-029) | None; manual: Xcode build |
@@ -97,5 +97,6 @@ On November 2, 2026, with the fixes below applied, the dot-dashTests target and 
 - Particle motion is scaled by dt, so bursts match at any refresh rate.
 - reset and changeMode share applyStartState; the unused flash and theme fields and ContentView.ModeSelection are removed.
 - Idle frames publish nothing and the display link pauses until reset.
+- BestScores owns the best keys and legacy migration; Home reads bests through it.
 
-New tests: tapAfterMissKeepsGameOverCard, repeatedHitsCapSpeedAtMaxSpeed, particleDistanceIsIndependentOfFrameRate.
+New tests: tapAfterMissKeepsGameOverCard, repeatedHitsCapSpeedAtMaxSpeed, particleDistanceIsIndependentOfFrameRate, homeScreenLoadSeesMigratedLegacyBest.

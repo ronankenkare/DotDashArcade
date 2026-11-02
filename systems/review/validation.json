@@ -4,10 +4,10 @@
   "diagramCount": 12,
   "documentCount": 7,
   "requirementCount": 47,
-  "elementCount": 649,
-  "viewCount": 294,
-  "sourceArtifacts": 105,
-  "traceCount": 230,
+  "elementCount": 666,
+  "viewCount": 302,
+  "sourceArtifacts": 108,
+  "traceCount": 236,
   "roundTrip": "passed",
   "findings": [
     {
@@ -141,15 +141,17 @@
       "speed-cap",
       "particle-dt",
       "cleanup",
-      "idle-loop"
+      "idle-loop",
+      "best-scores"
     ],
     "newTestParts": [
       "tapAfterMissKeepsGameOverCard",
       "repeatedHitsCapSpeedAtMaxSpeed",
-      "particleDistanceIsIndependentOfFrameRate"
+      "particleDistanceIsIndependentOfFrameRate",
+      "homeScreenLoadSeesMigratedLegacyBest"
     ],
     "verificationCoverage": {
-      "componentWithTests": "18 of 29",
+      "componentWithTests": "19 of 29",
       "systemWithUiTests": "4 of 12"
     },
     "svgPreviewsRegenerated": [
@@ -159,6 +161,7 @@
       "10-successful-tap-sequence.svg",
       "11-miss-and-persistence-sequence.svg",
       "12-display-frame-sequence.svg",
+      "15-persistence-ownership.svg",
       "13-hit-difficulty-progression.svg (relabeled)"
     ],
     "svgGenerator": "Graphviz from the native models; sequence previews reproduce the earlier output exactly, state and class layouts use the same style with recalibrated spacing",

@@ -40,7 +40,7 @@ From Home, the player shall be able to choose Light, Dark or System appearance; 
 
 ## REQ-010 Best migration
 
-A best score recorded by an earlier version of the app shall carry forward as the Classic best without replacing a Classic best recorded since.
+A best score recorded by an earlier version of the app shall carry forward as the Classic best, on Home as well as in the game, without replacing a Classic best recorded since.
 
 ## REQ-011 Feedback and themes
 
@@ -63,6 +63,6 @@ Home shall let the player choose a mode, see that mode's best, start play, chang
 | Lifecycle handling (REQ-007) | NEED-004 | CMP-016, CMP-017, CMP-019 |
 | Target placement (REQ-008) | NEED-002 | CMP-012 |
 | Appearance preference (REQ-009) | NEED-005 | CMP-024, CMP-025, CMP-027 |
-| Best migration (REQ-010) | NEED-003 | CMP-018 |
+| Best migration (REQ-010) | NEED-003 | CMP-018, CMP-026 |
 | Feedback and themes (REQ-011) | NEED-005 | CMP-001, CMP-009, CMP-010, CMP-011 |
 | Home and support (REQ-012) | NEED-001, NEED-003, NEED-006 | CMP-025, CMP-026, CMP-027, CMP-028 |
