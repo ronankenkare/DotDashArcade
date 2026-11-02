@@ -374,6 +374,9 @@ final class GameState: ObservableObject {
     private var link: CADisplayLink?
     private var lastTs: CFTimeInterval = CACurrentMediaTime()
 
+    // Persistence
+    private let defaults: UserDefaults
+
     // Haptics
     private let successHap = UINotificationFeedbackGenerator()
     private let impactHap = UIImpactFeedbackGenerator(style: .rigid)
@@ -402,8 +405,9 @@ final class GameState: ObservableObject {
 
     // MARK: - Lifecycle
 
-    init() {
-        (bestClassic, bestAdvanced) = BestScores.load(from: .standard)
+    init(defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+        (bestClassic, bestAdvanced) = BestScores.load(from: defaults)
         successHap.prepare(); impactHap.prepare()
     }
     deinit { link?.invalidate() }
@@ -451,7 +455,10 @@ final class GameState: ObservableObject {
     }
 
     func pauseToHelp() {
-        if running { running = false; showHelp = true; gameOver = false }
+        guard running else { return }
+        // The paused run can't be resumed, so keep its score if it's a new best.
+        recordBest()
+        running = false; showHelp = true; gameOver = false
     }
 
     // MARK: - Loop
@@ -526,14 +533,19 @@ final class GameState: ObservableObject {
             spawnBurst(at: CGPoint(x: markerScreenX(screenWidth: screenWidth), y: cachedBarY), good: false)
             running = false
             gameOver = true
-            if mode == .classic {
-                bestClassic = max(bestClassic, score)
-            } else {
-                bestAdvanced = max(bestAdvanced, score)
-            }
-            UserDefaults.standard.set(bestCurrent, forKey: BestScores.key(for: mode))
+            recordBest()
             showHelp = true
         }
+    }
+
+    /// Raises the current mode's best to `score` if higher and persists it.
+    private func recordBest() {
+        if mode == .classic {
+            bestClassic = max(bestClassic, score)
+        } else {
+            bestAdvanced = max(bestAdvanced, score)
+        }
+        defaults.set(bestCurrent, forKey: BestScores.key(for: mode))
     }
 
     func currentSettings() -> ModeSettings {

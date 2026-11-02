@@ -15,15 +15,6 @@ import UIKit
 @Suite(.serialized)
 struct GameStateLifecycleTests {
 
-    // MARK: - Helpers
-
-    private func clearBestScoreKeys() {
-        let d = UserDefaults.standard
-        d.removeObject(forKey: "dotdash_best_classic_v1")
-        d.removeObject(forKey: "dotdash_best_advanced_v1")
-        d.removeObject(forKey: "dotdash_best_v1")
-    }
-
     // MARK: - reset()
 
     @Test func resetRestoresClassicStartState() {
@@ -175,8 +166,6 @@ struct GameStateLifecycleTests {
     // MARK: - bestCurrent
 
     @Test func bestCurrentFollowsMode() {
-        clearBestScoreKeys()
-        defer { clearBestScoreKeys() }
         let g = GameState()
         g.bestClassic = 4
         g.bestAdvanced = 9
