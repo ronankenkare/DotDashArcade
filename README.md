@@ -83,6 +83,17 @@ The player’s Light, Dark, or System appearance preference is stored under `dot
 
 Four visual themes unlock by score inside a run (0 / 12 / 25 / 40). See `GameState.pickThemeIndex(for:)`.
 
+## App Store Info
+
+App Store listing copy and metadata are kept as dated snapshots in `App_Store_Info/`. The current one is [v2026.11.02](App_Store_Info/v2026.11.02.md):
+
+- **App Store name:** Dot Dash Arcade — *Pure Focus. Pure Fun.* (Games › Casual, Age 4+)
+- **Support URL:** [Google support form](https://docs.google.com/forms/d/e/1FAIpQLSc363RKRky1eFwkpDa4Eu2jDMwhBiBsOTacm03HsBZbZKctYQ/viewform?usp=dialog) (also opened by the in-app Support button)
+- **Privacy Policy URL:** [Google Drive folder](https://drive.google.com/drive/u/0/folders/1C8FPoMXLpXEHZUfzMExzftD3FauxDxUS)
+- **App Privacy:** Data Not Collected
+
+When the listing changes, add a new `vYYYY.MM.DD.md` snapshot rather than editing an older one.
+
 ## Plus-C systems library
 
 Open this repository folder in the installed Plus-C app. The root `project.plc` preserves the project identity, and `systems/` contains 12 editable diagrams and seven native documents covering stakeholder needs, system and component requirements, architecture, states, sequences, difficulty, storage, player flows, verification, and maintenance.
