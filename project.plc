@@ -76,7 +76,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "cad0fc9b449fbb71e8e5b3adfb5febad652da233406535a2361eaa5db2f16ec0"
+          "contentHash": "58740d713767ef1d56342752bcd15678dfa9b6a657cf105b08d8f26283584470"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -211,10 +211,10 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "c22c27b8f058363f5916f2508bcc7837c3ebc6dd8a4c412de49db5e488b23838"
+          "contentHash": "720c0b5c52321be1748abd2ca4281fe6e013cddcb4b384a41d3bb5e34b4c5db2"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
-        "modifiedAt": "2026-10-21T21:41:30.593Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-f53e55a8-0b68-47e0-888c-fb928b76efd3",
@@ -292,11 +292,11 @@
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView",
           "startLine": 46,
-          "endLine": 233,
-          "contentHash": "60b1c8dd"
+          "endLine": 226,
+          "contentHash": "d5cb56f1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "implements-4053d611-d1fd-4c22-ad72-aa6f6e5fe03c",
@@ -324,12 +324,12 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.body",
-          "startLine": 61,
-          "endLine": 87,
-          "contentHash": "cc75323d"
+          "startLine": 59,
+          "endLine": 80,
+          "contentHash": "31a60a9e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-2fc02206-651b-4589-87d4-53e91ac5f20a",
@@ -340,12 +340,12 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.refreshBests",
-          "startLine": 89,
-          "endLine": 92,
+          "startLine": 82,
+          "endLine": 85,
           "contentHash": "ba3b804d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-a49b8314-25b4-40a6-974e-5a09ed320eb0",
@@ -356,12 +356,12 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.HomeView",
-          "startLine": 105,
-          "endLine": 209,
-          "contentHash": "ddfb31ec"
+          "startLine": 98,
+          "endLine": 202,
+          "contentHash": "9f4bf7cd"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
-        "modifiedAt": "2026-10-28T17:19:53.689Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-c905f899-3226-4de8-9e3a-16aa1fd5db69",
@@ -571,8 +571,8 @@
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState",
           "startLine": 298,
-          "endLine": 641,
-          "contentHash": "8d0ad0fb"
+          "endLine": 615,
+          "contentHash": "b5d52177"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -603,8 +603,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.init",
-          "startLine": 387,
-          "endLine": 395,
+          "startLine": 382,
+          "endLine": 390,
           "contentHash": "72ab03ea"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -619,8 +619,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.startLoop",
-          "startLine": 398,
-          "endLine": 404,
+          "startLine": 393,
+          "endLine": 399,
           "contentHash": "3e275a06"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -635,8 +635,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.stopLoop",
-          "startLine": 406,
-          "endLine": 409,
+          "startLine": 401,
+          "endLine": 404,
           "contentHash": "b6350e8f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -651,9 +651,9 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.reset",
-          "startLine": 411,
-          "endLine": 426,
-          "contentHash": "00d659cc"
+          "startLine": 406,
+          "endLine": 410,
+          "contentHash": "9e5c3dfd"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -667,8 +667,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pauseToHelp",
-          "startLine": 428,
-          "endLine": 430,
+          "startLine": 427,
+          "endLine": 429,
           "contentHash": "5cf194a6"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -679,13 +679,13 @@
         "kind": "code-artifact",
         "ownerId": null,
         "name": "dot-dash/GameView.swift#GameState.step",
-        "documentation": "Per-frame dt cap, flash fade, marker advance while running, particle update.",
+        "documentation": "Per-frame dt cap, marker advance while running, particle update.",
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.step",
-          "startLine": 434,
-          "endLine": 449,
-          "contentHash": "c7a3e97b"
+          "startLine": 433,
+          "endLine": 445,
+          "contentHash": "e296466b"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -699,8 +699,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.advanceMarker",
-          "startLine": 452,
-          "endLine": 459,
+          "startLine": 448,
+          "endLine": 455,
           "contentHash": "b442c5ca"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -715,8 +715,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.updateParticles",
-          "startLine": 463,
-          "endLine": 471,
+          "startLine": 459,
+          "endLine": 467,
           "contentHash": "54d40799"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -731,9 +731,9 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.handleTap",
-          "startLine": 475,
-          "endLine": 514,
-          "contentHash": "213abecc"
+          "startLine": 471,
+          "endLine": 509,
+          "contentHash": "54b0c3eb"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -747,8 +747,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.currentSettings",
-          "startLine": 516,
-          "endLine": 543,
+          "startLine": 511,
+          "endLine": 538,
           "contentHash": "bf46c333"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -763,9 +763,9 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.changeMode",
-          "startLine": 545,
-          "endLine": 574,
-          "contentHash": "5f49528d"
+          "startLine": 540,
+          "endLine": 548,
+          "contentHash": "a63a90a6"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -779,8 +779,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inZone",
-          "startLine": 578,
-          "endLine": 581,
+          "startLine": 552,
+          "endLine": 555,
           "contentHash": "44f0424d"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -795,8 +795,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.inPerfect",
-          "startLine": 583,
-          "endLine": 587,
+          "startLine": 557,
+          "endLine": 561,
           "contentHash": "4bd6431e"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -811,8 +811,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickThemeIndex",
-          "startLine": 591,
-          "endLine": 596,
+          "startLine": 565,
+          "endLine": 570,
           "contentHash": "80d5dad8"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -827,8 +827,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.spawnBurst",
-          "startLine": 605,
-          "endLine": 621,
+          "startLine": 579,
+          "endLine": 595,
           "contentHash": "3ac94ea1"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -843,8 +843,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.pickNewZoneCenter",
-          "startLine": 623,
-          "endLine": 640,
+          "startLine": 597,
+          "endLine": 614,
           "contentHash": "6a4c493f"
         },
         "createdAt": "2026-10-28T17:19:53.689Z",
@@ -1011,7 +1011,7 @@
           "symbol": "",
           "startLine": null,
           "endLine": null,
-          "contentHash": "4c64d2c391fef48b1ddc504306314eb363fbabc4a6011d87c7ca4b7566ace613"
+          "contentHash": "383e3876df135d7db7a7b36b65229fdc45f3ffb5be9649f5854ebbb8405dfb5b"
         },
         "createdAt": "2026-10-21T21:41:30.593Z",
         "modifiedAt": "2026-11-02T12:00:00.000Z"
@@ -1482,10 +1482,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-001 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, fade the flash value, advance the marker only while a run is active, and update particles on every callback.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, and update particles on every callback.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-01880288-5d90-46fc-8cfb-178b2d26322f",
         "soft": true
@@ -1703,10 +1703,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-007 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-007 Hit feedback\",{\"key\":\"CMP-007\",\"title\":\"Hit feedback\",\"statement\":\"A perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-007 Hit feedback\",{\"key\":\"CMP-007\",\"title\":\"Hit feedback\",\"statement\":\"A perfect hit shall emit a success notification and a rigid impact at intensity 1.0; a good hit shall emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-fd1a0d87-731c-4089-9e52-5a425afdc50a",
         "soft": true
@@ -1941,10 +1941,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Allocation: CMP-013 is allocated to the GameState class.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.622Z",
-        "modifiedAt": "2026-10-28T17:30:31.622Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "classifier-5283ed01-ecd8-44ad-96be-a58d872419a1",
         "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "soft": true
@@ -2621,12 +2621,12 @@
         "properties": {
           "path": "dot-dash/ContentView.swift",
           "symbol": "ContentView.appearance",
-          "startLine": 57,
-          "endLine": 59,
+          "startLine": 55,
+          "endLine": 57,
           "contentHash": "0aab38db"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "code-artifact-93027b6a-9213-474a-89d3-2a79003ab1bd",
@@ -2637,8 +2637,8 @@
         "properties": {
           "path": "dot-dash/GameView.swift",
           "symbol": "GameState.deinit",
-          "startLine": 396,
-          "endLine": 396,
+          "startLine": 391,
+          "endLine": 391,
           "contentHash": "79eebad7"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
@@ -2925,10 +2925,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.reset implements CMP-013; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-d3ef774a-ccd0-4d08-b3bf-a19faecfff5f",
         "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "soft": true
@@ -2959,10 +2959,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.step implements CMP-001; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, fade the flash value, advance the marker only while a run is active, and update particles on every callback.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-001 Frame step\",{\"key\":\"CMP-001\",\"title\":\"Frame step\",\"statement\":\"GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, and update particles on every callback.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-df66cc56-945d-4be2-bf13-92607dd1792c",
         "targetId": "document-requirement-01880288-5d90-46fc-8cfb-178b2d26322f",
         "soft": true
@@ -3027,10 +3027,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "GameState.handleTap implements CMP-007; symbol range inspected 2026-10-28.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-007 Hit feedback\",{\"key\":\"CMP-007\",\"title\":\"Hit feedback\",\"statement\":\"A perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-007 Hit feedback\",{\"key\":\"CMP-007\",\"title\":\"Hit feedback\",\"statement\":\"A perfect hit shall emit a success notification and a rigid impact at intensity 1.0; a good hit shall emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.623Z",
-        "modifiedAt": "2026-10-28T17:30:31.623Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-3a14db9e-64d0-4006-bcd2-af51ff8d70d0",
         "targetId": "document-requirement-fd1a0d87-731c-4089-9e52-5a425afdc50a",
         "soft": true
@@ -4108,10 +4108,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-013; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-e29b40ea-d51d-4e28-99a6-0b68cfa07a2a",
         "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "soft": true
@@ -4193,11 +4193,11 @@
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.resetRestoresClassicStartState",
           "startLine": 29,
-          "endLine": 58,
-          "contentHash": "e23517d5"
+          "endLine": 56,
+          "contentHash": "2733e55c"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-1136c269-ad63-4834-87cc-69c5b00b3292",
@@ -4208,10 +4208,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-013; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-1908136d-4142-4349-bddb-074277eab9ab",
         "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "soft": true
@@ -4225,12 +4225,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.resetAppliesAdvancedStartValues",
-          "startLine": 60,
-          "endLine": 69,
+          "startLine": 58,
+          "endLine": 67,
           "contentHash": "6a3f8bfb"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-422d7bd4-fe62-4cce-98de-276a76678b0c",
@@ -4241,10 +4241,10 @@
         "properties": {
           "origin": "manual",
           "rationale": "Verifies CMP-013; Plus-C has no verifies kind, so verification is recorded as refines. Coverage inspected in source 2026-10-28, not executed.",
-          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.\"}]"
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-b2c06be3-3ec0-4303-8ef7-1b45cb65ff24",
         "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
         "soft": true
@@ -4258,12 +4258,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.changeModeToSameModeIsNoOp",
-          "startLine": 73,
-          "endLine": 83,
+          "startLine": 71,
+          "endLine": 81,
           "contentHash": "237430ca"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-12d42ab0-6068-4d49-a5fe-a2500324b940",
@@ -4291,12 +4291,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.changeModeClassicToAdvancedResetsToAdvancedStartState",
-          "startLine": 85,
-          "endLine": 104,
+          "startLine": 83,
+          "endLine": 102,
           "contentHash": "75942cfe"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-328ff4b7-3c9c-484f-9405-a82a0d41c706",
@@ -4324,12 +4324,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.changeModeMidRunDiscardsTheRun",
-          "startLine": 106,
-          "endLine": 117,
+          "startLine": 104,
+          "endLine": 115,
           "contentHash": "b9f38ff2"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-c4a25c3f-fb46-45ec-b9c0-4b6b608d8703",
@@ -4357,12 +4357,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.changeModeAdvancedToClassicAppliesClassicStartValues",
-          "startLine": 119,
-          "endLine": 132,
+          "startLine": 117,
+          "endLine": 130,
           "contentHash": "db942d51"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-60d66197-dbdb-48df-b07f-902899bfa9bc",
@@ -4390,12 +4390,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.pickThemeIndexThresholds",
-          "startLine": 142,
-          "endLine": 145,
+          "startLine": 140,
+          "endLine": 143,
           "contentHash": "9d491471"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-128568b6-a878-472c-b682-72b7a272ea72",
@@ -4423,12 +4423,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.classicSettingsMatchExpectedConstants",
-          "startLine": 149,
-          "endLine": 161,
+          "startLine": 147,
+          "endLine": 159,
           "contentHash": "3dce243f"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-b449ee21-65b9-4fbf-9ea0-09dc53814739",
@@ -4456,12 +4456,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.advancedSettingsMatchExpectedConstants",
-          "startLine": 163,
-          "endLine": 175,
+          "startLine": 161,
+          "endLine": 173,
           "contentHash": "5f78a384"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-2ea7287b-1548-4188-a47e-034a004eca17",
@@ -4489,12 +4489,12 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.bestCurrentFollowsMode",
-          "startLine": 179,
-          "endLine": 189,
+          "startLine": 177,
+          "endLine": 187,
           "contentHash": "0e49a51f"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
-        "modifiedAt": "2026-10-28T17:30:31.625Z"
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
       },
       {
         "id": "refines-96f00781-99bc-45b1-b316-4559bbd23b7f",
@@ -4522,8 +4522,8 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.updateParticlesAgesMovesAndRemoves",
-          "startLine": 193,
-          "endLine": 209,
+          "startLine": 191,
+          "endLine": 207,
           "contentHash": "0778e660"
         },
         "createdAt": "2026-10-28T17:30:31.625Z",
@@ -5481,8 +5481,8 @@
         "properties": {
           "path": "dot-dashTests/GameStateLifecycleTests.swift",
           "symbol": "GameStateLifecycleTests.particleDistanceIsIndependentOfFrameRate",
-          "startLine": 211,
-          "endLine": 221,
+          "startLine": 209,
+          "endLine": 219,
           "contentHash": "210dfe8f"
         },
         "createdAt": "2026-11-02T12:00:00.000Z",
@@ -5503,6 +5503,56 @@
         "modifiedAt": "2026-11-02T12:00:00.000Z",
         "sourceId": "code-artifact-2a3fb46b-3cad-5c59-83aa-817e9cd35fa4",
         "targetId": "document-requirement-38afd14c-e6bf-4938-9fdf-3d894405e42d",
+        "soft": true
+      },
+      {
+        "id": "code-artifact-79ff0d5c-a2c2-5aa0-9bca-513e601e893f",
+        "kind": "code-artifact",
+        "ownerId": null,
+        "name": "dot-dash/GameView.swift#GameState.applyStartState",
+        "documentation": "Restores the current mode's start values for reset and changeMode.",
+        "properties": {
+          "path": "dot-dash/GameView.swift",
+          "symbol": "GameState.applyStartState",
+          "startLine": 413,
+          "endLine": 425,
+          "contentHash": "1467484c"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z"
+      },
+      {
+        "id": "implements-e723b9c0-c41a-5016-93a3-4a5bcd2c69df",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.applyStartState implements CMP-013; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-013 Run reset\",{\"key\":\"CMP-013\",\"title\":\"Run reset\",\"statement\":\"reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-79ff0d5c-a2c2-5aa0-9bca-513e601e893f",
+        "targetId": "document-requirement-5379f9fa-4256-42a4-9696-f2a5b1edef9e",
+        "soft": true
+      },
+      {
+        "id": "implements-b9d69412-bd21-55be-8dee-100ebcd0df9b",
+        "kind": "implements",
+        "ownerId": null,
+        "name": "",
+        "documentation": "",
+        "properties": {
+          "origin": "manual",
+          "rationale": "GameState.applyStartState implements CMP-015; symbol range inspected 2026-11-02.",
+          "targetFingerprint": "[\"document-requirement\",\"CMP-015 Mode change\",{\"key\":\"CMP-015\",\"title\":\"Mode change\",\"statement\":\"changeMode to a different mode shall stop any run, apply that mode's start values and show instructions without a game-over result or saved best. changeMode to the current mode shall do nothing.\"}]"
+        },
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "modifiedAt": "2026-11-02T12:00:00.000Z",
+        "sourceId": "code-artifact-79ff0d5c-a2c2-5aa0-9bca-513e601e893f",
+        "targetId": "document-requirement-1fe03981-6e57-426f-b6ce-d2881e5c0284",
         "soft": true
       }
     ],

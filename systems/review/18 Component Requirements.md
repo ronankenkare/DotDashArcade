@@ -8,7 +8,7 @@ Allocated to GameState.
 
 ### CMP-001 Frame step
 
-GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, fade the flash value, advance the marker only while a run is active, and update particles on every callback.
+GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, and update particles on every callback.
 
 ### CMP-002 Marker advance
 
@@ -36,7 +36,7 @@ On a hit, handleTap shall add one point, multiply speed and width by the mode's 
 
 ### CMP-007 Hit feedback
 
-A perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.
+A perfect hit shall emit a success notification and a rigid impact at intensity 1.0; a good hit shall emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.
 
 ### CMP-008 Miss handling
 
@@ -64,7 +64,7 @@ Allocated to GameState.
 
 ### CMP-013 Run reset
 
-reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.
+reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.
 
 ### CMP-014 Stopped tap
 

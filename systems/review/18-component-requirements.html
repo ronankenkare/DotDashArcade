@@ -4,7 +4,7 @@
 <h2 id="gamestate-timing-and-motion">GameState: timing and motion</h2>
 <p>Allocated to GameState.</p>
 <h3 id="cmp-001-frame-step">CMP-001 Frame step</h3>
-<p>GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, fade the flash value, advance the marker only while a run is active, and update particles on every callback.</p>
+<p>GameState.step shall take dt as the difference between successive CADisplayLink timestamps, cap it at 0.05 s, advance the marker only while a run is active, and update particles on every callback.</p>
 <h3 id="cmp-002-marker-advance">CMP-002 Marker advance</h3>
 <p>advanceMarker shall add direction × speed × dt to the position, clamp the result to 0...1, and reverse direction when the position reaches 0 or 1 inclusive, discarding any excess distance.</p>
 <h2 id="gamestate-rules-and-difficulty">GameState: rules and difficulty</h2>
@@ -18,7 +18,7 @@
 <h3 id="cmp-006-hit-update">CMP-006 Hit update</h3>
 <p>On a hit, handleTap shall add one point, multiply speed and width by the mode&#39;s factors for the hit quality, cap speed at the mode maximum, clamp width to the mode minimum ... 0.5, relocate the target and select the theme for the new score.</p>
 <h3 id="cmp-007-hit-feedback">CMP-007 Hit feedback</h3>
-<p>A perfect hit shall raise flash by 0.5 and emit a success notification and a rigid impact at intensity 1.0; a good hit shall raise flash by 0.35 and emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.</p>
+<p>A perfect hit shall emit a success notification and a rigid impact at intensity 1.0; a good hit shall emit a warning notification and an impact at 0.6. Generators shall be prepared again after each hit.</p>
 <h3 id="cmp-008-miss-handling">CMP-008 Miss handling</h3>
 <p>On a miss, handleTap shall stop the run, set gameOver, store max(best, score) for the current mode under dotdash_best_classic_v1 or dotdash_best_advanced_v1, and show the overlay. It shall not touch the other mode&#39;s key.</p>
 <h3 id="cmp-009-particle-bursts">CMP-009 Particle bursts</h3>
@@ -32,7 +32,7 @@
 <h2 id="gamestate-run-lifecycle-and-storage">GameState: run lifecycle and storage</h2>
 <p>Allocated to GameState.</p>
 <h3 id="cmp-013-run-reset">CMP-013 Run reset</h3>
-<p>reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles, no flash and theme 0.</p>
+<p>reset shall start a run in the current mode with its start speed, width and perfect fraction, a random marker position and direction, a target centered at 0.5, score 0, no particles and theme 0.</p>
 <h3 id="cmp-014-stopped-tap">CMP-014 Stopped tap</h3>
 <p>handleTap shall call reset when no run is active and no game-over result is showing; while Game Over shows, it shall ignore taps so only Play Again starts a new run.</p>
 <h3 id="cmp-015-mode-change">CMP-015 Mode change</h3>

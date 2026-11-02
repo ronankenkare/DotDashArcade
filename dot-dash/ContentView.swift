@@ -44,10 +44,8 @@ enum AppearancePreference: String, CaseIterable {
 }
 
 struct ContentView: View {
-    // Local enum for navigation to game with a chosen mode
-    enum ModeSelection: String, Identifiable { case classic, advanced; var id: String { rawValue } }
-    @State private var selection: ModeSelection? = nil
-    @State private var chosenMode: ModeSelection = .classic
+    @State private var selection: GameState.Mode? = nil
+    @State private var chosenMode: GameState.Mode = .classic
     @AppStorage(AppearancePreference.storageKey) private var appearanceRawValue = AppearancePreference.system.rawValue
 
     // Best scores are read from UserDefaults in refreshBests() on appear (initial load + returning from GameView).
@@ -73,13 +71,8 @@ struct ContentView: View {
                 )
             }
             // Navigate to GameView with the chosen mode
-            .navigationDestination(item: $selection) { sel in
-                switch sel {
-                case .classic:
-                    GameView(initialMode: .classic)
-                case .advanced:
-                    GameView(initialMode: .advanced)
-                }
+            .navigationDestination(item: $selection) { mode in
+                GameView(initialMode: mode)
             }
             .onAppear { refreshBests() }
         }
@@ -103,7 +96,7 @@ struct ContentView: View {
     // MARK: - HomeView
 
     private struct HomeView: View {
-        @Binding var chosenMode: ModeSelection
+        @Binding var chosenMode: GameState.Mode
         let classicBest: Int
         let advancedBest: Int
         let appearance: AppearancePreference

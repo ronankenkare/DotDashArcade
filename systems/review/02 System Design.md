@@ -4,11 +4,11 @@
 
 Dot Dash is a universal iPhone/iPad reflex game. The deployment target is iOS 26.0. The app entry point in dot-dash/dot_dashApp.swift creates ContentView. ContentView owns NavigationStack, the selected home mode, best-score readout, and the persisted appearance preference. Home's Play selects a navigation destination; it does not start marker motion. HomeView places appearance and a native Support Menu in a horizontal HStack separated by a spacer, anchored with safeAreaInset(edge: .bottom). The system presents the menu outside toolbar layout, so opening it cannot enlarge the row or move the appearance control. The fixed bottom toolbar respects the safe area and stays horizontal on iPhone Duo, where native bottomBar items adapt into a trailing vertical rail in landscape.
 
-GameView owns a MainActor GameState through StateObject. GameState is an ObservableObject publishing score, flags, marker, target and particles. GameBarView renders a SwiftUI Canvas; ScoreBarView, HelpOverlayView and ModeBadgeView observe the same model. ModeTogglePill is shared with Home.
+GameView owns a MainActor GameState through StateObject. Home and GameView share GameState.Mode for the chosen mode. GameState is an ObservableObject publishing score, flags, marker, target and particles. GameBarView renders a SwiftUI Canvas; ScoreBarView, HelpOverlayView and ModeBadgeView observe the same model. ModeTogglePill is shared with Home.
 
 ## Timing and rendering
 
-GameView starts CADisplayLink on appear and on active scene phase. startLoop is idempotent; stopLoop invalidates and clears the link. step computes elapsed time and caps it at 50 ms. The marker moves only when running. Flash fades and particles age even when not running. Particle velocities are points per 60 Hz frame and are scaled by dt × 60, so bursts travel the same distance at any refresh rate.
+GameView starts CADisplayLink on appear and on active scene phase. startLoop is idempotent; stopLoop invalidates and clears the link. step computes elapsed time and caps it at 50 ms. The marker moves only when running; particles age even when not running. Particle velocities are points per 60 Hz frame and are scaled by dt × 60, so bursts travel the same distance at any refresh rate.
 
 ## Rules and difficulty
 
@@ -68,32 +68,33 @@ Each code part names a Swift symbol and its line range and records the Plus-C li
 | --- | --- | --- |
 | dot_dashApp.swift · dot_dashApp | 11–17 | dot_dashApp class, CMP-029 |
 | ContentView.swift · AppearancePreference | 6–44 | AppearancePreference class, CMP-024 |
-| ContentView.swift · ContentView | 46–233 | ContentView class |
-| ContentView.swift · ContentView.appearance | 57–59 | CMP-025 |
-| ContentView.swift · ContentView.body | 61–87 | CMP-025 |
-| ContentView.swift · ContentView.refreshBests | 89–92 | CMP-026 |
-| ContentView.swift · ContentView.HomeView | 105–209 | CMP-027 |
+| ContentView.swift · ContentView | 46–226 | ContentView class |
+| ContentView.swift · ContentView.appearance | 55–57 | CMP-025 |
+| ContentView.swift · ContentView.body | 59–80 | CMP-025 |
+| ContentView.swift · ContentView.refreshBests | 82–85 | CMP-026 |
+| ContentView.swift · ContentView.HomeView | 98–202 | CMP-027 |
 | GameView.swift · GameView | 15–71 | GameView class, CMP-019 |
 | GameView.swift · ModeTogglePill | 78–99 | ModeTogglePill class, CMP-028 |
 | GameView.swift · GameBarView | 104–159 | GameBarView class, CMP-020 |
 | GameView.swift · HelpOverlayView | 162–257 | GameReadoutViews class, CMP-021 |
 | GameView.swift · ModeBadgeView | 260–272 | GameReadoutViews class, CMP-022 |
 | GameView.swift · ScoreBarView | 275–293 | GameReadoutViews class, CMP-023 |
-| GameView.swift · GameState | 298–641 | GameState class |
-| GameView.swift · GameState.init | 387–395 | CMP-018 |
-| GameView.swift · GameState.deinit | 396–396 | CMP-017 |
-| GameView.swift · GameState.startLoop | 398–404 | CMP-017 |
-| GameView.swift · GameState.stopLoop | 406–409 | CMP-017 |
-| GameView.swift · GameState.reset | 411–426 | CMP-013 |
-| GameView.swift · GameState.pauseToHelp | 428–430 | CMP-016 |
-| GameView.swift · GameState.step | 434–449 | CMP-001 |
-| GameView.swift · GameState.advanceMarker | 452–459 | CMP-002 |
-| GameView.swift · GameState.updateParticles | 463–471 | CMP-010 |
-| GameView.swift · GameState.handleTap | 475–514 | CMP-006, CMP-007, CMP-008, CMP-014 |
-| GameView.swift · GameState.currentSettings | 516–543 | CMP-005 |
-| GameView.swift · GameState.changeMode | 545–574 | CMP-015 |
-| GameView.swift · GameState.inZone | 578–581 | CMP-003 |
-| GameView.swift · GameState.inPerfect | 583–587 | CMP-004 |
-| GameView.swift · GameState.pickThemeIndex | 591–596 | CMP-011 |
-| GameView.swift · GameState.spawnBurst | 605–621 | CMP-009 |
-| GameView.swift · GameState.pickNewZoneCenter | 623–640 | CMP-012 |
+| GameView.swift · GameState | 298–615 | GameState class |
+| GameView.swift · GameState.init | 382–390 | CMP-018 |
+| GameView.swift · GameState.deinit | 391–391 | CMP-017 |
+| GameView.swift · GameState.startLoop | 393–399 | CMP-017 |
+| GameView.swift · GameState.stopLoop | 401–404 | CMP-017 |
+| GameView.swift · GameState.reset | 406–410 | CMP-013 |
+| GameView.swift · GameState.applyStartState | 413–425 | CMP-013, CMP-015 |
+| GameView.swift · GameState.pauseToHelp | 427–429 | CMP-016 |
+| GameView.swift · GameState.step | 433–445 | CMP-001 |
+| GameView.swift · GameState.advanceMarker | 448–455 | CMP-002 |
+| GameView.swift · GameState.updateParticles | 459–467 | CMP-010 |
+| GameView.swift · GameState.handleTap | 471–509 | CMP-006, CMP-007, CMP-008, CMP-014 |
+| GameView.swift · GameState.currentSettings | 511–538 | CMP-005 |
+| GameView.swift · GameState.changeMode | 540–548 | CMP-015 |
+| GameView.swift · GameState.inZone | 552–555 | CMP-003 |
+| GameView.swift · GameState.inPerfect | 557–561 | CMP-004 |
+| GameView.swift · GameState.pickThemeIndex | 565–570 | CMP-011 |
+| GameView.swift · GameState.spawnBurst | 579–595 | CMP-009 |
+| GameView.swift · GameState.pickNewZoneCenter | 597–614 | CMP-012 |

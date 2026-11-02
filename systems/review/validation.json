@@ -4,10 +4,10 @@
   "diagramCount": 12,
   "documentCount": 7,
   "requirementCount": 47,
-  "elementCount": 637,
-  "viewCount": 288,
-  "sourceArtifacts": 103,
-  "traceCount": 226,
+  "elementCount": 639,
+  "viewCount": 287,
+  "sourceArtifacts": 104,
+  "traceCount": 228,
   "roundTrip": "passed",
   "findings": [
     {
@@ -139,7 +139,8 @@
       "touch-down",
       "game-over-taps",
       "speed-cap",
-      "particle-dt"
+      "particle-dt",
+      "cleanup"
     ],
     "newTestParts": [
       "tapAfterMissKeepsGameOverCard",
