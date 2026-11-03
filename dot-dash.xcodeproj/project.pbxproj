@@ -415,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2026.06.11;
+				MARKETING_VERSION = 2026.11.02;
 				PRODUCT_BUNDLE_IDENTIFIER = "ronankenkare.dot-dash";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -455,7 +455,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2026.06.11;
+				MARKETING_VERSION = 2026.11.02;
 				PRODUCT_BUNDLE_IDENTIFIER = "ronankenkare.dot-dash";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
